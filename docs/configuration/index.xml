@@ -1,0 +1,58 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Build and debug</title><link>/docs/configuration/</link><description>Recent content in Build and debug on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuring project</title><link>/docs/configuration/build/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/build/</guid><description>
+&lt;p>To configure a project in XploR Studio, right-click on the project and select &lt;strong>Properties&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_configuration//build/1.png" alt="example image">&lt;/p>
+&lt;p>The properties for a project include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Resource&lt;/strong>: Defined path variables for project.&lt;/li>
+&lt;li>&lt;strong>C/C++ Build&lt;/strong>: Configure project build options including build variables, environment settings, logging, build tools, and more.&lt;/li>
+&lt;li>&lt;strong>C/C++ General&lt;/strong>: Customize workspace settings including code analysis, formatting, indexing, language mappings, etc.&lt;/li>
+&lt;li>&lt;strong>Project Natures&lt;/strong>: Specify which natures should be assigned to the project (an advanced operation, requires a recent backup).&lt;/li>
+&lt;li>&lt;strong>Project References&lt;/strong>: Specify which other projects are referenced by the current project.&lt;/li>
+&lt;li>&lt;strong>Run/Debug Settings&lt;/strong>: Manage launch configurations associated with the current resource.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_configuration//build/2.png" alt="example image">&lt;/p>
+&lt;h2 id="build-configurations">Build Configurations&lt;/h2>
+&lt;p>To configure build settings, select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_configuration//build/3.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Tool Settings&lt;/strong> tab allows you to configure options while building applications, such as setting the target architecture, ABI, tuning, code model, and adding optimization options, libraries and warning options in the assembler, compiler, and linker steps.&lt;/li>
+&lt;li>&lt;strong>Build Steps&lt;/strong> tab allows you to add pre-build and post-build commands&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Preparing target connection</title><link>/docs/configuration/flash/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/flash/</guid><description>
+&lt;p>Prior to running or debugging the application, you must:&lt;/p>
+&lt;ol>
+&lt;li>Establish a physical connection between the host and target&lt;/li>
+&lt;li>Prepare an execution environment on the target, and&lt;/li>
+&lt;li>Establish a logical debug channel between the host debugger and execution environment&lt;/li>
+&lt;/ol>
+&lt;h3 id="physical-target-connection">Physical target connection&lt;/h3>
+&lt;p>For most target platform(s) (FPGAs boards), physical target connection is achieved via one of the following means:&lt;/p>
+&lt;ul>
+&lt;li>Host computer and target platform connected via USB&lt;/li>
+&lt;li>Target platform installed as a PCIe device on host computer&lt;/li>
+&lt;li>Host computer connected to target via secure VPN (cloud native)&lt;/li>
+&lt;/ul>
+&lt;p>For most cases, a USB cable is used to connect the host system to the target platform&lt;/p>
+&lt;h3 id="preparing-execution-environment">Preparing execution environment&lt;/h3>
+&lt;p>A binary image (bitfile) containing the hardware design of the system-on-chip that runs the embedded program will need to be downloaded and programmed on the FPGAs or hardware-assisted verification systems (HAVS) target.&lt;/p>
+&lt;p>For ASIC target platforms, no additional preparation is needed.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
+&lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="/images_configuration/run/1.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Running&lt;/strong> to create a new run configuration. In &lt;strong>Main&lt;/strong> tab, you can select the application path, auto-build option and change run configuration:&lt;/p>
+&lt;p>&lt;img src="/images_configuration/run/2.png" alt="example image">&lt;/p></description></item><item><title>Docs: Debugging program</title><link>/docs/configuration/debug/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/debug/</guid><description>
+&lt;p>To debug a project on XploR Studio, right-click on the project and select &lt;strong>Debug As &amp;gt; Debug Configurations&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="/images_configuration/debug/1.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Debugging&lt;/strong> to create a new debug configuration:&lt;/p>
+&lt;p>&lt;img src="/images_configuration/debug/2.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Main&lt;/strong> tab: Specify the executable application and configure auto-build option&lt;/li>
+&lt;li>&lt;strong>Debugger&lt;/strong> tab: Specify Platform (Remote Target/QEMU/Hardware/&amp;hellip;), GDB setup (GDB commands, GDB options, etc..) and Platform Configuration.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_configuration/debug/3.png" alt="example image">&lt;/p></description></item></channel></rss>

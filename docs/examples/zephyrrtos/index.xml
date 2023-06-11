@@ -1,0 +1,290 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Zephyr OS</title><link>/docs/examples/zephyrrtos/</link><description>Recent content in Zephyr OS on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/zephyrrtos/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hello World</title><link>/docs/examples/zephyrrtos/zephyrhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrhelloworld/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;HelloWorld.&amp;rdquo; This application prints &lt;em>Hello world&lt;/em> text and runs a simple for-loop for a simple demonstration. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Synchronization</title><link>/docs/examples/zephyrrtos/zephyrsynchronization/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsynchronization/</guid><description>
+&lt;p>This chapter covers the basics of the Zephyr RTOS Synchronization sample application including creating, building, running, and debugging steps. A simple application that demonstrates basic sanity of the kernel. Two threads (A and B) take turns printing a greeting message to the console and use sleep requests and semaphores to control the rate at which messages are generated. This application can also be built and run on QEMU emulator.&lt;/p>
+&lt;hr>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo; choose &lt;strong>Zephyr application&lt;/strong> then &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name.
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click Next button.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/3.png" alt="example image">&lt;/p>
+&lt;p>Then click the Finish button.
+Select Zephyr Base Path then click Next:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/6.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/7.png" alt="example image">&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/11.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/12.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/13.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/14.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/15.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/17.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/18.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/18.1.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Mutex</title><link>/docs/examples/zephyrrtos/zephyrmutex/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmutex/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Mutex&lt;/strong>. This application creates two threads that modify a shared resource while using a mutex lock for synchronization. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrhelloworld/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Mutex object:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Semaphore</title><link>/docs/examples/zephyrrtos/zephyrsemaphore/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsemaphore/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Semaphore&lt;/strong>. This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Semaphore objects:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Message Queue</title><link>/docs/examples/zephyrrtos/zephyrmsgq/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmsgq/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Message Queue&lt;/strong>. This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Mesage Queue objects:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/19.png" alt="example image">&lt;/p></description></item></channel></rss>

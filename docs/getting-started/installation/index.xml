@@ -1,0 +1,77 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Installation</title><link>/docs/getting-started/installation/</link><description>Recent content in Installation on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/getting-started/installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: System requirements</title><link>/docs/getting-started/installation/system-requirements/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/system-requirements/</guid><description>
+&lt;h2 id="host-system-requirements">Host System Requirements&lt;/h2>
+&lt;p>The supported operating systems for installing the product are:&lt;/p>
+&lt;ul>
+&lt;li>Windows 10&lt;/li>
+&lt;li>Ubuntu Desktop 20.04&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-windows-10">Minimum (Windows 10)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 1 gigahertz (GHz) or faster&lt;/li>
+&lt;li>Memory: 8 GB (64-bit)&lt;/li>
+&lt;li>Disk space: 30GB free HD space&lt;/li>
+&lt;li>Display: 19&amp;rsquo; Monitor, VGA capable of 1024×768 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="recommended-windows-10">Recommended (Windows 10)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 gigahertz (GHz) or faster&lt;/li>
+&lt;li>Memory: 16 gigabytes (GB)&lt;/li>
+&lt;li>Disk space: 50GB free HD space&lt;/li>
+&lt;li>Display: 22&amp;rsquo; Monitor, VGA capable of 1920x1080 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-ubuntu-2004">Minimum (Ubuntu 20.04)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 GHz dual-core processor&lt;/li>
+&lt;li>Memory: 8 GiB RAM (system memory)&lt;/li>
+&lt;li>Disk space: 30 GB of hard drive space&lt;/li>
+&lt;li>Display: 19&amp;rsquo; Monitor, VGA capable of 1024×768 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="recommended-ubuntu-2004">Recommended (Ubuntu 20.04)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 GHz dual-core processor&lt;/li>
+&lt;li>Memory: 16 GiB RAM (system memory)&lt;/li>
+&lt;li>Disk space: 50 GB of hard drive space&lt;/li>
+&lt;li>Display: 22&amp;rsquo; Monitor, VGA capable of 1920x1080 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;!-- ## Hardware Debug Requirements
+The hardware requirements, hardware connections as well as driver installation on a host machine are documented in &lt;a href="../hardware-environment">**Hardware and Environment Setup**&lt;/a>. If you are going to develop and debug RISC-V applications on Intel FPGA platforms, please refer to this document for more details. --></description></item><item><title>Docs: Installation</title><link>/docs/getting-started/installation/install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/install/</guid><description>
+&lt;p>This section contains instructions on how to install XploR IDE on both Windows and Ubuntu operating systems.&lt;/p>
+&lt;p>&lt;strong>The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity. Otherwise, the installer may fail to install XploR IDE.&lt;/strong>&lt;/p>
+&lt;h2 id="start-the-installer">Start the installer&lt;/h2>
+&lt;h3 id="on-windows">On Windows&lt;/h3>
+&lt;p>Download and run the executable installer by right-clicking on the executable from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/1.png" alt="example image">&lt;/p>
+&lt;h3 id="on-linux">On Linux&lt;/h3>
+&lt;p>Open the terminal and run the installer
+&lt;code>./__LAUNCHER_NAME__-linux.run&lt;/code>&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/2.png" alt="example image">&lt;/p>
+&lt;p>Select the &lt;strong>Next&lt;/strong> button to proceed with the installation.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/3.png" alt="example image">&lt;/p>
+&lt;p>Once &lt;strong>Next&lt;/strong> is selected, you shall be presented with the &lt;strong>XploR IDE License Agreement&lt;/strong>. Review this agreement carefully, then select &amp;ldquo;&lt;em>I accept the agreement&lt;/em>&amp;rdquo; and &lt;strong>Next&lt;/strong> to continue or &lt;strong>Quit&lt;/strong> to exit.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/4.png" alt="example image">&lt;/p>
+&lt;p>Once &lt;strong>Next&lt;/strong> is selected, you will see the information: &lt;em>Choose a directory name without space characters&lt;/em>.&lt;/p>
+&lt;p>Please choose a destination path without spaces. If XploR IDE is installed on a location containing spaces, the application build will fail. This is a known issue and will be fixed in a future release. Select &lt;strong>OK&lt;/strong> to continue.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/5.png" alt="example image">&lt;/p>
+&lt;p>Once &lt;strong>OK&lt;/strong> is selected, the installer presents the installation path. You can choose or enter an alternative. Select &lt;strong>Next&lt;/strong> to continue.&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+Please choose a destination path that is not available. If XploR IDE is installed in an available location, the data cannot be completely uninstalled. This is a known issue and will be fixed in a future release.&lt;/p>
+&lt;p>The XploR IDE installer presents a summary of packages to be installed.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/6.png" alt="example image">&lt;/p>
+&lt;p>To create, run and debug ZephyrRTOS application, please choose &lt;strong>Zephyr Component&lt;/strong> to install Zephyr and its dependencies.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/6-2.png" alt="example image">&lt;/p>
+&lt;p>An other option, &lt;strong>Baremetal Component&lt;/strong>, allows to install GCC baremetal toolchain and QEMU for RISC-V applications. Otherwise, they can be installed inside the IDE later. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/6-1.png" alt="example image">&lt;/p>
+&lt;p>Then select &lt;strong>Next&lt;/strong> to proceed.&lt;/p>
+&lt;p>Once &lt;strong>Next&lt;/strong> is selected, the selected packages will be copied into the installation directory.
+Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to install this feature. Installation requires about 4 GB of storage space. Zephyr also requires the &lt;strong>CMake&lt;/strong> version to be 3.20 or higher.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/7.png" alt="example image">&lt;/p>
+&lt;p>Select &lt;strong>Next&lt;/strong> to start the installation.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/8.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/9.png" alt="example image">&lt;/p>
+&lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item></channel></rss>

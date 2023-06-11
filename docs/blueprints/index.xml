@@ -1,0 +1,32 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Blueprints</title><link>/docs/blueprints/</link><description>Recent content in Blueprints on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/blueprints/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About blueprints</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Blueprints are a powerful feature for extending XploR with custom features and behaviors.
+The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a ip-as-a-service (IaaS) platform that provides an exhaustive list of the existing blueprints.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Prerequisite:&lt;/strong>
+You can reach the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard the &lt;code>Blueprints&lt;/code> menu entry.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="how-it-works">How it works&lt;/h2>
+&lt;h3 id="build-your-own-blueprints">Build Your Own Blueprints&lt;/h3>
+&lt;p>XploR users can create their own blueprints and share them with the community using the Blueprint Catalog.&lt;/p>
+&lt;p>XploR will load blueprints dynamically.
+They need not be compiled, and no complex toolchain is necessary to build them.
+The experience of implementing a XploR blueprint is comparable to writing a web browser extension.&lt;/p>
+&lt;p>To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
+&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE only contains &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em> (if this option is selected when installing).&lt;/p>
+&lt;p>To use other projects like Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
+&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available blueprints:&lt;/p>
+&lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>There are two types of Blueprint servers: &lt;strong>Stable server&lt;/strong> for usage and &lt;strong>Development server&lt;/strong> for development.&lt;/li>
+&lt;li>&lt;strong>Current Version&lt;/strong> and &lt;strong>Latest Version&lt;/strong> columns will indicate your computer&amp;rsquo;s current version and the server&amp;rsquo;s latest version.&lt;/li>
+&lt;li>&lt;strong>Status&lt;/strong> column will inform whether this blueprint is installed.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
+&lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
+&lt;p>The result of the blueprint installation process will be printed on the Console view.&lt;/p>
+&lt;p>&lt;img src="/blueprints/4.png" alt="example image">&lt;/p>
+&lt;p>After successful installation, please restart the IDE for the blueprints to take effect.&lt;/p></description></item></channel></rss>

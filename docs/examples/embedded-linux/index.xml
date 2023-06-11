@@ -1,0 +1,366 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Embedded Linux</title><link>/docs/examples/embedded-linux/</link><description>Recent content in Embedded Linux on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/embedded-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hello World</title><link>/docs/examples/embedded-linux/helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/helloworld/</guid><description>
+&lt;h1 id="risc-v-embedded-linux-project">RISC-V Embedded Linux Project&lt;/h1>
+&lt;p>This chapter covers the basics of C/C++ embedded Linux RISC-V projects, including create/build/run/debug RISC-V embedded Linux applications. The project referred to by this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>xplor-studio-linux&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Helloworld&lt;/strong> project and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1.png" alt="example image">&lt;/p>
+&lt;p>As the image above, there is no option as &lt;em>Embedded Linux XploR Toolchain for RISC-V&lt;/em> because this &lt;strong>PRODUCT_NAME&lt;/strong> does not contain Embedded Linux toolchain.&lt;/p>
+&lt;p>To use this toolchain, please install &lt;em>Embedded Linux toolchain&lt;/em> blueprint first.
+There are 4 different blueprints:&lt;/p>
+&lt;ul>
+&lt;li>RISC-V Embedded Linux toolchain 32-bit: &lt;strong>riscv32-xplor-linux&lt;/strong>&lt;/li>
+&lt;li>RISC-V Embedded Linux toolchain 32-bit (Double): &lt;strong>riscv32-xplord-linux&lt;/strong>&lt;/li>
+&lt;li>RISC-V Embedded Linux toolchain 64-bit: &lt;strong>riscv64-xplor-linux&lt;/strong>&lt;/li>
+&lt;li>RISC-V Embedded Linux toolchain 64-bit (Double): &lt;strong>riscv64-xplord-linux&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-3.png" alt="example image">&lt;/p>
+&lt;p>Each blueprint can be downloaded separately depending on the purpose.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>After installation and restarting the IDE, you can see the creating-project widget like:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-1.png" alt="example image">&lt;/p>
+&lt;p>On Ubuntu, LLVM Embedded Linux toolchain is packaged inside the Embedded Linux toolchain that supports &lt;em>Double&lt;/em> extension (&lt;strong>riscv32-xplord-linux&lt;/strong> and &lt;strong>riscv64-xplord-linux&lt;/strong>). LLVM Embedded Linux toolchain has not been supported on Windows yet.&lt;/p>
+&lt;p>For using LLVM Embedded Linux toolchain, please make sure that the RISC-V Embedded Linux toolchain (Double) are installed and select LLVM Embedded Linux Toolchain for RISC-V in the Toolchains box:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/2.png" alt="example image">&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Please make sure that the toolchain used to build is installed, otherwise errors as in the following image will appear:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-2.png" alt="example image">&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../user-guides/blueprint">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-4.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h4 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h4>
+&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the project entry in the Project Explorer then open the Run Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary run configuration information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-1.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Run Configuration Dialog&lt;/strong>, create new run configuration by double clicking on RISC-V Runging:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-2.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Main&lt;/strong> tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click Apply then Click Debug.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-3.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the desired project in the Project Explorer window, then click Run As/RISC-V application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-4.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; Run As &amp;gt; RISV-C application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After selecting Run As RISC-V application with QEMU, Console view will print as below image:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-5.png" alt="example image">&lt;/p>
+&lt;h4 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h4>
+&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/7.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Debug Configuration Dialog&lt;/strong>, create new configuration by double clicking on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/8.png" alt="example image">&lt;/p>
+&lt;p>On tab &lt;strong>Debugger&lt;/strong>, choose option &lt;strong>QEMU&lt;/strong> in Virtual Platforms. Click Apply then Click Debug.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/9.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the desired project in the Project Explorer window, then click Debug As/RISC-V application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/10.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; Debug As &amp;gt; RISV-C application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/11.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/12.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## Running and Debugging project with Imperas emulator
+### Run project on Imperas emulator
+**Right-click on current project > Run As > RISV-C application with Imperas**
+![example image](/images_embedded_linux/linux/7.png)
+### Debug project on Imperas Emulator
+__PRODUCT_NAME__ offers several ways to debug applications:
+- Select the project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.
+![example image](/images_embedded_linux/linux/23.png)
+On the **Debug Configuration Dialog**, create a new configuration by double clicking on RISC-V Debugging:
+![example image](/images_embedded_linux/linux/24.png)
+![example image](/images_embedded_linux/linux/25.png)
+On the tab **Debugger**, choose option **Imperas** in **Virtual Platforms**. Click **Apply** then Click **Debug**.
+![example image](/images_embedded_linux/linux/26.png)
+Select the desired project in the Project Explorer window, then click **Debug As > RISC-V application with Imperas.**
+![example image](/images_embedded_linux/linux/27.png)
+**Right-click on the current project > Debug As > RISV-C application with Imperas**
+![example image](/images_embedded_linux/linux/28.png)
+After selecting **Debug As > RISC-V application with Imperas**, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.
+![example image](/images_embedded_linux/linux/29.png)
+Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information.
+## &lt;a id="debug-linux-de2">&lt;span style="color: black">6 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>
+The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the DE2-115 board.
+- There are two built-in SoC SOFs on __PRODUCT_NAME__ to flash DE2-115 for embedded Linux applications:
+- One for MII network mode where speed is 10 Mbps
+- One for RGMII network mode where speed is 1000Mps
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+Currently, **riscv64-ipf-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain
+- Right click on the project then select properties.
+- In project settings, select
++ Architecture: RV64 (-march=rv64i*)
++ Floating point: None
++ Integer ABI: LP64 (-mabi=lp64*)
++ Floating point ABI: None
+![example image](/images_embedded_linux/linux/43.png)
+- Click Apply and Close
+There are some differences when debugging Linux applications, it is necessary to update some config as follows:
+On the Debugger tab, select Intel FPGA Board.
+![example image](/images_embedded_linux/linux/46.png)
+On the Configuration, select "**Advanced Configuration**".
+![example image](/images_embedded_linux/linux/47.png)
+Click the **New** button to create a new connection configuration, then select **SSH** as connection type:
+![example image](/images_embedded_linux/linux/48.png)
+On the "New Connection" dialog.
+- Connection name: The name of connection
+- Host: 192.168.1.50. This is the default IP address of Linux run on board. If you use a different subnet when booting Linux, please update this IP too.
+- User: root
+- Use password-based authentication: No password
+![example image](/images_embedded_linux/linux/49.png)
+Click **Finish** to create the connection configuration.
+In the Connections dropdown, select the newly created connection name and set the destination file path to copy the application to the board.
+On the Remote Absolute File Path for C/C++ Application, enter the path of the elf file that is copied to Linux (ex: /tmp/riscv.elf).
+![example image](/images_embedded_linux/linux/50.png)
+Click **Debug** to start debugging.
+!!!info "Note"
+When starting the first debug session, it will take time for the PC and board to exchange ssh keys.
+If you see this error messagge, please update your project setting to use *riscv64-ipf-linux* as noted above.
+![example image](/images_embedded_linux/linux/51.png)
+## &lt;a id="debug-linux-stratix">&lt;span style="color: black">7 Running and Debugging a project with Intel FPGA Stratix 10 GX platform&lt;/span> &lt;/a>
+The programming IP core step with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on Intel FPGA Stratix 10 GX board.
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain:
+- Right-click on the project then select properties.
+- In project settings, select
++ Architecture: RV64(-march=rv64i*)
++ Floating point: None
++ Integer ABI: LP64(-mabi=lp64*)
++ Floating point ABI: Double precision extension (RVFD)
++ Click Apply and Close
+The following steps as same as the previous sections. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../examples/embedded-linux/Helloworld#debug-linux-de2) for more information. --></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
+&lt;h1 id="kernel-debugging">Kernel Debugging&lt;/h1>
+&lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/li>
+&lt;li>In this release, &lt;strong>Debugging Kernel&lt;/strong> feature is only available on Ubuntu.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &amp;ldquo;&lt;strong>File &amp;gt; New &amp;gt; C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Linux Kernel Project&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/1.png" alt="example image">&lt;/p>
+&lt;p>Enter the &lt;em>Project name&lt;/em> and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/2.png" alt="example image">&lt;/p>
+&lt;p>Select &lt;em>Kernel Source Path&lt;/em> then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/3.png" alt="example image">&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>With build settings, users can switch from RISC-V 32 bits to RISC-V 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/4.png" alt="example image">&lt;/p>
+&lt;p>Please refer to the below table to select the correct options for each target.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Platform&lt;/th>
+&lt;th style="text-align:center">Core&lt;/th>
+&lt;th style="text-align:center">Architecture&lt;/th>
+&lt;th style="text-align:center">Floating Point&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV32&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV32&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">DE2-115&lt;/td>
+&lt;td style="text-align:center">Rocket Chip&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Stratix 10 GX&lt;/td>
+&lt;td style="text-align:center">Rocket Chip&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>!!!warning &amp;ldquo;Note&amp;rdquo;&lt;/p>
+&lt;pre>&lt;code>**The Static Kernel project does not need to be built because the __PRODUCT_NAME__ uses a pre-build kernel image for debugging.**
+&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/5.png" alt="example image">&lt;/p>
+&lt;h2 id="debugging-the-kernel-with-qemu-emulator">Debugging the kernel with QEMU emulator&lt;/h2>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;&lt;/p>
+&lt;pre>&lt;code>Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to [Section 2: Update build settings](#2-update-build-settings)
+&lt;/code>&lt;/pre>
+&lt;p>There are two ways to debug the kernel:&lt;/p>
+&lt;ul>
+&lt;li>On the Project explorer, right-click on the project name and select &lt;strong>Debug as &amp;gt; RISC-V Kernel application with QEMU.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/6.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Create the new &lt;strong>RISC-V Kernel Debugging&lt;/strong> configurations: Right-click on the project name then select &lt;strong>Debug As &amp;gt; Debug Configurations.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/7.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Kernel Debugging&lt;/strong>, then click &lt;strong>Debug&lt;/strong> to start the Kernel debugging session.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/8.png" alt="example image">&lt;/p>
+&lt;p>When starting kernel debugging, the kernel is suspended in the start_kernel function and the terminal/console pauses at kernel booting.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/9.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>To debug an &lt;a href="../../../examples/embedded-linux/Helloworld">&lt;span style="color: blue">embedded Linux applications&lt;/span>&lt;/a>, the kernel should be booted completely.&lt;/strong>&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;&lt;/p>
+&lt;pre>&lt;code>To switch arch between 32-bit and 64-bit, users should remove the old Debug Kernel Configuration and create a new one to change the kernel (vmlinux).
+Or users can replace vmlinux manually at:
+`$XPLOR_HOME/blueprints/rootfs-debug/rv***_debugkernel/vmlinux`
+&lt;/code>&lt;/pre>
+&lt;!-- ## Debugging the kernel with Intel FPGA DE2-115 platform
+### Hardware and connection preparations
+Please refer to the &lt;a href="../../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging **Embedded Linux RISC-V applications** on the DE2-115 board.
+- There are two built-in SoC SOFs on __PRODUCT_NAME__ to flash DE2-115 for embedded Linux applications:
++ One for MII network mode where speed is 10 Mbps
++ One for RGMII network mode where speed is 1000Mps
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+### Programming IP core
+To programming RISC-V IP core to the board, click on Flash icon on the toolbar.
+![example image](/images_embedded_linux/debug-kernel/10.png)
+- In **Vendor**, select: Rocket
+- In **Product**, select
+- "**rocket64 - DE2-115 (mii)**" for MMI network mode
+- "**rocket64 - DE2-115 (rgmii)**" for RGMII network mode
+- **Custom IP core** if users use their own RISC-V IP core.
+Select the JTAG cable (if the user has multiple boards connected to the development machine).
+Click **Finish** to flash Rocket 64 bits RISC-V core.
+To view the console output printed from the RISC-V core, please open Terminal view, and select COM port (on Windows) or ttyUSB port (on Linux) with the following connection settings:
+![example image](/images_embedded_linux/debug-kernel/11.png)
+The Terminal view shows BIOS and Linux boot messages.
+![example image](/images_embedded_linux/debug-kernel/12.png)
+![example image](/images_embedded_linux/debug-kernel/13.png)
+Users can log in to Linux using a "**root**" account **without a password**.
+### Update build settings
+Currently, **riscv64-ipf-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain.
+- Right-click on the project then select properties.
+- In project settings, select
+- Architecture: RV64(-march=rv64i*)
+- Floating point: None
+- Integer ABI: LP64(-mabi=lp64*)
+- Floating point ABI: None
+- Click Apply and Close
+### Debugging the Kernel on Intel FPGA DE2-115 platform
+!!!info "Note"
+Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to [Section 2: Update build settings](#2-update-build-settings)
+There are two ways to debug the kernel:
+- On the Project explorer, right-click on the project name and select **Debug as > RISC-V Kernel application with Hardware** (default is DE2-115)
+![example image](/images_embedded_linux/debug-kernel/14.png)
+- Create the new **RISC-V Kernel Debugging** configurations: Right-click on the project name then select **Debug As > Debug Configurations**.
+![example image](/images_embedded_linux/debug-kernel/15.png)
+Double-click on **RISC-V Kernel Debugging**,
+![example image](/images_embedded_linux/debug-kernel/16.png)
+Selects the Debugger tab to switch the Platform. In the Platform list, select **Terrasic DE2-115 Board** that you’d like to start kernel debugging. Click Apply then Debug to start the Kernel debugging session on the Terrasic DE2-115 board.
+![example image](/images_embedded_linux/debug-kernel/17.png)
+On hardware, the bootloader is re-loaded, then the HydraSoC booting is restarted from the beginning.
+![example image](/images_embedded_linux/debug-kernel/18.png)
+## Debugging the kernel with Intel FPGA Stratix 10 GX platform
+### Hardware and connection preparations
+Please refer to the &lt;a href="../../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the Intel FPGA Stratix 10 GX board.
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+### Programming IP core
+To programming RISC-V IP core to the board, click on Flash icon on the toolbar.
+![example image](/images_embedded_linux/debug-kernel/19.png)
+- In **Vendor**, select: Rocket
+- In **Product**, select
+- "**rocket64 - Stratix10gx (multicore)**"
+- **Custom IP core** if users use their own RISC-V IP core.
+Select JTAG cable (if the user has multiple boards connected to the development machine).
+Click **Finish** to flash Rocket 64 bits RISC-V core.
+To view the console output printed from the RISC-V core, please open Terminal view, and select Local Terminal. Type `jtagconfig -d` to detect the index of the USB-Blaster II cable (Linux OS: User should use the command `source path/to/__PROJECT_SHORTNAME__/bin/environment-setup.sh` first to set the environment of the __PROJECT_SHORTNAME__.
+![example image](/images_embedded_linux/debug-kernel/20.png)
+Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
+The Terminal view shows BIOS and Linux boot messages.
+![example image](/images_embedded_linux/debug-kernel/21.png)
+Users can log in to Linux using a "**root**" account **without a password**.
+### Update build settings
+Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain.
+- Right-click on the project then select properties.
+- In project settings, select
+- Architecture: RV64(-march=rv64i*)
+- Floating point: None
+- Integer ABI: LP64(-mabi=lp64*)
+- Floating point ABI: Double precision extension (RVFD)
+- Click Apply and Close.
+### Debugging the Kernel on Intel FPGA Stratix 10 GX platform
+!!!info "Note"
+Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to [Section 2: Update build settings](#2-update-build-settings)
+To debug the kernel on Intel FPGA Stratix 10 GX platform, create the new **RISC-V Kernel Debugging** configurations:
+Right-click on the project name then select **Debug As > Debug Configurations**.
+![example image](/images_embedded_linux/debug-kernel/22.png)
+Double-click on **RISC-V Kernel Debugging**,
+![example image](/images_embedded_linux/debug-kernel/23.png)
+Selects the Debugger tab to switch the Platform. In the Platform list, select **Intel Stratix 10 GX Board** that you’d like to start kernel debugging. Click Apply then Debug to start the Kernel debugging session on the Intel Stratix 10 GX board.
+![example image](/images_embedded_linux/debug-kernel/24.png)
+!!!warning "Note"
+For **debugging the Kernel with multicores**, the users should select *2. Intel FPGA USB-Blaster II (virtual-jtag, smp-4-cores)* on **Default Configuration**. Otherwise only 1 core is debugged.
+On hardware, the bootloader is re-loaded, then the HydraSoC booting is restarted from the beginning.
+![example image](/images_embedded_linux/debug-kernel/25.png)
+## Debugging the embedded Linux application while debugging the Kernel
+!!!info "Note"
+- For detailed information regarding basics of Embedded Linux application, please refer to &lt;a href="../../../examples/embedded-linux/Helloworld">**RISC-V Embedded Linux Project**&lt;/a>
+- **Make sure the architecture and floating point options of both the Linux Kernel project and the Embedded Linux project are the same**.
+Since the kernel is booted on the QEMU emulator or target boards on previous sections, users only need to debug the application via *Remote Target*. Right-click on the embedded Linux project then select **Debug As > Debug Configurations**.
+![example image](/images_embedded_linux/debug-kernel/28.png)
+Double-click on **RISC-V Debugging** and select "Helloworld Debug".
+![example image](/images_embedded_linux/debug-kernel/29.png)
+On the *Debugger* tab, please select:
+- Platform: *Remote Target*
+- Connection: *Default SSH-QEMU/ Default SSH-Hardware* (base on the target platform on which the Kernel is booted)
+- Remote Absolute File Path for C/C++ Application: `/tmp/riscv_application.elf`
+- Commands execute before application: `killall gdbserver`
+![example image](/images_embedded_linux/debug-kernel/30.png)
+Select **Apply** then **Debug**, the IDE will change to the debug perspective and automatically sets a breakpoint in the first line of code in the `main()` function.
+![example image](/images_embedded_linux/debug-kernel/31.png)
+--></description></item></channel></rss>

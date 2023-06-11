@@ -1,0 +1,49 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Getting Started</title><link>/docs/getting-started/</link><description>Recent content in Getting Started on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Concepts</title><link>/docs/getting-started/concepts/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/getting-started/concepts/</guid><description>
+&lt;p>As an embedded developer, you need to be familiar with a range of tools and concepts, including IDEs, toolchains, RTOSes, and more. With the XploR Studio IDE, you can take advantage of a flexible and highly configurable software environment that helps RISC-V developers throughout the development process. The toolchain includes essential technologies such as LLVM and GDB, and supports popular RTOSes like FreeRTOS and Zephyr. OpenOCD is used for in-system programming and debugging, while Quartus Programmer provides quick programming of FPGA and ASIC devices. With support for Linux and QEMU, the XploR Studio IDE can provide developers with an optimized environment for RISC-V development.&lt;/p>
+&lt;h2 id="blueprint---the-essential-concept-in-our-embedded-products">Blueprint - The Essential Concept in Our Embedded Products&lt;/h2>
+&lt;p>At the core of our embedded products is the crucial concept of blueprints. Everything in our products is blueprint-based, making blueprints a key element of our offerings.&lt;/p>
+&lt;h3 id="what-is-a-blueprint">What is a Blueprint?&lt;/h3>
+&lt;p>A blueprint is basically a combination of different IP(s), which can be either hardware or software-based or both. This design is what serves as the foundation of our embedded products.&lt;/p>
+&lt;h3 id="versatile-and-compatible">Versatile and Compatible&lt;/h3>
+&lt;p>One appealing feature of blueprints is that they are incredibly versatile. For one, blueprints don&amp;rsquo;t necessarily have to be compatible among different hosts. This means that we can have both Windows and Linux blueprints, depending on what the situation calls for.&lt;/p>
+&lt;p>Moreover, they don&amp;rsquo;t have to be compatible between IDE versions. This makes the process of using blueprints more flexible and opens up options for our customers. They can opt for either Eclipse blueprint, Thea blueprint or even no blueprint at all.&lt;/p>
+&lt;h3 id="key-benefits-of-blueprints">Key Benefits of Blueprints&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Provides a clear and concise plan: Blueprints serve as a detailed plan or a design that outlines the necessary steps and materials required to construct or create something. By having blueprints, it becomes easier to communicate technical information to our customers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensures consistency in the final product: Blueprints help to ensure that the finished product is consistent with the original design and meets the expectations and requirements of our customers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Saves time in the design process: With a blueprint in place, it becomes easier to identify potential issues and address them beforehand. This, in turn, saves time during the design process and can prevent costly mistakes.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="ide-integrated-development-environment">IDE: Integrated Development Environment&lt;/h2>
+&lt;p>An Integrated Development Environment (IDE) is a software tool that provides everything necessary for a developer to write and debug code. An IDE typically includes a source code editor, a debugger, and a build automation tool. The XploR Studio IDE is a flexible and highly configurable software environment that helps RISC-V developers throughout the development process.&lt;/p>
+&lt;h2 id="toolchain">Toolchain&lt;/h2>
+&lt;p>In embedded development, a toolchain is a set of software tools that are used to compile, build, and debug code. The XploR Studio toolchain includes the LLVM compiler, GDB debugger, and openocd.&lt;/p>
+&lt;h2 id="llvm">LLVM&lt;/h2>
+&lt;p>LLVM is a collection of modular and reusable compiler and toolchain technologies that are designed for software development. It uses an intermediate representation (IR) that is designed to be useful for a wide range of languages and target architectures. LLVM is used in the XploR Studio toolchain to compile code for RISC-V.&lt;/p>
+&lt;h2 id="gdb">GDB&lt;/h2>
+&lt;p>GDB is a GNU project debugger that allows developers to debug programs written in various languages. It supports many debugging formats and offers many debugging features, including the ability to step through code, set breakpoints, and examine variables.&lt;/p>
+&lt;h2 id="rtos-real-time-operating-system">RTOS: Real-Time Operating System&lt;/h2>
+&lt;p>A real-time operating system (RTOS) is an operating system that is designed to provide predictable processing time for critical tasks. An RTOS can respond to an event in a specified time period. This makes it ideal for applications that require high reliability or timing precision.&lt;/p>
+&lt;h2 id="freertos">FreeRTOS&lt;/h2>
+&lt;p>FreeRTOS is a popular open-source RTOS that provides a task scheduler and basic memory management. It supports many architectures, including RISC-V.&lt;/p>
+&lt;h2 id="zephyr">Zephyr&lt;/h2>
+&lt;p>Zephyr is an open-source RTOS that is designed for resource-constrained systems. It is scalable and offers many features, including a kernel that supports multiple threads, interrupt handling, and power management. It also supports many architectures, including RISC-V.&lt;/p>
+&lt;h2 id="openocd">OpenOCD&lt;/h2>
+&lt;p>Open On-Chip Debugger (OpenOCD) is an open-source software tool that provides debugging, in-system programming, and boundary scan testing for embedded devices. It supports many architectures and is used in the XploR Studio toolchain for debugging.&lt;/p>
+&lt;h2 id="quartus-programmer">Quartus Programmer&lt;/h2>
+&lt;p>Quartus Programmer is a tool that is used to program FPGA and ASIC devices. It can be used to download a configuration file to a specific device, such as the Intel Quartus FPGA.&lt;/p>
+&lt;h2 id="linux">Linux&lt;/h2>
+&lt;p>Linux is a free and open-source operating system that provides a stable and reliable platform for developers to build applications. It is widely used in embedded development and can be customized for specific applications.&lt;/p>
+&lt;h2 id="risc-v">RISC-V&lt;/h2>
+&lt;p>RISC-V is an open-source instruction set architecture (ISA) that is designed to be scalable, modular, and extensible. It is used in many embedded systems, including the XploR Studio IDE.&lt;/p>
+&lt;h2 id="qemu">QEMU&lt;/h2>
+&lt;p>Quick Emulator (QEMU) is a free and open-source emulator that can emulate many architectures, including RISC-V. It is used in the XploR Studio IDE as the default target platform.&lt;/p>
+&lt;h2 id="fpga-field-programmable-gate-array">FPGA: Field-Programmable Gate Array&lt;/h2>
+&lt;p>An FPGA is a programmable integrated circuit that can be configured by the user after manufacturing. It provides flexibility and can be used for prototyping and embedded development.&lt;/p>
+&lt;h2 id="asic-application-specific-integrated-circuit">ASIC: Application-Specific Integrated Circuit&lt;/h2>
+&lt;p>An ASIC is an integrated circuit that is designed for a specific application. It provides higher performance than an FPGA but is less flexible.&lt;/p></description></item><item><title>Docs: Installation</title><link>/docs/getting-started/installation/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/</guid><description/></item><item><title>Docs: Quick start</title><link>/docs/getting-started/quick-start/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/</guid><description/></item><item><title>Docs: FAQ</title><link>/docs/getting-started/faq/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/faq/</guid><description/></item></channel></rss>

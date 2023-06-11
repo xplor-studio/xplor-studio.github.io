@@ -1,0 +1,49 @@
+<center>
+```plantuml
+state HW {
+  state "HW Design" as HW_Design { 
+  }
+  state "CPU & IP Qualification" as HW_Qualification {
+  }
+  state "RTL implementation" as RTL {
+  }
+  state "Functional Validation" as HW_Validation {
+  }
+  state "RTL Verification" as HW_Verification {    
+  }
+  HW_Design --> HW_Qualification 
+  HW_Qualification --> RTL 
+  RTL --> HW_Validation 
+  HW_Validation --> HW_Verification
+}
+state SW {
+  state "SW Design" as SW_Design {    
+  }
+  state "SW Prototyping" as SW_Prototyping {    
+  }
+  state Coding {    
+  }
+  state "Functional Validation" as SW_Validation {    
+  }
+  state "Performance Optimization" as SW_Optimization {
+  }
+  SW_Design --> SW_Prototyping
+  SW_Prototyping --> Coding
+  Coding --> SW_Validation
+  SW_Validation --> SW_Optimization 
+}    
+state "Product Requirements & Inputs" as Requirements
+state "System Architecture" as Architecture
+state Integration
+state Testing
+Requirements --> Architecture
+Architecture --> SW_Design
+Architecture --> HW_Design
+SW_Optimization --> Integration
+HW_Verification --> Integration
+Integration --> Testing
+```
+
+_Traditional embedded system design flow_
+
+</center>

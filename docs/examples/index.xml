@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Sample projects</title><link>/docs/examples/</link><description>Recent content in Sample projects on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Sample projects</title><link>/docs/examples/introduction/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/introduction/</guid><description>
+&lt;p>In this release, XploR Studio supports following projects:&lt;/p>
+&lt;ul>
+&lt;li>Embedded projects:
+&lt;ul>
+&lt;li>&lt;a href="/docs/examples/embedded/riscvhelloworld/">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded/llvmhelloworld/">&lt;span style="color: blue">Helloworld LLVM Application&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>FreeRTOS projects:
+&lt;ul>
+&lt;li>&lt;a href="/docs/examples/freertos/blinky/">&lt;span style="color: blue">Blinky&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/freertos/genericheap/">&lt;span style="color: blue">General Heap&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/freertos/largeheap/">&lt;span style="color: blue">Large Heap&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/freertos/generictimer/">&lt;span style="color: blue">Generic Timer&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Embedded Linux projects:
+&lt;ul>
+&lt;li>&lt;a href="./embedded-linux/Helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="./embedded-linux/Debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Zephyr RTOS projects:
+&lt;ul>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrHelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Baremetal</title><link>/docs/examples/embedded/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/</guid><description/></item><item><title>Docs: FreeRTOS</title><link>/docs/examples/freertos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/</guid><description/></item><item><title>Docs: Embedded Linux</title><link>/docs/examples/embedded-linux/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/</guid><description/></item><item><title>Docs: Zephyr OS</title><link>/docs/examples/zephyrrtos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/</guid><description/></item></channel></rss>

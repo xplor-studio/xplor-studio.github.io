@@ -1,0 +1,78 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Advance features</title><link>/docs/views/</link><description>Recent content in Advance features on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/views/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Project views</title><link>/docs/views/project-views/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/project-views/</guid><description>
+&lt;h2 id="console-view">Console View&lt;/h2>
+&lt;p>The Console view displays program output as well as output from the build tools. The Console view is connected to stdin, stdout, and stderr of the compilation process.
+An example of Console view output:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/9.png" alt="example image">&lt;/p>
+&lt;p>The Console view only represents programs that are running on the host, such as compilers and linkers. Programs running on an external target will display their output in other views, such as a terminal emulator window, depending on the type of target.&lt;/p>
+&lt;h2 id="register-view">Register View&lt;/h2>
+&lt;p>The register view helps developers examine RISC-V registers values during debug sessions. This is an example of Register view:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/10.png" alt="example image">&lt;/p>
+&lt;h2 id="problems-view">Problems View&lt;/h2>
+&lt;p>If any errors or warnings are encountered during the compilation process will be shown on the Problem View&lt;/p>
+&lt;p>&lt;img src="/images_views/11.png" alt="example image">&lt;/p>
+&lt;h2 id="executables-view">Executables View&lt;/h2>
+&lt;p>The Executable view lists down all executable output built using &lt;strong>PRODUCT_NAME&lt;/strong>, for example:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/12.png" alt="example image">&lt;/p>
+&lt;h2 id="terminal-view">Terminal View&lt;/h2>
+&lt;p>The Terminal View helps users connect to and interact with the console of different targets:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/13.png" alt="example image">&lt;/p>
+&lt;p>Users can use this Terminal view to open the shell/bash console of the host machine, remote connection, or serial connection to the target platform. For example, with a serial terminal, users can specify additional parameters such as which device to connect, baud rate, and similar.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/14.png" alt="example image">&lt;/p>
+&lt;h2 id="peripheral-registers-view">Peripheral Registers View&lt;/h2>
+&lt;p>In the complex application where the peripherals are configured with the RISC-V cores, users can examine the peripherals&amp;rsquo; status such as control register values, and data register values via the Peripheral Registers View.
+To active Peripheral registers view, select &lt;strong>Window &amp;gt; Preferences&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/15.png" alt="example image">&lt;/p>
+&lt;p>Then select &lt;strong>C/C++ &amp;gt; Debug section&lt;/strong>
+Click &lt;strong>Peripheral Registers Page&lt;/strong>. On this page:&lt;/p>
+&lt;ul>
+&lt;li>Architecture: Select RISC-V&lt;/li>
+&lt;li>Vendor: Select QEMU&lt;/li>
+&lt;li>Platform: Select Spike or E31mc or E31&lt;/li>
+&lt;/ul>
+&lt;p>The peripheral registers will be listed on the right-hand side of the page:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/16.png" alt="example image">&lt;/p>
+&lt;p>Users can select registers or all registers to check, then click &lt;strong>Apply and Close&lt;/strong> button.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/17.png" alt="example image">&lt;/p>
+&lt;p>The Peripheral register views will show all registers and their status.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/18.png" alt="example image">&lt;/p>
+&lt;h2 id="debugger-console-view">Debugger console View&lt;/h2>
+&lt;p>The Debugger Console shows gdb debug information.
+The is an example of Console view output:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/24.png" alt="example image">&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+If any of view disappears, users can always restore by clicking *&lt;strong>Window &amp;gt; Show View/NAME_OF_VIEW&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/25.png" alt="example image">&lt;/p></description></item><item><title>Docs: FreeRTOS views</title><link>/docs/views/freertos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/freertos/</guid><description>
+&lt;p>During the FreeRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Task, Queue, Heap, and Timer. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+- To open FreeRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Others&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>FreeRTOS Object Views&lt;/strong>
+- The FreeRTOS object views only contain information when user debugs a FreeRTOS project
+- Depending on the FreeRTOS application, not all FreeRTOS objects will display valid information. For example, if the application does not utilize a Timer object, XploR Studio will not display any useful information on FreeRTOS Timer view.&lt;/p>
+&lt;h2 id="freertos-task-view">FreeRTOS Task View&lt;/h2>
+&lt;p>The FreeRTOS task view helps developers examine tasks during debug sessions. Each object is identified by its ID, name, address, state, task state, stack usage, event object, runtime, and priority.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/20.png" alt="example image">&lt;/p>
+&lt;h2 id="freertos-queue-view">FreeRTOS Queue View&lt;/h2>
+&lt;p>The FreeRTOS Queue view helps developers examine queues during debug sessions. Each object is identified by its type, ID, name, address, length, size, and state of TX and RX.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/21.png" alt="example image">&lt;/p>
+&lt;h2 id="freertos-timer-view">FreeRTOS Timer View&lt;/h2>
+&lt;p>The FreeRTOS Timer view helps developers examine timers during debug sessions. Each object is identified by its ID, name, status, callback functions, and similar.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
+&lt;h2 id="freertos-heap-view">FreeRTOS Heap View&lt;/h2>
+&lt;p>The FreeRTOS Heap view helps developers examine heaps during debug sessions. Each object is identified by its ID, address, usage information, and similar.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/23.png" alt="example image">&lt;/p></description></item><item><title>Docs: Zephyr OS views</title><link>/docs/views/zephyros/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/zephyros/</guid><description>
+&lt;p>During the ZephyrRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Thread, Mutex, Semaphore, and MessageQueue. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+- To open ZephyrRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Other&amp;hellip;&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>ZephyrRTOS Object Views&lt;/strong>
+- The ZephyrRTOS object views only contain information when user debugs a ZephyrRTOS project
+- Depending on the ZephyrRTOS application, not all ZephyrRTOS objects will display valid information. For example, if the application does not utilize a Mutex object, XploR Studio will not display any useful information on ZephyrRTOS Mutex view.&lt;/p>
+&lt;h2 id="zephyrrtos-thread-view">ZephyrRTOS Thread View&lt;/h2>
+&lt;p>The ZephyrRTOS Thread view helps developers examine threads during debug sessions. Each object is identified by its ID, Name, Handle, Priority, Thread State and Thread Usage.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/1.png" alt="example image">&lt;/p>
+&lt;h2 id="zephyrrtos-mutex-view">ZephyrRTOS Mutex View&lt;/h2>
+&lt;p>The ZephyrRTOS Mutex view helps developers examine mutexes during debug sessions. Each object is identified by its ID, Handle, Mutex Owner, Owner Priority and Lock Count.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/2.png" alt="example image">&lt;/p>
+&lt;h2 id="zephyrrtos-semaphore-view">ZephyrRTOS Semaphore View&lt;/h2>
+&lt;p>The ZephyrRTOS Timer view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/3.png" alt="example image">&lt;/p>
+&lt;h2 id="zephyrrtos-heap-view">ZephyrRTOS Heap View&lt;/h2>
+&lt;p>The ZephyrRTOS Heap view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item></channel></rss>

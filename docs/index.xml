@@ -1,0 +1,1521 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Welcome to XploR Studio</title><link>/docs/</link><description>Recent content in Welcome to XploR Studio on XploR Studio</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About blueprints</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Blueprints are a powerful feature for extending XploR with custom features and behaviors.
+The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a ip-as-a-service (IaaS) platform that provides an exhaustive list of the existing blueprints.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Prerequisite:&lt;/strong>
+You can reach the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard the &lt;code>Blueprints&lt;/code> menu entry.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="how-it-works">How it works&lt;/h2>
+&lt;h3 id="build-your-own-blueprints">Build Your Own Blueprints&lt;/h3>
+&lt;p>XploR users can create their own blueprints and share them with the community using the Blueprint Catalog.&lt;/p>
+&lt;p>XploR will load blueprints dynamically.
+They need not be compiled, and no complex toolchain is necessary to build them.
+The experience of implementing a XploR blueprint is comparable to writing a web browser extension.&lt;/p>
+&lt;p>To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Concepts</title><link>/docs/getting-started/concepts/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/getting-started/concepts/</guid><description>
+&lt;p>As an embedded developer, you need to be familiar with a range of tools and concepts, including IDEs, toolchains, RTOSes, and more. With the XploR Studio IDE, you can take advantage of a flexible and highly configurable software environment that helps RISC-V developers throughout the development process. The toolchain includes essential technologies such as LLVM and GDB, and supports popular RTOSes like FreeRTOS and Zephyr. OpenOCD is used for in-system programming and debugging, while Quartus Programmer provides quick programming of FPGA and ASIC devices. With support for Linux and QEMU, the XploR Studio IDE can provide developers with an optimized environment for RISC-V development.&lt;/p>
+&lt;h2 id="blueprint---the-essential-concept-in-our-embedded-products">Blueprint - The Essential Concept in Our Embedded Products&lt;/h2>
+&lt;p>At the core of our embedded products is the crucial concept of blueprints. Everything in our products is blueprint-based, making blueprints a key element of our offerings.&lt;/p>
+&lt;h3 id="what-is-a-blueprint">What is a Blueprint?&lt;/h3>
+&lt;p>A blueprint is basically a combination of different IP(s), which can be either hardware or software-based or both. This design is what serves as the foundation of our embedded products.&lt;/p>
+&lt;h3 id="versatile-and-compatible">Versatile and Compatible&lt;/h3>
+&lt;p>One appealing feature of blueprints is that they are incredibly versatile. For one, blueprints don&amp;rsquo;t necessarily have to be compatible among different hosts. This means that we can have both Windows and Linux blueprints, depending on what the situation calls for.&lt;/p>
+&lt;p>Moreover, they don&amp;rsquo;t have to be compatible between IDE versions. This makes the process of using blueprints more flexible and opens up options for our customers. They can opt for either Eclipse blueprint, Thea blueprint or even no blueprint at all.&lt;/p>
+&lt;h3 id="key-benefits-of-blueprints">Key Benefits of Blueprints&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Provides a clear and concise plan: Blueprints serve as a detailed plan or a design that outlines the necessary steps and materials required to construct or create something. By having blueprints, it becomes easier to communicate technical information to our customers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensures consistency in the final product: Blueprints help to ensure that the finished product is consistent with the original design and meets the expectations and requirements of our customers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Saves time in the design process: With a blueprint in place, it becomes easier to identify potential issues and address them beforehand. This, in turn, saves time during the design process and can prevent costly mistakes.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="ide-integrated-development-environment">IDE: Integrated Development Environment&lt;/h2>
+&lt;p>An Integrated Development Environment (IDE) is a software tool that provides everything necessary for a developer to write and debug code. An IDE typically includes a source code editor, a debugger, and a build automation tool. The XploR Studio IDE is a flexible and highly configurable software environment that helps RISC-V developers throughout the development process.&lt;/p>
+&lt;h2 id="toolchain">Toolchain&lt;/h2>
+&lt;p>In embedded development, a toolchain is a set of software tools that are used to compile, build, and debug code. The XploR Studio toolchain includes the LLVM compiler, GDB debugger, and openocd.&lt;/p>
+&lt;h2 id="llvm">LLVM&lt;/h2>
+&lt;p>LLVM is a collection of modular and reusable compiler and toolchain technologies that are designed for software development. It uses an intermediate representation (IR) that is designed to be useful for a wide range of languages and target architectures. LLVM is used in the XploR Studio toolchain to compile code for RISC-V.&lt;/p>
+&lt;h2 id="gdb">GDB&lt;/h2>
+&lt;p>GDB is a GNU project debugger that allows developers to debug programs written in various languages. It supports many debugging formats and offers many debugging features, including the ability to step through code, set breakpoints, and examine variables.&lt;/p>
+&lt;h2 id="rtos-real-time-operating-system">RTOS: Real-Time Operating System&lt;/h2>
+&lt;p>A real-time operating system (RTOS) is an operating system that is designed to provide predictable processing time for critical tasks. An RTOS can respond to an event in a specified time period. This makes it ideal for applications that require high reliability or timing precision.&lt;/p>
+&lt;h2 id="freertos">FreeRTOS&lt;/h2>
+&lt;p>FreeRTOS is a popular open-source RTOS that provides a task scheduler and basic memory management. It supports many architectures, including RISC-V.&lt;/p>
+&lt;h2 id="zephyr">Zephyr&lt;/h2>
+&lt;p>Zephyr is an open-source RTOS that is designed for resource-constrained systems. It is scalable and offers many features, including a kernel that supports multiple threads, interrupt handling, and power management. It also supports many architectures, including RISC-V.&lt;/p>
+&lt;h2 id="openocd">OpenOCD&lt;/h2>
+&lt;p>Open On-Chip Debugger (OpenOCD) is an open-source software tool that provides debugging, in-system programming, and boundary scan testing for embedded devices. It supports many architectures and is used in the XploR Studio toolchain for debugging.&lt;/p>
+&lt;h2 id="quartus-programmer">Quartus Programmer&lt;/h2>
+&lt;p>Quartus Programmer is a tool that is used to program FPGA and ASIC devices. It can be used to download a configuration file to a specific device, such as the Intel Quartus FPGA.&lt;/p>
+&lt;h2 id="linux">Linux&lt;/h2>
+&lt;p>Linux is a free and open-source operating system that provides a stable and reliable platform for developers to build applications. It is widely used in embedded development and can be customized for specific applications.&lt;/p>
+&lt;h2 id="risc-v">RISC-V&lt;/h2>
+&lt;p>RISC-V is an open-source instruction set architecture (ISA) that is designed to be scalable, modular, and extensible. It is used in many embedded systems, including the XploR Studio IDE.&lt;/p>
+&lt;h2 id="qemu">QEMU&lt;/h2>
+&lt;p>Quick Emulator (QEMU) is a free and open-source emulator that can emulate many architectures, including RISC-V. It is used in the XploR Studio IDE as the default target platform.&lt;/p>
+&lt;h2 id="fpga-field-programmable-gate-array">FPGA: Field-Programmable Gate Array&lt;/h2>
+&lt;p>An FPGA is a programmable integrated circuit that can be configured by the user after manufacturing. It provides flexibility and can be used for prototyping and embedded development.&lt;/p>
+&lt;h2 id="asic-application-specific-integrated-circuit">ASIC: Application-Specific Integrated Circuit&lt;/h2>
+&lt;p>An ASIC is an integrated circuit that is designed for a specific application. It provides higher performance than an FPGA but is less flexible.&lt;/p></description></item><item><title>Docs: System requirements</title><link>/docs/getting-started/installation/system-requirements/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/system-requirements/</guid><description>
+&lt;h2 id="host-system-requirements">Host System Requirements&lt;/h2>
+&lt;p>The supported operating systems for installing the product are:&lt;/p>
+&lt;ul>
+&lt;li>Windows 10&lt;/li>
+&lt;li>Ubuntu Desktop 20.04&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-windows-10">Minimum (Windows 10)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 1 gigahertz (GHz) or faster&lt;/li>
+&lt;li>Memory: 8 GB (64-bit)&lt;/li>
+&lt;li>Disk space: 30GB free HD space&lt;/li>
+&lt;li>Display: 19&amp;rsquo; Monitor, VGA capable of 1024×768 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="recommended-windows-10">Recommended (Windows 10)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 gigahertz (GHz) or faster&lt;/li>
+&lt;li>Memory: 16 gigabytes (GB)&lt;/li>
+&lt;li>Disk space: 50GB free HD space&lt;/li>
+&lt;li>Display: 22&amp;rsquo; Monitor, VGA capable of 1920x1080 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-ubuntu-2004">Minimum (Ubuntu 20.04)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 GHz dual-core processor&lt;/li>
+&lt;li>Memory: 8 GiB RAM (system memory)&lt;/li>
+&lt;li>Disk space: 30 GB of hard drive space&lt;/li>
+&lt;li>Display: 19&amp;rsquo; Monitor, VGA capable of 1024×768 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="recommended-ubuntu-2004">Recommended (Ubuntu 20.04)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 GHz dual-core processor&lt;/li>
+&lt;li>Memory: 16 GiB RAM (system memory)&lt;/li>
+&lt;li>Disk space: 50 GB of hard drive space&lt;/li>
+&lt;li>Display: 22&amp;rsquo; Monitor, VGA capable of 1920x1080 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;!-- ## Hardware Debug Requirements
+The hardware requirements, hardware connections as well as driver installation on a host machine are documented in &lt;a href="../hardware-environment">**Hardware and Environment Setup**&lt;/a>. If you are going to develop and debug RISC-V applications on Intel FPGA platforms, please refer to this document for more details. --></description></item><item><title>Docs: Installation</title><link>/docs/getting-started/installation/install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/install/</guid><description>
+&lt;p>This section contains instructions on how to install XploR IDE on both Windows and Ubuntu operating systems.&lt;/p>
+&lt;p>&lt;strong>The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity. Otherwise, the installer may fail to install XploR IDE.&lt;/strong>&lt;/p>
+&lt;h2 id="start-the-installer">Start the installer&lt;/h2>
+&lt;h3 id="on-windows">On Windows&lt;/h3>
+&lt;p>Download and run the executable installer by right-clicking on the executable from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/1.png" alt="example image">&lt;/p>
+&lt;h3 id="on-linux">On Linux&lt;/h3>
+&lt;p>Open the terminal and run the installer
+&lt;code>./__LAUNCHER_NAME__-linux.run&lt;/code>&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/2.png" alt="example image">&lt;/p>
+&lt;p>Select the &lt;strong>Next&lt;/strong> button to proceed with the installation.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/3.png" alt="example image">&lt;/p>
+&lt;p>Once &lt;strong>Next&lt;/strong> is selected, you shall be presented with the &lt;strong>XploR IDE License Agreement&lt;/strong>. Review this agreement carefully, then select &amp;ldquo;&lt;em>I accept the agreement&lt;/em>&amp;rdquo; and &lt;strong>Next&lt;/strong> to continue or &lt;strong>Quit&lt;/strong> to exit.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/4.png" alt="example image">&lt;/p>
+&lt;p>Once &lt;strong>Next&lt;/strong> is selected, you will see the information: &lt;em>Choose a directory name without space characters&lt;/em>.&lt;/p>
+&lt;p>Please choose a destination path without spaces. If XploR IDE is installed on a location containing spaces, the application build will fail. This is a known issue and will be fixed in a future release. Select &lt;strong>OK&lt;/strong> to continue.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/5.png" alt="example image">&lt;/p>
+&lt;p>Once &lt;strong>OK&lt;/strong> is selected, the installer presents the installation path. You can choose or enter an alternative. Select &lt;strong>Next&lt;/strong> to continue.&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+Please choose a destination path that is not available. If XploR IDE is installed in an available location, the data cannot be completely uninstalled. This is a known issue and will be fixed in a future release.&lt;/p>
+&lt;p>The XploR IDE installer presents a summary of packages to be installed.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/6.png" alt="example image">&lt;/p>
+&lt;p>To create, run and debug ZephyrRTOS application, please choose &lt;strong>Zephyr Component&lt;/strong> to install Zephyr and its dependencies.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/6-2.png" alt="example image">&lt;/p>
+&lt;p>An other option, &lt;strong>Baremetal Component&lt;/strong>, allows to install GCC baremetal toolchain and QEMU for RISC-V applications. Otherwise, they can be installed inside the IDE later. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/6-1.png" alt="example image">&lt;/p>
+&lt;p>Then select &lt;strong>Next&lt;/strong> to proceed.&lt;/p>
+&lt;p>Once &lt;strong>Next&lt;/strong> is selected, the selected packages will be copied into the installation directory.
+Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to install this feature. Installation requires about 4 GB of storage space. Zephyr also requires the &lt;strong>CMake&lt;/strong> version to be 3.20 or higher.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/7.png" alt="example image">&lt;/p>
+&lt;p>Select &lt;strong>Next&lt;/strong> to start the installation.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/8.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/9.png" alt="example image">&lt;/p>
+&lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
+&lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
+&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE only contains &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em> (if this option is selected when installing).&lt;/p>
+&lt;p>To use other projects like Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
+&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available blueprints:&lt;/p>
+&lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>There are two types of Blueprint servers: &lt;strong>Stable server&lt;/strong> for usage and &lt;strong>Development server&lt;/strong> for development.&lt;/li>
+&lt;li>&lt;strong>Current Version&lt;/strong> and &lt;strong>Latest Version&lt;/strong> columns will indicate your computer&amp;rsquo;s current version and the server&amp;rsquo;s latest version.&lt;/li>
+&lt;li>&lt;strong>Status&lt;/strong> column will inform whether this blueprint is installed.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
+&lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
+&lt;p>The result of the blueprint installation process will be printed on the Console view.&lt;/p>
+&lt;p>&lt;img src="/blueprints/4.png" alt="example image">&lt;/p>
+&lt;p>After successful installation, please restart the IDE for the blueprints to take effect.&lt;/p></description></item><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
+&lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &amp;ldquo;RISC-V Blinky&amp;rdquo;. This application prints &amp;ldquo;Blink&amp;rdquo; text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>To build, run and debug &amp;ldquo;RISC-V Blinky&amp;rdquo; applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="a-idcreate-projectcreate-a-new-projecta">&lt;a id="create-project">Create a new project&lt;/a>&lt;/h2>
+&lt;p>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects by selecting &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Blinky&lt;/strong> project.
+Select Toolchains: &lt;strong>Baremetal XplorR Toolchain for RISC-V&lt;/strong> and enter the Project name.
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/1.png" alt="Image">&lt;/p>
+&lt;p>In the next screens, users can specify project options such as Author, copyright notice, project description, compiler, assembler, linker, and run/debug options. Then click the &lt;strong>Next&lt;/strong> button.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/2.png" alt="example image">&lt;/p>
+&lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/3.png" alt="example image">&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+In some other kinds of projects, the new project wizard may have additional pages for specifying source codes, target, toolchain,&amp;hellip; but the workflow is not changed.&lt;/p>
+&lt;h2 id="a-idupdate-build-settingsupdate-build-settingsa">&lt;a id="update-build-settings">Update build settings&lt;/a>&lt;/h2>
+&lt;p>After the project is created, the user can change build settings or other project settings by right-clicking on the project name in &lt;strong>Project Explorer&lt;/strong> and selecting &lt;strong>Properties&lt;/strong>.
+Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/4.png" alt="example image">&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+The Floating-point ABI – Single precision (f) is currently not supported in this release (except Embedded projects).&lt;/p>
+&lt;p>For example, on the Target Processor menu, users can change the architecture from 32 bits to 64 bits, and also select floating-point options.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/5.png" alt="example image">&lt;/p>
+&lt;p>Another useful setting is to add hooks before and after the build. For example,&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/6.png" alt="example image">&lt;/p>
+&lt;h2 id="a-idbuild-projectbuild-projecta">&lt;a id="build-project">Build project&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Building is simply done by clicking on the build button in the toolbar:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/rtos-images/freertos/7.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Or right-click on the current project &amp;gt; Build Project&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_xplorstudio/8.png" alt="example image">&lt;/p>
+&lt;p>Messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/9.png" alt="example image">&lt;/p>
+&lt;h2 id="a-idblinky-debug-qemurunning-and-debugging-project-with-qemu-emulatora">&lt;a id="blinky-debug-qemu">Running and Debugging project with QEMU emulator&lt;/a>&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h3>
+&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to run applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the RISC-V Blinky Demo entry in the Project Explorer then open the Run Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary run configuration information.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/10.png" alt="example image">&lt;/p>
+&lt;p>In Run Configuration Dialog box, create a new run configuration by double-clicking on RISC-V Running&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/10-1.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Main&lt;/strong> tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click Apply then Click Debug.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/10-2.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the Blinky Demo Project entry in the Project Explorer and then click &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISC-V application with QEMU&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/10-3.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/10-4.png" alt="example image">&lt;/p>
+&lt;p>After selecting &lt;strong>Run As RISC-V application with QEMU&lt;/strong>, the &amp;ldquo;Blink&amp;rdquo; text will be printed continuously in Console view.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/10-5.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="a-idrtos-debugspan-stylecolor-blackdebug-project-on-qemu-emulatorspana">&lt;a id="rtos-debug">&lt;span style="color: black">Debug project on QEMU Emulator&lt;/span>&lt;/a>&lt;/h3>
+&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the RISC-V Blinky Demo entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/11.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog box, create a new debug configuration by double-clicking on RISC-V Debugging&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/12.png" alt="example image">&lt;/p>
+&lt;p>On the Debugger tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click Apply then Click Debug.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/13.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the Blinky Demo Project entry in the Project Explorer and then click Debug As/RISC-V application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/14.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; Debug As &amp;gt; RISV-C application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/15.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/16.png" alt="example image">&lt;/p>
+&lt;p>Open &lt;strong>main_blinky.c&lt;/strong> source code file in &lt;strong>src/application-specific/blinky_demo&lt;/strong> &amp;gt; Set more breakpoints in Task and Queue object.&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/17.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Press F8 or click on &lt;strong>Resume&lt;/strong> button to go to the next breakpoint&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/17.1.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continue debugging with press F5 or clicking on Step Into button to step into the line of code and see data change in Register View&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/18.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continue debugging with press F6 or clicking on Step Over button for step over&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/18.1.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press F7 or click on Step Return (F7) button for step return code&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/19.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on the Suspend button to pause the debug process.&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/20.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>User can open Object Variables, Breakpoints, Task, Queue, and Heap to examine application states:&lt;/p>
+&lt;p>&lt;strong>Variables&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/21.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Breakpoints:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/22.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Task:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/23.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/24.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Heap:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/25.png" alt="example image">&lt;/p>
+&lt;p>To stop the debug process, click the Terminate icon in the toolbar or press F2.&lt;/p>
+&lt;p>&lt;img src="/rtos-images/freertos/26.png" alt="example image">&lt;/p>
+&lt;!-- ## &lt;a id="blinky-debug-de2">5 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/a>
+### Hardware and driver preparations
+Please refer to the &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
+### Programming IP core
+To program a RISC-V IP core to the board, click on Flash icon on the toolbar
+![example image](/images_xplorstudio/27.png)
+- In the **Categories**, there are 2 types:
+- "***Free IP For Starter Boards***" includes free IP Core files like Neorv32, Rocket64 or OpenHW group
+- "***Commercial Grade IP for Professional Boards***" includes commercial IP Core files like Andes, Codasip. To download these IP Core files, user need to register an account and download from [https://pathfinder.intel.com/registration/](https://pathfinder.intel.com/registration/)
+- In the **IP Core**, select **stratix10_rocket64.sof** or **Custom IP core** if users use their own RISC-V IP core. In this case, we select "***de2-115_neorv32***" for the neorv32 - DE2-115 project.
+- Select JTAG cable (if the user has multiple boards connected to the development machine).
+- Click **Finish** to flash Neorv 32-bit RISC-V core to DE2-115 board.
+To view the console output printed from the RISC-V core, there are 2 ways depending on the IP core:
+- **Physical UART** &lt;span style="color:red">*(for Open-V-MCU, Neorv32)*:&lt;/style>
+Open the Terminal view and select `COM` port (on Windows) or `/dev/ttyUSBx` port (on Linux) with the following connection settings.
+![example image](/images_xplorstudio/28.png)
+The output message on the serial terminal will look like this:
+```
+&lt;&lt; NEORV32 Bootloader >>
+BLDV: Oct 27 2021
+HWV: 0x01060300
+CLK: 0x02faf080
+MISA: 0x40801104
+CPU: 0x00000483
+SOC: 0x0007400d
+IMEM: 0x00040000 bytes @0x00000000
+DMEM: 0x00020000 bytes @0x80000000
+Autoboot in 8s. Press key to abort.
+Loading...
+[ERR 0x00000005 0xffff0d58 0xffffffa8]
+ERROR_1
+```
+It is safe to ignore messages like `ERROR_1` above.
+- **vJTAG-UART** &lt;span style="color:red">*(for Rocket Chip, Andes, Codasip)*:&lt;/style>
+Open Terminal view and choose Local Terminal. Type `jtagconfig -d` to detect the index of the USB-Blaster II cable (Linux OS: The user should use the command `source path/to/__PROJECT_SHORTNAME__/bin/environment-setup.sh` first to set the environment of the __PROJECT_SHORTNAME__.
+![example image](/rtos-images/freertos/28.1.png)
+Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
+!!!warning "Note"
+Examples with 3 IP cores (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
+### Run project on Intel FPGA DE2-115 platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 5.2](#52-programming-ip-core) for how to program the bitstream.
+To run the application on hardware without debugging, select project in the Project Explorer, click **Run as > RISC-V application on Hardware**.
+On the Terminal view, the "Blinky" message will be printed continuously.
+Please refer to [section 6.3](#63-run-project-on-intel-fpga-stratix-10-gx-platform) for how to run the application by creating a new *Run Configuration*.
+!!!info
+Both Neorv32 and Rocket Chip on DE2-115 board use Virtual JTAG to run/debug.
+![example image](/images_xplorstudio/29.png)
+### Debug project on Intel FPGA DE2-115 platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 5.2](#52-programming-ip-core) for how to program the bitstream.
+To debug the application on hardware, select project in the Project Explorer, click **Debug as > RISC-V application on Hardware**
+![example image](/images_xplorstudio/30.png)
+Please refer to [section 6.4](#64-debug-project-on-intel-fpga-stratix-10-gx-platform) for how to debug the application by creating a new *Debug Configuration*.
+!!!info
+Both Neorv32 and Rocket Chip on DE2-115 board use Virtual JTAG to run/debug.
+If users cannot debug normally, that means the RISC-V core may be locked from a previous debug session. To restart with a new debug session, please press `KEY0` on the DE2-115 board to reset the core and continue.
+The application stops at the first line, and users can set breakpoints and continue to debug.
+![example image](/images_xplorstudio/31.png)
+To view the RTOS objects, press the **Suspend** button.
+![example image](/rtos-images/freertos/32.png)
+Task objects:
+![example image](/images_xplorstudio/33.png)
+Queue objects:
+![example image](/images_xplorstudio/34.png)
+Heap objects:
+![example image](/images_xplorstudio/35.png)
+To view Registers, switch to the Register view:
+![example image](/images_xplorstudio/36.png)
+To view gdb console message, switch to the Debug console view
+![example image](/images_xplorstudio/37.png)
+In the complex application where the peripherals are configured with the RISC-V cores, users can examine the peripherals' status such as control register values, and data register values via **Peripheral Registers view**.
+To active Peripheral Registers view, select **Window > Preferences**
+![example image](/images_xplorstudio/38.png)
+Then go to the **C/C++ > Debug section**
+Click the Peripheral **Registers Page**. On this page:
+- Architecture: Select RISC-V
+- Vendor: Select FPGA
+- Platform: Select Neorv32
+The peripheral registers will be listed on the right-hand side of the page:
+![example image](/images_xplorstudio/39.png)
+Users can select specific registers or all registers via the checkbox, then click **Apply and Close** button
+![example image](/images_xplorstudio/40.png)
+The Peripheral Register views will show all registers as well as their information.
+To view any register status, double-click on the register name on Peripheral View:
+![example image](/images_xplorstudio/41.png)
+To view the program output, switch to the Terminal view.
+![example image](/images_xplorstudio/42.png)
+## &lt;a id="blinky-debug-stratix">6 Running and Debugging project with Intel FPGA Stratix 10 GX platform&lt;/a>
+### Hardware and driver preparations
+For more information, please refer to &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> and [Running and Debugging project with Intel FPGA DE2-115 platform](#5-running-and-debugging-project-with-intel-fpga-de2-115-platform).
+### Programming IP core
+To program a RISC-V IP core to the board, click on the Flash icon on the toolbar:
+![example image](/images_xplorstudio/43.png)
+- In **Vendor**, select: Neorv32
+- In **Product**, select
+- **neorv32 - Stratix10gx (sof)**.
+- **Custom IP core** if users use their own RISC-V IP core.
+- Select the JTAG cable (if users have multiple boards connected to the development machine)
+- Click "Finish" to flash the NEOR32 RISC-V core.
+### Run project on Intel FPGA Stratix 10 GX platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 6.2](#62-programming-ip-core) for how to program the bitstream.
+To run the application on hardware without debugging, select the project in the Project Explorer, and click **Run as > Run Configurations**. Then create a new RISC-V Running configuration with the following information.
+- Platform: **FPGA** > **Intel Stratix 10 GX Board** > **Neorv32**
+- Configuration: Uncheck Virtual Jtag and select the external JTAG
+![example image](/images_xplorstudio/45.png)
+![example image](/images_xplorstudio/29.png)
+### Debug project on Intel FPGA Stratix 10 GX platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 6.2](#62-programming-ip-core) for how to program the bitstream.
+To debug the application on hardware, select project in the Project Explorer, click **Debug as > Debug RISC-V application on hardware**. Then create a new RISC-V Running configuration with the following information.
+- Platform: **FPGA** > **Intel Stratix 10 GX Board** > **Neorv32**
+- Configuration: Uncheck `Virtual Jtag` and select the external JTAG
+![example image](/images_xplorstudio/47.png)
+![example image](/images_xplorstudio/48.png)
+For the OpenOCD configuration of each IP core on the Intel Stratix 10 GX board, please refer to the below table:
+| IP cores | Type of JTAG | Supported JTAG |
+|:-----------:|:-------------:|:-----------------------------------------------------------:|
+| Neorv32 | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+| Rocket Chip | Virtual JTAG | N/A |
+| Open-V-MCU | Virtual JTAG | N/A |
+| Andes | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+| Codasip | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+*Note: This is an example of creating, building, running, and debugging a typical project. For specific projects, which are supported in this release, please refer to &lt;a href="../../examples/">**Examples and Demos**&lt;/a> section.*
+## Debug project with custom openocd
+Create a new debug configuration on **Debug Configurations** dialog by double-clicking on **RISC-V Debugging**:
+![example image](/images_xplorstudio/50.png)
+On the tab **Debugger**, select option **Intel FPGA Board in FPGA.**
+![example image](/images_xplorstudio/51.png)
+On the **OpenOCD Options**, we use the openocd binary of Quartus and the default openocd configuration file.
+![example image](/images_xplorstudio/52.png)
+Users can browse the custom openocd binary and the custom openocd configuration file.
+![example image](/images_xplorstudio/53.png)
+Click **Apply** then click **Debug** to start debugging with the custom openocd binary. --></description></item><item><title>Docs: Installation Issues</title><link>/docs/getting-started/faq/faq/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/faq/faq/</guid><description>
+&lt;h2 id="failure-when-installing-xplor-studio">Failure when installing XploR Studio&lt;/h2>
+&lt;p>&lt;strong>Issue 01: The dependencies packages are not installed&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_faq/1.png" alt="example image">&lt;/p>
+&lt;p>Solution: Please make sure your machine has an Internet connection.&lt;/p>
+&lt;p>&lt;strong>Issue 02: The installer stopped with the error &amp;ldquo;Java heap space&amp;rdquo;&lt;/strong>&lt;/p>
+&lt;p>Solution: Please make sure your machine has enough RAM.
+Please refer to &lt;a href="../../installation/">&lt;span style="color: blue">&lt;strong>System Requirements&lt;/strong>&lt;/span>&lt;/a> for hardware requirements to install XploR Studio.&lt;/p>
+&lt;!-- ## Cannot program FPGA device
+Issue: Sometimes, the board cannot be flashed with messages like:
+```
+*************** Intel FPGA board flash start ***************
+Error (23025): Short option -c takes an argument. Refer to --help for legal arguments.
+Usage:
+------
+quartus_pgm [-h | --help[=&lt;option|topic>] | -v]
+quartus_pgm -c &lt;cable name> filname.cdf --- If you want to use cdf file
+quartus_pgm -c &lt;cable name> -m &lt;programming mode> -o &lt;value> [-o &lt;value>...] --- If you want to use individual programming file(s)
+quartus_pgm -l --- to display the list of available hardware
+quartus_pgm -c &lt;cable name> -a --- to display the list of devices connected to the cable.
+```
+**Solution**: Clean up the previous jtag server instance
+Please open **Terminal view**, and select **Local Terminal**
+&lt;center>
+![example image](images/3.png)
+&lt;/center>
+Then run the following commands in the terminal to see if the board is online:
+```
+killall jtagd
+jtagd --user-start
+jtagconfig
+```
+&lt;center>
+![example image](images/4.png)
+&lt;/center>
+!!!info "Note"
+Please use the built-in terminal of the IDE. Otherwise, you may see the message "jtagd not found"
+## 3 Could not bind gdb to socket on port 3333: Address already in use
+&lt;center>
+![example image](images/5.png)
+&lt;/center>
+The previous debug session is still running on port 3333.
+Solution: Right-click on Console View and select **Terminate/Disconnect All**
+&lt;center>
+![example image](images/6.png)
+&lt;/center>
+## Error: Fatal: Hart 0 failed to halt during examine()
+&lt;center>
+![example image](images/7.png)
+&lt;/center>
+Explanation: The RISC-V core for the previous debug session was not cleaned up.
+Solution: Reset the RISC-V core by pressing the reset button on the FPGA board. On DE2-115, **its button KEY0**
+## Failed to open port /dev/ttyUSB0 with selected settings.
+&lt;center>
+![example image](images/8.png)
+&lt;/center>
+Explanation: User does not have permission to access ttyUSB0 device
+Workaround: sudo chmod 666 /dev/ttyUSB0
+## `eth_local_ip` Command not found
+&lt;center>
+![example image](images/9.png)
+&lt;/center>
+Explanation: The ethernet module on DE2-115 is not activated since the flashed SOF file is not corresponding to the Ethernet jumper settings on the board.
+Solution: Please make sure the exact SOF file is flashed. Please refer to &lt;a href="../hardware-environment">**Hardware and Environment**&lt;/a> for more information.
+## TFTP is not working
+When the board is booting, the Linux image is not downloaded from TFTP Server. The issue could be
+- No permission on the tftpboot directory. Try running **chmod -R 777 /path/to/boot.bin**
+- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Configuring project</title><link>/docs/configuration/build/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/build/</guid><description>
+&lt;p>To configure a project in XploR Studio, right-click on the project and select &lt;strong>Properties&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_configuration//build/1.png" alt="example image">&lt;/p>
+&lt;p>The properties for a project include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Resource&lt;/strong>: Defined path variables for project.&lt;/li>
+&lt;li>&lt;strong>C/C++ Build&lt;/strong>: Configure project build options including build variables, environment settings, logging, build tools, and more.&lt;/li>
+&lt;li>&lt;strong>C/C++ General&lt;/strong>: Customize workspace settings including code analysis, formatting, indexing, language mappings, etc.&lt;/li>
+&lt;li>&lt;strong>Project Natures&lt;/strong>: Specify which natures should be assigned to the project (an advanced operation, requires a recent backup).&lt;/li>
+&lt;li>&lt;strong>Project References&lt;/strong>: Specify which other projects are referenced by the current project.&lt;/li>
+&lt;li>&lt;strong>Run/Debug Settings&lt;/strong>: Manage launch configurations associated with the current resource.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_configuration//build/2.png" alt="example image">&lt;/p>
+&lt;h2 id="build-configurations">Build Configurations&lt;/h2>
+&lt;p>To configure build settings, select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_configuration//build/3.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Tool Settings&lt;/strong> tab allows you to configure options while building applications, such as setting the target architecture, ABI, tuning, code model, and adding optimization options, libraries and warning options in the assembler, compiler, and linker steps.&lt;/li>
+&lt;li>&lt;strong>Build Steps&lt;/strong> tab allows you to add pre-build and post-build commands&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Preparing target connection</title><link>/docs/configuration/flash/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/flash/</guid><description>
+&lt;p>Prior to running or debugging the application, you must:&lt;/p>
+&lt;ol>
+&lt;li>Establish a physical connection between the host and target&lt;/li>
+&lt;li>Prepare an execution environment on the target, and&lt;/li>
+&lt;li>Establish a logical debug channel between the host debugger and execution environment&lt;/li>
+&lt;/ol>
+&lt;h3 id="physical-target-connection">Physical target connection&lt;/h3>
+&lt;p>For most target platform(s) (FPGAs boards), physical target connection is achieved via one of the following means:&lt;/p>
+&lt;ul>
+&lt;li>Host computer and target platform connected via USB&lt;/li>
+&lt;li>Target platform installed as a PCIe device on host computer&lt;/li>
+&lt;li>Host computer connected to target via secure VPN (cloud native)&lt;/li>
+&lt;/ul>
+&lt;p>For most cases, a USB cable is used to connect the host system to the target platform&lt;/p>
+&lt;h3 id="preparing-execution-environment">Preparing execution environment&lt;/h3>
+&lt;p>A binary image (bitfile) containing the hardware design of the system-on-chip that runs the embedded program will need to be downloaded and programmed on the FPGAs or hardware-assisted verification systems (HAVS) target.&lt;/p>
+&lt;p>For ASIC target platforms, no additional preparation is needed.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
+&lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="/images_configuration/run/1.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Running&lt;/strong> to create a new run configuration. In &lt;strong>Main&lt;/strong> tab, you can select the application path, auto-build option and change run configuration:&lt;/p>
+&lt;p>&lt;img src="/images_configuration/run/2.png" alt="example image">&lt;/p></description></item><item><title>Docs: Debugging program</title><link>/docs/configuration/debug/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/debug/</guid><description>
+&lt;p>To debug a project on XploR Studio, right-click on the project and select &lt;strong>Debug As &amp;gt; Debug Configurations&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="/images_configuration/debug/1.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Debugging&lt;/strong> to create a new debug configuration:&lt;/p>
+&lt;p>&lt;img src="/images_configuration/debug/2.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Main&lt;/strong> tab: Specify the executable application and configure auto-build option&lt;/li>
+&lt;li>&lt;strong>Debugger&lt;/strong> tab: Specify Platform (Remote Target/QEMU/Hardware/&amp;hellip;), GDB setup (GDB commands, GDB options, etc..) and Platform Configuration.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_configuration/debug/3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Sample projects</title><link>/docs/examples/introduction/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/introduction/</guid><description>
+&lt;p>In this release, XploR Studio supports following projects:&lt;/p>
+&lt;ul>
+&lt;li>Embedded projects:
+&lt;ul>
+&lt;li>&lt;a href="/docs/examples/embedded/riscvhelloworld/">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded/llvmhelloworld/">&lt;span style="color: blue">Helloworld LLVM Application&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>FreeRTOS projects:
+&lt;ul>
+&lt;li>&lt;a href="/docs/examples/freertos/blinky/">&lt;span style="color: blue">Blinky&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/freertos/genericheap/">&lt;span style="color: blue">General Heap&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/freertos/largeheap/">&lt;span style="color: blue">Large Heap&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/freertos/generictimer/">&lt;span style="color: blue">Generic Timer&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Embedded Linux projects:
+&lt;ul>
+&lt;li>&lt;a href="./embedded-linux/Helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="./embedded-linux/Debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Zephyr RTOS projects:
+&lt;ul>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrHelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: GNU C/C++ HelloWorld</title><link>/docs/examples/embedded/riscvhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/riscvhelloworld/</guid><description>
+&lt;h1 id="risc-v-hello-world-embedded-project">RISC-V Hello World Embedded Project&lt;/h1>
+&lt;p>This chapter covers the basics of C/C++ embedded RISC-V projects including creating, building, running, and debugging embedded RISC-V applications. The project referred to in this chapter is called &amp;ldquo;RISC-V Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworld/1-1.png" alt="example image">&lt;/p>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; RISC-V Helloworld&lt;/strong> project and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em> then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworld/1.png" alt="example image">&lt;/p>
+&lt;p>In the next screens, the user can specify project options such as Author, copyright notice, project description, compiler, assembler, linker, and run/debug options. Then click the Next button.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworld/2.png" alt="example image">&lt;/p>
+&lt;p>Then click Next to select Vendor Information. From the list, User can select one platform and one core to run/debug.&lt;/p>
+&lt;!--
+![example image](/images_embedded/RISCVHelloworld/3.png)
+![example image](/images_embedded/RISCVHelloworld/4.png)
+-->
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworld/5.png" alt="example image">&lt;/p>
+&lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## &lt;a id="debug-imperas">&lt;span style="color: black">5. Running and Debugging project with Imperas emulator&lt;/span> &lt;/a>
+!!!warning "Note"
+Before running the HelloworldDemo with Imperas, please update the build setting to "Architecture: RV64I, IntegerABI: LP64". Because Imperas only supports 64-bit samples currently.
+![example image](/images_embedded/RISCVHelloworld/28.png)
+### Run project on Imperas emulator
+Right-click on current project > **Run As > RISV-C application with Imperas**.
+![example image](/images_embedded/RISCVHelloworld/29.png)
+The output of the application is shown in the Console view:
+![example image](/images_embedded/RISCVHelloworld/30.png)
+### Debug project on Imperas Emulator
+**There are three ways to start debugging the application:**
+1. Select the HelloworldDemo entry in the Project Explorer then open the **Debug Configurations** Dialog. Doing so will enable XploR Studio to automatically fill out the necessary debug configuration information.
+![example image](/images_embedded/RISCVHelloworld/31.png)
+In the **Debug Configurations** Dialog, create a new one by double clicking on **RISC-V Debugging**:
+![example image](/images_embedded/RISCVHelloworld/32.png)
+On the tab **Debugger**, choose option **Imperas in Virtual Platforms**. Click **Apply** then click **Debug**.
+![example image](/images_embedded/RISCVHelloworld/33.png)
+2. Select the **HelloworldDemo** in the **Toolbar**, then click **Debug As RISC-V application with Imperas**.
+![example image](/images_embedded/RISCVHelloworld/34.png)
+3. Right-click on the current project in the **Project Explorer > Debug As > RISV-C application with Imperas.**
+![example image](/images_embedded/RISCVHelloworld/35.png)
+After selecting Debug As and RISC-V application with Imperas, the XploR Studio UI changes to debug perspective and automatically sets a breakpoint in the first line of code in main() function.
+Refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information about examining applications and perform functions such as adding new breakpoints, viewing and changing variable values, checking the register values, and so on.
+## Running and Debugging project with Intel FPGA DE2-115 platform
+The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+## Running and Debugging project with Intel FPGA Stratix 10 GX platform
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: LLVM C/C++ HelloWorld</title><link>/docs/examples/embedded/llvmhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/llvmhelloworld/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>To create &lt;em>LLVM Hello World Embedded Project&lt;/em>, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; RISC-V LLVM Sample&lt;/strong> project and &lt;strong>Toolchains&lt;/strong>: &lt;em>LLVM Baremetal Toolchain for RISC-V&lt;/em>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1.png" alt="example image">&lt;/p>
+&lt;p>As the image above, there is no option as &lt;em>LLVM Baremetal Toolchain for RISC-V&lt;/em> because this XploR Studio does not contain LLVM toolchain.&lt;/p>
+&lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information).&lt;/p>
+&lt;p>After installation and restart the IDE, you can see the creating-project widget like:&lt;/p>
+&lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1-1.png" alt="example image">&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## Running and Debugging project with Imperas emulator
+The running and debugging with Imperas emulator is the same as the **RISC-V Hello World Embedded Application**. Please refer to [Running and Debugging project with Imperas emulator](../../../examples/embedded/RISCVHelloworld#debug-imperas)
+## Running and Debugging project with Intel FPGA DE2-115 platform
+The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+## Running and Debugging project with Intel FPGA Stratix 10 GX platform
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Blinky</title><link>/docs/examples/freertos/blinky/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/blinky/</guid><description>
+&lt;p>This chapter covers the basics of C/C++ FreeRTOS RISC-V projects including creating, building, running, and debugging FreeRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;RISC-V Blinky.&amp;rdquo; This application prints &lt;em>Blink&lt;/em> text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
+The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+## Running and Debugging project with Intel FPGA Stratix 10 GX platform
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Generic Heap</title><link>/docs/examples/freertos/genericheap/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/genericheap/</guid><description>
+&lt;h1 id="freertos-risc-v-generic-heap-application">FreeRTOS RISC-V Generic Heap application&lt;/h1>
+&lt;p>This chapter covers the basics of the FreeRTOS RISC-V Heap sample application including creating, building, running, and debugging steps. This application simply prints &lt;em>Testing Heap&lt;/em> on the console screen. Through this example, users know how to discover FreeRTOS objects such as Queue, Task, Heap, &amp;hellip; during debug session. This application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>FreeRTOS Project&lt;/strong> &amp;gt; &lt;strong>RISC-V Generic Heap&lt;/strong> and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em>, enter project name then click &lt;strong>Next&lt;/strong> button.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
+The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+When suspending the debug process and switching to Terminal view, the user can see the "Testing Heap" message:
+&lt;center>
+![example image](images/GenericHeap/4.png)
+&lt;/center>
+## Running and Debugging project with Intel FPGA Stratix 10 GX platform
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Large Heap</title><link>/docs/examples/freertos/largeheap/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/largeheap/</guid><description>
+&lt;h1 id="freertos-risc-v-large-heap-project">FreeRTOS RISC-V Large Heap Project&lt;/h1>
+&lt;p>This chapter covers the basics of the FreeRTOS RISC-V Large Heap application including creating, building, running, and debugging steps. This application simply prints &lt;em>Testing Heap&lt;/em> on the console screen. Through this example, users know how to discover FreeRTOS objects such as Queue, Task, Heap, &amp;hellip; during debug session. This application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>FreeRTOS Project&lt;/strong> &amp;gt; &lt;strong>RISC-V Large Heap&lt;/strong> and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em>, enter project name then click &lt;strong>Next&lt;/strong> button.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
+The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+When suspending the debug process and switching to Terminal view, the user can see the "Testing Heap" message:
+&lt;center>
+![example image](images/LargeHeap/4.png)
+&lt;/center>
+## Running and Debugging project with Intel FPGA Stratix 10 GX platform
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Generic Timer</title><link>/docs/examples/freertos/generictimer/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/generictimer/</guid><description>
+&lt;h1 id="freertos-risc-v-generic-timer-application">FreeRTOS RISC-V Generic Timer application&lt;/h1>
+&lt;p>This chapter covers the basics of the FreeRTOS RISC-V Generic Timer application including creating, building, running, and debugging steps. This application simply prints &lt;em>Testing Timer&lt;/em> on the console screen. Through this example, users know how to discover FreeRTOS objects such as Queue, Task, Heap, &amp;hellip; during debug session. This application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>FreeRTOS Project&lt;/strong> &amp;gt; &lt;strong>RISC-V Generic Timer&lt;/strong> and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em>, enter project name then click &lt;strong>Next&lt;/strong> button.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Timer objects:&lt;/p>
+&lt;center>
+![example image](images_IMG_FOLDER/GenericTimer/4.png)
+&lt;/center>
+&lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
+The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+If you customise the sample application and see this message on the Terminal view,
+```
+ERROR_1FreeRTOS V10.4.3 on NEORV32 Demo
+FreeRTOS_FAULT: vApplicationMallocFailedHook (solution: increase 'configTOTAL_HEAP_SIZE' in FreeRTOSConfig.h)
+```
+the heap size is small and need to be adjusted by update configTOTAL_HEAP_SIZE in src/application-specific/FreeRTOSConfig.h
+&lt;center>
+![example image](images_IMG_FOLDER/GenericTimer/7.png)
+&lt;/center>
+and RAM size in src/environmental-support/env-board/linker_script.lds
+&lt;center>
+![example image](images/GenericTimer/8.png)
+&lt;/center>
+## Running and Debugging project with Intel FPGA Stratix 10 GX platform
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Hello World</title><link>/docs/examples/embedded-linux/helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/helloworld/</guid><description>
+&lt;h1 id="risc-v-embedded-linux-project">RISC-V Embedded Linux Project&lt;/h1>
+&lt;p>This chapter covers the basics of C/C++ embedded Linux RISC-V projects, including create/build/run/debug RISC-V embedded Linux applications. The project referred to by this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>xplor-studio-linux&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Helloworld&lt;/strong> project and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1.png" alt="example image">&lt;/p>
+&lt;p>As the image above, there is no option as &lt;em>Embedded Linux XploR Toolchain for RISC-V&lt;/em> because this &lt;strong>PRODUCT_NAME&lt;/strong> does not contain Embedded Linux toolchain.&lt;/p>
+&lt;p>To use this toolchain, please install &lt;em>Embedded Linux toolchain&lt;/em> blueprint first.
+There are 4 different blueprints:&lt;/p>
+&lt;ul>
+&lt;li>RISC-V Embedded Linux toolchain 32-bit: &lt;strong>riscv32-xplor-linux&lt;/strong>&lt;/li>
+&lt;li>RISC-V Embedded Linux toolchain 32-bit (Double): &lt;strong>riscv32-xplord-linux&lt;/strong>&lt;/li>
+&lt;li>RISC-V Embedded Linux toolchain 64-bit: &lt;strong>riscv64-xplor-linux&lt;/strong>&lt;/li>
+&lt;li>RISC-V Embedded Linux toolchain 64-bit (Double): &lt;strong>riscv64-xplord-linux&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-3.png" alt="example image">&lt;/p>
+&lt;p>Each blueprint can be downloaded separately depending on the purpose.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>After installation and restarting the IDE, you can see the creating-project widget like:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-1.png" alt="example image">&lt;/p>
+&lt;p>On Ubuntu, LLVM Embedded Linux toolchain is packaged inside the Embedded Linux toolchain that supports &lt;em>Double&lt;/em> extension (&lt;strong>riscv32-xplord-linux&lt;/strong> and &lt;strong>riscv64-xplord-linux&lt;/strong>). LLVM Embedded Linux toolchain has not been supported on Windows yet.&lt;/p>
+&lt;p>For using LLVM Embedded Linux toolchain, please make sure that the RISC-V Embedded Linux toolchain (Double) are installed and select LLVM Embedded Linux Toolchain for RISC-V in the Toolchains box:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/2.png" alt="example image">&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Please make sure that the toolchain used to build is installed, otherwise errors as in the following image will appear:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-2.png" alt="example image">&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../user-guides/blueprint">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/1-4.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h4 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h4>
+&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the project entry in the Project Explorer then open the Run Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary run configuration information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-1.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Run Configuration Dialog&lt;/strong>, create new run configuration by double clicking on RISC-V Runging:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-2.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Main&lt;/strong> tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click Apply then Click Debug.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-3.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the desired project in the Project Explorer window, then click Run As/RISC-V application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-4.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; Run As &amp;gt; RISV-C application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After selecting Run As RISC-V application with QEMU, Console view will print as below image:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/6-5.png" alt="example image">&lt;/p>
+&lt;h4 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h4>
+&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/7.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Debug Configuration Dialog&lt;/strong>, create new configuration by double clicking on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/8.png" alt="example image">&lt;/p>
+&lt;p>On tab &lt;strong>Debugger&lt;/strong>, choose option &lt;strong>QEMU&lt;/strong> in Virtual Platforms. Click Apply then Click Debug.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/9.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the desired project in the Project Explorer window, then click Debug As/RISC-V application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/10.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; Debug As &amp;gt; RISV-C application with QEMU&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/11.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/12.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;!-- ## Running and Debugging project with Imperas emulator
+### Run project on Imperas emulator
+**Right-click on current project > Run As > RISV-C application with Imperas**
+![example image](/images_embedded_linux/linux/7.png)
+### Debug project on Imperas Emulator
+__PRODUCT_NAME__ offers several ways to debug applications:
+- Select the project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.
+![example image](/images_embedded_linux/linux/23.png)
+On the **Debug Configuration Dialog**, create a new configuration by double clicking on RISC-V Debugging:
+![example image](/images_embedded_linux/linux/24.png)
+![example image](/images_embedded_linux/linux/25.png)
+On the tab **Debugger**, choose option **Imperas** in **Virtual Platforms**. Click **Apply** then Click **Debug**.
+![example image](/images_embedded_linux/linux/26.png)
+Select the desired project in the Project Explorer window, then click **Debug As > RISC-V application with Imperas.**
+![example image](/images_embedded_linux/linux/27.png)
+**Right-click on the current project > Debug As > RISV-C application with Imperas**
+![example image](/images_embedded_linux/linux/28.png)
+After selecting **Debug As > RISC-V application with Imperas**, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.
+![example image](/images_embedded_linux/linux/29.png)
+Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information.
+## &lt;a id="debug-linux-de2">&lt;span style="color: black">6 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>
+The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the DE2-115 board.
+- There are two built-in SoC SOFs on __PRODUCT_NAME__ to flash DE2-115 for embedded Linux applications:
+- One for MII network mode where speed is 10 Mbps
+- One for RGMII network mode where speed is 1000Mps
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+Currently, **riscv64-ipf-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain
+- Right click on the project then select properties.
+- In project settings, select
++ Architecture: RV64 (-march=rv64i*)
++ Floating point: None
++ Integer ABI: LP64 (-mabi=lp64*)
++ Floating point ABI: None
+![example image](/images_embedded_linux/linux/43.png)
+- Click Apply and Close
+There are some differences when debugging Linux applications, it is necessary to update some config as follows:
+On the Debugger tab, select Intel FPGA Board.
+![example image](/images_embedded_linux/linux/46.png)
+On the Configuration, select "**Advanced Configuration**".
+![example image](/images_embedded_linux/linux/47.png)
+Click the **New** button to create a new connection configuration, then select **SSH** as connection type:
+![example image](/images_embedded_linux/linux/48.png)
+On the "New Connection" dialog.
+- Connection name: The name of connection
+- Host: 192.168.1.50. This is the default IP address of Linux run on board. If you use a different subnet when booting Linux, please update this IP too.
+- User: root
+- Use password-based authentication: No password
+![example image](/images_embedded_linux/linux/49.png)
+Click **Finish** to create the connection configuration.
+In the Connections dropdown, select the newly created connection name and set the destination file path to copy the application to the board.
+On the Remote Absolute File Path for C/C++ Application, enter the path of the elf file that is copied to Linux (ex: /tmp/riscv.elf).
+![example image](/images_embedded_linux/linux/50.png)
+Click **Debug** to start debugging.
+!!!info "Note"
+When starting the first debug session, it will take time for the PC and board to exchange ssh keys.
+If you see this error messagge, please update your project setting to use *riscv64-ipf-linux* as noted above.
+![example image](/images_embedded_linux/linux/51.png)
+## &lt;a id="debug-linux-stratix">&lt;span style="color: black">7 Running and Debugging a project with Intel FPGA Stratix 10 GX platform&lt;/span> &lt;/a>
+The programming IP core step with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on Intel FPGA Stratix 10 GX board.
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain:
+- Right-click on the project then select properties.
+- In project settings, select
++ Architecture: RV64(-march=rv64i*)
++ Floating point: None
++ Integer ABI: LP64(-mabi=lp64*)
++ Floating point ABI: Double precision extension (RVFD)
++ Click Apply and Close
+The following steps as same as the previous sections. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../examples/embedded-linux/Helloworld#debug-linux-de2) for more information. --></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
+&lt;h1 id="kernel-debugging">Kernel Debugging&lt;/h1>
+&lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/li>
+&lt;li>In this release, &lt;strong>Debugging Kernel&lt;/strong> feature is only available on Ubuntu.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &amp;ldquo;&lt;strong>File &amp;gt; New &amp;gt; C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Linux Kernel Project&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/1.png" alt="example image">&lt;/p>
+&lt;p>Enter the &lt;em>Project name&lt;/em> and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/2.png" alt="example image">&lt;/p>
+&lt;p>Select &lt;em>Kernel Source Path&lt;/em> then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/3.png" alt="example image">&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>With build settings, users can switch from RISC-V 32 bits to RISC-V 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/4.png" alt="example image">&lt;/p>
+&lt;p>Please refer to the below table to select the correct options for each target.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Platform&lt;/th>
+&lt;th style="text-align:center">Core&lt;/th>
+&lt;th style="text-align:center">Architecture&lt;/th>
+&lt;th style="text-align:center">Floating Point&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV32&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV32&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">DE2-115&lt;/td>
+&lt;td style="text-align:center">Rocket Chip&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Stratix 10 GX&lt;/td>
+&lt;td style="text-align:center">Rocket Chip&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>!!!warning &amp;ldquo;Note&amp;rdquo;&lt;/p>
+&lt;pre>&lt;code>**The Static Kernel project does not need to be built because the __PRODUCT_NAME__ uses a pre-build kernel image for debugging.**
+&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/5.png" alt="example image">&lt;/p>
+&lt;h2 id="debugging-the-kernel-with-qemu-emulator">Debugging the kernel with QEMU emulator&lt;/h2>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;&lt;/p>
+&lt;pre>&lt;code>Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to [Section 2: Update build settings](#2-update-build-settings)
+&lt;/code>&lt;/pre>
+&lt;p>There are two ways to debug the kernel:&lt;/p>
+&lt;ul>
+&lt;li>On the Project explorer, right-click on the project name and select &lt;strong>Debug as &amp;gt; RISC-V Kernel application with QEMU.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/6.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Create the new &lt;strong>RISC-V Kernel Debugging&lt;/strong> configurations: Right-click on the project name then select &lt;strong>Debug As &amp;gt; Debug Configurations.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/7.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Kernel Debugging&lt;/strong>, then click &lt;strong>Debug&lt;/strong> to start the Kernel debugging session.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/8.png" alt="example image">&lt;/p>
+&lt;p>When starting kernel debugging, the kernel is suspended in the start_kernel function and the terminal/console pauses at kernel booting.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/9.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>To debug an &lt;a href="../../../examples/embedded-linux/Helloworld">&lt;span style="color: blue">embedded Linux applications&lt;/span>&lt;/a>, the kernel should be booted completely.&lt;/strong>&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;&lt;/p>
+&lt;pre>&lt;code>To switch arch between 32-bit and 64-bit, users should remove the old Debug Kernel Configuration and create a new one to change the kernel (vmlinux).
+Or users can replace vmlinux manually at:
+`$XPLOR_HOME/blueprints/rootfs-debug/rv***_debugkernel/vmlinux`
+&lt;/code>&lt;/pre>
+&lt;!-- ## Debugging the kernel with Intel FPGA DE2-115 platform
+### Hardware and connection preparations
+Please refer to the &lt;a href="../../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging **Embedded Linux RISC-V applications** on the DE2-115 board.
+- There are two built-in SoC SOFs on __PRODUCT_NAME__ to flash DE2-115 for embedded Linux applications:
++ One for MII network mode where speed is 10 Mbps
++ One for RGMII network mode where speed is 1000Mps
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+### Programming IP core
+To programming RISC-V IP core to the board, click on Flash icon on the toolbar.
+![example image](/images_embedded_linux/debug-kernel/10.png)
+- In **Vendor**, select: Rocket
+- In **Product**, select
+- "**rocket64 - DE2-115 (mii)**" for MMI network mode
+- "**rocket64 - DE2-115 (rgmii)**" for RGMII network mode
+- **Custom IP core** if users use their own RISC-V IP core.
+Select the JTAG cable (if the user has multiple boards connected to the development machine).
+Click **Finish** to flash Rocket 64 bits RISC-V core.
+To view the console output printed from the RISC-V core, please open Terminal view, and select COM port (on Windows) or ttyUSB port (on Linux) with the following connection settings:
+![example image](/images_embedded_linux/debug-kernel/11.png)
+The Terminal view shows BIOS and Linux boot messages.
+![example image](/images_embedded_linux/debug-kernel/12.png)
+![example image](/images_embedded_linux/debug-kernel/13.png)
+Users can log in to Linux using a "**root**" account **without a password**.
+### Update build settings
+Currently, **riscv64-ipf-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain.
+- Right-click on the project then select properties.
+- In project settings, select
+- Architecture: RV64(-march=rv64i*)
+- Floating point: None
+- Integer ABI: LP64(-mabi=lp64*)
+- Floating point ABI: None
+- Click Apply and Close
+### Debugging the Kernel on Intel FPGA DE2-115 platform
+!!!info "Note"
+Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to [Section 2: Update build settings](#2-update-build-settings)
+There are two ways to debug the kernel:
+- On the Project explorer, right-click on the project name and select **Debug as > RISC-V Kernel application with Hardware** (default is DE2-115)
+![example image](/images_embedded_linux/debug-kernel/14.png)
+- Create the new **RISC-V Kernel Debugging** configurations: Right-click on the project name then select **Debug As > Debug Configurations**.
+![example image](/images_embedded_linux/debug-kernel/15.png)
+Double-click on **RISC-V Kernel Debugging**,
+![example image](/images_embedded_linux/debug-kernel/16.png)
+Selects the Debugger tab to switch the Platform. In the Platform list, select **Terrasic DE2-115 Board** that you’d like to start kernel debugging. Click Apply then Debug to start the Kernel debugging session on the Terrasic DE2-115 board.
+![example image](/images_embedded_linux/debug-kernel/17.png)
+On hardware, the bootloader is re-loaded, then the HydraSoC booting is restarted from the beginning.
+![example image](/images_embedded_linux/debug-kernel/18.png)
+## Debugging the kernel with Intel FPGA Stratix 10 GX platform
+### Hardware and connection preparations
+Please refer to the &lt;a href="../../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
+!!!info "Note"
+- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the Intel FPGA Stratix 10 GX board.
+- Development PC IP address: 192.168.1.100
+- The TFTP server is running the development PC and serving boot.bin Linux image
+### Programming IP core
+To programming RISC-V IP core to the board, click on Flash icon on the toolbar.
+![example image](/images_embedded_linux/debug-kernel/19.png)
+- In **Vendor**, select: Rocket
+- In **Product**, select
+- "**rocket64 - Stratix10gx (multicore)**"
+- **Custom IP core** if users use their own RISC-V IP core.
+Select JTAG cable (if the user has multiple boards connected to the development machine).
+Click **Finish** to flash Rocket 64 bits RISC-V core.
+To view the console output printed from the RISC-V core, please open Terminal view, and select Local Terminal. Type `jtagconfig -d` to detect the index of the USB-Blaster II cable (Linux OS: User should use the command `source path/to/__PROJECT_SHORTNAME__/bin/environment-setup.sh` first to set the environment of the __PROJECT_SHORTNAME__.
+![example image](/images_embedded_linux/debug-kernel/20.png)
+Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
+The Terminal view shows BIOS and Linux boot messages.
+![example image](/images_embedded_linux/debug-kernel/21.png)
+Users can log in to Linux using a "**root**" account **without a password**.
+### Update build settings
+Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain.
+- Right-click on the project then select properties.
+- In project settings, select
+- Architecture: RV64(-march=rv64i*)
+- Floating point: None
+- Integer ABI: LP64(-mabi=lp64*)
+- Floating point ABI: Double precision extension (RVFD)
+- Click Apply and Close.
+### Debugging the Kernel on Intel FPGA Stratix 10 GX platform
+!!!info "Note"
+Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to [Section 2: Update build settings](#2-update-build-settings)
+To debug the kernel on Intel FPGA Stratix 10 GX platform, create the new **RISC-V Kernel Debugging** configurations:
+Right-click on the project name then select **Debug As > Debug Configurations**.
+![example image](/images_embedded_linux/debug-kernel/22.png)
+Double-click on **RISC-V Kernel Debugging**,
+![example image](/images_embedded_linux/debug-kernel/23.png)
+Selects the Debugger tab to switch the Platform. In the Platform list, select **Intel Stratix 10 GX Board** that you’d like to start kernel debugging. Click Apply then Debug to start the Kernel debugging session on the Intel Stratix 10 GX board.
+![example image](/images_embedded_linux/debug-kernel/24.png)
+!!!warning "Note"
+For **debugging the Kernel with multicores**, the users should select *2. Intel FPGA USB-Blaster II (virtual-jtag, smp-4-cores)* on **Default Configuration**. Otherwise only 1 core is debugged.
+On hardware, the bootloader is re-loaded, then the HydraSoC booting is restarted from the beginning.
+![example image](/images_embedded_linux/debug-kernel/25.png)
+## Debugging the embedded Linux application while debugging the Kernel
+!!!info "Note"
+- For detailed information regarding basics of Embedded Linux application, please refer to &lt;a href="../../../examples/embedded-linux/Helloworld">**RISC-V Embedded Linux Project**&lt;/a>
+- **Make sure the architecture and floating point options of both the Linux Kernel project and the Embedded Linux project are the same**.
+Since the kernel is booted on the QEMU emulator or target boards on previous sections, users only need to debug the application via *Remote Target*. Right-click on the embedded Linux project then select **Debug As > Debug Configurations**.
+![example image](/images_embedded_linux/debug-kernel/28.png)
+Double-click on **RISC-V Debugging** and select "Helloworld Debug".
+![example image](/images_embedded_linux/debug-kernel/29.png)
+On the *Debugger* tab, please select:
+- Platform: *Remote Target*
+- Connection: *Default SSH-QEMU/ Default SSH-Hardware* (base on the target platform on which the Kernel is booted)
+- Remote Absolute File Path for C/C++ Application: `/tmp/riscv_application.elf`
+- Commands execute before application: `killall gdbserver`
+![example image](/images_embedded_linux/debug-kernel/30.png)
+Select **Apply** then **Debug**, the IDE will change to the debug perspective and automatically sets a breakpoint in the first line of code in the `main()` function.
+![example image](/images_embedded_linux/debug-kernel/31.png)
+--></description></item><item><title>Docs: Hello World</title><link>/docs/examples/zephyrrtos/zephyrhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrhelloworld/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;HelloWorld.&amp;rdquo; This application prints &lt;em>Hello world&lt;/em> text and runs a simple for-loop for a simple demonstration. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Synchronization</title><link>/docs/examples/zephyrrtos/zephyrsynchronization/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsynchronization/</guid><description>
+&lt;p>This chapter covers the basics of the Zephyr RTOS Synchronization sample application including creating, building, running, and debugging steps. A simple application that demonstrates basic sanity of the kernel. Two threads (A and B) take turns printing a greeting message to the console and use sleep requests and semaphores to control the rate at which messages are generated. This application can also be built and run on QEMU emulator.&lt;/p>
+&lt;hr>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo; choose &lt;strong>Zephyr application&lt;/strong> then &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name.
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click Next button.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/3.png" alt="example image">&lt;/p>
+&lt;p>Then click the Finish button.
+Select Zephyr Base Path then click Next:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/6.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/7.png" alt="example image">&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/11.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/12.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/13.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/14.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/15.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/17.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/18.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/18.1.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Mutex</title><link>/docs/examples/zephyrrtos/zephyrmutex/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmutex/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Mutex&lt;/strong>. This application creates two threads that modify a shared resource while using a mutex lock for synchronization. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrhelloworld/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Mutex object:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMutex/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Semaphore</title><link>/docs/examples/zephyrrtos/zephyrsemaphore/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsemaphore/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Semaphore&lt;/strong>. This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Semaphore objects:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Message Queue</title><link>/docs/examples/zephyrrtos/zephyrmsgq/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmsgq/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Message Queue&lt;/strong>. This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note&lt;/strong>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/1.png" alt="example image">&lt;/p>
+&lt;p>Select Toolchains: &lt;strong>RISC-V Custom Toolchains&lt;/strong> and enter the Project name
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/2.png" alt="example image">&lt;/p>
+&lt;p>Enter Author then click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/3.png" alt="example image">&lt;/p>
+&lt;p>Select Zephyr Base Path then click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/4.png" alt="example image">&lt;/p>
+&lt;p>Select target board configuration:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/5.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/6.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/7.png" alt="example image">&lt;/p>
+&lt;p>Select toolchain path then click &lt;strong>Next&lt;/strong> and &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/10.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/10.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU Emulator&lt;/h3>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/11.png" alt="example image">&lt;/p>
+&lt;p>The output of the application is shown in the Console view:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/12.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/13.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog, create new one by double click on RISC-V Debugging:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/14.png" alt="example image">&lt;/p>
+&lt;p>On tab Debugger, choose option QEMU in Virtual Platforms. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/15.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Select the Helloworld project entry in the Project Explorer then clicking &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Right-click on current project &amp;gt; &lt;strong>Debug As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/17.png" alt="example image">&lt;/p>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/18.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Besides, users can see more about Mesage Queue objects:&lt;/p>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Project views</title><link>/docs/views/project-views/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/project-views/</guid><description>
+&lt;h2 id="console-view">Console View&lt;/h2>
+&lt;p>The Console view displays program output as well as output from the build tools. The Console view is connected to stdin, stdout, and stderr of the compilation process.
+An example of Console view output:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/9.png" alt="example image">&lt;/p>
+&lt;p>The Console view only represents programs that are running on the host, such as compilers and linkers. Programs running on an external target will display their output in other views, such as a terminal emulator window, depending on the type of target.&lt;/p>
+&lt;h2 id="register-view">Register View&lt;/h2>
+&lt;p>The register view helps developers examine RISC-V registers values during debug sessions. This is an example of Register view:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/10.png" alt="example image">&lt;/p>
+&lt;h2 id="problems-view">Problems View&lt;/h2>
+&lt;p>If any errors or warnings are encountered during the compilation process will be shown on the Problem View&lt;/p>
+&lt;p>&lt;img src="/images_views/11.png" alt="example image">&lt;/p>
+&lt;h2 id="executables-view">Executables View&lt;/h2>
+&lt;p>The Executable view lists down all executable output built using &lt;strong>PRODUCT_NAME&lt;/strong>, for example:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/12.png" alt="example image">&lt;/p>
+&lt;h2 id="terminal-view">Terminal View&lt;/h2>
+&lt;p>The Terminal View helps users connect to and interact with the console of different targets:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/13.png" alt="example image">&lt;/p>
+&lt;p>Users can use this Terminal view to open the shell/bash console of the host machine, remote connection, or serial connection to the target platform. For example, with a serial terminal, users can specify additional parameters such as which device to connect, baud rate, and similar.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/14.png" alt="example image">&lt;/p>
+&lt;h2 id="peripheral-registers-view">Peripheral Registers View&lt;/h2>
+&lt;p>In the complex application where the peripherals are configured with the RISC-V cores, users can examine the peripherals&amp;rsquo; status such as control register values, and data register values via the Peripheral Registers View.
+To active Peripheral registers view, select &lt;strong>Window &amp;gt; Preferences&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/15.png" alt="example image">&lt;/p>
+&lt;p>Then select &lt;strong>C/C++ &amp;gt; Debug section&lt;/strong>
+Click &lt;strong>Peripheral Registers Page&lt;/strong>. On this page:&lt;/p>
+&lt;ul>
+&lt;li>Architecture: Select RISC-V&lt;/li>
+&lt;li>Vendor: Select QEMU&lt;/li>
+&lt;li>Platform: Select Spike or E31mc or E31&lt;/li>
+&lt;/ul>
+&lt;p>The peripheral registers will be listed on the right-hand side of the page:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/16.png" alt="example image">&lt;/p>
+&lt;p>Users can select registers or all registers to check, then click &lt;strong>Apply and Close&lt;/strong> button.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/17.png" alt="example image">&lt;/p>
+&lt;p>The Peripheral register views will show all registers and their status.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/18.png" alt="example image">&lt;/p>
+&lt;h2 id="debugger-console-view">Debugger console View&lt;/h2>
+&lt;p>The Debugger Console shows gdb debug information.
+The is an example of Console view output:&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/24.png" alt="example image">&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+If any of view disappears, users can always restore by clicking *&lt;strong>Window &amp;gt; Show View/NAME_OF_VIEW&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_views/basic/25.png" alt="example image">&lt;/p></description></item><item><title>Docs: FreeRTOS views</title><link>/docs/views/freertos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/freertos/</guid><description>
+&lt;p>During the FreeRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Task, Queue, Heap, and Timer. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+- To open FreeRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Others&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>FreeRTOS Object Views&lt;/strong>
+- The FreeRTOS object views only contain information when user debugs a FreeRTOS project
+- Depending on the FreeRTOS application, not all FreeRTOS objects will display valid information. For example, if the application does not utilize a Timer object, XploR Studio will not display any useful information on FreeRTOS Timer view.&lt;/p>
+&lt;h2 id="freertos-task-view">FreeRTOS Task View&lt;/h2>
+&lt;p>The FreeRTOS task view helps developers examine tasks during debug sessions. Each object is identified by its ID, name, address, state, task state, stack usage, event object, runtime, and priority.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/20.png" alt="example image">&lt;/p>
+&lt;h2 id="freertos-queue-view">FreeRTOS Queue View&lt;/h2>
+&lt;p>The FreeRTOS Queue view helps developers examine queues during debug sessions. Each object is identified by its type, ID, name, address, length, size, and state of TX and RX.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/21.png" alt="example image">&lt;/p>
+&lt;h2 id="freertos-timer-view">FreeRTOS Timer View&lt;/h2>
+&lt;p>The FreeRTOS Timer view helps developers examine timers during debug sessions. Each object is identified by its ID, name, status, callback functions, and similar.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
+&lt;h2 id="freertos-heap-view">FreeRTOS Heap View&lt;/h2>
+&lt;p>The FreeRTOS Heap view helps developers examine heaps during debug sessions. Each object is identified by its ID, address, usage information, and similar.&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/23.png" alt="example image">&lt;/p></description></item><item><title>Docs: Zephyr OS views</title><link>/docs/views/zephyros/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/zephyros/</guid><description>
+&lt;p>During the ZephyrRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Thread, Mutex, Semaphore, and MessageQueue. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
+&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+- To open ZephyrRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Other&amp;hellip;&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>ZephyrRTOS Object Views&lt;/strong>
+- The ZephyrRTOS object views only contain information when user debugs a ZephyrRTOS project
+- Depending on the ZephyrRTOS application, not all ZephyrRTOS objects will display valid information. For example, if the application does not utilize a Mutex object, XploR Studio will not display any useful information on ZephyrRTOS Mutex view.&lt;/p>
+&lt;h2 id="zephyrrtos-thread-view">ZephyrRTOS Thread View&lt;/h2>
+&lt;p>The ZephyrRTOS Thread view helps developers examine threads during debug sessions. Each object is identified by its ID, Name, Handle, Priority, Thread State and Thread Usage.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/1.png" alt="example image">&lt;/p>
+&lt;h2 id="zephyrrtos-mutex-view">ZephyrRTOS Mutex View&lt;/h2>
+&lt;p>The ZephyrRTOS Mutex view helps developers examine mutexes during debug sessions. Each object is identified by its ID, Handle, Mutex Owner, Owner Priority and Lock Count.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/2.png" alt="example image">&lt;/p>
+&lt;h2 id="zephyrrtos-semaphore-view">ZephyrRTOS Semaphore View&lt;/h2>
+&lt;p>The ZephyrRTOS Timer view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/3.png" alt="example image">&lt;/p>
+&lt;h2 id="zephyrrtos-heap-view">ZephyrRTOS Heap View&lt;/h2>
+&lt;p>The ZephyrRTOS Heap view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
+&lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item><item><title>Docs: License Agreement (*)</title><link>/docs/license/</link><pubDate>Thu, 27 Aug 2020 19:23:18 +0200</pubDate><guid>/docs/license/</guid><description>
+&lt;p>&lt;b>SOC.ONE SOFTWARE LICENSE TERMS&lt;/b>&lt;br>
+&lt;b>SOC.ONE XPLOR STUDIO&lt;/b>
+&lt;em>Version 1.0.1&lt;/em>&lt;/p>
+&lt;p>These license terms are an agreement between you and SoC.one Corp. (or based on where you live, one of its affiliates). They apply to the software named above. The terms also apply to any SoC.one services or updates for the software, except to the extent those have different terms.&lt;/p>
+&lt;p>&lt;b>IF YOU COMPLY WITH THESE LICENSE TERMS, YOU HAVE THE RIGHTS BELOW.&lt;/b>&lt;/p>
+&lt;h5 id="installation-and-use-rights">INSTALLATION AND USE RIGHTS.&lt;/h5>
+&lt;p>&lt;strong>General.&lt;/strong> You may use any number of copies of the software to develop and test your applications, including deployment within your internal corporate network.
+Demo use. The uses permitted above include use of the software in demonstrating your applications.&lt;/p>
+&lt;p>&lt;strong>Third Party Components.&lt;/strong> The software may include third party components with separate legal notices or governed by other agreements, as may be described in the ThirdPartyNotices file accompanying the software.&lt;/p>
+&lt;p>&lt;strong>Extensions.&lt;/strong> The software gives you the option to download other SoC.one and third party software packages from XploR.zone. Those packages are under their own licenses, and not this agreement. SoC.one does not distribute, license or provide any warranties for any of the third party packages. By accessing or using our XploR.zone, you agree to the terms located &lt;a href="https://xplor.zone/docs/license">here&lt;/a>&lt;/p>
+&lt;h4 id="data">DATA.&lt;/h4>
+&lt;p>&lt;strong>Data Collection.&lt;/strong> The software may collect information about you and your use of the software, and send that to SoC.one. SoC.one may use this information to provide services and improve our products and services. There may also be some features in the software that may enable you and SoC.one to collect data from users of your applications. If you use these features, you must comply with applicable law, including providing appropriate notices to users of your applications together with SoC.one’s privacy statement. Our privacy statement is located at &lt;a href="https://xplor.studio/privacy-policy">https://xplor.studio/privacy-policy&lt;/a>. You can learn more about data collection and use in the help documentation and our privacy statement. Your use of the software operates as your consent to these practices.&lt;/p>
+&lt;p>&lt;strong>Processing of Personal Data.&lt;/strong> To the extent SoC.one is a processor or subprocessor of personal data in connection with the software, SoC.one makes the commitments in the European Union General Data Protection Regulation Terms of the Online Services Terms to all customers effective May 25, 2018, at &lt;a href="https://xplor.studio/legal/gdpr">https://xplor.studio/legal/gdpr&lt;/a>.&lt;/p>
+&lt;h3 id="updates">UPDATES.&lt;/h3>
+&lt;p>The software may periodically check for updates and download and install them for you. You may obtain updates only from SoC.one or authorized sources. SoC.one may need to update your system to provide you with updates. You agree to receive these automatic updates without any additional notice. Updates may not include or support all existing software features, services, or peripheral devices.&lt;/p>
+&lt;h3 id="feedback">FEEDBACK.&lt;/h3>
+&lt;p>If you give feedback about the software to SoC.one, you give to SoC.one, without charge, the right to use, share and commercialize your feedback in any way and for any purpose. You will not give feedback that is subject to a license that requires SoC.one to license its software or documentation to third parties because we include your feedback in them. These rights survive this agreement.&lt;/p>
+&lt;h3 id="scope-of-license">SCOPE OF LICENSE.&lt;/h3>
+&lt;p>This license applies to the XploR Studio product. XploR Studio is based on Eclipse. Source code for Eclipse is available at &lt;a href="https://git.eclipse.org/c/">https://git.eclipse.org/c/&lt;/a> under the Eclipse license agreement. The software is licensed, not sold. This agreement only gives you some rights to use the software. SoC.one reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not reverse engineer, decompile or disassemble the software, or otherwise attempt to derive the source code for the software except and solely to the extent required by third party licensing terms governing use of certain open source components that may be included in the software; remove, minimize, block or modify any notices of SoC.one or its suppliers in the software; use the software in any way that is against the law; share, publish, rent or lease the software, or provide the software as a stand-alone offering for others to use.&lt;/p>
+&lt;h3 id="support-services">SUPPORT SERVICES.&lt;/h3>
+&lt;p>Because this software is “as is,” we may not provide support services for it.
+ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.&lt;/p>
+&lt;h3 id="export-restrictions">EXPORT RESTRICTIONS.&lt;/h3>
+&lt;p>You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end-users, and end use. For further information on export restrictions, see &lt;a href="https://www.SoC.one.com/exporting">https://www.SoC.one.com/exporting&lt;/a>.&lt;/p>
+&lt;h3 id="applicable-law">APPLICABLE LAW.&lt;/h3>
+&lt;p>If you acquired the software in the United States, Washington law applies to interpretation of and claims for breach of this agreement, and the laws of the state where you live apply to all other claims. If you acquired the software in any other country, its laws apply.&lt;/p>
+&lt;h3 id="consumer-rights-regional-variations">CONSUMER RIGHTS; REGIONAL VARIATIONS.&lt;/h3>
+&lt;p>This agreement describes certain legal rights. You may have other rights, including consumer rights, under the laws of your state or country. Separate and apart from your relationship with SoC.one, you may also have rights with respect to the party from which you acquired the software. This agreement does not change those other rights if the laws of your state or country do not permit it to do so. For example, if you acquired the software in one of the below regions, or mandatory country law applies, then the following provisions apply to you:&lt;/p>
+&lt;p>Australia. You have statutory guarantees under the Australian Consumer Law and nothing in this agreement is intended to affect those rights.&lt;/p>
+&lt;p>Canada. If you acquired this software in Canada, you may stop receiving updates by turning off the automatic update feature, disconnecting your device from the Internet (if and when you re-connect to the Internet, however, the software will resume checking for and installing updates), or uninstalling the software. The product documentation, if any, may also specify how to turn off updates for your specific device or software.&lt;/p>
+&lt;p>Germany and Austria.
+Warranty. The properly licensed software will perform substantially as described in any SoC.one materials that accompany the software. However, SoC.one gives no contractual guarantee in relation to the licensed software.
+Limitation of Liability. In case of intentional conduct, gross negligence, claims based on the Product Liability Act, as well as, in case of death or personal or physical injury, SoC.one is liable according to the statutory law.
+Subject to the foregoing clause (ii), SoC.one will only be liable for slight negligence if SoC.one is in breach of such material contractual obligations, the fulfillment of which facilitate the due performance of this agreement, the breach of which would endanger the purpose of this agreement and the compliance with which a party may constantly trust in (so-called &amp;ldquo;cardinal obligations&amp;rdquo;). In other cases of slight negligence, SoC.one will not be liable for slight negligence.&lt;/p>
+&lt;h3 id="disclaimer-of-warranty">DISCLAIMER OF WARRANTY.&lt;/h3>
+&lt;p>The software is licensed “as-is.” You bear the risk of using it. SoC.one gives no express warranties, guarantees or conditions. To the extent permitted under your local laws, SoC.one excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.&lt;/p>
+&lt;h3 id="limitation-on-and-exclusion-of-damages">LIMITATION ON AND EXCLUSION OF DAMAGES.&lt;/h3>
+&lt;p>You can recover from SoC.one and its suppliers only direct damages up to U.S. $0.05. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.&lt;/p>
+&lt;p>This limitation applies to (a) anything related to the software, services, content (including code) on third party Internet sites, or third party applications; and (b) claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.&lt;/p>
+&lt;p>It also applies even if SoC.one knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your state or country may not allow the exclusion or limitation of incidental, consequential or other damages.&lt;/p>
+&lt;p>&lt;em>(*) This license agreement derives from the &lt;a href="https://code.visualstudio.com/license">SoC.one Software License Terms for Visual Studio Code&lt;/a>&lt;/em>&lt;/p></description></item><item><title>Docs:</title><link>/docs/contributing/join-us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributing/join-us/</guid><description>
+&lt;p>&lt;em>You&lt;/em> Made It
+{: .subtitle}&lt;/p>
+&lt;p>We extend our gratitude to all contributors who have participated! XploR Design serves as an inclusive platform, allowing anyone to contribute their work to an open marketplace&lt;/p>
+&lt;p>So once again, thank you for your invaluable help in making XploR such a good product!&lt;/p>
+&lt;!-- !!! question "Where to Go Next?"
+If you want to:
+- Propose and idea, request a feature a report a bug,
+read the page [Submitting Issues](./submitting-issues.md).
+- Discover how to make an efficient contribution,
+read the page [Submitting Pull Requests](./submitting-pull-requests.md).
+- Learn how to build and test XploR blueprint,
+the page [Building and Testing](./building-testing.md) is for you.
+- Contribute to the documentation,
+read the related page [Documentation](./documentation.md). --></description></item><item><title>Docs:</title><link>/docs/debug-and-trace/trace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/debug-and-trace/trace/</guid><description/></item></channel></rss>
