@@ -37,7 +37,7 @@
 &lt;p>For ASIC target platforms, no additional preparation is needed.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
 &lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_configuration/run/1.png" alt="example image">&lt;/p>
@@ -45,7 +45,7 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;p>&lt;img src="/images_configuration/run/2.png" alt="example image">&lt;/p></description></item><item><title>Docs: Debugging program</title><link>/docs/configuration/debug/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/debug/</guid><description>
 &lt;p>To debug a project on XploR Studio, right-click on the project and select &lt;strong>Debug As &amp;gt; Debug Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_configuration/debug/1.png" alt="example image">&lt;/p>
@@ -53,6 +53,6 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;p>&lt;img src="/images_configuration/debug/2.png" alt="example image">&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Main&lt;/strong> tab: Specify the executable application and configure auto-build option&lt;/li>
-&lt;li>&lt;strong>Debugger&lt;/strong> tab: Specify Platform (Remote Target/QEMU/Hardware/&amp;hellip;), GDB setup (GDB commands, GDB options, etc..) and Platform Configuration.&lt;/li>
+&lt;li>&lt;strong>Debugger&lt;/strong> tab: Specify &lt;em>Platform&lt;/em> (Remote Target/QEMU/Hardware/&amp;hellip;), &lt;em>GDB setup&lt;/em> (GDB commands, GDB options, etc..) and &lt;em>Platform Configuration&lt;/em>.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="/images_configuration/debug/3.png" alt="example image">&lt;/p></description></item></channel></rss>

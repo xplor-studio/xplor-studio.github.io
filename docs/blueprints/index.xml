@@ -15,6 +15,8 @@ The experience of implementing a XploR blueprint is comparable to writing a web 
 &lt;p>To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
 &lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE only contains &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em> (if this option is selected when installing).&lt;/p>
 &lt;p>To use other projects like Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
+&lt;p>TODO: Hieu Bui:
+Update image&lt;/p>
 &lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available blueprints:&lt;/p>
 &lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
 &lt;blockquote>

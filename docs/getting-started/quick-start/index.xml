@@ -3,30 +3,32 @@
 &lt;p>To build, run and debug &amp;ldquo;RISC-V Blinky&amp;rdquo; applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="a-idcreate-projectcreate-a-new-projecta">&lt;a id="create-project">Create a new project&lt;/a>&lt;/h2>
 &lt;p>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects by selecting &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Blinky&lt;/strong> project.
-Select Toolchains: &lt;strong>Baremetal XplorR Toolchain for RISC-V&lt;/strong> and enter the Project name.
+Select Toolchains: &lt;strong>Baremetal XploR Toolchain for RISC-V&lt;/strong> and enter the Project name.
 Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/1.png" alt="Image">&lt;/p>
 &lt;p>In the next screens, users can specify project options such as Author, copyright notice, project description, compiler, assembler, linker, and run/debug options. Then click the &lt;strong>Next&lt;/strong> button.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/2.png" alt="example image">&lt;/p>
 &lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/3.png" alt="example image">&lt;/p>
-&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
-In some other kinds of projects, the new project wizard may have additional pages for specifying source codes, target, toolchain,&amp;hellip; but the workflow is not changed.&lt;/p>
+&lt;blockquote>
+&lt;p>In some other kinds of projects, the new project wizard may have additional pages for specifying source codes, target, toolchain,&amp;hellip; but the workflow is not changed.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="a-idupdate-build-settingsupdate-build-settingsa">&lt;a id="update-build-settings">Update build settings&lt;/a>&lt;/h2>
 &lt;p>After the project is created, the user can change build settings or other project settings by right-clicking on the project name in &lt;strong>Project Explorer&lt;/strong> and selecting &lt;strong>Properties&lt;/strong>.
 Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/4.png" alt="example image">&lt;/p>
-&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
-The Floating-point ABI – Single precision (f) is currently not supported in this release (except Embedded projects).&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The Floating-point ABI – Single precision (f) is currently not supported in this release (except Embedded projects).&lt;/p>
+&lt;/blockquote>
 &lt;p>For example, on the Target Processor menu, users can change the architecture from 32 bits to 64 bits, and also select floating-point options.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/5.png" alt="example image">&lt;/p>
-&lt;p>Another useful setting is to add hooks before and after the build. For example,&lt;/p>
+&lt;p>Another useful setting is to add hooks before and after the build. For example:&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/6.png" alt="example image">&lt;/p>
 &lt;h2 id="a-idbuild-projectbuild-projecta">&lt;a id="build-project">Build project&lt;/a>&lt;/h2>
 &lt;ul>
 &lt;li>Building is simply done by clicking on the build button in the toolbar:&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/rtos-images/freertos/7.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/7.png" alt="example image">&lt;/p>
 &lt;ul>
 &lt;li>Or right-click on the current project &amp;gt; Build Project&lt;/li>
 &lt;/ul>
@@ -35,14 +37,14 @@ The Floating-point ABI – Single precision (f) is currently not supported in th
 &lt;p>&lt;img src="/images_xplorstudio/9.png" alt="example image">&lt;/p>
 &lt;h2 id="a-idblinky-debug-qemurunning-and-debugging-project-with-qemu-emulatora">&lt;a id="blinky-debug-qemu">Running and Debugging project with QEMU emulator&lt;/a>&lt;/h2>
 &lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h3>
-&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to run applications:&lt;/p>
+&lt;p>XploR Studio offers several ways to run applications:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Select the RISC-V Blinky Demo entry in the Project Explorer then open the Run Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary run configuration information.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/10.png" alt="example image">&lt;/p>
 &lt;p>In Run Configuration Dialog box, create a new run configuration by double-clicking on RISC-V Running&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/10-1.png" alt="example image">&lt;/p>
-&lt;p>On the &lt;strong>Main&lt;/strong> tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click Apply then Click Debug.&lt;/p>
+&lt;p>On the &lt;strong>Main&lt;/strong> tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Run&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/10-2.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -57,18 +59,18 @@ The Floating-point ABI – Single precision (f) is currently not supported in th
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="a-idrtos-debugspan-stylecolor-blackdebug-project-on-qemu-emulatorspana">&lt;a id="rtos-debug">&lt;span style="color: black">Debug project on QEMU Emulator&lt;/span>&lt;/a>&lt;/h3>
-&lt;p>&lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;p>XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Select the RISC-V Blinky Demo entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/11.png" alt="example image">&lt;/p>
 &lt;p>In Debug Configuration Dialog box, create a new debug configuration by double-clicking on RISC-V Debugging&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/12.png" alt="example image">&lt;/p>
-&lt;p>On the Debugger tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click Apply then Click Debug.&lt;/p>
+&lt;p>On the Debugger tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/13.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Select the Blinky Demo Project entry in the Project Explorer and then click Debug As/RISC-V application with QEMU&lt;/p>
+&lt;p>Select the Blinky Demo Project entry in the Project Explorer and then click &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/14.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -83,30 +85,30 @@ The Floating-point ABI – Single precision (f) is currently not supported in th
 &lt;ul>
 &lt;li>
 &lt;p>Press F8 or click on &lt;strong>Resume&lt;/strong> button to go to the next breakpoint&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/17.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/17.1.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Continue debugging with press F5 or clicking on Step Into button to step into the line of code and see data change in Register View&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/18.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/18.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Continue debugging with press F6 or clicking on Step Over button for step over&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/18.1.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/18.1.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Press F7 or click on Step Return (F7) button for step return code&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/19.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/19.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Click on the Suspend button to pause the debug process.&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/20.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/20.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>User can open Object Variables, Breakpoints, Task, Queue, and Heap to examine application states:&lt;/p>
 &lt;p>&lt;strong>Variables&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/21.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/21.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Breakpoints:&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/22.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/22.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Task:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/23.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
@@ -114,7 +116,7 @@ The Floating-point ABI – Single precision (f) is currently not supported in th
 &lt;p>&lt;strong>Heap:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/25.png" alt="example image">&lt;/p>
 &lt;p>To stop the debug process, click the Terminate icon in the toolbar or press F2.&lt;/p>
-&lt;p>&lt;img src="/rtos-images/freertos/26.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/26.png" alt="example image">&lt;/p>
 &lt;!-- ## &lt;a id="blinky-debug-de2">5 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/a>
 ### Hardware and driver preparations
 Please refer to the &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
@@ -150,7 +152,7 @@ ERROR_1
 It is safe to ignore messages like `ERROR_1` above.
 - **vJTAG-UART** &lt;span style="color:red">*(for Rocket Chip, Andes, Codasip)*:&lt;/style>
 Open Terminal view and choose Local Terminal. Type `jtagconfig -d` to detect the index of the USB-Blaster II cable (Linux OS: The user should use the command `source path/to/__PROJECT_SHORTNAME__/bin/environment-setup.sh` first to set the environment of the __PROJECT_SHORTNAME__.
-![example image](/rtos-images/freertos/28.1.png)
+![example image](/images_xplorstudio/28.1.png)
 Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
 !!!warning "Note"
 Examples with 3 IP cores (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
@@ -175,7 +177,7 @@ If users cannot debug normally, that means the RISC-V core may be locked from a 
 The application stops at the first line, and users can set breakpoints and continue to debug.
 ![example image](/images_xplorstudio/31.png)
 To view the RTOS objects, press the **Suspend** button.
-![example image](/rtos-images/freertos/32.png)
+![example image](/images_xplorstudio/32.png)
 Task objects:
 ![example image](/images_xplorstudio/33.png)
 Queue objects:

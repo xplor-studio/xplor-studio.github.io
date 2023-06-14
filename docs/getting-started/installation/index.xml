@@ -57,9 +57,13 @@ The hardware requirements, hardware connections as well as driver installation o
 &lt;p>Please choose a destination path without spaces. If XploR IDE is installed on a location containing spaces, the application build will fail. This is a known issue and will be fixed in a future release. Select &lt;strong>OK&lt;/strong> to continue.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/5.png" alt="example image">&lt;/p>
 &lt;p>Once &lt;strong>OK&lt;/strong> is selected, the installer presents the installation path. You can choose or enter an alternative. Select &lt;strong>Next&lt;/strong> to continue.&lt;/p>
-&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
 Please choose a destination path that is not available. If XploR IDE is installed in an available location, the data cannot be completely uninstalled. This is a known issue and will be fixed in a future release.&lt;/p>
+&lt;/blockquote>
 &lt;p>The XploR IDE installer presents a summary of packages to be installed.&lt;/p>
+&lt;p>TODO: Hieu Bui:
+Update image&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/6.png" alt="example image">&lt;/p>
 &lt;p>To create, run and debug ZephyrRTOS application, please choose &lt;strong>Zephyr Component&lt;/strong> to install Zephyr and its dependencies.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/6-2.png" alt="example image">&lt;/p>
@@ -74,4 +78,6 @@ Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to 
 &lt;p>&lt;img src="/img_xplorstudio/Installation/9.png" alt="example image">&lt;/p>
 &lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
-&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item></channel></rss>
+&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p>
+&lt;p>TODO: Hieu Bui:
+Install by xip&lt;/p></description></item></channel></rss>

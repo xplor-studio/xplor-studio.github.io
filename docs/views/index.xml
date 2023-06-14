@@ -11,7 +11,7 @@ An example of Console view output:&lt;/p>
 &lt;p>If any errors or warnings are encountered during the compilation process will be shown on the Problem View&lt;/p>
 &lt;p>&lt;img src="/images_views/11.png" alt="example image">&lt;/p>
 &lt;h2 id="executables-view">Executables View&lt;/h2>
-&lt;p>The Executable view lists down all executable output built using &lt;strong>PRODUCT_NAME&lt;/strong>, for example:&lt;/p>
+&lt;p>The Executable view lists down all executable output built using XploR Studio, for example:&lt;/p>
 &lt;p>&lt;img src="/images_views/basic/12.png" alt="example image">&lt;/p>
 &lt;h2 id="terminal-view">Terminal View&lt;/h2>
 &lt;p>The Terminal View helps users connect to and interact with the console of different targets:&lt;/p>
@@ -39,14 +39,20 @@ Click &lt;strong>Peripheral Registers Page&lt;/strong>. On this page:&lt;/p>
 &lt;p>The Debugger Console shows gdb debug information.
 The is an example of Console view output:&lt;/p>
 &lt;p>&lt;img src="/images_views/basic/24.png" alt="example image">&lt;/p>
-&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
 If any of view disappears, users can always restore by clicking *&lt;strong>Window &amp;gt; Show View/NAME_OF_VIEW&lt;/strong>.&lt;/p>
+&lt;/blockquote>
 &lt;p>&lt;img src="/images_views/basic/25.png" alt="example image">&lt;/p></description></item><item><title>Docs: FreeRTOS views</title><link>/docs/views/freertos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/freertos/</guid><description>
 &lt;p>During the FreeRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Task, Queue, Heap, and Timer. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
-&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
-- To open FreeRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Others&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>FreeRTOS Object Views&lt;/strong>
-- The FreeRTOS object views only contain information when user debugs a FreeRTOS project
-- Depending on the FreeRTOS application, not all FreeRTOS objects will display valid information. For example, if the application does not utilize a Timer object, XploR Studio will not display any useful information on FreeRTOS Timer view.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>To open FreeRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Others&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>FreeRTOS Object Views&lt;/strong>&lt;/li>
+&lt;li>The FreeRTOS object views only contain information when user debugs a FreeRTOS project&lt;/li>
+&lt;li>Depending on the FreeRTOS application, not all FreeRTOS objects will display valid information. For example, if the application does not utilize a Timer object, XploR Studio will not display any useful information on FreeRTOS Timer view.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
 &lt;h2 id="freertos-task-view">FreeRTOS Task View&lt;/h2>
 &lt;p>The FreeRTOS task view helps developers examine tasks during debug sessions. Each object is identified by its ID, name, address, state, task state, stack usage, event object, runtime, and priority.&lt;/p>
 &lt;p>&lt;img src="/images_views/freertos/20.png" alt="example image">&lt;/p>
@@ -60,10 +66,14 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;p>The FreeRTOS Heap view helps developers examine heaps during debug sessions. Each object is identified by its ID, address, usage information, and similar.&lt;/p>
 &lt;p>&lt;img src="/images_views/freertos/23.png" alt="example image">&lt;/p></description></item><item><title>Docs: Zephyr OS views</title><link>/docs/views/zephyros/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/zephyros/</guid><description>
 &lt;p>During the ZephyrRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Thread, Mutex, Semaphore, and MessageQueue. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
-&lt;p>!!!info &amp;ldquo;Note&amp;rdquo;
-- To open ZephyrRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Other&amp;hellip;&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>ZephyrRTOS Object Views&lt;/strong>
-- The ZephyrRTOS object views only contain information when user debugs a ZephyrRTOS project
-- Depending on the ZephyrRTOS application, not all ZephyrRTOS objects will display valid information. For example, if the application does not utilize a Mutex object, XploR Studio will not display any useful information on ZephyrRTOS Mutex view.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>To open ZephyrRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Other&amp;hellip;&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>ZephyrRTOS Object Views&lt;/strong>&lt;/li>
+&lt;li>The ZephyrRTOS object views only contain information when user debugs a ZephyrRTOS project&lt;/li>
+&lt;li>Depending on the ZephyrRTOS application, not all ZephyrRTOS objects will display valid information. For example, if the application does not utilize a Mutex object, XploR Studio will not display any useful information on ZephyrRTOS Mutex view.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
 &lt;h2 id="zephyrrtos-thread-view">ZephyrRTOS Thread View&lt;/h2>
 &lt;p>The ZephyrRTOS Thread view helps developers examine threads during debug sessions. Each object is identified by its ID, Name, Handle, Priority, Thread State and Thread Usage.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/1.png" alt="example image">&lt;/p>

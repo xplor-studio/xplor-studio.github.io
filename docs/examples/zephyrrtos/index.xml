@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Zephyr OS</title><link>/docs/examples/zephyrrtos/</link><description>Recent content in Zephyr OS on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/zephyrrtos/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hello World</title><link>/docs/examples/zephyrrtos/zephyrhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrhelloworld/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;HelloWorld.&amp;rdquo; This application prints &lt;em>Hello world&lt;/em> text and runs a simple for-loop for a simple demonstration. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -35,7 +35,7 @@ Then click Next.&lt;/p>
 &lt;p>The output of the application is shown in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/12.png" alt="example image">&lt;/p>
 &lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
-&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;p>The XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
 &lt;/ul>
@@ -58,7 +58,7 @@ Then click Next.&lt;/p>
 &lt;p>This chapter covers the basics of the Zephyr RTOS Synchronization sample application including creating, building, running, and debugging steps. A simple application that demonstrates basic sanity of the kernel. Two threads (A and B) take turns printing a greeting message to the console and use sleep requests and semaphores to control the rate at which messages are generated. This application can also be built and run on QEMU emulator.&lt;/p>
 &lt;hr>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;hr>
@@ -94,7 +94,7 @@ Select Zephyr Base Path then click Next:&lt;/p>
 &lt;p>The output of the application is shown in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/13.png" alt="example image">&lt;/p>
 &lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
-&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;p>The XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
 &lt;/ul>
@@ -116,7 +116,7 @@ Select Zephyr Base Path then click Next:&lt;/p>
 &lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Mutex</title><link>/docs/examples/zephyrrtos/zephyrmutex/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmutex/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Mutex&lt;/strong>. This application creates two threads that modify a shared resource while using a mutex lock for synchronization. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -150,7 +150,7 @@ Then click Next.&lt;/p>
 &lt;p>The output of the application is shown in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMutex/12.png" alt="example image">&lt;/p>
 &lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
-&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;p>The XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
 &lt;/ul>
@@ -174,7 +174,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMutex/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Semaphore</title><link>/docs/examples/zephyrrtos/zephyrsemaphore/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsemaphore/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Semaphore&lt;/strong>. This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -208,7 +208,7 @@ Then click Next.&lt;/p>
 &lt;p>The output of the application is shown in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/12.png" alt="example image">&lt;/p>
 &lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
-&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;p>The XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
 &lt;/ul>
@@ -232,7 +232,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Message Queue</title><link>/docs/examples/zephyrrtos/zephyrmsgq/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmsgq/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Message Queue&lt;/strong>. This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Note&lt;/strong>
+&lt;p>&lt;strong>Note:&lt;/strong>
 To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -266,7 +266,7 @@ Then click Next.&lt;/p>
 &lt;p>The output of the application is shown in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMsgq/12.png" alt="example image">&lt;/p>
 &lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
-&lt;p>The &lt;strong>PRODUCT_NAME&lt;/strong> offers several ways to debug applications:&lt;/p>
+&lt;p>The XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>Select the Helloworld project entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable eclipse to automatically fill out the necessary debug configuration information.&lt;/li>
 &lt;/ul>
