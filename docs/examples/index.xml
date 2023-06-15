@@ -17,17 +17,17 @@
 &lt;/li>
 &lt;li>Embedded Linux projects:
 &lt;ul>
-&lt;li>&lt;a href="./embedded-linux/Helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="./embedded-linux/Debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Zephyr RTOS projects:
 &lt;ul>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrHelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrhelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Docs: Baremetal</title><link>/docs/examples/embedded/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/</guid><description/></item><item><title>Docs: FreeRTOS</title><link>/docs/examples/freertos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/</guid><description/></item><item><title>Docs: Embedded Linux</title><link>/docs/examples/embedded-linux/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/</guid><description/></item><item><title>Docs: Zephyr OS</title><link>/docs/examples/zephyrrtos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/</guid><description/></item></channel></rss>

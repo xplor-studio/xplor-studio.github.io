@@ -155,11 +155,11 @@ Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to 
 &lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p></description></item><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
 &lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &amp;ldquo;RISC-V Blinky&amp;rdquo;. This application prints &amp;ldquo;Blink&amp;rdquo; text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;p>To build, run and debug &amp;ldquo;RISC-V Blinky&amp;rdquo; applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
-&lt;h2 id="a-idcreate-projectcreate-a-new-projecta">&lt;a id="create-project">Create a new project&lt;/a>&lt;/h2>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects by selecting &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Blinky&lt;/strong> project.
 Select Toolchains: &lt;strong>Baremetal XploR Toolchain for RISC-V&lt;/strong> and enter the Project name.
 Then click Next.&lt;/p>
-&lt;p>&lt;img src="/images_xplorstudio/1.png" alt="Image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/1.png" alt="example image">&lt;/p>
 &lt;p>In the next screens, users can specify project options such as Author, copyright notice, project description, compiler, assembler, linker, and run/debug options. Then click the &lt;strong>Next&lt;/strong> button.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/2.png" alt="example image">&lt;/p>
 &lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
@@ -167,7 +167,7 @@ Then click Next.&lt;/p>
 &lt;blockquote>
 &lt;p>In some other kinds of projects, the new project wizard may have additional pages for specifying source codes, target, toolchain,&amp;hellip; but the workflow is not changed.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="a-idupdate-build-settingsupdate-build-settingsa">&lt;a id="update-build-settings">Update build settings&lt;/a>&lt;/h2>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
 &lt;p>After the project is created, the user can change build settings or other project settings by right-clicking on the project name in &lt;strong>Project Explorer&lt;/strong> and selecting &lt;strong>Properties&lt;/strong>.
 Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/4.png" alt="example image">&lt;/p>
@@ -178,7 +178,7 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/5.png" alt="example image">&lt;/p>
 &lt;p>Another useful setting is to add hooks before and after the build. For example:&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/6.png" alt="example image">&lt;/p>
-&lt;h2 id="a-idbuild-projectbuild-projecta">&lt;a id="build-project">Build project&lt;/a>&lt;/h2>
+&lt;h2 id="build-project">Build project&lt;/h2>
 &lt;ul>
 &lt;li>Building is simply done by clicking on the build button in the toolbar:&lt;/li>
 &lt;/ul>
@@ -189,7 +189,7 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/8.png" alt="example image">&lt;/p>
 &lt;p>Messages in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/9.png" alt="example image">&lt;/p>
-&lt;h2 id="a-idblinky-debug-qemurunning-and-debugging-project-with-qemu-emulatora">&lt;a id="blinky-debug-qemu">Running and Debugging project with QEMU emulator&lt;/a>&lt;/h2>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
 &lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h3>
 &lt;p>XploR Studio offers several ways to run applications:&lt;/p>
 &lt;ul>
@@ -548,17 +548,17 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;/li>
 &lt;li>Embedded Linux projects:
 &lt;ul>
-&lt;li>&lt;a href="./embedded-linux/Helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="./embedded-linux/Debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Zephyr RTOS projects:
 &lt;ul>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrHelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrSemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/examples/zephyrRTOS/zephyrMsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrhelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Docs: GNU C/C++ HelloWorld</title><link>/docs/examples/embedded/riscvhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/riscvhelloworld/</guid><description>
@@ -768,7 +768,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-2.png" alt="example image">&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
-&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../user-guides/blueprint">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-4.png" alt="example image">&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
 &lt;h4 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h4>
@@ -957,7 +957,7 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
 Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
-Please refer to &lt;a href="#2-update-build-settings">Section 2: Update build settings&lt;/a>&lt;/p>
+Please refer to &lt;a href="#update-build-settings">Section 2: Update build settings&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;p>There are two ways to debug the kernel:&lt;/p>
 &lt;ul>

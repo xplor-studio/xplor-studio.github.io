@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Quick start</title><link>/docs/getting-started/quick-start/</link><description>Recent content in Quick start on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/getting-started/quick-start/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
 &lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &amp;ldquo;RISC-V Blinky&amp;rdquo;. This application prints &amp;ldquo;Blink&amp;rdquo; text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;p>To build, run and debug &amp;ldquo;RISC-V Blinky&amp;rdquo; applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
-&lt;h2 id="a-idcreate-projectcreate-a-new-projecta">&lt;a id="create-project">Create a new project&lt;/a>&lt;/h2>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects by selecting &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Blinky&lt;/strong> project.
 Select Toolchains: &lt;strong>Baremetal XploR Toolchain for RISC-V&lt;/strong> and enter the Project name.
 Then click Next.&lt;/p>
-&lt;p>&lt;img src="/images_xplorstudio/1.png" alt="Image">&lt;/p>
+&lt;p>&lt;img src="/images_xplorstudio/1.png" alt="example image">&lt;/p>
 &lt;p>In the next screens, users can specify project options such as Author, copyright notice, project description, compiler, assembler, linker, and run/debug options. Then click the &lt;strong>Next&lt;/strong> button.&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/2.png" alt="example image">&lt;/p>
 &lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
@@ -13,7 +13,7 @@ Then click Next.&lt;/p>
 &lt;blockquote>
 &lt;p>In some other kinds of projects, the new project wizard may have additional pages for specifying source codes, target, toolchain,&amp;hellip; but the workflow is not changed.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="a-idupdate-build-settingsupdate-build-settingsa">&lt;a id="update-build-settings">Update build settings&lt;/a>&lt;/h2>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
 &lt;p>After the project is created, the user can change build settings or other project settings by right-clicking on the project name in &lt;strong>Project Explorer&lt;/strong> and selecting &lt;strong>Properties&lt;/strong>.
 Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/4.png" alt="example image">&lt;/p>
@@ -24,7 +24,7 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/5.png" alt="example image">&lt;/p>
 &lt;p>Another useful setting is to add hooks before and after the build. For example:&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/6.png" alt="example image">&lt;/p>
-&lt;h2 id="a-idbuild-projectbuild-projecta">&lt;a id="build-project">Build project&lt;/a>&lt;/h2>
+&lt;h2 id="build-project">Build project&lt;/h2>
 &lt;ul>
 &lt;li>Building is simply done by clicking on the build button in the toolbar:&lt;/li>
 &lt;/ul>
@@ -35,7 +35,7 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/8.png" alt="example image">&lt;/p>
 &lt;p>Messages in the Console view:&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/9.png" alt="example image">&lt;/p>
-&lt;h2 id="a-idblinky-debug-qemurunning-and-debugging-project-with-qemu-emulatora">&lt;a id="blinky-debug-qemu">Running and Debugging project with QEMU emulator&lt;/a>&lt;/h2>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
 &lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h3>
 &lt;p>XploR Studio offers several ways to run applications:&lt;/p>
 &lt;ul>

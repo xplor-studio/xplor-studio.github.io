@@ -31,7 +31,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-2.png" alt="example image">&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
-&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../user-guides/blueprint">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-4.png" alt="example image">&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
 &lt;h4 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h4>
@@ -220,7 +220,7 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
 Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
-Please refer to &lt;a href="#2-update-build-settings">Section 2: Update build settings&lt;/a>&lt;/p>
+Please refer to &lt;a href="#update-build-settings">Section 2: Update build settings&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;p>There are two ways to debug the kernel:&lt;/p>
 &lt;ul>
