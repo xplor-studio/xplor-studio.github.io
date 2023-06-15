@@ -472,7 +472,178 @@ Solution: Please make sure the exact SOF file is flashed. Please refer to &lt;a 
 ## TFTP is not working
 When the board is booting, the Linux image is not downloaded from TFTP Server. The issue could be
 - No permission on the tftpboot directory. Try running **chmod -R 777 /path/to/boot.bin**
-- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Configuring project</title><link>/docs/configuration/build/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/build/</guid><description>
+- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Package blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>python==3.8.10&lt;/p>
+&lt;ul>
+&lt;li>setuptools (newest version): using for packaging a blueprint&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-danger" role="alert">
+&lt;p>Download and extract the blueprint template in &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/empty-blueprint-templates.zip">here&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Blueprint Name&lt;/strong>: Blueprint names should be lowercase, and if multiple words are used, they should be separated by underscores &lt;code>_&lt;/code> or &lt;code>-&lt;/code>. Avoid using spaces or special characters or mixing &lt;code>_&lt;/code> and &lt;code>-&lt;/code> in the package name.&lt;/p>
+&lt;p>&lt;strong>The correct name&lt;/strong>: &lt;code>blueprint-one&lt;/code>, &lt;code>blueprint_two&lt;/code>&lt;/p>
+&lt;p>&lt;strong>The wrong name&lt;/strong>: &lt;code>blueprint_with-wrong_name&lt;/code>&lt;/p>
+&lt;/div>
+&lt;h2 id="structure-of-blueprint-templates">Structure of blueprint templates&lt;/h2>
+&lt;p>In the sample, there are 2 folders (&lt;strong>blueprint-one/&lt;/strong>, &lt;strong>blueprint-two/&lt;/strong>) containing blueprint templates and a Makefile that supports building and uploading blueprints.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── blueprint-one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── blueprint-one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ └── Readme.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── blueprint-two
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── blueprint-two
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ ├── linux.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ │ └── env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ └── win32.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ └── env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── Makefile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The standard structure of a blueprint template includes:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>A data folder (blueprint-one/blueprint-one, blueprint-two/blueprint-two)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>MANIFEST.in&lt;/strong> (used for including non-Python data to package/blueprint)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>setup.py&lt;/strong> (used for building a blueprint)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>We have 2 main scenarios of data in the blueprint:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The data of the blueprint can be used in both Windows and Linux OS (&lt;strong>blueprint-one&lt;/strong>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The data of the blueprint is different with each OS (&lt;strong>blueprint-two&lt;/strong>)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>Limitation&lt;/strong>: We still not handle for a blueprint has both common and specific data for each OS&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="explain-the-content-of-setuppy">Explain the content of setup.py&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>blueprint-one/setup.py&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">setuptools&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">setup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">package_dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;blueprint-one&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;blueprint-one&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">setup&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;blueprint-one&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">version&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">description&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;The baremetal example of the NEORV32 RISC-V Processor on Terrasic DE2-115 board&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">package_dir&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">package_dir&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">packages&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;blueprint-one&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">include_package_data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">author&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;SoC.One Inc.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://xplor.design&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">author_email&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;info@soc.one&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">platforms&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">long_description&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;The baremetal example of the NEORV32 RISC-V Processor on Terrasic DE2-115 board&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">license&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Free&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">install_requires&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># Some dependencies here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">classifiers&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;Hardware&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Ref. &lt;a href="https://setuptools.pypa.io/en/latest/references/keywords.html">https://setuptools.pypa.io/en/latest/references/keywords.html&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>name&lt;/code> - A string specifying the name of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>version&lt;/code>- A string specifying the version number of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>description&lt;/code> - A string describing the package in a single line.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>long_description&lt;/code> - A string providing a longer description of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>author&lt;/code> - A string specifying the author of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>author_email&lt;/code> - A string specifying the email address of the package author.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>URL&lt;/code> - A string specifying the URL for the package homepage.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>license&lt;/code> - A string specifying the license of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>platforms&lt;/code> - A list of strings or comma-separated string. (Used to specify which OS is supported)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>package_dir&lt;/code> - A dictionary that maps package names. (That maps the data folder with the installed blueprint folder)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>packages&lt;/code> - A list of strings specifying the packages that setuptools will manipulate. (That is the name of the installed blueprint folder)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>install_requires&lt;/code> - A string or list of strings specifying what other distributions need to be installed when this one is. (Dependencies concept)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>classifiers&lt;/code> - A list of strings describing the categories for the package. (Classify a blueprint as HW, SW, bitstream,… or something else)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>include_package_data&lt;/code> - If set to True, this tells setuptools to automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. (Should be set to True to include non-Python data)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>For scenario no.2 (&lt;code>blueprint-two&lt;/code>), we only need to add some code to &lt;code>setup.py&lt;/code> that specific &lt;code>package_dir&lt;/code> for each OS.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">setuptools&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">setup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">platform&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000">platform&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">system&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;Windows&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">package_dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;blueprint-two&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;blueprint-two/win32.x86_64&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">else&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">package_dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;blueprint-two&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;blueprint-two/linux.x86_64&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="post-install-and-pre-uninstall">Post-install and Pre-uninstall&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;p>If there are some executed files needed to run after the blueprint is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (depending on the OS) to the data folder.&lt;/p>
+&lt;p>If there are some executed files needed to run before the blueprint is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (depending on the OS) to the data folder.&lt;/p>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>xplor-studio-elf/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-studio-elf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── linux.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ ├── post-install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ └── pre-uninstall.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── win32.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── post-install.bat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── pre-uninstall.bat
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="build-a-blueprint">Build a blueprint&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python3 setup.py sdist
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>make build&lt;/code>&lt;/p>
+&lt;h2 id="span-stylecolor-rednotespan">&lt;span style="color: red">&lt;strong>NOTE&lt;/strong>&lt;/span>&lt;/h2>
+&lt;ul>
+&lt;li>For re-using the template, please rename the data folder and update the content of &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code>&lt;/li>
+&lt;li>For instance with &lt;code>blueprint-one&lt;/code>:
+&lt;ul>
+&lt;li>Rename folder &lt;code>blueprint-one&lt;/code> → &lt;code>socone-blueprint&lt;/code>&lt;/li>
+&lt;li>Replace string in &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code> : &lt;code>blueprint-one&lt;/code> → &lt;code>socone-blueprint&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Configuring project</title><link>/docs/configuration/build/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/build/</guid><description>
 &lt;p>To configure a project in XploR Studio, right-click on the project and select &lt;strong>Properties&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_configuration//build/1.png" alt="example image">&lt;/p>
 &lt;p>The properties for a project include:&lt;/p>
