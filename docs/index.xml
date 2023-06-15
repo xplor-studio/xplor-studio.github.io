@@ -1379,7 +1379,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMsgq/18.png" alt="example image">&lt;/p>
 &lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>Besides, users can see more about Mesage Queue objects:&lt;/p>
-&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Project views</title><link>/docs/views/project-views/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/project-views/</guid><description>
+&lt;p>&lt;img src="/images_zephyr/zephyrMsgq/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Project / Debug views</title><link>/docs/views/project-views/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/project-views/</guid><description>
 &lt;h2 id="console-view">Console View&lt;/h2>
 &lt;p>The Console view displays program output as well as output from the build tools. The Console view is connected to stdin, stdout, and stderr of the compilation process.
 An example of Console view output:&lt;/p>
