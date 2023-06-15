@@ -47,7 +47,7 @@ The hardware requirements, hardware connections as well as driver installation o
 &lt;p>&lt;img src="/img_xplorstudio/Installation/1.png" alt="example image">&lt;/p>
 &lt;h3 id="on-linux">On Linux&lt;/h3>
 &lt;p>Open the terminal and run the installer
-&lt;code>./__LAUNCHER_NAME__-linux.run&lt;/code>&lt;/p>
+&lt;code>./xplorstudio-linux.run&lt;/code>&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/2.png" alt="example image">&lt;/p>
 &lt;p>Select the &lt;strong>Next&lt;/strong> button to proceed with the installation.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/3.png" alt="example image">&lt;/p>
@@ -62,11 +62,7 @@ The hardware requirements, hardware connections as well as driver installation o
 Please choose a destination path that is not available. If XploR IDE is installed in an available location, the data cannot be completely uninstalled. This is a known issue and will be fixed in a future release.&lt;/p>
 &lt;/blockquote>
 &lt;p>The XploR IDE installer presents a summary of packages to be installed.&lt;/p>
-&lt;p>TODO: Hieu Bui:
-Update image&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/6.png" alt="example image">&lt;/p>
-&lt;p>To create, run and debug ZephyrRTOS application, please choose &lt;strong>Zephyr Component&lt;/strong> to install Zephyr and its dependencies.&lt;/p>
-&lt;p>&lt;img src="/img_xplorstudio/Installation/6-2.png" alt="example image">&lt;/p>
 &lt;p>An other option, &lt;strong>Baremetal Component&lt;/strong>, allows to install GCC baremetal toolchain and QEMU for RISC-V applications. Otherwise, they can be installed inside the IDE later. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/6-1.png" alt="example image">&lt;/p>
 &lt;p>Then select &lt;strong>Next&lt;/strong> to proceed.&lt;/p>
@@ -78,6 +74,4 @@ Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to 
 &lt;p>&lt;img src="/img_xplorstudio/Installation/9.png" alt="example image">&lt;/p>
 &lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
-&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p>
-&lt;p>TODO: Hieu Bui:
-Install by xip&lt;/p></description></item></channel></rss>
+&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item></channel></rss>
