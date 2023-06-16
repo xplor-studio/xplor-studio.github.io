@@ -137,8 +137,8 @@ Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to 
 &lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
 &lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
-&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE only contains &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em> (if this option is selected when installing).&lt;/p>
-&lt;p>To use other projects like Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
+&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu&amp;hellip;.&lt;/p>
+&lt;p>To use example projects like Embedded Baremetal, Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
 &lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available blueprints:&lt;/p>
 &lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
 &lt;blockquote>
