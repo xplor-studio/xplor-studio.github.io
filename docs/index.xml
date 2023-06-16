@@ -213,7 +213,7 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/10-5.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="a-idrtos-debugspan-stylecolor-blackdebug-project-on-qemu-emulatorspana">&lt;a id="rtos-debug">&lt;span style="color: black">Debug project on QEMU Emulator&lt;/span>&lt;/a>&lt;/h3>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
 &lt;p>XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -266,8 +266,10 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/22.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Task:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/23.png" alt="example image">&lt;/p>
-&lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Queue:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/24.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Heap:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/25.png" alt="example image">&lt;/p>
 &lt;p>To stop the debug process, click the Terminate icon in the toolbar or press F2.&lt;/p>
@@ -709,10 +711,10 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;p>&lt;img src="/images_configuration/debug/3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Sample projects</title><link>/docs/examples/introduction/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/introduction/</guid><description>
 &lt;p>In this release, XploR Studio supports following projects:&lt;/p>
 &lt;ul>
-&lt;li>Embedded projects:
+&lt;li>Baremetal projects:
 &lt;ul>
-&lt;li>&lt;a href="/docs/examples/embedded/riscvhelloworld/">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/embedded/llvmhelloworld/">&lt;span style="color: blue">Helloworld LLVM Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded/riscvhelloworld/">&lt;span style="color: blue">GNU C/C++ Helloworld&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded/llvmhelloworld/">&lt;span style="color: blue">LLVM C/C++ Helloworld&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>FreeRTOS projects:
@@ -725,17 +727,17 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;/li>
 &lt;li>Embedded Linux projects:
 &lt;ul>
-&lt;li>&lt;a href="/docs/examples/embedded-linux/helloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/embedded-linux/debug-kernel">&lt;span style="color: blue">Kernel Debugging&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/helloworld">&lt;span style="color: blue">Helloworld&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/debug-kernel">&lt;span style="color: blue">Kernel Debug&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Zephyr RTOS projects:
 &lt;ul>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrhelloworld">&lt;span style="color: blue">Helloworld Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsynchronization">&lt;span style="color: blue">Synchonization Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmutex">&lt;span style="color: blue">Mutex Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsemaphore">&lt;span style="color: blue">Semaphore Application&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmsgq">&lt;span style="color: blue">Message Queue Application&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrhelloworld">&lt;span style="color: blue">Helloworld&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsynchronization">&lt;span style="color: blue">Synchonization&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmutex">&lt;span style="color: blue">Mutex&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsemaphore">&lt;span style="color: blue">Semaphore&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmsgq">&lt;span style="color: blue">Message Queue&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Docs: GNU C/C++ HelloWorld</title><link>/docs/examples/embedded/riscvhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/riscvhelloworld/</guid><description>
@@ -763,7 +765,7 @@ To build, run and debug Embedded applications with QEMU emulator, please install
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## &lt;a id="debug-imperas">&lt;span style="color: black">5. Running and Debugging project with Imperas emulator&lt;/span> &lt;/a>
 !!!warning "Note"
 Before running the HelloworldDemo with Imperas, please update the build setting to "Architecture: RV64I, IntegerABI: LP64". Because Imperas only supports 64-bit samples currently.
@@ -786,7 +788,7 @@ On the tab **Debugger**, choose option **Imperas in Virtual Platforms**. Click *
 3. Right-click on the current project in the **Project Explorer > Debug As > RISV-C application with Imperas.**
 ![example image](/images_embedded/RISCVHelloworld/35.png)
 After selecting Debug As and RISC-V application with Imperas, the XploR Studio UI changes to debug perspective and automatically sets a breakpoint in the first line of code in main() function.
-Refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information about examining applications and perform functions such as adding new breakpoints, viewing and changing variable values, checking the register values, and so on.
+Refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information about examining applications and perform functions such as adding new breakpoints, viewing and changing variable values, checking the register values, and so on.
 ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
@@ -804,13 +806,13 @@ To build, run and debug Embedded applications with QEMU emulator, please install
 &lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information).&lt;/p>
 &lt;p>After installation and restart the IDE, you can see the creating-project widget like:&lt;/p>
 &lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1-1.png" alt="example image">&lt;/p>
-&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-a-new-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>
 &lt;h2 id="update-build-settings">Update build settings&lt;/h2>
 &lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Imperas emulator
 The running and debugging with Imperas emulator is the same as the **RISC-V Hello World Embedded Application**. Please refer to [Running and Debugging project with Imperas emulator](../../../examples/embedded/RISCVHelloworld#debug-imperas)
 ## Running and Debugging project with Intel FPGA DE2-115 platform
@@ -823,13 +825,13 @@ The running and debugging with Intel FPGA Stratix 10 GX platform is the same as 
 To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
-&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-a-new-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="update-build-settings">Update build settings&lt;/h2>
 &lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
@@ -847,7 +849,7 @@ To build, run and debug FreeRTOS applications with QEMU emulator, please install
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 When suspending the debug process and switching to Terminal view, the user can see the "Testing Heap" message:
@@ -869,7 +871,7 @@ To build, run and debug FreeRTOS applications with QEMU emulator, please install
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 When suspending the debug process and switching to Terminal view, the user can see the "Testing Heap" message:
@@ -891,11 +893,9 @@ To build, run and debug FreeRTOS applications with QEMU emulator, please install
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>Besides, users can see more about Timer objects:&lt;/p>
-&lt;center>
-![example image](images_IMG_FOLDER/GenericTimer/4.png)
-&lt;/center>
+&lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
 &lt;!-- ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 If you customise the sample application and see this message on the Terminal view,
@@ -992,7 +992,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;/ul>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/12.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Imperas emulator
 ### Run project on Imperas emulator
 **Right-click on current project > Run As > RISV-C application with Imperas**
@@ -1012,7 +1012,7 @@ Select the desired project in the Project Explorer window, then click **Debug As
 ![example image](/images_embedded_linux/linux/28.png)
 After selecting **Debug As > RISC-V application with Imperas**, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.
 ![example image](/images_embedded_linux/linux/29.png)
-Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information.
+Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information.
 ## &lt;a id="debug-linux-de2">&lt;span style="color: black">6 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>
 The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 !!!info "Note"
@@ -1323,7 +1323,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/17.png" alt="example image">&lt;/p>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrHelloworld/18.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Synchronization</title><link>/docs/examples/zephyrrtos/zephyrsynchronization/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsynchronization/</guid><description>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Synchronization</title><link>/docs/examples/zephyrrtos/zephyrsynchronization/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsynchronization/</guid><description>
 &lt;p>This chapter covers the basics of the Zephyr RTOS Synchronization sample application including creating, building, running, and debugging steps. A simple application that demonstrates basic sanity of the kernel. Two threads (A and B) take turns printing a greeting message to the console and use sleep requests and semaphores to control the rate at which messages are generated. This application can also be built and run on QEMU emulator.&lt;/p>
 &lt;hr>
 &lt;blockquote>
@@ -1382,7 +1382,7 @@ Select Zephyr Base Path then click Next:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/18.png" alt="example image">&lt;/p>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSynchronization/18.1.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Mutex</title><link>/docs/examples/zephyrrtos/zephyrmutex/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmutex/</guid><description>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p></description></item><item><title>Docs: Mutex</title><link>/docs/examples/zephyrrtos/zephyrmutex/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmutex/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Mutex&lt;/strong>. This application creates two threads that modify a shared resource while using a mutex lock for synchronization. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
@@ -1438,7 +1438,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMutex/17.png" alt="example image">&lt;/p>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMutex/18.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>Besides, users can see more about Mutex object:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMutex/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Semaphore</title><link>/docs/examples/zephyrrtos/zephyrsemaphore/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrsemaphore/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Semaphore&lt;/strong>. This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore. The application can also be built and run on a QEMU emulator.&lt;/p>
@@ -1496,7 +1496,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/17.png" alt="example image">&lt;/p>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/18.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>Besides, users can see more about Semaphore objects:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrSemaphore/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Message Queue</title><link>/docs/examples/zephyrrtos/zephyrmsgq/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrmsgq/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Message Queue&lt;/strong>. This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them. The application can also be built and run on a QEMU emulator.&lt;/p>
@@ -1554,7 +1554,7 @@ Then click Next.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMsgq/17.png" alt="example image">&lt;/p>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMsgq/18.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>Besides, users can see more about Mesage Queue objects:&lt;/p>
 &lt;p>&lt;img src="/images_zephyr/zephyrMsgq/19.png" alt="example image">&lt;/p></description></item><item><title>Docs: Project / Debug views</title><link>/docs/views/project-views/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/project-views/</guid><description>
 &lt;h2 id="console-view">Console View&lt;/h2>

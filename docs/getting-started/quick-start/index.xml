@@ -58,7 +58,7 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/10-5.png" alt="example image">&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="a-idrtos-debugspan-stylecolor-blackdebug-project-on-qemu-emulatorspana">&lt;a id="rtos-debug">&lt;span style="color: black">Debug project on QEMU Emulator&lt;/span>&lt;/a>&lt;/h3>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
 &lt;p>XploR Studio offers several ways to debug applications:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -111,8 +111,10 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/22.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Task:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/23.png" alt="example image">&lt;/p>
-&lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Queue:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/24.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>Heap:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/images_xplorstudio/25.png" alt="example image">&lt;/p>
 &lt;p>To stop the debug process, click the Terminate icon in the toolbar or press F2.&lt;/p>

@@ -78,7 +78,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;/ul>
 &lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/12.png" alt="example image">&lt;/p>
-&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the quick-start project&amp;rsquo;s. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Imperas emulator
 ### Run project on Imperas emulator
 **Right-click on current project > Run As > RISV-C application with Imperas**
@@ -98,7 +98,7 @@ Select the desired project in the Project Explorer window, then click **Debug As
 ![example image](/images_embedded_linux/linux/28.png)
 After selecting **Debug As > RISC-V application with Imperas**, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.
 ![example image](/images_embedded_linux/linux/29.png)
-Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information.
+Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information.
 ## &lt;a id="debug-linux-de2">&lt;span style="color: black">6 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>
 The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 !!!info "Note"

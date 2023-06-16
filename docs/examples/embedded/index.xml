@@ -23,7 +23,7 @@ To build, run and debug Embedded applications with QEMU emulator, please install
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## &lt;a id="debug-imperas">&lt;span style="color: black">5. Running and Debugging project with Imperas emulator&lt;/span> &lt;/a>
 !!!warning "Note"
 Before running the HelloworldDemo with Imperas, please update the build setting to "Architecture: RV64I, IntegerABI: LP64". Because Imperas only supports 64-bit samples currently.
@@ -46,7 +46,7 @@ On the tab **Debugger**, choose option **Imperas in Virtual Platforms**. Click *
 3. Right-click on the current project in the **Project Explorer > Debug As > RISV-C application with Imperas.**
 ![example image](/images_embedded/RISCVHelloworld/35.png)
 After selecting Debug As and RISC-V application with Imperas, the XploR Studio UI changes to debug perspective and automatically sets a breakpoint in the first line of code in main() function.
-Refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#blinky-debug-qemu) for more information about examining applications and perform functions such as adding new breakpoints, viewing and changing variable values, checking the register values, and so on.
+Refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information about examining applications and perform functions such as adding new breakpoints, viewing and changing variable values, checking the register values, and so on.
 ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
@@ -64,13 +64,13 @@ To build, run and debug Embedded applications with QEMU emulator, please install
 &lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information).&lt;/p>
 &lt;p>After installation and restart the IDE, you can see the creating-project widget like:&lt;/p>
 &lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1-1.png" alt="example image">&lt;/p>
-&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-a-new-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>
 &lt;h2 id="update-build-settings">Update build settings&lt;/h2>
 &lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
-&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#blinky-debug-qemu">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>The running and debugging step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;!-- ## Running and Debugging project with Imperas emulator
 The running and debugging with Imperas emulator is the same as the **RISC-V Hello World Embedded Application**. Please refer to [Running and Debugging project with Imperas emulator](../../../examples/embedded/RISCVHelloworld#debug-imperas)
 ## Running and Debugging project with Intel FPGA DE2-115 platform
