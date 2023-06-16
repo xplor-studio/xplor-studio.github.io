@@ -13,7 +13,7 @@ You can reach the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> fr
 They need not be compiled, and no complex toolchain is necessary to build them.
 The experience of implementing a XploR blueprint is comparable to writing a web browser extension.&lt;/p>
 &lt;p>To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
-&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu&amp;hellip;.&lt;/p>
+&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu &amp;hellip;&lt;/p>
 &lt;p>To use example projects like Embedded Baremetal, Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
 &lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available blueprints:&lt;/p>
 &lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
@@ -27,7 +27,7 @@ The experience of implementing a XploR blueprint is comparable to writing a web 
 &lt;/blockquote>
 &lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
-&lt;p>If a blueprint has various versions, you can cherry-pick the exact one you desire by simply double-clicking on the blueprint.&lt;/p>
+&lt;p>If a blueprint has multiple available versions, you can select a specific version of this blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions, like this:&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p></description></item><item><title>Docs: Package blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;ul>

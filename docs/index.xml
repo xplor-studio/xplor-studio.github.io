@@ -137,7 +137,7 @@ Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to 
 &lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
 &lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
-&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu&amp;hellip;.&lt;/p>
+&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu &amp;hellip;&lt;/p>
 &lt;p>To use example projects like Embedded Baremetal, Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>blueprints&lt;/em>.&lt;/p>
 &lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available blueprints:&lt;/p>
 &lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
@@ -151,7 +151,7 @@ Please select the &lt;strong>Zephyr Component&lt;/strong> option if you want to 
 &lt;/blockquote>
 &lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
-&lt;p>If a blueprint has various versions, you can cherry-pick the exact one you desire by simply double-clicking on the blueprint.&lt;/p>
+&lt;p>If a blueprint has multiple available versions, you can select a specific version of this blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions, like this:&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p></description></item><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
 &lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &amp;ldquo;RISC-V Blinky&amp;rdquo;. This application prints &amp;ldquo;Blink&amp;rdquo; text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;p>To build, run and debug &amp;ldquo;RISC-V Blinky&amp;rdquo; applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
