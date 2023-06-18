@@ -1,7 +1,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Getting Started</title><link>/docs/getting-started/</link><description>Recent content in Getting Started on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Concepts</title><link>/docs/getting-started/concepts/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/getting-started/concepts/</guid><description>
-&lt;p>As an embedded developer, you need to be familiar with a range of tools and concepts, including IDEs, toolchains, RTOSes, and more. With the XploR Studio IDE, you can take advantage of a flexible and highly configurable software environment that helps RISC-V developers throughout the development process. The toolchain includes essential technologies such as LLVM and GDB, and supports popular RTOSes like FreeRTOS and Zephyr. OpenOCD is used for in-system programming and debugging, while Quartus Programmer provides quick programming of FPGA and ASIC devices. With support for Linux and QEMU, the XploR Studio IDE can provide developers with an optimized environment for RISC-V development.&lt;/p>
-&lt;h2 id="blueprint---the-essential-concept-in-our-embedded-products">Blueprint - The Essential Concept in Our Embedded Products&lt;/h2>
-&lt;p>At the core of our embedded products is the crucial concept of blueprints. Everything in our products is blueprint-based, making blueprints a key element of our offerings.&lt;/p>
+&lt;h2 id="cross-platform-development">Cross-platform development&lt;/h2>
+&lt;p>In embedded development, the compute architecture of the &lt;strong>host development system&lt;/strong> (i.e. &lt;em>hosts&lt;/em>) is different than the the &lt;strong>target execution platform&lt;/strong> (i.e. &lt;em>targets&lt;/em>). Thus, the &lt;strong>target application(s)&lt;/strong> (i.e. &lt;em>programs&lt;/em>) will not be able to run on the host development system.&lt;/p>
+&lt;p>The &lt;strong>communication channel&lt;/strong> between the host and target provides the means for the host software (e.g. XploR Studio) to program and control the target hardware implementation and programs.&lt;/p>
+&lt;p>Because of the inherent architural differences between the hosts and targets, &lt;strong>XploR Studio&lt;/strong> is integrated with different embedded compiler toolchains, operating systems, hardware designs, and debug &amp;amp; monitoring tools, packaged as &lt;strong>blueprints&lt;/strong> and delivered by the IDE to provide a unified experience to create, build, deploy, test and debug designs for developers.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe Cross-platform development
+state &amp;#34;Host Development System&amp;#34; as hosts
+note left of hosts : where XploR IDE runs
+hosts : Linux or Windows on x86 / ia64
+state &amp;#34;Target Execution Platforms&amp;#34; as targets
+targets : ARM, RISC-V, or others ISA(s)\nrunning baremetal or with an\nembedded OS
+note right of targets : where target applications run
+targets -u-&amp;gt; hosts
+note left on link
+acknowledgement to
+host from target
+end note
+hosts --&amp;gt; targets
+note left on link
+host commands to
+program or debug target
+end note
+&lt;/code>&lt;/pre>&lt;h2 id="embedded-target">Embedded Target&lt;/h2>
+&lt;p>In the post-silicon development flow, the &lt;strong>embedded target&lt;/strong> consists of a CPU and associated peripherals (e.g. USB, Ethernet, I2C, &amp;hellip;). The CPU implements and execute code defined by an Instruction Set Architecture (ISA, e.g. x86, ARM, RISC-V). &lt;strong>JTAG&lt;/strong> is commonly the communication channel between the host and target for programming and debugging, as shown below:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe Post-silicon embedded target
+state &amp;#34;Host Development System&amp;#34; as hosts
+hosts : Linux or Windows on x86 / ia64
+state &amp;#34;Target Platform (ASICs)&amp;#34; as targets {
+state CPU : x86 or ARM
+state Memory : DDR, SRAM, ...
+state Peripherals : USB, Ethernet, ...
+}
+note bottom of targets : CPU, Memory and Peripherals are\nASIC blocks, not modifable.
+state JTAG
+note top of JTAG : JTAG used to program target memory\nand control / debug programs on CPU.
+hosts -&amp;gt; JTAG
+JTAG -&amp;gt; targets
+&lt;/code>&lt;/pre>&lt;h2 id="target-execution-platform">Target execution platform&lt;/h2>
+&lt;p>With the advent of open source CPU implementation (e.g. &lt;a href="https://openrisc.io/">openRISC&lt;/a> ), and open ISA (e.g. &lt;a href="http://www.riscv.org">RISC-V&lt;/a>), opportunities exist for developers to innovate on both side of the coin: in both hardware and software (i.e. &lt;strong>software-hardware co-design and development&lt;/strong>)&lt;/p>
+&lt;p>To properly supports software-hardware co-design for pre-silicon development, the embedded target must be able to host different hardware designs consisting of different ISA implementation (and sometimes more than one), HW IP(s) and peripherals, and on-chip topology.&lt;/p>
+&lt;p>&lt;strong>Target execution platform(s)&lt;/strong> are platform devices with circuits that can be manipulated with hardware description language (HDL) to perform specific functions, including those of a microprocessor or a complete system on chip (SoC).&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Examples&lt;/h4>
+&lt;em>
+FPGA(s) are common target execution platforms used for prototyping and deployment. Emulators and arguably cycle-approximate instruction set simulators, used for verification and early software development, are other examples.
+&lt;/em>
+&lt;/div>
+&lt;p>In the context of pre-silicon development, &lt;em>programming&lt;/em> means either the manipulation of the device circuits with specific HDL (&lt;em>hardware programming&lt;/em>, or &lt;em>flashing&lt;/em>), or the loading of executable code and data (&lt;em>software programming&lt;/em>, or &lt;em>loading&lt;/em>) into the memory of the microprocessor that is executing on the target execution platform. XploR Studio supports both mode of programming support both pre and post silicon software development.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe Target execution platform as the embedded target
+state &amp;#34;Host Development System&amp;#34; as hosts
+hosts : Linux or Windows on x86 / ia64
+state &amp;#34;Pre-silicon target execution platform&amp;#34; as targets {
+state JTAG
+state &amp;#34;HDL programmable device&amp;#34; as HAPS {
+state CPU : x86 or ARM
+state Memory : DDR, SRAM, ...
+state Peripherals : USB, Ethernet, ...
+}
+JTAG --&amp;gt; HAPS
+}
+note bottom of HAPS : CPU, Memory and Peripherals\nare (or can be) programmed with HDL.
+state JTAG
+note top of JTAG : JTAG used for both hardware\nand software programming
+hosts -&amp;gt; JTAG
+&lt;/code>&lt;/pre>&lt;h2 id="blueprints">Blueprints&lt;/h2>
+&lt;p>Blueprints are packages of hardware and/or software IP(s) that are bounded to specific &lt;em>execution platform&lt;/em>.&lt;/p>
 &lt;h3 id="what-is-a-blueprint">What is a Blueprint?&lt;/h3>
 &lt;p>A blueprint is basically a combination of different IP(s), which can be either hardware or software-based or both. This design is what serves as the foundation of our embedded products.&lt;/p>
 &lt;h3 id="versatile-and-compatible">Versatile and Compatible&lt;/h3>
