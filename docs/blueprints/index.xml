@@ -1,54 +1,75 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Blueprints</title><link>/docs/blueprints/</link><description>Recent content in Blueprints on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/blueprints/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About blueprints</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Blueprints are a powerful feature for extending XploR with custom features and behaviors.
-The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a ip-as-a-service (IaaS) platform that provides an exhaustive list of the existing blueprints.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Blueprints</title><link>/docs/blueprints/</link><description>Recent content in Blueprints on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/blueprints/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
+&lt;p>Blueprints are packages of hardware and/or software IP(s) that extend XploR Studio with custom features and behaviors for specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
+&lt;p>The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a collection of free and paid blueprints from SoC.one, community contributors, and commercial vendors.&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Prerequisite:&lt;/strong>
-You can reach the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard the &lt;code>Blueprints&lt;/code> menu entry.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong>
+You can peruse the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard via the &lt;code>Blueprints&lt;/code> menu entry, or with &lt;strong>xip&lt;/strong>.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="how-it-works">How it works&lt;/h2>
-&lt;h3 id="build-your-own-blueprints">Build Your Own Blueprints&lt;/h3>
-&lt;p>XploR users can create their own blueprints and share them with the community using the Blueprint Catalog.&lt;/p>
-&lt;p>XploR will load blueprints dynamically.
-They need not be compiled, and no complex toolchain is necessary to build them.
-The experience of implementing a XploR blueprint is comparable to writing a web browser extension.&lt;/p>
-&lt;p>To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
-&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu &amp;hellip;&lt;/p>
-&lt;p>To use example projects like Embedded Baremetal, Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>Blueprints&lt;/em>.&lt;/p>
-&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available Blueprints:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe XploR blueprints
+state &amp;#34;xplor.design - blueprint registry&amp;#34; as registry {
+state &amp;#34;Free blueprints&amp;#34;
+state &amp;#34;Paid blueprints&amp;#34;
+}
+state &amp;#34;Contributors&amp;#34; as contributors {
+state &amp;#34;SoC.one&amp;#34; as socone
+state &amp;#34;Open source developers&amp;#34; as developers
+state &amp;#34;Third-parties vendors&amp;#34; as vendors
+}
+socone --&amp;gt; registry : contributes
+developers -up-&amp;gt; registry : contribute
+vendors --&amp;gt; registry : contribute
+state &amp;#34;XploR Studio&amp;#34; as IDE
+state &amp;#34;Target Platform&amp;#34; as target
+IDE : User downloads and installs
+IDE : blueprints from XploR.design
+IDE : on the host system.
+IDE :
+IDE : XploR studio deploys blueprints
+IDE : on target platform
+registry -&amp;gt; IDE : download &amp;amp;\ninstall
+IDE --&amp;gt; target
+&lt;/code>&lt;/pre>&lt;h3 id="creating-and-contributing-blueprints">Creating and contributing blueprints&lt;/h3>
+&lt;p>Developer can create and contribute blueprints to XploR Design blueprint catalog. Once downloaded and installed, contributed blueprints are loaded dynamically XploR Studio.&lt;/p>
+&lt;p>The experience of implementing an XploR Design blueprint is comparable to that of writing a web browser extension. To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
+&lt;p>After successful &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">installation&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, example programs, and target bitfiles.&lt;/p>
+&lt;p>To use example projects such as &lt;em>Embedded Baremetal&lt;/em>, &lt;em>Embedded Linux&lt;/em> or &lt;em>LLVM examples&lt;/em>, it is necessary to download and install the respective blueprints.&lt;/p>
+&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar to show a list of available blueprints:&lt;/p>
 &lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>There are two types of Blueprint servers: &lt;strong>Stable server&lt;/strong> for usage and &lt;strong>Development server&lt;/strong> for development.&lt;/li>
-&lt;li>&lt;strong>Current Version&lt;/strong> and &lt;strong>Available Version&lt;/strong> columns will indicate your computer&amp;rsquo;s current version and the server&amp;rsquo;s available version.&lt;/li>
-&lt;li>&lt;strong>Status&lt;/strong> column will inform whether this Blueprint is installed.&lt;/li>
+&lt;li>There are two instances of blueprints: &lt;strong>Stable&lt;/strong> for normal usage and &lt;strong>Development&lt;/strong> for development.&lt;/li>
+&lt;li>The &lt;strong>Current Version&lt;/strong> and &lt;strong>Available Version&lt;/strong> columns show the current installed version and the newest available version from XploR Design.&lt;/li>
+&lt;li>The &lt;strong>Status&lt;/strong> column indicates whether a blueprint is installed.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
-&lt;p>To install the desired Blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more Blueprints can be installed at the same time.&lt;/p>
+&lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
-&lt;p>If a Blueprint has multiple available versions, you can select a specific version of this Blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions, like this:&lt;/p>
+&lt;p>If a blueprint has multiple available versions, you can select a specific version of that blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions:&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p>
-&lt;p>There is a column named &amp;ldquo;Status&amp;rdquo; to show the status of a Blueprint as installed or not installed. User can uninstall a Blueprint, which is already installed, by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more Blueprints can be uninstalled at the same time.&lt;/p>
+&lt;p>The &amp;ldquo;Status&amp;rdquo; column shows whether the blueprint is installed locally. User can uninstall a blueprint by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more blueprints can be uninstalled at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3-2.png" alt="example image">&lt;/p>
-&lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Package blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+&lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Packaging blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;strong>WARNING&lt;/strong>
+The following guide is preliminary and subjected to changes.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
+&lt;p>The following software components on the host computer are required:&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>python==3.8.10&lt;/p>
-&lt;ul>
-&lt;li>setuptools (newest version): using for packaging a blueprint&lt;/li>
+&lt;li>python==3.8.10&lt;/li>
+&lt;li>setuptools (newest version)&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;div class="alert alert-danger" role="alert">
-&lt;p>Download and extract the blueprint template in &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/empty-blueprint-templates.zip">here&lt;/a>.&lt;/p>
-&lt;p>&lt;strong>Blueprint Name&lt;/strong>: Blueprint names should be lowercase, and if multiple words are used, they should be separated by underscores &lt;code>_&lt;/code> or &lt;code>-&lt;/code>. Avoid using spaces or special characters or mixing &lt;code>_&lt;/code> and &lt;code>-&lt;/code> in the package name.&lt;/p>
-&lt;p>&lt;strong>The correct name&lt;/strong>: &lt;code>blueprint-one&lt;/code>, &lt;code>blueprint_two&lt;/code>&lt;/p>
-&lt;p>&lt;strong>The wrong name&lt;/strong>: &lt;code>blueprint_with-wrong_name&lt;/code>&lt;/p>
-&lt;/div>
-&lt;h2 id="structure-of-blueprint-templates">Structure of blueprint templates&lt;/h2>
-&lt;p>In the sample, there are 2 folders (&lt;strong>blueprint-one/&lt;/strong>, &lt;strong>blueprint-two/&lt;/strong>) containing blueprint templates and a Makefile that supports building and uploading blueprints.&lt;/p>
+&lt;h2 id="template">Template&lt;/h2>
+&lt;p>Download and extract the blueprint template from &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/empty-blueprint-templates.zip">here&lt;/a>.&lt;/p>
+&lt;p>Note that blueprint name should be in lowercases. If multiple words are used, they should be separated by underscores &lt;code>_&lt;/code> or &lt;code>-&lt;/code>. Avoid using spaces or special characters or mixing &lt;code>_&lt;/code> and &lt;code>-&lt;/code> in the package name.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code> Correct name : `blueprint-one`, `blueprint_two`
+Wrong name : `blueprint_with-wrong_name`
+&lt;/code>&lt;/pre>&lt;/blockquote>
+&lt;h3 id="structure-of-blueprint-templates">Structure of blueprint templates&lt;/h3>
+&lt;p>In the example blueprint template, there are 2 folders (&lt;strong>blueprint-one/&lt;/strong>, &lt;strong>blueprint-two/&lt;/strong>) containing blueprint templates and a &lt;em>Makefile&lt;/em> that supports building and publishing blueprints.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── blueprint-one
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── blueprint-one
@@ -76,19 +97,19 @@ The experience of implementing a XploR blueprint is comparable to writing a web 
 &lt;p>&lt;strong>setup.py&lt;/strong> (used for building a blueprint)&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>We have 2 main scenarios of data in the blueprint:&lt;/p>
+&lt;p>Two different data scenarios for blueprint are supported:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>The data of the blueprint can be used in both Windows and Linux OS (&lt;strong>blueprint-one&lt;/strong>)&lt;/p>
+&lt;p>The data of the blueprint are host-independent, and can be used in both Windows and Linux OS (&lt;strong>blueprint-one&lt;/strong>)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>The data of the blueprint is different with each OS (&lt;strong>blueprint-two&lt;/strong>)&lt;/p>
+&lt;p>The data of the blueprint are host-dependent, requiring a different version for each supported host (&lt;strong>blueprint-two&lt;/strong>)&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>&lt;strong>Limitation&lt;/strong>: We still not handle for a blueprint has both common and specific data for each OS&lt;/p>
+&lt;p>&lt;strong>Limitation&lt;/strong>: blueprints that have a mix of both common and specific data for different supported host are not yet supported.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="explain-the-content-of-setuppy">Explain the content of setup.py&lt;/h2>
+&lt;h2 id="setuppy">setup.py&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>blueprint-one/setup.py&lt;/code>&lt;/p>
@@ -160,12 +181,12 @@ The experience of implementing a XploR blueprint is comparable to writing a web 
 &lt;p>&lt;code>classifiers&lt;/code> - A list of strings describing the categories for the package. (Classify a blueprint as HW, SW, bitstream,… or something else)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>include_package_data&lt;/code> - If set to True, this tells setuptools to automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. (Should be set to True to include non-Python data)&lt;/p>
+&lt;p>&lt;code>include_package_data&lt;/code> - If True, setuptools will automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. (Should be set to True to include non-Python data)&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>For scenario no.2 (&lt;code>blueprint-two&lt;/code>), we only need to add some code to &lt;code>setup.py&lt;/code> that specific &lt;code>package_dir&lt;/code> for each OS.&lt;/p>
+&lt;p>For (&lt;code>blueprint-two&lt;/code>), only some code need to be added to &lt;code>setup.py&lt;/code> to specify &lt;code>package_dir&lt;/code> for each supported host OS, as follow:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">setuptools&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">setup&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">platform&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -176,9 +197,10 @@ The experience of implementing a XploR blueprint is comparable to writing a web 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;h2 id="post-install-and-pre-uninstall">Post-install and Pre-uninstall&lt;/h2>
-&lt;div class="alert alert-info" role="alert">
-&lt;p>If there are some executed files needed to run after the blueprint is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (depending on the OS) to the data folder.&lt;/p>
-&lt;p>If there are some executed files needed to run before the blueprint is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (depending on the OS) to the data folder.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note:&lt;/h4>
+&lt;p>If there are executable files that need to run after the blueprint is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
+&lt;p>If there are executable files that need to run before the blueprint is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
 &lt;/div>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>xplor-studio-elf/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
@@ -190,16 +212,18 @@ The experience of implementing a XploR blueprint is comparable to writing a web 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── win32.x86_64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── post-install.bat
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── pre-uninstall.bat
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="build-a-blueprint">Build a blueprint&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python3 setup.py sdist
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>make build&lt;/code>&lt;/p>
-&lt;h2 id="span-stylecolor-rednotespan">&lt;span style="color: red">&lt;strong>NOTE&lt;/strong>&lt;/span>&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="building-blueprint">Building blueprint&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% python3 setup.py sdist
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>% make build&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>For re-using the template, please rename the data folder and update the content of &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code>&lt;/li>
-&lt;li>For instance with &lt;code>blueprint-one&lt;/code>:
+&lt;li>If you&amp;rsquo;re reusing the example template, please rename the data folder and update the content of &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code>&lt;/li>
+&lt;li>As an example, with &lt;code>blueprint-one&lt;/code>:
 &lt;ul>
 &lt;li>Rename folder &lt;code>blueprint-one&lt;/code> → &lt;code>socone-blueprint&lt;/code>&lt;/li>
 &lt;li>Replace string in &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code> : &lt;code>blueprint-one&lt;/code> → &lt;code>socone-blueprint&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;/blockquote></description></item></channel></rss>

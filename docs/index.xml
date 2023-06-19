@@ -1,21 +1,38 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Welcome to XploR Studio</title><link>/docs/</link><description>Recent content in Welcome to XploR Studio on XploR Studio</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: About blueprints</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Blueprints are a powerful feature for extending XploR with custom features and behaviors.
-The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a ip-as-a-service (IaaS) platform that provides an exhaustive list of the existing blueprints.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Welcome to XploR Studio</title><link>/docs/</link><description>Recent content in Welcome to XploR Studio on XploR Studio</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
+&lt;p>Blueprints are packages of hardware and/or software IP(s) that extend XploR Studio with custom features and behaviors for specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
+&lt;p>The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a collection of free and paid blueprints from SoC.one, community contributors, and commercial vendors.&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Prerequisite:&lt;/strong>
-You can reach the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard the &lt;code>Blueprints&lt;/code> menu entry.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong>
+You can peruse the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard via the &lt;code>Blueprints&lt;/code> menu entry, or with &lt;strong>xip&lt;/strong>.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="how-it-works">How it works&lt;/h2>
-&lt;h3 id="build-your-own-blueprints">Build Your Own Blueprints&lt;/h3>
-&lt;p>XploR users can create their own blueprints and share them with the community using the Blueprint Catalog.&lt;/p>
-&lt;p>XploR will load blueprints dynamically.
-They need not be compiled, and no complex toolchain is necessary to build them.
-The experience of implementing a XploR blueprint is comparable to writing a web browser extension.&lt;/p>
-&lt;p>To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Concepts</title><link>/docs/getting-started/concepts/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/getting-started/concepts/</guid><description>
-&lt;h2 id="cross-platform-development">Cross-platform development&lt;/h2>
-&lt;p>In embedded development, the compute architecture of the &lt;strong>host development system&lt;/strong> (i.e. &lt;em>hosts&lt;/em>) is different than the the &lt;strong>target execution platform&lt;/strong> (i.e. &lt;em>targets&lt;/em>). Thus, the &lt;strong>target application(s)&lt;/strong> (i.e. &lt;em>programs&lt;/em>) will not be able to run on the host development system.&lt;/p>
-&lt;p>The &lt;strong>communication channel&lt;/strong> between the host and target provides the means for the host software (e.g. XploR Studio) to program and control the target hardware implementation and programs.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe XploR blueprints
+state &amp;#34;xplor.design - blueprint registry&amp;#34; as registry {
+state &amp;#34;Free blueprints&amp;#34;
+state &amp;#34;Paid blueprints&amp;#34;
+}
+state &amp;#34;Contributors&amp;#34; as contributors {
+state &amp;#34;SoC.one&amp;#34; as socone
+state &amp;#34;Open source developers&amp;#34; as developers
+state &amp;#34;Third-parties vendors&amp;#34; as vendors
+}
+socone --&amp;gt; registry : contributes
+developers -up-&amp;gt; registry : contribute
+vendors --&amp;gt; registry : contribute
+state &amp;#34;XploR Studio&amp;#34; as IDE
+state &amp;#34;Target Platform&amp;#34; as target
+IDE : User downloads and installs
+IDE : blueprints from XploR.design
+IDE : on the host system.
+IDE :
+IDE : XploR studio deploys blueprints
+IDE : on target platform
+registry -&amp;gt; IDE : download &amp;amp;\ninstall
+IDE --&amp;gt; target
+&lt;/code>&lt;/pre>&lt;h3 id="creating-and-contributing-blueprints">Creating and contributing blueprints&lt;/h3>
+&lt;p>Developer can create and contribute blueprints to XploR Design blueprint catalog. Once downloaded and installed, contributed blueprints are loaded dynamically XploR Studio.&lt;/p>
+&lt;p>The experience of implementing an XploR Design blueprint is comparable to that of writing a web browser extension. To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Embedded development</title><link>/docs/concepts/cross-platform/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/cross-platform/</guid><description>
+&lt;p>In embedded or &lt;strong>cross-platform&lt;/strong> development, the compute architecture of the &lt;strong>host development system&lt;/strong> (i.e. &lt;em>hosts&lt;/em>) is different than the the &lt;strong>target execution platform&lt;/strong> (i.e. &lt;em>targets&lt;/em>). Thus, the &lt;strong>target application(s)&lt;/strong> (i.e. &lt;em>programs&lt;/em>) will not be able to run on the host development system.&lt;/p>
+&lt;p>The &lt;strong>communication channel&lt;/strong> between the host and target lets the host software (e.g. XploR Studio) program and control the target hardware behavior and program code.&lt;/p>
 &lt;p>Because of the inherent architural differences between the hosts and targets, &lt;strong>XploR Studio&lt;/strong> is integrated with different embedded compiler toolchains, operating systems, hardware designs, and debug &amp;amp; monitoring tools, packaged as &lt;strong>blueprints&lt;/strong> and delivered by the IDE to provide a unified experience to create, build, deploy, test and debug designs for developers.&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe Cross-platform development
 state &amp;#34;Host Development System&amp;#34; as hosts
@@ -49,17 +66,54 @@ state JTAG
 note top of JTAG : JTAG used to program target memory\nand control / debug programs on CPU.
 hosts -&amp;gt; JTAG
 JTAG -&amp;gt; targets
-&lt;/code>&lt;/pre>&lt;h2 id="target-execution-platform">Target execution platform&lt;/h2>
+&lt;/code>&lt;/pre>&lt;h2 id="host-software">Host software&lt;/h2>
+&lt;p>Some of the most common software components that run on the &lt;em>host computer&lt;/em>.&lt;/p>
+&lt;h3 id="ide">IDE&lt;/h3>
+&lt;p>XploR Studio has a command line interface as well as a graphical user interface based on the Eclipse IDE. Both are collection of software programs and tools let the developer create programs for the embedded targets.&lt;/p>
+&lt;p>The Integrated Development Environment (IDE) is a unified graphical user interface that makes it easy and convenient for developers to write and debug code. The IDE typically includes a source code editor, a source-level debugger, and a build automation tool.&lt;/p>
+&lt;p>The XploR Studio IDE is a flexible and highly configurable software environment that is fully integrated with blueprints to accelerate pre and post silicon software development.&lt;/p>
+&lt;p>&lt;em>Also see &lt;a href="/about">Why do I need an IDE?&lt;/a>&lt;/em>&lt;/p>
+&lt;h3 id="cross-toolchain">Cross toolchain&lt;/h3>
+&lt;p>The cross toolchain is the set of tools that compiles program source code, written in C/C++ or assembly language, into executable instructions that run on the target platforms. The cross toolchain consists of compilers, linker, and associated run-time libraries.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Compiler choices:&lt;/strong>
+&lt;em>The &lt;b>GNU&lt;/b> compiler (&lt;a href="https://www.gnu.org">www.gnu.org&lt;/a>), and &lt;b>LLVM&lt;/b> are two most popular compilers for cross platform development. GNU GCC is compatible with a wider range of existing open source software, CPU architecture, and operating systems.&lt;/p>
+&lt;p>LLVM is a more modern compiler that, while continuously evolving, provides faster compilation speed, better diagnostic, and is modularly designed, making it the popular choice for new and emerging ISA and architecture.&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="gdb">GDB&lt;/h3>
+&lt;p>GDB is a GNU project command line debugger that allows developers to debug programs written in various languages. It supports many debugging formats and offers many debugging features, including the ability to step through code, set breakpoints, and examine variables. The XploR Studio IDE provides a graphical interface to GDB, making it easier to view different aspects of the running program (e.g. call-stack, variables, registers, and assembly code) from centralized dash-board.&lt;/p>
+&lt;h2 id="target-software">Target software&lt;/h2>
+&lt;h3 id="bootloader">Bootloader&lt;/h3>
+&lt;p>Program code and data of an embedded operating system must be loaded into the target platform working memory during the device start-up. This task is achieved by the &lt;strong>bootloader&lt;/strong>, which is a program launched immediately after the target starts.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+&lt;em>The &lt;b>U-Boot&lt;/b> bootloader is a popular bootloader available for embedded microarchitecture such as PowerPC and ARM. Recent ISA such as RISC-V takes a more minimalistic approach, such as that supported by &lt;b>BBL&lt;/b> (Berkeley Boot Loader)
+&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="real-time-os-rtos">Real-time OS (RTOS)&lt;/h3>
+&lt;p>A real-time operating system (RTOS) is an operating system that is designed to provide predictable processing time for critical tasks. An RTOS can respond to an event in a specified time period. This makes it ideal for applications that require high reliability or timing precision.&lt;/p>
+&lt;p>RTOS(es) provide real-time task scheduling and basic memory management, along with advanced features such as multi-threading, interrupt handling and power management. Some RTOS(es) such as Zephyr OS are scalable and can be configured to support as many or as few features as needed in order to minimize resource and memory footprint.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>RTOS awareness:&lt;/strong>
+&lt;em>The XploR Studio IDE and related blueprints provide support for building and debugging of several popular RTOS(es) including &lt;b>Amazon FreeRTOS&lt;/b>, &lt;b>Zephyr OS&lt;/b>, and &lt;b>embedded Linux&lt;/b>.&lt;/em>&lt;/p>
+&lt;/blockquote></description></item><item><title>Docs: Execution platforms</title><link>/docs/concepts/execution-environment/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/execution-environment/</guid><description>
 &lt;p>With the advent of open source CPU implementation (e.g. &lt;a href="https://openrisc.io/">openRISC&lt;/a> ), and open ISA (e.g. &lt;a href="http://www.riscv.org">RISC-V&lt;/a>), opportunities exist for developers to innovate on both side of the coin: in both hardware and software (i.e. &lt;strong>software-hardware co-design and development&lt;/strong>)&lt;/p>
 &lt;p>To properly supports software-hardware co-design for pre-silicon development, the embedded target must be able to host different hardware designs consisting of different ISA implementation (and sometimes more than one), HW IP(s) and peripherals, and on-chip topology.&lt;/p>
 &lt;p>&lt;strong>Target execution platform(s)&lt;/strong> are platform devices with circuits that can be manipulated with hardware description language (HDL) to perform specific functions, including those of a microprocessor or a complete system on chip (SoC).&lt;/p>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Examples&lt;/h4>
-&lt;em>
-FPGA(s) are common target execution platforms used for prototyping and deployment. Emulators and arguably cycle-approximate instruction set simulators, used for verification and early software development, are other examples.
-&lt;/em>
-&lt;/div>
-&lt;p>In the context of pre-silicon development, &lt;em>programming&lt;/em> means either the manipulation of the device circuits with specific HDL (&lt;em>hardware programming&lt;/em>, or &lt;em>flashing&lt;/em>), or the loading of executable code and data (&lt;em>software programming&lt;/em>, or &lt;em>loading&lt;/em>) into the memory of the microprocessor that is executing on the target execution platform. XploR Studio supports both mode of programming support both pre and post silicon software development.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Examples:&lt;/strong>
+&lt;em>&lt;b>FPGA(s)&lt;/b> are common target execution platforms used for prototyping and deployment. &lt;b>Emulators&lt;/b> and arguably cycle-approximate &lt;b>instruction set simulators&lt;/b>, used for verification and early software development, are other examples. &lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;p>In the context of pre-silicon development, &lt;em>programming&lt;/em> means:&lt;/p>
+&lt;ul>
+&lt;li>The manipulation of the device circuits with specific HDL (&lt;em>hardware programming&lt;/em>, or &lt;em>flashing&lt;/em>), or&lt;/li>
+&lt;li>The loading and debugging of executable code and data (&lt;em>software programming&lt;/em>, or &lt;em>loading&lt;/em>) into the memory of the microprocessor that is executing on the target execution platform.&lt;/li>
+&lt;/ul>
+&lt;p>XploR Studio supports both mode of programming support both pre and post silicon software development.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Virtual JTAG:&lt;/strong>
+&lt;em>Many &lt;b>XploR blueprints&lt;/b> for execution platforms include builtin &lt;b>virtual JTAG&lt;/b> supporting hardware and software programming, thus obviating the needs for costly and less convenient external JTAG device from third-parties.&lt;/em>&lt;/p>
+&lt;/blockquote>
 &lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe Target execution platform as the embedded target
 state &amp;#34;Host Development System&amp;#34; as hosts
 hosts : Linux or Windows on x86 / ia64
@@ -76,53 +130,30 @@ note bottom of HAPS : CPU, Memory and Peripherals\nare (or can be) programmed wi
 state JTAG
 note top of JTAG : JTAG used for both hardware\nand software programming
 hosts -&amp;gt; JTAG
-&lt;/code>&lt;/pre>&lt;h2 id="blueprints">Blueprints&lt;/h2>
-&lt;p>Blueprints are packages of hardware and/or software IP(s) that are bounded to specific &lt;em>execution platform&lt;/em>.&lt;/p>
-&lt;h3 id="what-is-a-blueprint">What is a Blueprint?&lt;/h3>
-&lt;p>A blueprint is basically a combination of different IP(s), which can be either hardware or software-based or both. This design is what serves as the foundation of our embedded products.&lt;/p>
-&lt;h3 id="versatile-and-compatible">Versatile and Compatible&lt;/h3>
-&lt;p>One appealing feature of blueprints is that they are incredibly versatile. For one, blueprints don&amp;rsquo;t necessarily have to be compatible among different hosts. This means that we can have both Windows and Linux blueprints, depending on what the situation calls for.&lt;/p>
-&lt;p>Moreover, they don&amp;rsquo;t have to be compatible between IDE versions. This makes the process of using blueprints more flexible and opens up options for our customers. They can opt for either Eclipse blueprint, Thea blueprint or even no blueprint at all.&lt;/p>
-&lt;h3 id="key-benefits-of-blueprints">Key Benefits of Blueprints&lt;/h3>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Blueprints</title><link>/docs/concepts/blueprints/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/blueprints/</guid><description>
+&lt;p>Blueprints are packages of hardware and/or software IP(s) that are bounded to specific &lt;em>execution platform(s)&lt;/em>.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>IP(s) versus blueprints&amp;quot;&lt;/strong>
+&lt;em> The HDL implementations of hardware peripherals, accelerator, or ISA such as ARM or RISC-V are &lt;b>IP(s)&lt;/b>. &lt;b>Blueprints&lt;/b> are combination these IP(s) that has been customized, configured, and built to execute on specific target execution platforms, such as FPGA(s) from AMD or Intel. &lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;p>Blueprints are fully integrated with XploR Studio, and can be installed and used by themselves or in combination with other blueprints.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Benefits:&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Provides a clear and concise plan: Blueprints serve as a detailed plan or a design that outlines the necessary steps and materials required to construct or create something. By having blueprints, it becomes easier to communicate technical information to our customers.&lt;/p>
+&lt;p>&lt;strong>Blueprints provide clear and concise purposes&lt;/strong> - Blueprints serve as a detailed plan or a design that outlines the necessary steps and materials required to construct or create a design.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Ensures consistency in the final product: Blueprints help to ensure that the finished product is consistent with the original design and meets the expectations and requirements of our customers.&lt;/p>
+&lt;p>&lt;strong>Blueprints act as reference model&lt;/strong> - Blueprints prototype the functional behavior of the design, and can be used as a reference or golden model to help to ensure that the finished product is consistent with the original design and meets the expectations and requirements of our customers.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Saves time in the design process: With a blueprint in place, it becomes easier to identify potential issues and address them beforehand. This, in turn, saves time during the design process and can prevent costly mistakes.&lt;/p>
+&lt;p>&lt;strong>Blueprints enable early software development&lt;/strong> - Together with XploR Studio IDE, blueprints enable developers to design, test, and debug software in pre-silicon phase in order to identify and address potential issues beforehand.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Blueprints promote reusability&lt;/strong> - In many cases, HW and SW IP(s) in blueprints are hardened and reused for in-silicon and post-silicon deployment.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;h2 id="ide-integrated-development-environment">IDE: Integrated Development Environment&lt;/h2>
-&lt;p>An Integrated Development Environment (IDE) is a software tool that provides everything necessary for a developer to write and debug code. An IDE typically includes a source code editor, a debugger, and a build automation tool. The XploR Studio IDE is a flexible and highly configurable software environment that helps RISC-V developers throughout the development process.&lt;/p>
-&lt;h2 id="toolchain">Toolchain&lt;/h2>
-&lt;p>In embedded development, a toolchain is a set of software tools that are used to compile, build, and debug code. The XploR Studio toolchain includes the LLVM compiler, GDB debugger, and openocd.&lt;/p>
-&lt;h2 id="llvm">LLVM&lt;/h2>
-&lt;p>LLVM is a collection of modular and reusable compiler and toolchain technologies that are designed for software development. It uses an intermediate representation (IR) that is designed to be useful for a wide range of languages and target architectures. LLVM is used in the XploR Studio toolchain to compile code for RISC-V.&lt;/p>
-&lt;h2 id="gdb">GDB&lt;/h2>
-&lt;p>GDB is a GNU project debugger that allows developers to debug programs written in various languages. It supports many debugging formats and offers many debugging features, including the ability to step through code, set breakpoints, and examine variables.&lt;/p>
-&lt;h2 id="rtos-real-time-operating-system">RTOS: Real-Time Operating System&lt;/h2>
-&lt;p>A real-time operating system (RTOS) is an operating system that is designed to provide predictable processing time for critical tasks. An RTOS can respond to an event in a specified time period. This makes it ideal for applications that require high reliability or timing precision.&lt;/p>
-&lt;h2 id="freertos">FreeRTOS&lt;/h2>
-&lt;p>FreeRTOS is a popular open-source RTOS that provides a task scheduler and basic memory management. It supports many architectures, including RISC-V.&lt;/p>
-&lt;h2 id="zephyr">Zephyr&lt;/h2>
-&lt;p>Zephyr is an open-source RTOS that is designed for resource-constrained systems. It is scalable and offers many features, including a kernel that supports multiple threads, interrupt handling, and power management. It also supports many architectures, including RISC-V.&lt;/p>
-&lt;h2 id="openocd">OpenOCD&lt;/h2>
-&lt;p>Open On-Chip Debugger (OpenOCD) is an open-source software tool that provides debugging, in-system programming, and boundary scan testing for embedded devices. It supports many architectures and is used in the XploR Studio toolchain for debugging.&lt;/p>
-&lt;h2 id="quartus-programmer">Quartus Programmer&lt;/h2>
-&lt;p>Quartus Programmer is a tool that is used to program FPGA and ASIC devices. It can be used to download a configuration file to a specific device, such as the Intel Quartus FPGA.&lt;/p>
-&lt;h2 id="linux">Linux&lt;/h2>
-&lt;p>Linux is a free and open-source operating system that provides a stable and reliable platform for developers to build applications. It is widely used in embedded development and can be customized for specific applications.&lt;/p>
-&lt;h2 id="risc-v">RISC-V&lt;/h2>
-&lt;p>RISC-V is an open-source instruction set architecture (ISA) that is designed to be scalable, modular, and extensible. It is used in many embedded systems, including the XploR Studio IDE.&lt;/p>
-&lt;h2 id="qemu">QEMU&lt;/h2>
-&lt;p>Quick Emulator (QEMU) is a free and open-source emulator that can emulate many architectures, including RISC-V. It is used in the XploR Studio IDE as the default target platform.&lt;/p>
-&lt;h2 id="fpga-field-programmable-gate-array">FPGA: Field-Programmable Gate Array&lt;/h2>
-&lt;p>An FPGA is a programmable integrated circuit that can be configured by the user after manufacturing. It provides flexibility and can be used for prototyping and embedded development.&lt;/p>
-&lt;h2 id="asic-application-specific-integrated-circuit">ASIC: Application-Specific Integrated Circuit&lt;/h2>
-&lt;p>An ASIC is an integrated circuit that is designed for a specific application. It provides higher performance than an FPGA but is less flexible.&lt;/p></description></item><item><title>Docs: System requirements</title><link>/docs/getting-started/installation/system-requirements/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/system-requirements/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: System requirements</title><link>/docs/getting-started/installation/system-requirements/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/system-requirements/</guid><description>
 &lt;h2 id="host-system-requirements">Host System Requirements&lt;/h2>
 &lt;p>The supported operating systems for installing the product are:&lt;/p>
 &lt;ul>
@@ -162,16 +193,47 @@ hosts -&amp;gt; JTAG
 &lt;li>Internet connection: Yes&lt;/li>
 &lt;/ul>
 &lt;!-- ## Hardware Debug Requirements
-The hardware requirements, hardware connections as well as driver installation on a host machine are documented in &lt;a href="../hardware-environment">**Hardware and Environment Setup**&lt;/a>. If you are going to develop and debug RISC-V applications on Intel FPGA platforms, please refer to this document for more details. --></description></item><item><title>Docs: Installation</title><link>/docs/getting-started/installation/install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/install/</guid><description>
-&lt;p>This section contains instructions on how to install XploR IDE on both Windows and Ubuntu operating systems.&lt;/p>
-&lt;p>&lt;strong>The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity. Otherwise, the installer may fail to install XploR IDE.&lt;/strong>&lt;/p>
+The hardware requirements, hardware connections as well as driver installation on a host machine are documented in &lt;a href="../hardware-environment">**Hardware and Environment Setup**&lt;/a>. If you are going to develop and debug RISC-V applications on Intel FPGA platforms, please refer to this document for more details. --></description></item><item><title>Docs: IDE installer</title><link>/docs/getting-started/installation/install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/install/</guid><description>
+&lt;p>There are two ways to install the IDE:&lt;/p>
+&lt;ol>
+&lt;li>Using the IDE installer.&lt;/li>
+&lt;li>With &lt;a href="/download">&lt;strong>xip&lt;/strong>&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;p>This section contains instructions on how to install the XploR IDE using the installer on Windows or Linux hosts.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="download-the-ide-installer">Download the IDE installer&lt;/h2>
+&lt;p>&lt;mark>&lt;strong>TEAM&lt;/strong>: Add link to download of the IDE installer here
+&lt;div class="td-card-group card-group p-0 mb-4">
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>Installer for Linux&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>Installer for Windows&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
 &lt;h2 id="start-the-installer">Start the installer&lt;/h2>
 &lt;h3 id="on-windows">On Windows&lt;/h3>
-&lt;p>Download and run the executable installer by right-clicking on the executable from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>:&lt;/p>
+&lt;p>Run the executable installer by right-clicking on the executable from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>:&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/1.png" alt="example image">&lt;/p>
 &lt;h3 id="on-linux">On Linux&lt;/h3>
-&lt;p>Open the terminal and run the installer
-&lt;code>./xplorstudio-linux.run&lt;/code>&lt;/p>
+&lt;p>Open the terminal and run the installer&lt;/p>
+&lt;p>&lt;code>./xplorstudio-linux.run&lt;/code>&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/2.png" alt="example image">&lt;/p>
 &lt;p>Select the &lt;strong>Next&lt;/strong> button to proceed with the installation.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/3.png" alt="example image">&lt;/p>
@@ -196,24 +258,280 @@ Please choose a destination path that is not available. If XploR IDE is installe
 &lt;p>&lt;img src="/img_xplorstudio/Installation/9.png" alt="example image">&lt;/p>
 &lt;p>After all the XploR IDE files have been copied, one final dialog is presented below. Select the &lt;strong>Finish&lt;/strong> button to complete the installation of the XploR IDE.&lt;/p>
 &lt;p>&lt;img src="/img_xplorstudio/Installation/10.png" alt="example image">&lt;/p>
-&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
-&lt;p>After the successful installation in &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">Installation Guide&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, examples, qemu &amp;hellip;&lt;/p>
-&lt;p>To use example projects like Embedded Baremetal, Embedded Linux or LLVM projects, it is necessary to download and install some dependencies packaged as &lt;em>Blueprints&lt;/em>.&lt;/p>
-&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar, it will show a list of available Blueprints:&lt;/p>
+&lt;p>Click &lt;strong>OK&lt;/strong> to launch XploR IDE.&lt;/p></description></item><item><title>Docs: XIP installer</title><link>/docs/getting-started/installation/xip/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/installation/xip/</guid><description>
+&lt;p>&lt;strong>xip&lt;/strong> (i.e. XploR pip) is a standalone application used for downloading, installing and managing the IDE and blueprints. &lt;strong>xip&lt;/strong> can be downloaded from this &lt;a href="https://github.com/xplor-studio/xip/releases">link&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Tip:&lt;/strong>
+To install the XploR IDE with &lt;strong>xip&lt;/strong>, use:&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>% xip install xplor-studio-ide
+&lt;/code>&lt;/pre>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Developers can use &lt;strong>xip&lt;/strong> to:&lt;/p>
+&lt;ul>
+&lt;li>&lt;b>signup&lt;/b>: sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://xplor.soc.one/panel/registration">this link&lt;/a> to sign up for a free account.
+&lt;mark>Change all references to blueprint(s) to xplor.design&lt;/mark>&lt;/li>
+&lt;li>&lt;b>install&lt;/b>: download and install XploR Studio IDE, or blueprints from &lt;a href="https://xplor.design/">XploR Design&lt;/a>&lt;/li>
+&lt;li>&lt;b>uninstall&lt;/b>: uninstall installed blueprints on the host machine.&lt;/li>
+&lt;li>&lt;b>show&lt;/b>: show information about installed blueprints.&lt;/li>
+&lt;li>&lt;b>list&lt;/b>: list all installed and available blueprints.&lt;/li>
+&lt;/ul>
+&lt;p>To get more information:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: xip &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--version&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--xplor-home &amp;lt;path&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--init&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>A Blueprint manager CLI
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this &lt;span style="color:#204a87">help&lt;/span> message and &lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Commands:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> signup Sign up &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> a free account.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> install Install a blueprint.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uninstall Uninstall a blueprint.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> show Show the information of a blueprint.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list List installed blueprints.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>General options:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version Show version and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --xplor-home &amp;lt;path&amp;gt; Set the XploR workspace and &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">$XPLOR_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;path&amp;gt; &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> it not exists &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>Default: /home/ubuntu/.xplor&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --init Initialize the credentials file in the Xplor workspace and &lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To get more info about subcommands (signup, install, uninstall, show, list):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip install --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: xip install &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--no-deps&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--upgrade&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> blueprint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>positional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> blueprint The name of the blueprint to install.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this &lt;span style="color:#204a87">help&lt;/span> message and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-deps Install a blueprint without dependencies.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --upgrade Upgrade a blueprint to the newest available version.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="sign-up">Sign up&lt;/h2>
+&lt;p>To access blueprints and blueprint registry, users must sign up for an account &lt;a href="https://xplor.soc.one/panel/welcome">here&lt;/a> or using the &lt;code>xip signup&lt;/code> command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip signup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.060&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.060&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.061&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting the Registration Flow.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://xplor.soc.one/.ory/kratos/public/self-service/registration?flow&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5713986c-5675-4b15-9c27-169c68345bee
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 1.142&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting email and password.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your email: staff@soc.one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Re-enter your password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 17.868&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Signing up.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 19.770&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Sign up successfully.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>Notice&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Please activate your account now by clicking the link in the activation email to access all our features and services.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> Please activate your account by clicking the link in the activation email.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="sign-in">Sign in&lt;/h2>
+&lt;p>After signing up, users can authenticate with the registry with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip --init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.060&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.060&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder created successfully!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Cannot find the credentials file in /home/dongnh/.xplor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your username: staff@soc.one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your password:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>xip&lt;/strong> installer will require the username and password previously created in the sign up step for login. If login is successful, users will be asked to save the username and encoded password in a credentials file.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Enter your username: staff@soc.one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Login successully!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Would you like to save username and password to the credentials file? &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>y/n&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>This action will create a new credentials file or update the current credentials file&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install">Install&lt;/h2>
+&lt;p>Use &lt;em>xip install&lt;/em> to install blueprints with or without dependencies.&lt;/p>
+&lt;p>To install the GNU elf toolchain and related dependencies, use:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% xip install riscv-xplor-elf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To install without dependencies, use:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% xip install riscv-xplor-elf --no-deps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To upgrade blueprints to latest version:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% xip install --upgrade riscv-xplor-elf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="show">Show&lt;/h2>
+&lt;p>To show information about an installed blueprint:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip show riscv64-xplor-linux
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.003&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Name: riscv64-xplor-linux
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Version: 1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Summary: RISC-V Embedded Linux 64-bit Toolchain
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Home-page: http://xplor.design
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Author: SoC.One Inc.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Author-email: info@soc.one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>License: Free
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Location: /home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Requires: rootfs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Required-by:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="uninstall">Uninstall&lt;/h2>
+&lt;p>To uninstall the installed blueprint:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip uninstall qemu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.003&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.003&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Found existing installation: qemu 1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Uninstalling qemu-1.0:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Successfully uninstalled qemu-1.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="list">List&lt;/h2>
+&lt;p>To show all installed blueprints on the local machine:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Package Version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>------------------- -------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>qemu 1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>riscv64-xplor-linux 1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rootfs 1.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To show all available blueprints for your account:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list --on-registry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 3.723&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting data from registry.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 4.750&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Information of all blueprints on Registry:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+------------------------------+---------------+---------------+-----------+------------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> No &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Version &lt;span style="color:#000;font-weight:bold">|&lt;/span> Versions &lt;span style="color:#000;font-weight:bold">|&lt;/span> License &lt;span style="color:#000;font-weight:bold">|&lt;/span> Classifier &lt;span style="color:#000;font-weight:bold">|&lt;/span> Requires &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+&lt;span style="color:#ce5c00;font-weight:bold">======&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">==============================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===============&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===============&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">==================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============================&lt;/span>+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> openocd &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+------------------------------+---------------+---------------+-----------+------------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> qemu &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software, &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Platform &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+------------------------------+---------------+---------------+-----------+------------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> riscv-xplor-elf &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+------------------------------+---------------+---------------+-----------+------------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> riscv32-xplor-linux &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software &lt;span style="color:#000;font-weight:bold">|&lt;/span> rootfs &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+------------------------------+---------------+---------------+-----------+------------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> riscv32-xplord-linux &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software &lt;span style="color:#000;font-weight:bold">|&lt;/span> rootfs &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+------------------------------+---------------+---------------+-----------+------------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default, the data is displayed in table format. Users can customize their views by adding the &lt;code>--format&lt;/code> option. The available options are &lt;em>tabular&lt;/em> and &lt;em>JSON&lt;/em>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list --on-registry --format json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 3.662&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting data from registry.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 4.618&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Information of all blueprints on Registry:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;openocd-1.0.0&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Metadata-Version&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;1.1&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;openocd&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;1.0.0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Summary&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;Open On-Chip Debugger&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Home-page&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;http://xplor.design&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Author&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;SoC.One Inc.&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Author-email&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;info@soc.one&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;License&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;Free&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Description&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;OpenOCD aims to provide debugging, in-system programming and boundary-scan testing for embedded target devices&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Platform&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Classifier&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Software&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Requires&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Size&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;7.68 MB&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;qemu-1.0.0&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>User can select specific type of blueprints to display with the &lt;code>--filter&lt;/code> option.&lt;/p>
+&lt;p>Blueprint types for display using &lt;code>--filter&lt;/code> include &lt;b>software&lt;/b>, &lt;b>hardware&lt;/b>, &lt;b>cores&lt;/b>, &lt;b>platforms&lt;/b>, &lt;b>examples&lt;/b> or all (using the &lt;b>none&lt;/b> option).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list --on-registry --filter examples
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/blueprints
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 3.649&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting data from registry.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 4.600&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Information of examples blueprints on Registry:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+---------------------------+-----------+------------+-----------+--------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> No &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Version &lt;span style="color:#000;font-weight:bold">|&lt;/span> Versions &lt;span style="color:#000;font-weight:bold">|&lt;/span> License &lt;span style="color:#000;font-weight:bold">|&lt;/span> Classifier &lt;span style="color:#000;font-weight:bold">|&lt;/span> Requires &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+&lt;span style="color:#ce5c00;font-weight:bold">======&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">==============&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============================&lt;/span>+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> baremetal-neorv32-de2115 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Example &lt;span style="color:#000;font-weight:bold">|&lt;/span> bitstream-de2115-neorv32, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> riscv-xplor-elf &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+---------------------------+-----------+------------+-----------+--------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> baremetal-vexriscv-agilex &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Example &lt;span style="color:#000;font-weight:bold">|&lt;/span> bitstream-agilex-vexriscv, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> riscv-xplor-elf &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+---------------------------+-----------+------------+-----------+--------------+----------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
+&lt;p>After successful &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">installation&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, example programs, and target bitfiles.&lt;/p>
+&lt;p>To use example projects such as &lt;em>Embedded Baremetal&lt;/em>, &lt;em>Embedded Linux&lt;/em> or &lt;em>LLVM examples&lt;/em>, it is necessary to download and install the respective blueprints.&lt;/p>
+&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar to show a list of available blueprints:&lt;/p>
 &lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>There are two types of Blueprint servers: &lt;strong>Stable server&lt;/strong> for usage and &lt;strong>Development server&lt;/strong> for development.&lt;/li>
-&lt;li>&lt;strong>Current Version&lt;/strong> and &lt;strong>Available Version&lt;/strong> columns will indicate your computer&amp;rsquo;s current version and the server&amp;rsquo;s available version.&lt;/li>
-&lt;li>&lt;strong>Status&lt;/strong> column will inform whether this Blueprint is installed.&lt;/li>
+&lt;li>There are two instances of blueprints: &lt;strong>Stable&lt;/strong> for normal usage and &lt;strong>Development&lt;/strong> for development.&lt;/li>
+&lt;li>The &lt;strong>Current Version&lt;/strong> and &lt;strong>Available Version&lt;/strong> columns show the current installed version and the newest available version from XploR Design.&lt;/li>
+&lt;li>The &lt;strong>Status&lt;/strong> column indicates whether a blueprint is installed.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
-&lt;p>To install the desired Blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more Blueprints can be installed at the same time.&lt;/p>
+&lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
-&lt;p>If a Blueprint has multiple available versions, you can select a specific version of this Blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions, like this:&lt;/p>
+&lt;p>If a blueprint has multiple available versions, you can select a specific version of that blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions:&lt;/p>
 &lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p>
-&lt;p>There is a column named &amp;ldquo;Status&amp;rdquo; to show the status of a Blueprint as installed or not installed. User can uninstall a Blueprint, which is already installed, by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more Blueprints can be uninstalled at the same time.&lt;/p>
+&lt;p>The &amp;ldquo;Status&amp;rdquo; column shows whether the blueprint is installed locally. User can uninstall a blueprint by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more blueprints can be uninstalled at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3-2.png" alt="example image">&lt;/p>
 &lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
 &lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &amp;ldquo;RISC-V Blinky&amp;rdquo;. This application prints &amp;ldquo;Blink&amp;rdquo; text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
@@ -537,24 +855,27 @@ Solution: Please make sure the exact SOF file is flashed. Please refer to &lt;a 
 ## TFTP is not working
 When the board is booting, the Linux image is not downloaded from TFTP Server. The issue could be
 - No permission on the tftpboot directory. Try running **chmod -R 777 /path/to/boot.bin**
-- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Package blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Packaging blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;strong>WARNING&lt;/strong>
+The following guide is preliminary and subjected to changes.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
+&lt;p>The following software components on the host computer are required:&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>python==3.8.10&lt;/p>
-&lt;ul>
-&lt;li>setuptools (newest version): using for packaging a blueprint&lt;/li>
+&lt;li>python==3.8.10&lt;/li>
+&lt;li>setuptools (newest version)&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;div class="alert alert-danger" role="alert">
-&lt;p>Download and extract the blueprint template in &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/empty-blueprint-templates.zip">here&lt;/a>.&lt;/p>
-&lt;p>&lt;strong>Blueprint Name&lt;/strong>: Blueprint names should be lowercase, and if multiple words are used, they should be separated by underscores &lt;code>_&lt;/code> or &lt;code>-&lt;/code>. Avoid using spaces or special characters or mixing &lt;code>_&lt;/code> and &lt;code>-&lt;/code> in the package name.&lt;/p>
-&lt;p>&lt;strong>The correct name&lt;/strong>: &lt;code>blueprint-one&lt;/code>, &lt;code>blueprint_two&lt;/code>&lt;/p>
-&lt;p>&lt;strong>The wrong name&lt;/strong>: &lt;code>blueprint_with-wrong_name&lt;/code>&lt;/p>
-&lt;/div>
-&lt;h2 id="structure-of-blueprint-templates">Structure of blueprint templates&lt;/h2>
-&lt;p>In the sample, there are 2 folders (&lt;strong>blueprint-one/&lt;/strong>, &lt;strong>blueprint-two/&lt;/strong>) containing blueprint templates and a Makefile that supports building and uploading blueprints.&lt;/p>
+&lt;h2 id="template">Template&lt;/h2>
+&lt;p>Download and extract the blueprint template from &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/empty-blueprint-templates.zip">here&lt;/a>.&lt;/p>
+&lt;p>Note that blueprint name should be in lowercases. If multiple words are used, they should be separated by underscores &lt;code>_&lt;/code> or &lt;code>-&lt;/code>. Avoid using spaces or special characters or mixing &lt;code>_&lt;/code> and &lt;code>-&lt;/code> in the package name.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code> Correct name : `blueprint-one`, `blueprint_two`
+Wrong name : `blueprint_with-wrong_name`
+&lt;/code>&lt;/pre>&lt;/blockquote>
+&lt;h3 id="structure-of-blueprint-templates">Structure of blueprint templates&lt;/h3>
+&lt;p>In the example blueprint template, there are 2 folders (&lt;strong>blueprint-one/&lt;/strong>, &lt;strong>blueprint-two/&lt;/strong>) containing blueprint templates and a &lt;em>Makefile&lt;/em> that supports building and publishing blueprints.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── blueprint-one
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── blueprint-one
@@ -582,19 +903,19 @@ When the board is booting, the Linux image is not downloaded from TFTP Server. T
 &lt;p>&lt;strong>setup.py&lt;/strong> (used for building a blueprint)&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>We have 2 main scenarios of data in the blueprint:&lt;/p>
+&lt;p>Two different data scenarios for blueprint are supported:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>The data of the blueprint can be used in both Windows and Linux OS (&lt;strong>blueprint-one&lt;/strong>)&lt;/p>
+&lt;p>The data of the blueprint are host-independent, and can be used in both Windows and Linux OS (&lt;strong>blueprint-one&lt;/strong>)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>The data of the blueprint is different with each OS (&lt;strong>blueprint-two&lt;/strong>)&lt;/p>
+&lt;p>The data of the blueprint are host-dependent, requiring a different version for each supported host (&lt;strong>blueprint-two&lt;/strong>)&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>&lt;strong>Limitation&lt;/strong>: We still not handle for a blueprint has both common and specific data for each OS&lt;/p>
+&lt;p>&lt;strong>Limitation&lt;/strong>: blueprints that have a mix of both common and specific data for different supported host are not yet supported.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="explain-the-content-of-setuppy">Explain the content of setup.py&lt;/h2>
+&lt;h2 id="setuppy">setup.py&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>blueprint-one/setup.py&lt;/code>&lt;/p>
@@ -666,12 +987,12 @@ When the board is booting, the Linux image is not downloaded from TFTP Server. T
 &lt;p>&lt;code>classifiers&lt;/code> - A list of strings describing the categories for the package. (Classify a blueprint as HW, SW, bitstream,… or something else)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>include_package_data&lt;/code> - If set to True, this tells setuptools to automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. (Should be set to True to include non-Python data)&lt;/p>
+&lt;p>&lt;code>include_package_data&lt;/code> - If True, setuptools will automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. (Should be set to True to include non-Python data)&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>For scenario no.2 (&lt;code>blueprint-two&lt;/code>), we only need to add some code to &lt;code>setup.py&lt;/code> that specific &lt;code>package_dir&lt;/code> for each OS.&lt;/p>
+&lt;p>For (&lt;code>blueprint-two&lt;/code>), only some code need to be added to &lt;code>setup.py&lt;/code> to specify &lt;code>package_dir&lt;/code> for each supported host OS, as follow:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">setuptools&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">setup&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">platform&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -682,9 +1003,10 @@ When the board is booting, the Linux image is not downloaded from TFTP Server. T
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;h2 id="post-install-and-pre-uninstall">Post-install and Pre-uninstall&lt;/h2>
-&lt;div class="alert alert-info" role="alert">
-&lt;p>If there are some executed files needed to run after the blueprint is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (depending on the OS) to the data folder.&lt;/p>
-&lt;p>If there are some executed files needed to run before the blueprint is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (depending on the OS) to the data folder.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note:&lt;/h4>
+&lt;p>If there are executable files that need to run after the blueprint is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
+&lt;p>If there are executable files that need to run before the blueprint is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
 &lt;/div>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>xplor-studio-elf/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
@@ -696,19 +1018,21 @@ When the board is booting, the Linux image is not downloaded from TFTP Server. T
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── win32.x86_64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── post-install.bat
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── pre-uninstall.bat
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="build-a-blueprint">Build a blueprint&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python3 setup.py sdist
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>make build&lt;/code>&lt;/p>
-&lt;h2 id="span-stylecolor-rednotespan">&lt;span style="color: red">&lt;strong>NOTE&lt;/strong>&lt;/span>&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="building-blueprint">Building blueprint&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% python3 setup.py sdist
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>% make build&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>For re-using the template, please rename the data folder and update the content of &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code>&lt;/li>
-&lt;li>For instance with &lt;code>blueprint-one&lt;/code>:
+&lt;li>If you&amp;rsquo;re reusing the example template, please rename the data folder and update the content of &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code>&lt;/li>
+&lt;li>As an example, with &lt;code>blueprint-one&lt;/code>:
 &lt;ul>
 &lt;li>Rename folder &lt;code>blueprint-one&lt;/code> → &lt;code>socone-blueprint&lt;/code>&lt;/li>
 &lt;li>Replace string in &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code> : &lt;code>blueprint-one&lt;/code> → &lt;code>socone-blueprint&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: Configuring project</title><link>/docs/configuration/build/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/build/</guid><description>
+&lt;/ul>
+&lt;/blockquote></description></item><item><title>Docs: Configuring project</title><link>/docs/configuration/build/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/build/</guid><description>
 &lt;p>To configure a project in XploR Studio, right-click on the project and select &lt;strong>Properties&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_configuration//build/1.png" alt="example image">&lt;/p>
 &lt;p>The properties for a project include:&lt;/p>
