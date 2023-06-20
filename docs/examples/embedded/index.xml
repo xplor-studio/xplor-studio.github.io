@@ -1,9 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Baremetal</title><link>/docs/examples/embedded/</link><description>Recent content in Baremetal on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/embedded/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GNU C/C++ HelloWorld</title><link>/docs/examples/embedded/riscvhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/riscvhelloworld/</guid><description>
-&lt;h1 id="risc-v-hello-world-embedded-project">RISC-V Hello World Embedded Project&lt;/h1>
-&lt;p>This chapter covers the basics of C/C++ embedded RISC-V projects including creating, building, running, and debugging embedded RISC-V applications. The project referred to in this chapter is called &amp;ldquo;RISC-V Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>This chapter covers the basics of C/C++ embedded projects including creating, building, running, and debugging embedded applications. The project referred to in this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_embedded/RISCVHelloworld/1-1.png" alt="example image">&lt;/p>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -51,17 +50,16 @@ Refer to [Running and Debugging project with QEMU emulator](../../../getting-sta
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: LLVM C/C++ HelloWorld</title><link>/docs/examples/embedded/llvmhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/llvmhelloworld/</guid><description>
-&lt;h1 id="llvm-hello-world-embedded-project">LLVM Hello World Embedded Project&lt;/h1>
 &lt;p>This chapter covers the basics of C/C++ embedded RISC-V projects including creating, building, running, and debugging embedded RISC-V applications. The project referred to in this chapter is called &amp;ldquo;LLVM Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built with LLVM toolchain and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>To create &lt;em>LLVM Hello World Embedded Project&lt;/em>, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; RISC-V LLVM Sample&lt;/strong> project and &lt;strong>Toolchains&lt;/strong>: &lt;em>LLVM Baremetal Toolchain for RISC-V&lt;/em>.&lt;/p>
 &lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1.png" alt="example image">&lt;/p>
 &lt;p>As the image above, there is no option as &lt;em>LLVM Baremetal Toolchain for RISC-V&lt;/em> because this XploR Studio does not contain LLVM toolchain.&lt;/p>
-&lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information).&lt;/p>
+&lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information).&lt;/p>
 &lt;p>After installation and restart the IDE, you can see the creating-project widget like:&lt;/p>
 &lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1-1.png" alt="example image">&lt;/p>
 &lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-a-new-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>

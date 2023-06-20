@@ -2,7 +2,7 @@
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;HelloWorld.&amp;rdquo; This application prints &lt;em>Hello world&lt;/em> text and runs a simple for-loop for a simple demonstration. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -59,7 +59,7 @@ Then click Next.&lt;/p>
 &lt;hr>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;hr>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -117,7 +117,7 @@ Select Zephyr Base Path then click Next:&lt;/p>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Mutex&lt;/strong>. This application creates two threads that modify a shared resource while using a mutex lock for synchronization. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -175,7 +175,7 @@ Then click Next.&lt;/p>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Semaphore&lt;/strong>. This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -233,7 +233,7 @@ Then click Next.&lt;/p>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Message Queue&lt;/strong>. This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>

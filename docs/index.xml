@@ -1,36 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Welcome to XploR Studio</title><link>/docs/</link><description>Recent content in Welcome to XploR Studio on XploR Studio</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
-&lt;p>Blueprints are packages of hardware and/or software IP(s) that extend XploR Studio with custom features and behaviors for specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
-&lt;p>The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a collection of free and paid blueprints from SoC.one, community contributors, and commercial vendors.&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong>
-You can peruse the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard via the &lt;code>Blueprints&lt;/code> menu entry, or with &lt;strong>xip&lt;/strong>.&lt;/p>
-&lt;/blockquote>
-&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe XploR blueprints
-state &amp;#34;xplor.design - blueprint registry&amp;#34; as registry {
-state &amp;#34;Free blueprints&amp;#34;
-state &amp;#34;Paid blueprints&amp;#34;
-}
-state &amp;#34;Contributors&amp;#34; as contributors {
-state &amp;#34;SoC.one&amp;#34; as socone
-state &amp;#34;Open source developers&amp;#34; as developers
-state &amp;#34;Third-parties vendors&amp;#34; as vendors
-}
-socone --&amp;gt; registry : contributes
-developers -up-&amp;gt; registry : contribute
-vendors --&amp;gt; registry : contribute
-state &amp;#34;XploR Studio&amp;#34; as IDE
-state &amp;#34;Target Platform&amp;#34; as target
-IDE : User downloads and installs
-IDE : blueprints from XploR.design
-IDE : on the host system.
-IDE :
-IDE : XploR studio deploys blueprints
-IDE : on target platform
-registry -&amp;gt; IDE : download &amp;amp;\ninstall
-IDE --&amp;gt; target
-&lt;/code>&lt;/pre>&lt;h3 id="creating-and-contributing-blueprints">Creating and contributing blueprints&lt;/h3>
-&lt;p>Developer can create and contribute blueprints to XploR Design blueprint catalog. Once downloaded and installed, contributed blueprints are loaded dynamically XploR Studio.&lt;/p>
-&lt;p>The experience of implementing an XploR Design blueprint is comparable to that of writing a web browser extension. To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Embedded development</title><link>/docs/concepts/cross-platform/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/cross-platform/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Welcome to XploR Studio</title><link>/docs/</link><description>Recent content in Welcome to XploR Studio on XploR Studio</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Embedded development</title><link>/docs/concepts/cross-platform/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/cross-platform/</guid><description>
 &lt;p>In embedded or &lt;strong>cross-platform&lt;/strong> development, the compute architecture of the &lt;strong>host development system&lt;/strong> (i.e. &lt;em>hosts&lt;/em>) is different than the the &lt;strong>target execution platform&lt;/strong> (i.e. &lt;em>targets&lt;/em>). Thus, the &lt;strong>target application(s)&lt;/strong> (i.e. &lt;em>programs&lt;/em>) will not be able to run on the host development system.&lt;/p>
 &lt;p>The &lt;strong>communication channel&lt;/strong> between the host and target lets the host software (e.g. XploR Studio) program and control the target hardware behavior and program code.&lt;/p>
 &lt;p>Because of the inherent architural differences between the hosts and targets, &lt;strong>XploR Studio&lt;/strong> is integrated with different embedded compiler toolchains, operating systems, hardware designs, and debug &amp;amp; monitoring tools, packaged as &lt;strong>blueprints&lt;/strong> and delivered by the IDE to provide a unified experience to create, build, deploy, test and debug designs for developers.&lt;/p>
@@ -514,28 +482,9 @@ To install the XploR IDE with &lt;strong>xip&lt;/strong>, use:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> riscv-xplor-elf &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+---------------------------+-----------+------------+-----------+--------------+----------------------------+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
-&lt;p>After successful &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">installation&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, example programs, and target bitfiles.&lt;/p>
-&lt;p>To use example projects such as &lt;em>Embedded Baremetal&lt;/em>, &lt;em>Embedded Linux&lt;/em> or &lt;em>LLVM examples&lt;/em>, it is necessary to download and install the respective blueprints.&lt;/p>
-&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar to show a list of available blueprints:&lt;/p>
-&lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>There are two instances of blueprints: &lt;strong>Stable&lt;/strong> for normal usage and &lt;strong>Development&lt;/strong> for development.&lt;/li>
-&lt;li>The &lt;strong>Current Version&lt;/strong> and &lt;strong>Available Version&lt;/strong> columns show the current installed version and the newest available version from XploR Design.&lt;/li>
-&lt;li>The &lt;strong>Status&lt;/strong> column indicates whether a blueprint is installed.&lt;/li>
-&lt;/ul>
-&lt;/blockquote>
-&lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
-&lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
-&lt;p>If a blueprint has multiple available versions, you can select a specific version of that blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions:&lt;/p>
-&lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p>
-&lt;p>The &amp;ldquo;Status&amp;rdquo; column shows whether the blueprint is installed locally. User can uninstall a blueprint by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more blueprints can be uninstalled at the same time.&lt;/p>
-&lt;p>&lt;img src="/blueprints/3-2.png" alt="example image">&lt;/p>
-&lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
-&lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &amp;ldquo;RISC-V Blinky&amp;rdquo;. This application prints &amp;ldquo;Blink&amp;rdquo; text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
-&lt;p>To build, run and debug &amp;ldquo;RISC-V Blinky&amp;rdquo; applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/getting-started/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/getting-started/quick-start/freertos/</guid><description>
+&lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &lt;strong>Blinky&lt;/strong>. This application prints &lt;em>Blink&lt;/em> text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>To build, run and debug &lt;strong>Blinky&lt;/strong> applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects by selecting &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Blinky&lt;/strong> project.
 Select Toolchains: &lt;strong>Baremetal XploR Toolchain for RISC-V&lt;/strong> and enter the Project name.
@@ -855,7 +804,58 @@ Solution: Please make sure the exact SOF file is flashed. Please refer to &lt;a 
 ## TFTP is not working
 When the board is booting, the Linux image is not downloaded from TFTP Server. The issue could be
 - No permission on the tftpboot directory. Try running **chmod -R 777 /path/to/boot.bin**
-- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Packaging blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Introduction</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
+&lt;p>Blueprints are packages of hardware and/or software IP(s) that extend XploR Studio with custom features and behaviors for specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
+&lt;p>The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a collection of free and paid blueprints from SoC.one, community contributors, and commercial vendors.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+You can peruse the &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> from the XploR Studio Dashboard via the &lt;code>Blueprints&lt;/code> menu entry, or with &lt;strong>xip&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe XploR blueprints
+state &amp;#34;xplor.design - blueprint registry&amp;#34; as registry {
+state &amp;#34;Free blueprints&amp;#34;
+state &amp;#34;Paid blueprints&amp;#34;
+}
+state &amp;#34;Contributors&amp;#34; as contributors {
+state &amp;#34;SoC.one&amp;#34; as socone
+state &amp;#34;Open source developers&amp;#34; as developers
+state &amp;#34;Third-parties vendors&amp;#34; as vendors
+}
+socone --&amp;gt; registry : contributes
+developers -up-&amp;gt; registry : contribute
+vendors --&amp;gt; registry : contribute
+state &amp;#34;XploR Studio&amp;#34; as IDE
+state &amp;#34;Target Platform&amp;#34; as target
+IDE : User downloads and installs
+IDE : blueprints from XploR.design
+IDE : on the host system.
+IDE :
+IDE : XploR studio deploys blueprints
+IDE : on target platform
+registry -&amp;gt; IDE : download &amp;amp;\ninstall
+IDE --&amp;gt; target
+&lt;/code>&lt;/pre>&lt;h3 id="creating-and-contributing-blueprints">Creating and contributing blueprints&lt;/h3>
+&lt;p>Developer can create and contribute blueprints to XploR Design blueprint catalog. Once downloaded and installed, contributed blueprints are loaded dynamically XploR Studio.&lt;/p>
+&lt;p>The experience of implementing an XploR Design blueprint is comparable to that of writing a web browser extension. To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
+&lt;p>After successful &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">installation&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, example programs, and target bitfiles.&lt;/p>
+&lt;p>To use example projects such as &lt;em>Embedded Baremetal&lt;/em>, &lt;em>Embedded Linux&lt;/em> or &lt;em>LLVM examples&lt;/em>, it is necessary to download and install the respective blueprints.&lt;/p>
+&lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar to show a list of available blueprints:&lt;/p>
+&lt;p>&lt;img src="/blueprints/2.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>There are two instances of blueprints: &lt;strong>Stable&lt;/strong> for normal usage and &lt;strong>Development&lt;/strong> for development.&lt;/li>
+&lt;li>The &lt;strong>Current Version&lt;/strong> and &lt;strong>Available Version&lt;/strong> columns show the current installed version and the newest available version from XploR Design.&lt;/li>
+&lt;li>The &lt;strong>Status&lt;/strong> column indicates whether a blueprint is installed.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>To install the desired blueprint, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more blueprints can be installed at the same time.&lt;/p>
+&lt;p>&lt;img src="/blueprints/3.png" alt="example image">&lt;/p>
+&lt;p>If a blueprint has multiple available versions, you can select a specific version of that blueprint by simply double-clicking on it. A new dialog will be shown to display all available versions:&lt;/p>
+&lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p>
+&lt;p>The &lt;em>Status&lt;/em> column shows whether the blueprint is installed locally. User can uninstall a blueprint by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more blueprints can be uninstalled at the same time.&lt;/p>
+&lt;p>&lt;img src="/blueprints/3-2.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Packaging blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;strong>WARNING&lt;/strong>
 The following guide is preliminary and subjected to changes.&lt;/p>
@@ -1069,15 +1069,14 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;h3 id="preparing-execution-environment">Preparing execution environment&lt;/h3>
 &lt;p>A binary image (bitfile) containing the hardware design of the system-on-chip that runs the embedded program will need to be downloaded and programmed on the FPGAs or hardware-assisted verification systems (HAVS) target.&lt;/p>
 &lt;p>For ASIC target platforms, no additional preparation is needed.&lt;/p>
-&lt;p>To program a bitfile to the specific board, click on the flash icon on the toolbar of XploR Studio IDE.&lt;/p>
-&lt;p>&lt;img src="/images_configuration/flash/flashing-icon.png" alt="example image">&lt;/p>
-&lt;p>The &amp;ldquo;Programming IP Core&amp;rdquo; dialog appears to make it easier to select IP cores from different vendors:&lt;/p>
+&lt;p>To program a bitfile to the specific board, click on the flash icon &lt;img src="/images_configuration/flash/flashing-icon.png" alt="Image alt"> on the toolbar of XploR Studio IDE.&lt;/p>
+&lt;p>The &lt;strong>Programming IP Core&lt;/strong> dialog appears to make it easier to select IP cores from different vendors:&lt;/p>
 &lt;p>&lt;img src="/images_configuration/flash/1.png" alt="example image">&lt;/p>
 &lt;p>The images show the IP core selected is &lt;code>s10gx_vexriscv.sof&lt;/code>, which is the bitfile for Intel Stratix 10 GX FPGA board from VexRiscv vendor and the tool used for programming board is &lt;code>quartus_pgm&lt;/code> (Quartus Programmer).&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
 &lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
+The project used in this documentation is &lt;strong>GNU C/C++ Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_configuration/run/1.png" alt="example image">&lt;/p>
 &lt;p>Double-click on &lt;strong>RISC-V Running&lt;/strong> to create a new run configuration. In &lt;strong>Main&lt;/strong> tab, you can select the application path, auto-build option and change run configuration:&lt;/p>
@@ -1085,7 +1084,7 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;p>To debug a project on XploR Studio, right-click on the project and select &lt;strong>Debug As &amp;gt; Debug Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
+The project used in this documentation is &lt;strong>GNU C/C++ Helloworld Embedded Project&lt;/strong> so there are some differences in other projects.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_configuration/debug/1.png" alt="example image">&lt;/p>
 &lt;p>Double-click on &lt;strong>RISC-V Debugging&lt;/strong> to create a new debug configuration:&lt;/p>
@@ -1113,25 +1112,24 @@ The project used in this documentation is &lt;strong>RISC-V Helloworld Embedded 
 &lt;/li>
 &lt;li>Embedded Linux projects:
 &lt;ul>
-&lt;li>&lt;a href="/docs/examples/embedded-linux/helloworld">&lt;span style="color: blue">Helloworld&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/embedded-linux/debug-kernel">&lt;span style="color: blue">Kernel Debug&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/helloworld/">&lt;span style="color: blue">Helloworld&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/embedded-linux/debug-kernel/">&lt;span style="color: blue">Kernel Debug&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Zephyr RTOS projects:
 &lt;ul>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrhelloworld">&lt;span style="color: blue">Helloworld&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsynchronization">&lt;span style="color: blue">Synchonization&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmutex">&lt;span style="color: blue">Mutex&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsemaphore">&lt;span style="color: blue">Semaphore&lt;/span>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmsgq">&lt;span style="color: blue">Message Queue&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrhelloworld/">&lt;span style="color: blue">Helloworld&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsynchronization/">&lt;span style="color: blue">Synchonization&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmutex/">&lt;span style="color: blue">Mutex&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrsemaphore/">&lt;span style="color: blue">Semaphore&lt;/span>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/examples/zephyrrtos/zephyrmsgq/">&lt;span style="color: blue">Message Queue&lt;/span>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Docs: GNU C/C++ HelloWorld</title><link>/docs/examples/embedded/riscvhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/riscvhelloworld/</guid><description>
-&lt;h1 id="risc-v-hello-world-embedded-project">RISC-V Hello World Embedded Project&lt;/h1>
-&lt;p>This chapter covers the basics of C/C++ embedded RISC-V projects including creating, building, running, and debugging embedded RISC-V applications. The project referred to in this chapter is called &amp;ldquo;RISC-V Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>This chapter covers the basics of C/C++ embedded projects including creating, building, running, and debugging embedded applications. The project referred to in this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_embedded/RISCVHelloworld/1-1.png" alt="example image">&lt;/p>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -1179,17 +1177,16 @@ Refer to [Running and Debugging project with QEMU emulator](../../../getting-sta
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: LLVM C/C++ HelloWorld</title><link>/docs/examples/embedded/llvmhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/llvmhelloworld/</guid><description>
-&lt;h1 id="llvm-hello-world-embedded-project">LLVM Hello World Embedded Project&lt;/h1>
 &lt;p>This chapter covers the basics of C/C++ embedded RISC-V projects including creating, building, running, and debugging embedded RISC-V applications. The project referred to in this chapter is called &amp;ldquo;LLVM Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built with LLVM toolchain and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug Embedded applications with QEMU emulator, please install the &lt;strong>xplor-studio-elf&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>To create &lt;em>LLVM Hello World Embedded Project&lt;/em>, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; RISC-V LLVM Sample&lt;/strong> project and &lt;strong>Toolchains&lt;/strong>: &lt;em>LLVM Baremetal Toolchain for RISC-V&lt;/em>.&lt;/p>
 &lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1.png" alt="example image">&lt;/p>
 &lt;p>As the image above, there is no option as &lt;em>LLVM Baremetal Toolchain for RISC-V&lt;/em> because this XploR Studio does not contain LLVM toolchain.&lt;/p>
-&lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information).&lt;/p>
+&lt;p>To use this toolchain, please install &lt;strong>xplor-clang&lt;/strong> blueprint (refer to &lt;a href="../../../blueprints/guideline">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information).&lt;/p>
 &lt;p>After installation and restart the IDE, you can see the creating-project widget like:&lt;/p>
 &lt;p>&lt;img src="/images_embedded/LLVMHelloworld/1-1.png" alt="example image">&lt;/p>
 &lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-a-new-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information on other steps.&lt;/p>
@@ -1205,10 +1202,10 @@ The running and debugging with Imperas emulator is the same as the **RISC-V Hell
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Blinky</title><link>/docs/examples/freertos/blinky/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/blinky/</guid><description>
-&lt;p>This chapter covers the basics of C/C++ FreeRTOS RISC-V projects including creating, building, running, and debugging FreeRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;RISC-V Blinky.&amp;rdquo; This application prints &lt;em>Blink&lt;/em> text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>This chapter covers the basics of C/C++ FreeRTOS projects including creating, building, running, and debugging FreeRTOS applications. The project referred to in this chapter is called &amp;ldquo;Blinky&amp;rdquo;. This application prints &lt;em>Blink&lt;/em> text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>Please refer to &lt;a href="../../../getting-started/quick-start/freertos#create-a-new-project">&lt;span style="color: blue">Create a new project&lt;/span>&lt;/a> for more information.&lt;/p>
@@ -1222,11 +1219,10 @@ To build, run and debug FreeRTOS applications with QEMU emulator, please install
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Generic Heap</title><link>/docs/examples/freertos/genericheap/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/genericheap/</guid><description>
-&lt;h1 id="freertos-risc-v-generic-heap-application">FreeRTOS RISC-V Generic Heap application&lt;/h1>
 &lt;p>This chapter covers the basics of the FreeRTOS RISC-V Heap sample application including creating, building, running, and debugging steps. This application simply prints &lt;em>Testing Heap&lt;/em> on the console screen. Through this example, users know how to discover FreeRTOS objects such as Queue, Task, Heap, &amp;hellip; during debug session. This application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>FreeRTOS Project&lt;/strong> &amp;gt; &lt;strong>RISC-V Generic Heap&lt;/strong> and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em>, enter project name then click &lt;strong>Next&lt;/strong> button.&lt;/p>
@@ -1244,11 +1240,10 @@ When suspending the debug process and switching to Terminal view, the user can s
 &lt;/center>
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Large Heap</title><link>/docs/examples/freertos/largeheap/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/largeheap/</guid><description>
-&lt;h1 id="freertos-risc-v-large-heap-project">FreeRTOS RISC-V Large Heap Project&lt;/h1>
 &lt;p>This chapter covers the basics of the FreeRTOS RISC-V Large Heap application including creating, building, running, and debugging steps. This application simply prints &lt;em>Testing Heap&lt;/em> on the console screen. Through this example, users know how to discover FreeRTOS objects such as Queue, Task, Heap, &amp;hellip; during debug session. This application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>FreeRTOS Project&lt;/strong> &amp;gt; &lt;strong>RISC-V Large Heap&lt;/strong> and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em>, enter project name then click &lt;strong>Next&lt;/strong> button.&lt;/p>
@@ -1266,11 +1261,10 @@ When suspending the debug process and switching to Terminal view, the user can s
 &lt;/center>
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Generic Timer</title><link>/docs/examples/freertos/generictimer/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/freertos/generictimer/</guid><description>
-&lt;h1 id="freertos-risc-v-generic-timer-application">FreeRTOS RISC-V Generic Timer application&lt;/h1>
 &lt;p>This chapter covers the basics of the FreeRTOS RISC-V Generic Timer application including creating, building, running, and debugging steps. This application simply prints &lt;em>Testing Timer&lt;/em> on the console screen. Through this example, users know how to discover FreeRTOS objects such as Queue, Task, Heap, &amp;hellip; during debug session. This application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug FreeRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>FreeRTOS Project&lt;/strong> &amp;gt; &lt;strong>RISC-V Generic Timer&lt;/strong> and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em>, enter project name then click &lt;strong>Next&lt;/strong> button.&lt;/p>
@@ -1299,11 +1293,10 @@ and RAM size in src/environmental-support/env-board/linker_script.lds
 &lt;/center>
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
 The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Hello World</title><link>/docs/examples/embedded-linux/helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/helloworld/</guid><description>
-&lt;h1 id="risc-v-embedded-linux-project">RISC-V Embedded Linux Project&lt;/h1>
-&lt;p>This chapter covers the basics of C/C++ embedded Linux RISC-V projects, including create/build/run/debug RISC-V embedded Linux applications. The project referred to by this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>This chapter covers the basics of C/C++ embedded Linux projects, including create/build/run/debug embedded Linux applications. The project referred to by this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>xplor-studio-linux&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>xplor-studio-linux&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Helloworld&lt;/strong> project and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box&lt;/p>
@@ -1319,7 +1312,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;/ul>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-3.png" alt="example image">&lt;/p>
 &lt;p>Each blueprint can be downloaded separately depending on the purpose.&lt;/p>
-&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>After installation and restarting the IDE, you can see the creating-project widget like:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-1.png" alt="example image">&lt;/p>
 &lt;p>On Ubuntu, LLVM Embedded Linux toolchain is packaged inside the Embedded Linux toolchain that supports &lt;em>Double&lt;/em> extension (&lt;strong>riscv32-xplord-linux&lt;/strong> and &lt;strong>riscv64-xplord-linux&lt;/strong>). LLVM Embedded Linux toolchain has not been supported on Windows yet.&lt;/p>
@@ -1331,7 +1324,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-2.png" alt="example image">&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
-&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-4.png" alt="example image">&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
 &lt;h4 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h4>
@@ -1454,12 +1447,11 @@ Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change
 + Floating point ABI: Double precision extension (RVFD)
 + Click Apply and Close
 The following steps as same as the previous sections. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../examples/embedded-linux/Helloworld#debug-linux-de2) for more information. --></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
-&lt;h1 id="kernel-debugging">Kernel Debugging&lt;/h1>
 &lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/li>
+&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/li>
 &lt;li>In this release, &lt;strong>Debugging Kernel&lt;/strong> feature is only available on Ubuntu.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
@@ -1471,7 +1463,7 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;p>Select &lt;em>Kernel Source Path&lt;/em> then click &lt;strong>Finish&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/debug-kernel/3.png" alt="example image">&lt;/p>
 &lt;h2 id="update-build-settings">Update build settings&lt;/h2>
-&lt;p>With build settings, users can switch from RISC-V 32 bits to RISC-V 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
+&lt;p>With build settings, users can switch from 32 bits to 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/debug-kernel/4.png" alt="example image">&lt;/p>
 &lt;p>Please refer to the below table to select the correct options for each target.&lt;/p>
 &lt;table>
@@ -1657,7 +1649,7 @@ Select **Apply** then **Debug**, the IDE will change to the debug perspective an
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;HelloWorld.&amp;rdquo; This application prints &lt;em>Hello world&lt;/em> text and runs a simple for-loop for a simple demonstration. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -1714,7 +1706,7 @@ Then click Next.&lt;/p>
 &lt;hr>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;hr>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
@@ -1772,7 +1764,7 @@ Select Zephyr Base Path then click Next:&lt;/p>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Mutex&lt;/strong>. This application creates two threads that modify a shared resource while using a mutex lock for synchronization. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -1830,7 +1822,7 @@ Then click Next.&lt;/p>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Semaphore&lt;/strong>. This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -1888,7 +1880,7 @@ Then click Next.&lt;/p>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &lt;strong>Message Queue&lt;/strong>. This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug ZephyrRTOS applications with QEMU emulator, please install the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>The easiest way to use Zephyr RTOS is to start with one of the pre-configured demo application projects by selecting &amp;ldquo;&lt;strong>File - New - C/C++ Project&lt;/strong>&amp;rdquo;, choose &lt;strong>Zephyr application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
@@ -2060,18 +2052,4 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;p>&lt;img src="/images_views/zephyrtos/3.png" alt="example image">&lt;/p>
 &lt;h2 id="zephyrrtos-heap-view">ZephyrRTOS Heap View&lt;/h2>
 &lt;p>The ZephyrRTOS Heap view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
-&lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item><item><title>Docs:</title><link>/docs/contributing/join-us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributing/join-us/</guid><description>
-&lt;p>&lt;em>You&lt;/em> Made It
-{: .subtitle}&lt;/p>
-&lt;p>We extend our gratitude to all contributors who have participated! XploR Design serves as an inclusive platform, allowing anyone to contribute their work to an open marketplace&lt;/p>
-&lt;p>So once again, thank you for your invaluable help in making XploR such a good product!&lt;/p>
-&lt;!-- !!! question "Where to Go Next?"
-If you want to:
-- Propose and idea, request a feature a report a bug,
-read the page [Submitting Issues](./submitting-issues.md).
-- Discover how to make an efficient contribution,
-read the page [Submitting Pull Requests](./submitting-pull-requests.md).
-- Learn how to build and test XploR blueprint,
-the page [Building and Testing](./building-testing.md) is for you.
-- Contribute to the documentation,
-read the related page [Documentation](./documentation.md). --></description></item><item><title>Docs:</title><link>/docs/debug-and-trace/trace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/debug-and-trace/trace/</guid><description/></item></channel></rss>
+&lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item><item><title>Docs:</title><link>/docs/contributing/join-us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributing/join-us/</guid><description/></item><item><title>Docs:</title><link>/docs/debug-and-trace/trace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/debug-and-trace/trace/</guid><description/></item></channel></rss>

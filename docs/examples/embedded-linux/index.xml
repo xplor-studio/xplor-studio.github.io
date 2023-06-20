@@ -1,9 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Embedded Linux</title><link>/docs/examples/embedded-linux/</link><description>Recent content in Embedded Linux on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/embedded-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hello World</title><link>/docs/examples/embedded-linux/helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/helloworld/</guid><description>
-&lt;h1 id="risc-v-embedded-linux-project">RISC-V Embedded Linux Project&lt;/h1>
-&lt;p>This chapter covers the basics of C/C++ embedded Linux RISC-V projects, including create/build/run/debug RISC-V embedded Linux applications. The project referred to by this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>This chapter covers the basics of C/C++ embedded Linux projects, including create/build/run/debug embedded Linux applications. The project referred to by this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To build, run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>xplor-studio-linux&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+To build, run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>xplor-studio-linux&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
 &lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Helloworld&lt;/strong> project and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box&lt;/p>
@@ -19,7 +18,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;/ul>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-3.png" alt="example image">&lt;/p>
 &lt;p>Each blueprint can be downloaded separately depending on the purpose.&lt;/p>
-&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>After installation and restarting the IDE, you can see the creating-project widget like:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-1.png" alt="example image">&lt;/p>
 &lt;p>On Ubuntu, LLVM Embedded Linux toolchain is packaged inside the Embedded Linux toolchain that supports &lt;em>Double&lt;/em> extension (&lt;strong>riscv32-xplord-linux&lt;/strong> and &lt;strong>riscv64-xplord-linux&lt;/strong>). LLVM Embedded Linux toolchain has not been supported on Windows yet.&lt;/p>
@@ -31,7 +30,7 @@ There are 4 different blueprints:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-2.png" alt="example image">&lt;/p>
 &lt;h2 id="build-project">Build project&lt;/h2>
 &lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
-&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>To run and debug Embedded Linux applications with QEMU emulator, please install the &lt;strong>rootfs&lt;/strong> blueprint and &lt;strong>qemu&lt;/strong> blueprint (if QEMU is not installed). Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/1-4.png" alt="example image">&lt;/p>
 &lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
 &lt;h4 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h4>
@@ -154,12 +153,11 @@ Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change
 + Floating point ABI: Double precision extension (RVFD)
 + Click Apply and Close
 The following steps as same as the previous sections. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../examples/embedded-linux/Helloworld#debug-linux-de2) for more information. --></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
-&lt;h1 id="kernel-debugging">Kernel Debugging&lt;/h1>
 &lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Blueprint Guideline&lt;/span>&lt;/a> for more information.&lt;/li>
+&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/li>
 &lt;li>In this release, &lt;strong>Debugging Kernel&lt;/strong> feature is only available on Ubuntu.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
@@ -171,7 +169,7 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;p>Select &lt;em>Kernel Source Path&lt;/em> then click &lt;strong>Finish&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/debug-kernel/3.png" alt="example image">&lt;/p>
 &lt;h2 id="update-build-settings">Update build settings&lt;/h2>
-&lt;p>With build settings, users can switch from RISC-V 32 bits to RISC-V 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
+&lt;p>With build settings, users can switch from 32 bits to 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/debug-kernel/4.png" alt="example image">&lt;/p>
 &lt;p>Please refer to the below table to select the correct options for each target.&lt;/p>
 &lt;table>
