@@ -2018,6 +2018,7 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;li>To open FreeRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Others&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>FreeRTOS Object Views&lt;/strong>&lt;/li>
 &lt;li>The FreeRTOS object views only contain information when user debugs a FreeRTOS project&lt;/li>
 &lt;li>Depending on the FreeRTOS application, not all FreeRTOS objects will display valid information. For example, if the application does not utilize a Timer object, XploR Studio will not display any useful information on FreeRTOS Timer view.&lt;/li>
+&lt;li>The display of FreeRTOS views is dependent on the &lt;strong>xplor-studio-freertos&lt;/strong> blueprint. Therefore, if you uninstall this blueprint, please close these views to prevent any errors.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="freertos-task-view">FreeRTOS Task View&lt;/h2>
@@ -2039,6 +2040,7 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;li>To open ZephyrRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Other&amp;hellip;&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>ZephyrRTOS Object Views&lt;/strong>&lt;/li>
 &lt;li>The ZephyrRTOS object views only contain information when user debugs a ZephyrRTOS project&lt;/li>
 &lt;li>Depending on the ZephyrRTOS application, not all ZephyrRTOS objects will display valid information. For example, if the application does not utilize a Mutex object, XploR Studio will not display any useful information on ZephyrRTOS Mutex view.&lt;/li>
+&lt;li>The display of ZephyrRTOS views is dependent on the &lt;strong>xplor-studio-zephyr&lt;/strong> blueprint. Therefore, if you uninstall this blueprint, please close these views to prevent any errors.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="zephyrrtos-thread-view">ZephyrRTOS Thread View&lt;/h2>
