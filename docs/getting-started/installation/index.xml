@@ -50,7 +50,6 @@ The hardware requirements, hardware connections as well as driver installation o
 The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="download-the-ide-installer">Download the IDE installer&lt;/h2>
-&lt;p>&lt;mark>&lt;strong>TEAM&lt;/strong>: Add link to download of the IDE installer here
 &lt;div class="td-card-group card-group p-0 mb-4">
 &lt;div class="td-card card border me-4">
 &lt;div class="card-header bg-white">
@@ -58,7 +57,7 @@ The installer needs to pull development packages from the internet. Please make 
 &lt;/div>
 &lt;div class="card-body code p-0 m-0">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> https://xplor.studio/download/ide/XploRStudio_v1.0.0_linux.run
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;div class="td-card card border me-4">
@@ -67,11 +66,10 @@ The installer needs to pull development packages from the internet. Please make 
 &lt;/div>
 &lt;div class="card-body code p-0 m-0">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> https://xplor.studio/download/ide/XploRStudio_v1.0.0_win32.exe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;/p>
 &lt;h2 id="start-the-installer">Start the installer&lt;/h2>
 &lt;h3 id="on-windows">On Windows&lt;/h3>
 &lt;p>Run the executable installer by right-clicking on the executable from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>:&lt;/p>
