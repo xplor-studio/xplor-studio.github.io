@@ -1642,7 +1642,7 @@ On the *Debugger* tab, please select:
 ![example image](/images_embedded_linux/debug-kernel/30.png)
 Select **Apply** then **Debug**, the IDE will change to the debug perspective and automatically sets a breakpoint in the first line of code in the `main()` function.
 ![example image](/images_embedded_linux/debug-kernel/31.png)
---></description></item><item><title>Docs: Hello World</title><link>/docs/examples/zephyrrtos/zephyrhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrhelloworld/</guid><description>
+--></description></item><item><title>Docs: Zephyr Hello World</title><link>/docs/examples/zephyrrtos/zephyrhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/zephyrrtos/zephyrhelloworld/</guid><description>
 &lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The project referred to in this chapter is called &amp;ldquo;HelloWorld.&amp;rdquo; This application prints &lt;em>Hello world&lt;/em> text and runs a simple for-loop for a simple demonstration. The application can also be built and run on a QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
