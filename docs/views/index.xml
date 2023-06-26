@@ -114,8 +114,8 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;p>The ZephyrRTOS Mutex view helps developers examine mutexes during debug sessions. Each object is identified by its ID, Handle, Mutex Owner, Owner Priority and Lock Count.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/2.png" alt="example image">&lt;/p>
 &lt;h2 id="zephyrrtos-semaphore-view">ZephyrRTOS Semaphore View&lt;/h2>
-&lt;p>The ZephyrRTOS Timer view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
+&lt;p>The ZephyrRTOS Semaphore view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/3.png" alt="example image">&lt;/p>
-&lt;h2 id="zephyrrtos-heap-view">ZephyrRTOS Heap View&lt;/h2>
-&lt;p>The ZephyrRTOS Heap view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
+&lt;h2 id="zephyrrtos-message-queue-view">ZephyrRTOS Message Queue View&lt;/h2>
+&lt;p>The ZephyrRTOS Message Queue view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item></channel></rss>

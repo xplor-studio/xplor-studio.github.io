@@ -111,8 +111,7 @@ To install the XploR IDE with &lt;strong>xip&lt;/strong>, use:&lt;/p>
 &lt;/code>&lt;/pre>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Developers can use &lt;strong>xip&lt;/strong> to:&lt;/p>
 &lt;ul>
-&lt;li>&lt;b>signup&lt;/b>: sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://xplor.soc.one/panel/registration">this link&lt;/a> to sign up for a free account.
-&lt;mark>Change all references to blueprint(s) to xplor.design&lt;/mark>&lt;/li>
+&lt;li>&lt;b>signup&lt;/b>: sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://accounts.soc.one/">this link&lt;/a> to sign up for a free account.&lt;/li>
 &lt;li>&lt;b>install&lt;/b>: download and install XploR Studio IDE, or blueprints from &lt;a href="https://xplor.design/">XploR Design&lt;/a>&lt;/li>
 &lt;li>&lt;b>uninstall&lt;/b>: uninstall installed blueprints on the host machine.&lt;/li>
 &lt;li>&lt;b>show&lt;/b>: show information about installed blueprints.&lt;/li>

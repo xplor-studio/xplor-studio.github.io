@@ -234,8 +234,7 @@ To install the XploR IDE with &lt;strong>xip&lt;/strong>, use:&lt;/p>
 &lt;/code>&lt;/pre>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Developers can use &lt;strong>xip&lt;/strong> to:&lt;/p>
 &lt;ul>
-&lt;li>&lt;b>signup&lt;/b>: sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://xplor.soc.one/panel/registration">this link&lt;/a> to sign up for a free account.
-&lt;mark>Change all references to blueprint(s) to xplor.design&lt;/mark>&lt;/li>
+&lt;li>&lt;b>signup&lt;/b>: sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://accounts.soc.one/">this link&lt;/a> to sign up for a free account.&lt;/li>
 &lt;li>&lt;b>install&lt;/b>: download and install XploR Studio IDE, or blueprints from &lt;a href="https://xplor.design/">XploR Design&lt;/a>&lt;/li>
 &lt;li>&lt;b>uninstall&lt;/b>: uninstall installed blueprints on the host machine.&lt;/li>
 &lt;li>&lt;b>show&lt;/b>: show information about installed blueprints.&lt;/li>
@@ -834,7 +833,7 @@ registry -&amp;gt; IDE : download &amp;amp;\ninstall
 IDE --&amp;gt; target
 &lt;/code>&lt;/pre>&lt;h3 id="creating-and-contributing-blueprints">Creating and contributing blueprints&lt;/h3>
 &lt;p>Developer can create and contribute blueprints to XploR Design blueprint catalog. Once downloaded and installed, contributed blueprints are loaded dynamically XploR Studio.&lt;/p>
-&lt;p>The experience of implementing an XploR Design blueprint is comparable to that of writing a web browser extension. To learn more about XploR blueprint creation, please refer to the &lt;a href="https://blueprints.xplor.design/create">developer documentation&lt;/a>.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
+&lt;p>The experience of implementing an XploR Design blueprint is comparable to that of writing a web browser extension. To learn more about XploR blueprint creation, please refer to the &lt;a href="../package">&lt;span style="color: blue">Packaging blueprints&lt;/span>&lt;/a> documentation.&lt;/p></description></item><item><title>Docs: Guidelines</title><link>/docs/blueprints/guideline/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/guideline/</guid><description>
 &lt;p>After successful &lt;a href="../../getting-started/installation/install">&lt;span style="color: blue">installation&lt;/span>&lt;/a>, the baseline IDE does not contain any resources like toolchains, example programs, and target bitfiles.&lt;/p>
 &lt;p>To use example projects such as &lt;em>Embedded Baremetal&lt;/em>, &lt;em>Embedded Linux&lt;/em> or &lt;em>LLVM examples&lt;/em>, it is necessary to download and install the respective blueprints.&lt;/p>
 &lt;p>Select the icon &lt;img src="/blueprints/1.png" alt="Image alt"> in the toolbar to show a list of available blueprints:&lt;/p>
@@ -2048,8 +2047,8 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;p>The ZephyrRTOS Mutex view helps developers examine mutexes during debug sessions. Each object is identified by its ID, Handle, Mutex Owner, Owner Priority and Lock Count.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/2.png" alt="example image">&lt;/p>
 &lt;h2 id="zephyrrtos-semaphore-view">ZephyrRTOS Semaphore View&lt;/h2>
-&lt;p>The ZephyrRTOS Timer view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
+&lt;p>The ZephyrRTOS Semaphore view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/3.png" alt="example image">&lt;/p>
-&lt;h2 id="zephyrrtos-heap-view">ZephyrRTOS Heap View&lt;/h2>
-&lt;p>The ZephyrRTOS Heap view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
+&lt;h2 id="zephyrrtos-message-queue-view">ZephyrRTOS Message Queue View&lt;/h2>
+&lt;p>The ZephyrRTOS Message Queue view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item><item><title>Docs:</title><link>/docs/contributing/join-us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributing/join-us/</guid><description/></item><item><title>Docs:</title><link>/docs/debug-and-trace/trace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/debug-and-trace/trace/</guid><description/></item></channel></rss>
