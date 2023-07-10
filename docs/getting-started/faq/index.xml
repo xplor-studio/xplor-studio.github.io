@@ -5,7 +5,7 @@
 &lt;p>Solution: Please make sure your machine has an Internet connection.&lt;/p>
 &lt;p>&lt;strong>Issue 02: The installer stopped with the error &amp;ldquo;Java heap space&amp;rdquo;&lt;/strong>&lt;/p>
 &lt;p>Solution: Please make sure your machine has enough RAM.
-Please refer to &lt;a href="../../installation/">&lt;span style="color: blue">&lt;strong>System Requirements&lt;/strong>&lt;/span>&lt;/a> for hardware requirements to install XploR Studio.&lt;/p>
+Please refer to &lt;a href="../../installation/system-requirements/">&lt;span style="color: blue">&lt;strong>System Requirements&lt;/strong>&lt;/span>&lt;/a> for hardware requirements to install XploR Studio.&lt;/p>
 &lt;!-- ## Cannot program FPGA device
 Issue: Sometimes, the board cannot be flashed with messages like:
 ```

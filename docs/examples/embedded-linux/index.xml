@@ -234,11 +234,13 @@ Please refer to &lt;a href="#update-build-settings">Section 2: Update build sett
 &lt;p>When starting kernel debugging, the kernel is suspended in the start_kernel function and the terminal/console pauses at kernel booting.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/debug-kernel/9.png" alt="example image">&lt;/p>
 &lt;p>&lt;strong>To debug an &lt;a href="../../../examples/embedded-linux/helloworld">&lt;span style="color: blue">embedded Linux applications&lt;/span>&lt;/a>, the kernel should be booted completely.&lt;/strong>&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong>
-To switch arch between 32-bit and 64-bit, users should remove the old Debug Kernel Configuration and create a new one to change the kernel (vmlinux).
-Or users can replace vmlinux manually at: &lt;code>~/.xplor/blueprints/rootfs-debug/rv***_debugkernel/vmlinux&lt;/code>&lt;/p>
-&lt;/blockquote>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note:&lt;/h4>
+&lt;p>To switch arch between 32-bit and 64-bit, users should remove the old Debug Kernel Configuration and create a new one to change the kernel (vmlinux).&lt;/p>
+&lt;p>Or users can replace vmlinux manually at: &lt;code>~/.xplor/blueprints/rootfs-debug/rv***_debugkernel/vmlinux&lt;/code>&lt;/p>
+&lt;p>Sometimes unable to debug Kernel for the first time with information such as follows:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/debug-kernel/9-1.png" alt="example image">&lt;/p>
+&lt;/div>
 &lt;!-- ## Debugging the kernel with Intel FPGA DE2-115 platform
 ### Hardware and connection preparations
 Please refer to the &lt;a href="../../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.

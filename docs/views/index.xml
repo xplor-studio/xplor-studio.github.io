@@ -96,7 +96,7 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
 &lt;h2 id="freertos-heap-view">FreeRTOS Heap View&lt;/h2>
 &lt;p>The FreeRTOS Heap view helps developers examine heaps during debug sessions. Each object is identified by its ID, address, usage information, and similar.&lt;/p>
-&lt;p>&lt;img src="/images_views/freertos/23.png" alt="example image">&lt;/p></description></item><item><title>Docs: Zephyr OS views</title><link>/docs/views/zephyros/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/zephyros/</guid><description>
+&lt;p>&lt;img src="/images_views/freertos/23.png" alt="example image">&lt;/p></description></item><item><title>Docs: Zephyr OS views</title><link>/docs/views/zephyrtos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/views/zephyrtos/</guid><description>
 &lt;p>During the ZephyrRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Thread, Mutex, Semaphore, and MessageQueue. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
@@ -110,12 +110,24 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;h2 id="zephyrrtos-thread-view">ZephyrRTOS Thread View&lt;/h2>
 &lt;p>The ZephyrRTOS Thread view helps developers examine threads during debug sessions. Each object is identified by its ID, Name, Handle, Priority, Thread State and Thread Usage.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/1.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Hello World project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="zephyrrtos-mutex-view">ZephyrRTOS Mutex View&lt;/h2>
 &lt;p>The ZephyrRTOS Mutex view helps developers examine mutexes during debug sessions. Each object is identified by its ID, Handle, Mutex Owner, Owner Priority and Lock Count.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/2.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Mutex project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="zephyrrtos-semaphore-view">ZephyrRTOS Semaphore View&lt;/h2>
 &lt;p>The ZephyrRTOS Semaphore view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
 &lt;p>&lt;img src="/images_views/zephyrtos/3.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Semaphore project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="zephyrrtos-message-queue-view">ZephyrRTOS Message Queue View&lt;/h2>
 &lt;p>The ZephyrRTOS Message Queue view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
-&lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="/images_views/zephyrtos/4.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Message Queue project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
