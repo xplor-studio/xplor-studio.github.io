@@ -852,7 +852,12 @@ IDE --&amp;gt; target
 &lt;p>&lt;img src="/blueprints/3.1.png" alt="example image">&lt;/p>
 &lt;p>The &lt;em>Status&lt;/em> column shows whether the blueprint is installed locally. User can uninstall a blueprint by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more blueprints can be uninstalled at the same time.&lt;/p>
 &lt;p>&lt;img src="/blueprints/3-2.png" alt="example image">&lt;/p>
-&lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p></description></item><item><title>Docs: Packaging blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
+&lt;p>&lt;img src="/blueprints/3-3.png" alt="example image">&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note:&lt;/h4>
+&lt;p>If you do not wish to install the dependencies of specific blueprints, please select the checkbox labeled &lt;strong>Don&amp;rsquo;t install Blueprint&amp;rsquo;s dependencies&lt;/strong> below the blueprints list.&lt;/p>
+&lt;p>&lt;img src="/blueprints/2-1.png" alt="example image">&lt;/p>
+&lt;/div></description></item><item><title>Docs: Packaging blueprint</title><link>/docs/blueprints/package/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/package/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;strong>WARNING&lt;/strong>
 The following guide is preliminary and subjected to changes.&lt;/p>
