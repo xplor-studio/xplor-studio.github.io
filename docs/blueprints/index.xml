@@ -233,8 +233,8 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="example-of-creating-sample-blueprint">Example of creating Sample Blueprint&lt;/h2>
-&lt;p>This is an example of how to create a Blueprint for Baremetal Helloworld sample.
-Download and extract the Sample Blueprint template from &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/xplor-studio-sample-blueprint-template.zip">here&lt;/a>.&lt;/p>
+&lt;p>This is an example of how to create a Blueprint for Baremetal Helloworld sample.&lt;/p>
+&lt;p>Download and extract the Sample Blueprint template from &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/xplor-studio-sample-blueprint-template.zip">here&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Makefile
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xplor-sample-emb-hello-c/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
@@ -248,28 +248,26 @@ Download and extract the Sample Blueprint template from &lt;a href="https://gith
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── .project
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── project.json
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>&lt;code>Makefile&lt;/code>
-To clean or build the Sample blueprint, use these commands:&lt;/li>
+&lt;li>&lt;code>Makefile&lt;/code>&lt;/li>
 &lt;/ul>
+&lt;p>To clean or build the Sample blueprint, use these commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>make clean
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/blueprints/makefile.png" alt="example image">&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>&lt;code>MANIFEST.in&lt;/code>
-Just need to replace with Blueprint&amp;rsquo;s name
-&lt;img src="/blueprints/manifest.png" alt="example image">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>setup.py&lt;/code>
-Update the Sample Blueprint&amp;rsquo;s information like name, description, platforms, dependencies &amp;hellip;
-&lt;img src="/blueprints/setup_py.png" alt="example image">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>project.json&lt;/code>
-&lt;img src="/blueprints/project_json.png" alt="example image">&lt;/p>
-&lt;/li>
+&lt;li>&lt;code>MANIFEST.in&lt;/code>&lt;/li>
 &lt;/ul>
+&lt;p>Just need to replace with Blueprint&amp;rsquo;s name&lt;/p>
+&lt;p>&lt;img src="/blueprints/manifest.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>setup.py&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Update the Sample Blueprint&amp;rsquo;s information like name, description, platforms, dependencies &amp;hellip;&lt;/p>
+&lt;p>&lt;img src="/blueprints/setup_py.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>project.json&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/blueprints/project_json.png" alt="example image">&lt;/p>
 &lt;p>Besides the basic information like Project&amp;rsquo;s Name, Project&amp;rsquo;s Type, User need to pay attention to Project&amp;rsquo;s language and Project&amp;rsquo;s category parameters.&lt;/p>
 &lt;blockquote>
 &lt;ul>
@@ -287,12 +285,10 @@ User have to select the correct Project&amp;rsquo;s category from above list.&lt
 &lt;/ul>
 &lt;/blockquote>
 &lt;ul>
-&lt;li>&lt;code>xplor-sample-emb-hello-c&lt;/code>
-Contains all resources of Eclipse&amp;rsquo;s project such as source code files, header files, linker script, libraries &amp;hellip;
-&lt;img src="/blueprints/src_main.png" alt="example image">&lt;/li>
+&lt;li>&lt;code>xplor-sample-emb-hello-c&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/blueprints/project.png" alt="example image">&lt;/p>
-&lt;p>&lt;img src="/blueprints/cproject.png" alt="example image">&lt;/p>
+&lt;p>Contains all resources of Eclipse&amp;rsquo;s project such as source code files, header files, linker script, libraries &amp;hellip;&lt;/p>
+&lt;p>&lt;img src="/blueprints/src_main.png" alt="example image">&lt;/p>
 &lt;p>In .cproject, it includes information of Project&amp;rsquo;s settings like managed build options, include paths, library paths &amp;hellip;. Please, check the path of these resources, you should use the relative path, not the absolute path.
 For example, to define the linker path:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> &amp;lt;option &lt;span style="color:#000">IS_BUILTIN_EMPTY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">IS_VALUE_EMPTY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vio.managedbuild.elf.riscv.option.c.linker.paths.222877999&amp;#34;&lt;/span> &lt;span style="color:#000">superClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vio.managedbuild.elf.riscv.option.c.linker.paths&amp;#34;&lt;/span> &lt;span style="color:#000">valueType&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;libPaths&amp;#34;&lt;/span>&amp;gt;
@@ -301,5 +297,5 @@ For example, to define the linker path:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/option&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To support Windows environment, User should use &amp;lsquo;&amp;quot;&amp;rsquo; before and after the relative path of resource&lt;/p>
+To support Windows environment, User should use &lt;code>&amp;amp;quot;&lt;/code> before and after the relative path of resource&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
