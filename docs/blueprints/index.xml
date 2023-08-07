@@ -268,7 +268,7 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;li>&lt;code>project.json&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="/blueprints/project_json.png" alt="example image">&lt;/p>
-&lt;p>Besides the basic information like Project&amp;rsquo;s Name, Project&amp;rsquo;s Type, User need to pay attention to Project&amp;rsquo;s language and Project&amp;rsquo;s category parameters.&lt;/p>
+&lt;p>Besides the basic information like Project&amp;rsquo;s Name, Project&amp;rsquo;s Type, Developer need to pay attention to Project&amp;rsquo;s language and Project&amp;rsquo;s category parameters.&lt;/p>
 &lt;blockquote>
 &lt;ul>
 &lt;li>XPLORSTUDIO IDE supports two kinds of Project&amp;rsquo;s language as C and CPP.&lt;/li>
@@ -278,24 +278,24 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;li>Baremetal: RISC-V Embedded Project&lt;/li>
 &lt;li>FreeRTOS: FreeRTOS Project&lt;/li>
 &lt;li>Zephyr: Zephyr Project&lt;/li>
-&lt;li>Linux_Kernel: Static Linux Kernel Project
-User have to select the correct Project&amp;rsquo;s category from above list.&lt;/li>
+&lt;li>Linux_Kernel: Static Linux Kernel Project&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;/blockquote>
+&lt;p>Developer have to select the correct Project&amp;rsquo;s category from above list.&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>xplor-sample-emb-hello-c&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Contains all resources of Eclipse&amp;rsquo;s project such as source code files, header files, linker script, libraries &amp;hellip;&lt;/p>
 &lt;p>&lt;img src="/blueprints/src_main.png" alt="example image">&lt;/p>
-&lt;p>In .cproject, it includes information of Project&amp;rsquo;s settings like managed build options, include paths, library paths &amp;hellip;. Please, check the path of these resources, you should use the relative path, not the absolute path.
-For example, to define the linker path:&lt;/p>
+&lt;p>In .cproject, it includes information of Project&amp;rsquo;s settings like managed build options, include paths, library paths &amp;hellip;. Please, check the path of these resources, Developer should use the relative path, not the absolute path.&lt;/p>
+&lt;p>For example, to define the linker path:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> &amp;lt;option &lt;span style="color:#000">IS_BUILTIN_EMPTY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">IS_VALUE_EMPTY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vio.managedbuild.elf.riscv.option.c.linker.paths.222877999&amp;#34;&lt;/span> &lt;span style="color:#000">superClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vio.managedbuild.elf.riscv.option.c.linker.paths&amp;#34;&lt;/span> &lt;span style="color:#000">valueType&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;libPaths&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;listOptionValue &lt;span style="color:#000">builtIn&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">value&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;amp;quot;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">XPLOR_HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/blueprints/libraries/libpico/lib/virt/xplor&amp;amp;quot;&amp;#34;&lt;/span>/&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;listOptionValue &lt;span style="color:#000">builtIn&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">value&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span>/&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/option&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To support Windows environment, User should use &lt;code>&amp;amp;quot;&lt;/code> before and after the relative path of resource&lt;/p>
+To support Windows environment, Developer should use &lt;code>&amp;amp;quot;&lt;/code> before and after the relative path of resource&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
