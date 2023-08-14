@@ -233,13 +233,13 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;/ul>
 &lt;/blockquote>
 &lt;h2 id="example-of-creating-sample-blueprint">Example of creating Sample Blueprint&lt;/h2>
-&lt;p>This is an example of how to create a Blueprint for Baremetal Helloworld sample.&lt;/p>
+&lt;p>This is an example of how to create a Blueprint for Baremetal Helloworld sample, running on QEMU simulator.&lt;/p>
 &lt;p>Download and extract the Sample Blueprint template from &lt;a href="https://github.com/xplor-studio/xip/blob/blueprint-template/xplor-studio-sample-blueprint-template.zip">here&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Makefile
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xplor-sample-emb-hello-c/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xplor-studio-virt-qemu-baremetal-helloworld/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── setup.py
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-sample-emb-hello-c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-studio-virt-qemu-baremetal-helloworld
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── src
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ ├── main.c
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ └── ...
@@ -258,8 +258,8 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;li>&lt;code>MANIFEST.in&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Just need to replace with Blueprint&amp;rsquo;s name&lt;/p>
-&lt;p>&lt;img src="/blueprints/manifest.png" alt="example image">&lt;/p>
-&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>global-include xplor-studio-virt-qemu-baremetal-helloworld/**/*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>&lt;code>setup.py&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Update the Sample Blueprint&amp;rsquo;s information like name, description, platforms, dependencies &amp;hellip;&lt;/p>
@@ -285,7 +285,7 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;/blockquote>
 &lt;p>Developer have to select the correct Project&amp;rsquo;s category from above list.&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>xplor-sample-emb-hello-c&lt;/code>&lt;/li>
+&lt;li>&lt;code>xplor-studio-virt-qemu-baremetal-helloworld&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Contains all resources of Eclipse&amp;rsquo;s project such as source code files, header files, linker script, libraries &amp;hellip;&lt;/p>
 &lt;p>&lt;img src="/blueprints/src_main.png" alt="example image">&lt;/p>
@@ -297,5 +297,11 @@ Wrong name : `blueprint_with-wrong_name`
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/option&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
-To support Windows environment, Developer should use &lt;code>&amp;amp;quot;&lt;/code> before and after the relative path of resource&lt;/p>
+To support Windows environment, Developer should use &lt;code>&amp;amp;quot;&lt;/code> before and after the relative path of resource
+Naming convention of Example blueprint is &amp;ldquo;xplor-studio-&lt;core>-&lt;platform>-&lt;rtos>-&lt;app>&amp;rdquo;
+Starting with prefix as &amp;ldquo;xplor-studio-&amp;rdquo;
+core: the name of running core such as Vexrisv, Neorv32, Corevmcu &amp;hellip;
+platform: the name of running platform such as Qemu, DE2-115, Stratix10gx &amp;hellip;
+rtos: the name of cateogry such as baremetal, linux, freertos &amp;hellip;
+app: the name of application such as helloworld, timer, heap &amp;hellip;&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
