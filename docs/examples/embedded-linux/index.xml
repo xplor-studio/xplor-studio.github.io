@@ -387,14 +387,15 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;p>&lt;img src="/images_embedded_linux/linux/59.1.png" alt="example image">&lt;/p>
 &lt;h3 id="programming-ip-core-1">Programming IP Core&lt;/h3>
 &lt;p>Similar to Linux&lt;/p>
-&lt;h3 id="update-ip-of-tftp-server">Update IP of TFTP server&lt;/h3>
+&lt;h3 id="booting-linux-to-de2">Booting Linux to DE2&lt;/h3>
+&lt;h4 id="update-ip-of-tftp-server">Update IP of TFTP server&lt;/h4>
 &lt;p>Go to *&lt;strong>Network and Internet settings&lt;/strong> by click on &lt;img src="/images_embedded_linux/linux/60.png" alt="example image">:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/61.png" alt="example image">&lt;/p>
+&lt;p>As image, there are 2 networks:&lt;/p>
+&lt;pre>&lt;code>- The `Ethernet 3` for connecting to Internet
+- The `Ethernet` for connecting to DE2-115 Board
+&lt;/code>&lt;/pre>
 &lt;p>&lt;img src="/images_embedded_linux/linux/62.png" alt="example image">&lt;/p>
-&lt;p>As image, there are 2 networks:
-- The &lt;code>Ethernet 3&lt;/code> for connecting to Internet
-- The &lt;code>Ethernet&lt;/code> for connecting to DE2-115 Board&lt;/p>
-&lt;p>&lt;img src="/images_embedded_linux/linux/63.png" alt="example image">&lt;/p>
 &lt;p>Click on &lt;strong>Properties&lt;/strong> on &lt;code>Ethernet&lt;/code>:&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/64.png" alt="example image">&lt;/p>
 &lt;p>Now we need to setup IP manually bt click on &lt;strong>Edit&lt;/strong> button, choose &lt;strong>Manual&lt;/strong> , type as image and &lt;strong>Save&lt;/strong>&lt;/p>
@@ -402,6 +403,29 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;p>After that, restart the SolarTFTP server and programming IP Core again.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/66.png" alt="example image">&lt;/p>
 &lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram IP core.&lt;/p>
+&lt;h4 id="login-and-setup-connection-from-board-to-host">Login and setup connection from board to host&lt;/h4>
+&lt;p>After booting Linux successfully,&lt;/p>
+&lt;pre>&lt;code>``` sh
+Starting Dropbear SSH server: Waiting for kernel randomness to be initialised...
+[ 14.144009] random: crng init done
+Generating 1024 bit rsa key, this may take a while...
+Public key portion is:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCMeX37iv5Hw5MadvVwd+UIVeSIx1QecoV8OiPOt65obbokDxvaol0PsfCHBi0h23zxhhzUHizKDAu9fJ7gQVLWfHjcGKA4x4XuY8O3TasjnzpAntjXgWcBOpw3zpM46skOl65zfJqq6AIH14IzCqs+VDUE2dKjv+4mRbiX3A5Ovw== root@de2-115-vexriscv32
+Fingerprint: sha1!! 5a:9f:05:35:11:2c:e2:e1:b8:71:a4:8e:f5:a3:8a:1d:76:b6:f2:ff
+dropbear.
+Rvdn 1.0 de2-115-vexriscv32 /dev/console
+de2-115-vexriscv32 login:
+```
+- Login by typing `root` without password
+- Run `ifconfig eth0 192.168.1.50 netmask 255.255.255.0`
+``` sh
+Rvdn 1.0 de2-115-vexriscv32 /dev/console
+de2-115-vexriscv32 login: root
+login[58]: root login on 'console'
+root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
+```
+Now board is ready for debugging application.
+&lt;/code>&lt;/pre>
 &lt;h3 id="debug-application-1">Debug application&lt;/h3>
 &lt;p>Create debug configurations and debug are same to Linux.&lt;/p></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
 &lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
