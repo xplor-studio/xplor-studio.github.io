@@ -416,16 +416,21 @@ dropbear.
 Rvdn 1.0 de2-115-vexriscv32 /dev/console
 de2-115-vexriscv32 login:
 ```
-- Login by typing `root` without password
-- Run `ifconfig eth0 192.168.1.50 netmask 255.255.255.0`
-``` sh
-Rvdn 1.0 de2-115-vexriscv32 /dev/console
-de2-115-vexriscv32 login: root
-login[58]: root login on 'console'
-root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
-```
-Now board is ready for debugging application.
 &lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>
+&lt;p>Login by typing &lt;code>root&lt;/code> without password&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Run &lt;code>ifconfig eth0 192.168.1.50 netmask 255.255.255.0&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> Rvdn 1.0 de2-115-vexriscv32 /dev/console
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> de2-115-vexriscv32 login: root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> login&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>58&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: root login on &lt;span style="color:#4e9a06">&amp;#39;console&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>Now board is ready for debugging application.&lt;/p>
 &lt;h3 id="debug-application-1">Debug application&lt;/h3>
 &lt;p>Create debug configurations and debug are same to Linux.&lt;/p></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
 &lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
