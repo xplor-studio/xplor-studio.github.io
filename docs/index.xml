@@ -804,7 +804,289 @@ Solution: Please make sure the exact SOF file is flashed. Please refer to &lt;a 
 ## TFTP is not working
 When the board is booting, the Linux image is not downloaded from TFTP Server. The issue could be
 - No permission on the tftpboot directory. Try running **chmod -R 777 /path/to/boot.bin**
-- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Introduction</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
+- Firewall: Update firewall rule to allow TFTP service such as **sudo ufw allow tftp** --></description></item><item><title>Docs: Hardware and Environment Setup</title><link>/docs/hardware-environment/hardware/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/hardware-environment/hardware/</guid><description>
+&lt;h2 id="hardware-requirements">Hardware Requirements&lt;/h2>
+&lt;h3 id="development-board">Development Board&lt;/h3>
+&lt;p>The following Intel FPGA platforms are tested with XploR Studio IDE:&lt;/p>
+&lt;ul>
+&lt;li>Intel FPGA DE2-115 development board&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/1.jpg" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Intel Stratix 10 GX board&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/2.png" alt="example image">&lt;/p>
+&lt;h3 id="usb-rs232-adapter">USB RS232 adapter&lt;/h3>
+&lt;p>The following USB-RS232 adapters are tested:&lt;/p>
+&lt;ul>
+&lt;li>UGreen USB-RS232 adapter&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/3.jpg" alt="example image">&lt;/p>
+&lt;h3 id="usb-ethernet-adapter-optional">USB Ethernet adapter (optional)&lt;/h3>
+&lt;p>The following USB-Ethernet adapters are tested:&lt;/p>
+&lt;ul>
+&lt;li>UGreen USB Ethernet adapter&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/4.jpg" alt="example image">&lt;/p>
+&lt;h2 id="connections">Connections&lt;/h2>
+&lt;h3 id="intel-de2-115-board">Intel DE2-115 Board&lt;/h3>
+&lt;p>The connection between the PC and the Intel DE2-115 board is shown in the below diagram:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/5.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>We use a single JTAG cable to flash an FPGA board and debug RISC-V IP via Virtual JTAG (vJTAG) to make things easier for the user. So please disconnect the unused FPGA board when using vJTAG.&lt;/p>
+&lt;/blockquote>
+&lt;!-- ### Intel Stratix 10 GX Board -->
+&lt;h4 id="connection-for-embedded-linux-projects">Connection for Embedded Linux projects&lt;/h4>
+&lt;p>The connection between the PC and the Intel Stratix 10 GX board is shown in the below diagram:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/6.png" alt="example image">&lt;/p>
+&lt;h4 id="connection-for-freertos-and-embedded-projects">Connection for FreeRTOS and Embedded projects&lt;/h4>
+&lt;p>&lt;strong>Intel Stratix 10GX board&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Disable Max V on JTAG chain for Stratix 10 GX&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Locate SW6 JTAG Bypass DIP switch&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Change &lt;code>SW6-2&lt;/code> to &lt;strong>ON&lt;/strong> in order to bypass MAX V (The default position is &lt;strong>OFF&lt;/strong>)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/7.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>FMC XM105 Debug Card&lt;/strong> is plugged into Intel FPGA Stratix 10 GX board&lt;/p>
+&lt;p>&lt;strong>UART connection&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/8.png" alt="example image">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">&lt;strong>Signal&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>UART Adapter&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>FMC XM105 Debug Card&lt;/strong>&lt;/th>
+&lt;th style="text-align:center">&lt;strong>Stratix 10 GX&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">UART0&lt;/td>
+&lt;td>RXD&lt;/td>
+&lt;td>J16 pin #9 - TXD&lt;/td>
+&lt;td style="text-align:center">AV13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td>TXD (GREEN)&lt;/td>
+&lt;td>J16 Pin #7 - RXD&lt;/td>
+&lt;td style="text-align:center">BC11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">UART1&lt;/td>
+&lt;td>RXD&lt;/td>
+&lt;td>J16 pin #12 - TXD&lt;/td>
+&lt;td style="text-align:center">AY13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td>TXD (GREEN)&lt;/td>
+&lt;td>J16 Pin #10 - RDX&lt;/td>
+&lt;td style="text-align:center">AW13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Other pins&lt;/td>
+&lt;td>NO&lt;/td>
+&lt;td>NO&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="/images_hardware/9.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>JTAG connection&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/10.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Altera USB blaster&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/11.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>USB Bus blaster&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/12.png" alt="example image">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Signal&lt;/th>
+&lt;th>Bus blaster JTAG Debugger v3&lt;/th>
+&lt;th>FMC XM105 Debug Card&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>TRST&lt;/td>
+&lt;td>TRST&lt;/td>
+&lt;td>J20 pin #1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TDI&lt;/td>
+&lt;td>TDI&lt;/td>
+&lt;td>J20 pin #4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TDO&lt;/td>
+&lt;td>TDO&lt;/td>
+&lt;td>J20 pin #7&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TMS&lt;/td>
+&lt;td>TMS&lt;/td>
+&lt;td>J20 pin #3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TCK&lt;/td>
+&lt;td>TCK&lt;/td>
+&lt;td>J20 pin #8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GND&lt;/td>
+&lt;td>GND&lt;/td>
+&lt;td>J5 pin #2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VREF&lt;/td>
+&lt;td>VREF&lt;/td>
+&lt;td>J15 pin #1&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>ARM Olimex&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/13.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_hardware/14.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_hardware/15.png" alt="example image">&lt;/p>
+&lt;h2 id="driver-installation">Driver installation&lt;/h2>
+&lt;h3 id="on-windows">On Windows&lt;/h3>
+&lt;p>To recognize the USB blaster, drivers are needed to be installed.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Open the &lt;strong>Device Manager&lt;/strong> (Control Panel | Device Manager).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on the &lt;strong>USB Blaster&lt;/strong> and then select &lt;strong>Update driver …&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/16.png" alt="example image">&lt;/p>
+&lt;ol start="3">
+&lt;li>Select &lt;strong>Browse my computer for driver software&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/17.png" alt="example image">&lt;/p>
+&lt;ol start="4">
+&lt;li>Select &lt;strong>Browse&amp;hellip;&lt;/strong> to select the driver you downloaded and extracted above, then click &lt;strong>Next&lt;/strong> to install the driver.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/18.png" alt="example image">&lt;/p>
+&lt;ol start="5">
+&lt;li>After that, the driver should have been successfully installed.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/19.png" alt="example image">&lt;/p>
+&lt;p>If you see that the Altera USB Blaster II is unconfigured&lt;/p>
+&lt;p>&lt;img src="/images_hardware/20.png" alt="example image">&lt;/p>
+&lt;p>and when flashing, the board cannot be detected; open Quartus programmer with administrator rights, wait a few seconds for Quartus Programmer to update the settings.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/21.png" alt="example image">&lt;/p>
+&lt;p>After the settings are updated, the JTAG USB can be used.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/22.png" alt="example image">&lt;/p>
+&lt;h3 id="on-linux">On Linux&lt;/h3>
+&lt;p>On Ubuntu 20.04 desktop, drivers are available. The installer will add rules to udev configuration to use devices. User can check the added rules in the file &lt;em>&lt;strong>/etc/udev/rules.d/51-usbblaster.rules&lt;/strong>&lt;/em>&lt;/p>
+&lt;pre tabindex="0">&lt;code># USB-Blaster
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6001&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6002&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6003&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+# USB-Blaster II
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6010&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6810&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>Unplug and plug USB cables.&lt;/p>
+&lt;h2 id="service-installation">Service installation&lt;/h2>
+&lt;p>This part is only needed for setting up an environment for debugging &lt;a href="/docs/examples/embedded-linux/helloworld">&lt;strong>RISC-V Embedded Linux Project&lt;/strong>&lt;/a>. If you are interested in embedded and FreeRTOS applications only, please skip this part.&lt;/p>
+&lt;h3 id="network-setup">Network setup&lt;/h3>
+&lt;p>The current built-in SoC SOFs for DE2-115 support 10 Mbps (MII mode) and 1000 Mbps (RGMII mode) Ethernet network. Depending on your network setup, please use the correct SOF file when programming the DE2-115 board.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/23.png" alt="example image">&lt;/p>
+&lt;p>To debug embedded Linux RISC-V applications on the board, the following requirements are mandatory for the connection between the host PC and the DE2-115 board.&lt;/p>
+&lt;p>&lt;strong>RGMII mode:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/24.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>ETHERNET0&lt;/strong> of DE2-115. &lt;strong>The connection could be directly or via router/switches&lt;/strong>.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 1 and 2. It’s default mode (RGMII mode).&lt;/li>
+&lt;li>Default IP addresses:
+&lt;ul>
+&lt;li>DE2-115 board: 192.168.1.50&lt;/li>
+&lt;li>TFTP server: 192.168.1.100&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.
+To update the IP of the board, after flashing FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Command&lt;/th>
+&lt;th style="text-align:left">Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">eth_local_ip&lt;/td>
+&lt;td style="text-align:left">Set the IP address of the board&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">eth_remote_ip&lt;/td>
+&lt;td style="text-align:left">Set the expected IP of the TFTP Server to download kernel/rootfs for network booting&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">netboot&lt;/td>
+&lt;td style="text-align:left">Start booting Linux from the network&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="/images_hardware/25.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>MII mode&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/26.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>port 0&lt;/strong> of DE2-115.&lt;/li>
+&lt;li>Connection speed is 10 Mpbs.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 2 and 3 (to config Ethernet port 0 to run on MII mode).&lt;/li>
+&lt;li>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. The network speed and IP can be set with the following command:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code># Assume that the network interface is enxf8e43b5dd64a
+NIC=enxf8e43b5dd64a
+sudo ethtool -s $NIC speed 10 duplex full autoneg off
+# Double check
+ethtool $NIC
+# IP needs to be fixed as 192.168.1.100
+# Make sure that IPv4 method is manual
+sudo ifconfig $NIC 192.168.1.100
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="/images_hardware/27.png" alt="example image">&lt;/p>
+&lt;h3 id="tftp-server">TFTP server&lt;/h3>
+&lt;p>To debug embedded Linux applications, a TFTP server needs to be set up on the development PC to host Linux /images_hardware. This Linux image will be loaded when the board is flashed.&lt;/p>
+&lt;h4 id="tftp-server-on-linux">TFTP server on Linux&lt;/h4>
+&lt;p>The quickest way to set up a TFTP server is using docker as follows:&lt;/p>
+&lt;ul>
+&lt;li>Create tftpboot directory&lt;/li>
+&lt;li>Copy boot.bin to tftpboot directory&lt;/li>
+&lt;li>Start the TFTP server&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>docker rm -f tftpboot
+cd tftpboot
+# Copy boot.bin (here)
+docker run -itd --name=tftpboot --net=host --restart=always -v ${PWD}:/var/tftpboot pghalliday/tftp
+&lt;/code>&lt;/pre>&lt;h4 id="solartftp-server-on-windows-10">SolarTFTP server on Windows 10&lt;/h4>
+&lt;blockquote>
+&lt;p>&lt;strong>Prerequisites&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Administrator permission&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SolarWinds TFTP Server&lt;/strong>: To set up a TFTP server, users will have to download the TFTP Server utility such as SolarWinds can be downloaded from &lt;a href="https://www.solarwinds.com/free-tools/free-tftp-server">https://www.solarwinds.com/free-tools/free-tftp-server&lt;/a>. Once the .zip file is downloaded, extract it and go through the straightforward installation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Firewall setup&lt;/strong>: To allow remote access to the TFTP server, users need to open the firewall for TFTP service.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>&lt;strong>Start the TFTP Server&lt;/strong>&lt;/p>
+&lt;p>Run the &lt;strong>SolarWinds TFTP Server&lt;/strong> utility by going to the &lt;strong>Start Menu&lt;/strong> and searching for &lt;strong>TFTP Server&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/28.png" alt="example image">&lt;/p>
+&lt;p>Once it loads up, copy the &lt;strong>boot.bin&lt;/strong> (RISC-V Linux image) to &lt;strong>C:\TFTP-Root&lt;/strong> folder.&lt;/p></description></item><item><title>Docs: Introduction</title><link>/docs/blueprints/about/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/blueprints/about/</guid><description>
 &lt;p>Blueprints are packages of hardware and/or software IP(s) that extend XploR Studio with custom features and behaviors for specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
 &lt;p>The &lt;a href="https://xplor.design/">Blueprint Catalog&lt;/a> is a collection of free and paid blueprints from SoC.one, community contributors, and commercial vendors.&lt;/p>
 &lt;blockquote>
@@ -1254,7 +1536,168 @@ Refer to [Running and Debugging project with QEMU emulator](../../../getting-sta
 ## Running and Debugging project with Intel FPGA DE2-115 platform
 The running and debugging with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
 ## Running and Debugging project with Intel FPGA Stratix 10 GX platform
-The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: LLVM C/C++ HelloWorld</title><link>/docs/examples/embedded/llvmhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/llvmhelloworld/</guid><description>
+The running and debugging with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information. --></description></item><item><title>Docs: Litex C HelloWorld</title><link>/docs/examples/embedded/riscvhelloworld-de2/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/riscvhelloworld-de2/</guid><description>
+&lt;p>This chapter covers the basics of C embedded projects including creating, building, running, and debugging embedded applications. The project referred to in this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on FPGA.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+To build, run and debug Embedded applications with FPGA, there are some blueprints that need to be installed first:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>xplor-studio-elf&lt;/strong>: XploR plugin for creating baremetal project&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>xplor-studio-openocd&lt;/strong>: Xplor plugin for debugging with hardware&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>baremetal-neorv32-de2115&lt;/strong>: The baremetal example of NEORV32 core on Terrasic DE2-115 board&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/1.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; RISC-V Helloworld (NEORV32)&lt;/strong> project and &lt;strong>Toolchains&lt;/strong>: &lt;em>Baremetal XploR Toolchain for RISC-V&lt;/em> then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/3.png" alt="example image">&lt;/p>
+&lt;p>Then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/4.png" alt="example image">&lt;/p>
+&lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>The build setting is the same as the quick-start project&amp;rsquo;s settings. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#update-build-settings">&lt;span style="color: blue">Update build settings&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;p>The build step is the same as the quick-start project&amp;rsquo;s step. Please refer to &lt;a href="../../../getting-started/quick-start/freertos#build-project">&lt;span style="color: blue">Build project&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-intel-fpga-de2-115-platform">Running and Debugging project with Intel FPGA DE2-115 platform&lt;/h2>
+&lt;h3 id="hardware-and-driver-preparations">Hardware and driver preparations&lt;/h3>
+&lt;p>Please refer to the &lt;a href="/docs/hardware-environment/hardware/">&lt;span style="color: blue">Hardware and Environment Setup&lt;/span>&lt;/a> document for more details.&lt;/p>
+&lt;h3 id="programming-ip-core">Programming IP core&lt;/h3>
+&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/images_embedded/RISCVHelloworldDE2/5.png" alt="example image"> on the toolbar&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/6.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-neorv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_neorv32&lt;/strong>&lt;/em> for the neorv32 - DE2-115 project.&lt;/li>
+&lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
+&lt;li>Click &lt;strong>Finish&lt;/strong> to flash Neorv 32-bit RISC-V core to DE2-115 board.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/7.png" alt="example image">&lt;/p>
+&lt;p>To view the console output printed from the RISC-V core, open the Terminal view and select &lt;code>COM&lt;/code> port (on Windows) or &lt;code>/dev/ttyUSBx&lt;/code> port (on Linux) with the following connection settings.&lt;/p>
+&lt;p>The output message on the serial terminal will look like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+_ _ _ ____ ____
+| | | |_ _ __| |_ __ __ _/ ___| ___ / ___|
+| |_| | | | |/ _` | &amp;#39;__/ _` \___ \ / _ \| |
+| _ | |_| | (_| | | | (_| |___) | (_) | |___
+|_| |_|\__, |\__,_|_| \__,_|____/ \___/ \____|
+|___/
+Maximize your SoC design!
+(c) Copyright 2020-2023 SoC.One
+(c) Copyright 2012-2023 Enjoy-Digital
+(c) Copyright 2007-2015 M-Labs
+BIOS CRC passed (42b17cce)
+HydraCore git sha1: --------
+--=============== SoC ==================--
+CPU: NEORV32 @ 50MHz
+BUS: WISHBONE 32-bit @ 4GiB
+CSR: 32-bit data
+ROM: 64.0KiB
+SRAM: 64.0KiB
+SDRAM: 128.0MiB 32-bit @ 50MT/s (CL-2 CWL-2)
+MAIN-RAM: 128.0MiB
+--========== Initialization ============--
+Ethernet init...
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+Switching SDRAM to hardware control.
+Memtest at 0x40000000 (2.0MiB)...
+Write: 0x40000000-0x40200000 2.0MiB
+Read: 0x40000000-0x40200000 2.0MiB
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 2.0MiB)...
+Write speed: 14.4MiB/s
+Read speed: 11.7MiB/s
+--============== Boot ==================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+Timeout
+Booting from network...
+Local IP: 192.168.1.50
+Remote IP: 192.168.1.100
+Booting from boot.json...
+Booting from boot.bin...
+Copying boot.bin to 0x40000000...
+Network boot failed.
+No boot medium found
+--============= Console ================--
+litex&amp;gt;
+&lt;/code>&lt;/pre>&lt;h3 id="run-project-on-terrasic-fpga-de2-115-platform">Run project on Terrasic FPGA DE2-115 platform&lt;/h3>
+&lt;blockquote>
+&lt;p>It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to &lt;a href="#programming-ip-core">previous section&lt;/a> for how to program the bitstream.&lt;/p>
+&lt;/blockquote>
+&lt;p>To run the application on hardware without debugging, select project in the Project Explorer, click &lt;strong>Run as &amp;gt; Run configurations&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/8.png" alt="example image">&lt;/p>
+&lt;p>Then create a new &lt;strong>RISC-V Running&lt;/strong> configuration with the following information.&lt;/p>
+&lt;ul>
+&lt;li>Platform: &lt;strong>FPGA&lt;/strong> &amp;gt; &lt;strong>Terrasic Board&lt;/strong> &amp;gt; &lt;strong>Neorv32&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/9.png" alt="example image">&lt;/p>
+&lt;p>On the Terminal view, the message will be printed.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/10.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>Both Neorv32 and Rocket Chip on DE2-115 board use Virtual JTAG to run/debug.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="debug-project-on-terrasic-fpga-de2-115-platform">Debug project on Terrasic FPGA DE2-115 platform&lt;/h3>
+&lt;blockquote>
+&lt;p>It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to &lt;a href="#programming-ip-core">previous section&lt;/a> for how to program the bitstream.&lt;/p>
+&lt;/blockquote>
+&lt;p>To debug the application on hardware, select project in the Project Explorer, click &lt;strong>Debug as &amp;gt; Debug Confihurations&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/11.png" alt="example image">&lt;/p>
+&lt;p>Then create a new RISC-V Running configuration with the following information.
+On tab &lt;strong>Debugger&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Platform: &lt;strong>FPGA&lt;/strong> &amp;gt; &lt;strong>Terrasic DE2-115 Board&lt;/strong> &amp;gt; &lt;strong>Neorv32&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/12.png" alt="example image">&lt;/p>
+&lt;p>After selecting &lt;strong>Apply&lt;/strong> and &lt;strong>Debug&lt;/strong>, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/13.png" alt="example image">&lt;/p>
+&lt;p>Other functions of debugging (such as &lt;em>Resume&lt;/em>, &lt;em>Step Into&lt;/em>, &lt;em>Step Over&lt;/em>, &lt;em>Step Return&lt;/em>, &lt;em>Terminate&lt;/em>, &amp;hellip;) are the same as the common project&amp;rsquo;s.
+Please refer to &lt;a href="../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator">&lt;span style="color: blue">Running and Debugging project with QEMU emulator&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/13.1.png" alt="example image">&lt;/p>
+&lt;!-- For the OpenOCD configuration of each IP core on the Intel Stratix 10 GX board, please refer to the below table:
+| IP cores | Type of JTAG | Supported JTAG |
+|:-----------:|:-------------:|:-----------------------------------------------------------:|
+| Neorv32 | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+| Rocket Chip | Virtual JTAG | N/A |
+| Open-V-MCU | Virtual JTAG | N/A |
+| Andes | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+| Codasip | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. | -->
+&lt;blockquote>
+&lt;p>Both Neorv32 and Rocket Chip on DE2-115 board use Virtual JTAG to run/debug.&lt;/p>
+&lt;/blockquote>
+&lt;!-- In the complex application where the peripherals are configured with the RISC-V cores, users can examine the peripherals' status such as control register values, and data register values via **Peripheral Registers view**.
+To active Peripheral Registers view, select **Window > Preferences**
+!![example image](/images_embedded/RISCVHelloworldDE2/14.png)
+Then go to the **C/C++ > Debug section**
+Click the Peripheral **Peripheral Registers Page**. On this page:
+- Architecture: Select RISC-V
+- Vendor: Select FPGA
+- Platform: Select Neorv32
+The peripheral registers will be listed on the right-hand side of the page:
+![example image](/images_embedded/RISCVHelloworldDE2/15.png)
+Users can select specific registers or all registers via the checkbox, then click **Apply and Close** button
+![example image](/images_embedded/RISCVHelloworldDE2/16.png)
+The Peripheral Register views will show all registers as well as their information.
+To view any register status, double-click on the register name on Peripheral View:
+![example image](/images_embedded/RISCVHelloworldDE2/17.png)
+To view the program output, switch to the Terminal view.
+![example image](/images_embedded/RISCVHelloworldDE2/18.png) -->
+&lt;h2 id="debug-project-with-custom-openocd">Debug project with custom openocd&lt;/h2>
+&lt;p>Create a new debug configuration on &lt;strong>Debug Configurations&lt;/strong> dialog by double-clicking on &lt;strong>RISC-V Debugging&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/11.png" alt="example image">&lt;/p>
+&lt;p>On the tab &lt;strong>Debugger&lt;/strong>, select option &lt;strong>Terrasic DE2-115 Board&lt;/strong> in &lt;strong>FPGA&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/12.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>OpenOCD Options&lt;/strong>, we use the openocd binary of Quartus and the default openocd configuration file.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/21.png" alt="example image">&lt;/p>
+&lt;p>Users can browse the custom openocd binary and the custom openocd configuration file.&lt;/p>
+&lt;p>&lt;img src="/images_embedded/RISCVHelloworldDE2/22.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong> to start debugging with the custom openocd binary.&lt;/p></description></item><item><title>Docs: LLVM C/C++ HelloWorld</title><link>/docs/examples/embedded/llvmhelloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded/llvmhelloworld/</guid><description>
 &lt;p>This chapter covers the basics of C/C++ embedded RISC-V projects including creating, building, running, and debugging embedded RISC-V applications. The project referred to in this chapter is called &amp;ldquo;LLVM Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built with LLVM toolchain and run on QEMU emulator.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
@@ -1469,54 +1912,263 @@ Select the desired project in the Project Explorer window, then click **Debug As
 ![example image](/images_embedded_linux/linux/28.png)
 After selecting **Debug As > RISC-V application with Imperas**, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.
 ![example image](/images_embedded_linux/linux/29.png)
-Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information.
-## &lt;a id="debug-linux-de2">&lt;span style="color: black">6 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>
-The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information.
-!!!info "Note"
-- The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the DE2-115 board.
-- There are two built-in SoC SOFs on XploR Studio to flash DE2-115 for embedded Linux applications:
-- One for MII network mode where speed is 10 Mbps
-- One for RGMII network mode where speed is 1000Mps
-- Development PC IP address: 192.168.1.100
-- The TFTP server is running the development PC and serving boot.bin Linux image
-Currently, **riscv64-ipf-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain
-- Right click on the project then select properties.
-- In project settings, select
-+ Architecture: RV64 (-march=rv64i*)
-+ Floating point: None
-+ Integer ABI: LP64 (-mabi=lp64*)
-+ Floating point ABI: None
-![example image](/images_embedded_linux/linux/43.png)
-- Click Apply and Close
-There are some differences when debugging Linux applications, it is necessary to update some config as follows:
-On the Debugger tab, select Intel FPGA Board.
-![example image](/images_embedded_linux/linux/46.png)
-On the Configuration, select "**Advanced Configuration**".
-![example image](/images_embedded_linux/linux/47.png)
-Click the **New** button to create a new connection configuration, then select **SSH** as connection type:
-![example image](/images_embedded_linux/linux/48.png)
-On the "New Connection" dialog.
-- Connection name: The name of connection
-- Host: 192.168.1.50. This is the default IP address of Linux run on board. If you use a different subnet when booting Linux, please update this IP too.
-- User: root
-- Use password-based authentication: No password
-![example image](/images_embedded_linux/linux/49.png)
-Click **Finish** to create the connection configuration.
-In the Connections dropdown, select the newly created connection name and set the destination file path to copy the application to the board.
-On the Remote Absolute File Path for C/C++ Application, enter the path of the elf file that is copied to Linux (ex: /tmp/riscv.elf).
-![example image](/images_embedded_linux/linux/50.png)
-Click **Debug** to start debugging.
-!!!info "Note"
-When starting the first debug session, it will take time for the PC and board to exchange ssh keys.
-If you see this error messagge, please update your project setting to use *riscv64-ipf-linux* as noted above.
-![example image](/images_embedded_linux/linux/51.png)
-## &lt;a id="debug-linux-stratix">&lt;span style="color: black">7 Running and Debugging a project with Intel FPGA Stratix 10 GX platform&lt;/span> &lt;/a>
+Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information. -->
+&lt;h2 id="a-iddebug-linux-de2span-stylecolor-blackrunning-and-debugging-project-with-intel-fpga-de2-115-platformspan-a">&lt;a id="debug-linux-de2">&lt;span style="color: black">Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>&lt;/h2>
+&lt;!-- The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information. -->
+&lt;h3 id="hardware-and-driver-preparations">Hardware and driver preparations&lt;/h3>
+&lt;p>Please refer to the &lt;a href="/docs/hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.&lt;/p>
+&lt;h3 id="programming-ip-core">Programming IP core&lt;/h3>
+&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/images_embedded/RISCVHelloworldDE2/5.png" alt="example image"> on the toolbar&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/13.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-Vexriscv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_vexrisc32&lt;/strong>&lt;/em> for the vexriscv - DE2-115 project.&lt;/li>
+&lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
+&lt;li>Click &lt;strong>Finish&lt;/strong> to flash Vexriscv 32-bit RISC-V core to DE2-115 board.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/linux/14.png" alt="example image">&lt;/p>
+&lt;p>To view the console output printed from the RISC-V core, open the Terminal view and select &lt;code>COM&lt;/code> port (on Windows) or &lt;code>/dev/ttyUSBx&lt;/code> port (on Linux) with the following connection settings.&lt;/p>
+&lt;p>The output message on the serial terminal will look like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+_ _ _ ____ ____
+| | | |_ _ __| |_ __ __ _/ ___| ___ / ___|
+| |_| | | | |/ _` | &amp;#39;__/ _` \___ \ / _ \| |
+| _ | |_| | (_| | | | (_| |___) | (_) | |___
+|_| |_|\__, |\__,_|_| \__,_|____/ \___/ \____|
+|___/
+Maximize your SoC design!
+(c) Copyright 2020-2023 SoC.One
+(c) Copyright 2012-2023 Enjoy-Digital
+(c) Copyright 2007-2015 M-Labs
+BIOS CRC passed (42b17cce)
+HydraCore git sha1: --------
+--=============== SoC ==================--
+CPU: NEORV32 @ 50MHz
+BUS: WISHBONE 32-bit @ 4GiB
+CSR: 32-bit data
+ROM: 64.0KiB
+SRAM: 64.0KiB
+SDRAM: 128.0MiB 32-bit @ 50MT/s (CL-2 CWL-2)
+MAIN-RAM: 128.0MiB
+--========== Initialization ============--
+Ethernet init...
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+Switching SDRAM to hardware control.
+Memtest at 0x40000000 (2.0MiB)...
+Write: 0x40000000-0x40200000 2.0MiB
+Read: 0x40000000-0x40200000 2.0MiB
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 2.0MiB)...
+Write speed: 14.4MiB/s
+Read speed: 11.7MiB/s
+--============== Boot ==================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+Timeout
+Booting from network...
+Local IP: 192.168.1.50
+Remote IP: 192.168.1.100
+Booting from boot.json...
+Booting from boot.bin...
+Copying boot.bin to 0x40000000...
+Network boot failed.
+No boot medium found
+--============= Console ================--
+litex&amp;gt;
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the DE2-115 board.&lt;/li>
+&lt;li>There are two built-in SoC SOFs on XploR Studio to flash DE2-115 for embedded Linux applications:&lt;/li>
+&lt;li>One for MII network mode where speed is 10 Mbps&lt;/li>
+&lt;li>One for RGMII network mode where speed is 1000Mps&lt;/li>
+&lt;li>Development PC IP address: 192.168.1.100&lt;/li>
+&lt;li>The TFTP server is running the development PC and serving Linux image&lt;/li>
+&lt;/ul>
+&lt;h3 id="booting-linux-to-de2-115-board">Booting Linux to DE2-115 board&lt;/h3>
+&lt;p>In serial terminal, if you see:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> Booting from network...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Local IP: 192.168.1.50
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Remote IP: 192.168.1.100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from boot.json...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from boot.bin...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Copying boot.bin to 0x40000000...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Network boot failed.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> No boot medium found
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That means the Linux kernel cannot be booted correctly.&lt;/p>
+&lt;p>So, please do the follow steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Install &lt;strong>linux-vexriscv-de2115&lt;/strong> blueprint&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start/Restart TFTP server (Linux)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> docker rm -f tftpboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>/.xplor/blueprints/linux-vexriscv-de2115/tftpboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> docker run -itd --name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tftpboot --net&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>host --restart&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>always -v &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">PWD&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>:/var/tftpboot pghalliday/tftp
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure IP address for DE2-115 board
+&lt;strong>RGMII mode:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/24.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>ETHERNET0&lt;/strong> of DE2-115. &lt;strong>The connection could be directly or via router/switches&lt;/strong>.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 1 and 2. It’s default mode (RGMII mode).&lt;/li>
+&lt;li>Default IP addresses:
+&lt;ul>
+&lt;li>DE2-115 board: 192.168.1.50&lt;/li>
+&lt;li>TFTP server: 192.168.1.100&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.
+To update the IP of the board, after flashing FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Command&lt;/th>
+&lt;th style="text-align:left">Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">eth_local_ip&lt;/td>
+&lt;td style="text-align:left">Set the IP address of the board&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">eth_remote_ip&lt;/td>
+&lt;td style="text-align:left">Set the expected IP of the TFTP Server to download kernel/rootfs for network booting&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">netboot&lt;/td>
+&lt;td style="text-align:left">Start booting Linux from the network&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="/images_hardware/25.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>MII mode&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/26.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>port 0&lt;/strong> of DE2-115.&lt;/li>
+&lt;li>Connection speed is 10 Mpbs.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 2 and 3 (to config Ethernet port 0 to run on MII mode).&lt;/li>
+&lt;li>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. The network speed and IP can be set with the following command:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code># Assume that the network interface is enxf8e43b5dd64a
+NIC=enxf8e43b5dd64a
+sudo ethtool -s $NIC speed 10 duplex full autoneg off
+# Double check
+ethtool $NIC
+# IP needs to be fixed as 192.168.1.100
+# Make sure that IPv4 method is manual
+sudo ifconfig $NIC 192.168.1.100
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="/images_hardware/27.png" alt="example image">&lt;/p>
+&lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Netboot/Reboot Linux
+In some case, you cannot type anything to serial terminal, please use &lt;code>litex_term&lt;/code> to connect the serial port.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git clone https://github.com/enjoy-digital/litex.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> python3 -m pip install pyserial
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> python3 -m pip install litex
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo chmod -R &lt;span style="color:#0000cf;font-weight:bold">777&lt;/span> /dev/ttyUSB0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">cd&lt;/span> litex/litex/tools/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ./litex_term.py /dev/ttyUSB0 --speed &lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After that, you can see:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> --&lt;span style="color:#ce5c00;font-weight:bold">==============&lt;/span> &lt;span style="color:#000">Boot&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">==================&lt;/span>--
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from serial...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Press Q or ESC to abort boot completely.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sL5DdSMmkekro
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Timeout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from network...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Local IP: 192.168.1.50
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Remote IP: 192.168.1.100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from boot.json...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from boot.bin...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Copying boot.bin to 0x40000000...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Network boot failed.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> No boot medium found
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --&lt;span style="color:#ce5c00;font-weight:bold">=============&lt;/span> &lt;span style="color:#000">Console&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">================&lt;/span>--
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> litex&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then setup IP address (if needed) and run &lt;code>netboot&lt;/code>. If output as follows, that means Linux be booted properly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> Starting Dropbear SSH server: Waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> kernel randomness to be initialised...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 14.144009&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> random: crng init &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Generating &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bit rsa key, this may take a &lt;span style="color:#204a87;font-weight:bold">while&lt;/span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Public key portion is:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCMeX37iv5Hw5MadvVwd+UIVeSIx1QecoV8OiPOt65obbokDxvaol0PsfCHBi0h23zxhhzUHizKDAu9fJ7gQVLWfHjcGKA4x4XuY8O3TasjnzpAntjXgWcBOpw3zpM46skOl65zfJqq6AIH14IzCqs+VDUE2dKjv+4mRbiX3A5Ovw&lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> root@de2-115-vexriscv32
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Fingerprint: sha1!! 5a:9f:05:35:11:2c:e2:e1:b8:71:a4:8e:f5:a3:8a:1d:76:b6:f2:ff
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dropbear.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Rvdn 1.0 de2-115-vexriscv32 /dev/console
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> de2-115-vexriscv32 login:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Login and setup connection to debug&lt;/p>
+&lt;ul>
+&lt;li>Login by typing &lt;code>root&lt;/code> without password&lt;/li>
+&lt;li>Run &lt;code>ifconfig eth0 192.168.1.50 netmask 255.255.255.0&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> Rvdn 1.0 de2-115-vexriscv32 /dev/console
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> de2-115-vexriscv32 login: root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> login&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>58&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: root login on &lt;span style="color:#4e9a06">&amp;#39;console&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="debug-application">Debug application&lt;/h3>
+&lt;p>Currently, &lt;strong>riscv32-xplor-linux&lt;/strong> is the only toolchain supported. Please change the project settings to use the correct toolchain&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Right click on the project then select properties.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In project settings, select&lt;/p>
+&lt;ul>
+&lt;li>Architecture: RV32 (-march=rv32i*)&lt;/li>
+&lt;li>Floating point: None&lt;/li>
+&lt;li>Integer ABI: ILP32 (-mabi=ilp32*)&lt;/li>
+&lt;li>Floating point ABI: None&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/linux/43.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click Apply and Close&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>There are some differences when debugging Linux applications, it is necessary to update some config as follows:&lt;/p>
+&lt;p>On the Debugger tab, select Intel FPGA Board.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/46.png" alt="example image">&lt;/p>
+&lt;p>On the Configuration, select &amp;ldquo;&lt;strong>Advanced Configuration&lt;/strong>&amp;rdquo;.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/47.png" alt="example image">&lt;/p>
+&lt;p>Click the &lt;strong>New&lt;/strong> button to create a new connection configuration, then select &lt;strong>SSH&lt;/strong> as connection type:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/48.png" alt="example image">&lt;/p>
+&lt;p>On the &amp;ldquo;New Connection&amp;rdquo; dialog.&lt;/p>
+&lt;ul>
+&lt;li>Connection name: The name of connection&lt;/li>
+&lt;li>Host: 192.168.1.50. This is the default IP address of Linux run on board. If you use a different subnet when booting Linux, please update this IP too.&lt;/li>
+&lt;li>User: root&lt;/li>
+&lt;li>Use password-based authentication: No password&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_embedded_linux/linux/49.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>Finish&lt;/strong> to create the connection configuration.&lt;/p>
+&lt;p>In the Connections dropdown, select the newly created connection name and set the destination file path to copy the application to the board.&lt;/p>
+&lt;p>On the Remote Absolute File Path for C/C++ Application, enter the path of the elf file that is copied to Linux (ex: /tmp/riscv.elf).&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/50.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>Debug&lt;/strong> to start debugging.&lt;/p>
+&lt;!--
+> When starting the first debug session, it will take time for the PC and board to exchange ssh keys.
+> If you see this error messagge, please update your project setting to use *riscv64-xplor-linux* as noted above.
+![example image](/images_embedded_linux/linux/51.png) -->
+&lt;!-- ## &lt;a id="debug-linux-stratix">&lt;span style="color: black">7 Running and Debugging a project with Intel FPGA Stratix 10 GX platform&lt;/span> &lt;/a>
 The programming IP core step with Intel FPGA Stratix 10 GX platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA Stratix 10 GX platform](../../../getting-started/quick-start/freertos#blinky-debug-stratix) for more information.
 !!!info "Note"
 - The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on Intel FPGA Stratix 10 GX board.
 - Development PC IP address: 192.168.1.100
 - The TFTP server is running the development PC and serving boot.bin Linux image
-Currently, **riscv64-ipfd-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain:
+Currently, **riscv64-xplord-linux** is the only toolchain supported. Please change the project settings to use the correct toolchain:
 - Right-click on the project then select properties.
 - In project settings, select
 + Architecture: RV64(-march=rv64i*)

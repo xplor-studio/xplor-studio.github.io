@@ -1,0 +1,283 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Hardware Environments</title><link>/docs/hardware-environment/</link><description>Recent content in Hardware Environments on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/hardware-environment/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hardware and Environment Setup</title><link>/docs/hardware-environment/hardware/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/hardware-environment/hardware/</guid><description>
+&lt;h2 id="hardware-requirements">Hardware Requirements&lt;/h2>
+&lt;h3 id="development-board">Development Board&lt;/h3>
+&lt;p>The following Intel FPGA platforms are tested with XploR Studio IDE:&lt;/p>
+&lt;ul>
+&lt;li>Intel FPGA DE2-115 development board&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/1.jpg" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Intel Stratix 10 GX board&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/2.png" alt="example image">&lt;/p>
+&lt;h3 id="usb-rs232-adapter">USB RS232 adapter&lt;/h3>
+&lt;p>The following USB-RS232 adapters are tested:&lt;/p>
+&lt;ul>
+&lt;li>UGreen USB-RS232 adapter&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/3.jpg" alt="example image">&lt;/p>
+&lt;h3 id="usb-ethernet-adapter-optional">USB Ethernet adapter (optional)&lt;/h3>
+&lt;p>The following USB-Ethernet adapters are tested:&lt;/p>
+&lt;ul>
+&lt;li>UGreen USB Ethernet adapter&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/4.jpg" alt="example image">&lt;/p>
+&lt;h2 id="connections">Connections&lt;/h2>
+&lt;h3 id="intel-de2-115-board">Intel DE2-115 Board&lt;/h3>
+&lt;p>The connection between the PC and the Intel DE2-115 board is shown in the below diagram:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/5.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>We use a single JTAG cable to flash an FPGA board and debug RISC-V IP via Virtual JTAG (vJTAG) to make things easier for the user. So please disconnect the unused FPGA board when using vJTAG.&lt;/p>
+&lt;/blockquote>
+&lt;!-- ### Intel Stratix 10 GX Board -->
+&lt;h4 id="connection-for-embedded-linux-projects">Connection for Embedded Linux projects&lt;/h4>
+&lt;p>The connection between the PC and the Intel Stratix 10 GX board is shown in the below diagram:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/6.png" alt="example image">&lt;/p>
+&lt;h4 id="connection-for-freertos-and-embedded-projects">Connection for FreeRTOS and Embedded projects&lt;/h4>
+&lt;p>&lt;strong>Intel Stratix 10GX board&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Disable Max V on JTAG chain for Stratix 10 GX&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Locate SW6 JTAG Bypass DIP switch&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Change &lt;code>SW6-2&lt;/code> to &lt;strong>ON&lt;/strong> in order to bypass MAX V (The default position is &lt;strong>OFF&lt;/strong>)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/images_hardware/7.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>FMC XM105 Debug Card&lt;/strong> is plugged into Intel FPGA Stratix 10 GX board&lt;/p>
+&lt;p>&lt;strong>UART connection&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/8.png" alt="example image">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">&lt;strong>Signal&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>UART Adapter&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>FMC XM105 Debug Card&lt;/strong>&lt;/th>
+&lt;th style="text-align:center">&lt;strong>Stratix 10 GX&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">UART0&lt;/td>
+&lt;td>RXD&lt;/td>
+&lt;td>J16 pin #9 - TXD&lt;/td>
+&lt;td style="text-align:center">AV13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td>TXD (GREEN)&lt;/td>
+&lt;td>J16 Pin #7 - RXD&lt;/td>
+&lt;td style="text-align:center">BC11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">UART1&lt;/td>
+&lt;td>RXD&lt;/td>
+&lt;td>J16 pin #12 - TXD&lt;/td>
+&lt;td style="text-align:center">AY13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td>TXD (GREEN)&lt;/td>
+&lt;td>J16 Pin #10 - RDX&lt;/td>
+&lt;td style="text-align:center">AW13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Other pins&lt;/td>
+&lt;td>NO&lt;/td>
+&lt;td>NO&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="/images_hardware/9.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>JTAG connection&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/10.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Altera USB blaster&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/11.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>USB Bus blaster&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/12.png" alt="example image">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Signal&lt;/th>
+&lt;th>Bus blaster JTAG Debugger v3&lt;/th>
+&lt;th>FMC XM105 Debug Card&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>TRST&lt;/td>
+&lt;td>TRST&lt;/td>
+&lt;td>J20 pin #1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TDI&lt;/td>
+&lt;td>TDI&lt;/td>
+&lt;td>J20 pin #4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TDO&lt;/td>
+&lt;td>TDO&lt;/td>
+&lt;td>J20 pin #7&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TMS&lt;/td>
+&lt;td>TMS&lt;/td>
+&lt;td>J20 pin #3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TCK&lt;/td>
+&lt;td>TCK&lt;/td>
+&lt;td>J20 pin #8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GND&lt;/td>
+&lt;td>GND&lt;/td>
+&lt;td>J5 pin #2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VREF&lt;/td>
+&lt;td>VREF&lt;/td>
+&lt;td>J15 pin #1&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>ARM Olimex&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/13.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_hardware/14.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_hardware/15.png" alt="example image">&lt;/p>
+&lt;h2 id="driver-installation">Driver installation&lt;/h2>
+&lt;h3 id="on-windows">On Windows&lt;/h3>
+&lt;p>To recognize the USB blaster, drivers are needed to be installed.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Open the &lt;strong>Device Manager&lt;/strong> (Control Panel | Device Manager).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on the &lt;strong>USB Blaster&lt;/strong> and then select &lt;strong>Update driver …&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/16.png" alt="example image">&lt;/p>
+&lt;ol start="3">
+&lt;li>Select &lt;strong>Browse my computer for driver software&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/17.png" alt="example image">&lt;/p>
+&lt;ol start="4">
+&lt;li>Select &lt;strong>Browse&amp;hellip;&lt;/strong> to select the driver you downloaded and extracted above, then click &lt;strong>Next&lt;/strong> to install the driver.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/18.png" alt="example image">&lt;/p>
+&lt;ol start="5">
+&lt;li>After that, the driver should have been successfully installed.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/images_hardware/19.png" alt="example image">&lt;/p>
+&lt;p>If you see that the Altera USB Blaster II is unconfigured&lt;/p>
+&lt;p>&lt;img src="/images_hardware/20.png" alt="example image">&lt;/p>
+&lt;p>and when flashing, the board cannot be detected; open Quartus programmer with administrator rights, wait a few seconds for Quartus Programmer to update the settings.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/21.png" alt="example image">&lt;/p>
+&lt;p>After the settings are updated, the JTAG USB can be used.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/22.png" alt="example image">&lt;/p>
+&lt;h3 id="on-linux">On Linux&lt;/h3>
+&lt;p>On Ubuntu 20.04 desktop, drivers are available. The installer will add rules to udev configuration to use devices. User can check the added rules in the file &lt;em>&lt;strong>/etc/udev/rules.d/51-usbblaster.rules&lt;/strong>&lt;/em>&lt;/p>
+&lt;pre tabindex="0">&lt;code># USB-Blaster
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6001&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6002&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6003&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+# USB-Blaster II
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6010&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+SUBSYSTEM==&amp;#34;usb&amp;#34;, ATTR{idVendor}==&amp;#34;09fb&amp;#34;, ATTR{idProduct}==&amp;#34;6810&amp;#34;, MODE=&amp;#34;0666&amp;#34;, GROUP=&amp;#34;plugdev&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>Unplug and plug USB cables.&lt;/p>
+&lt;h2 id="service-installation">Service installation&lt;/h2>
+&lt;p>This part is only needed for setting up an environment for debugging &lt;a href="/docs/examples/embedded-linux/helloworld">&lt;strong>RISC-V Embedded Linux Project&lt;/strong>&lt;/a>. If you are interested in embedded and FreeRTOS applications only, please skip this part.&lt;/p>
+&lt;h3 id="network-setup">Network setup&lt;/h3>
+&lt;p>The current built-in SoC SOFs for DE2-115 support 10 Mbps (MII mode) and 1000 Mbps (RGMII mode) Ethernet network. Depending on your network setup, please use the correct SOF file when programming the DE2-115 board.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/23.png" alt="example image">&lt;/p>
+&lt;p>To debug embedded Linux RISC-V applications on the board, the following requirements are mandatory for the connection between the host PC and the DE2-115 board.&lt;/p>
+&lt;p>&lt;strong>RGMII mode:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_hardware/24.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>ETHERNET0&lt;/strong> of DE2-115. &lt;strong>The connection could be directly or via router/switches&lt;/strong>.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 1 and 2. It’s default mode (RGMII mode).&lt;/li>
+&lt;li>Default IP addresses:
+&lt;ul>
+&lt;li>DE2-115 board: 192.168.1.50&lt;/li>
+&lt;li>TFTP server: 192.168.1.100&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.
+To update the IP of the board, after flashing FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Command&lt;/th>
+&lt;th style="text-align:left">Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">eth_local_ip&lt;/td>
+&lt;td style="text-align:left">Set the IP address of the board&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">eth_remote_ip&lt;/td>
+&lt;td style="text-align:left">Set the expected IP of the TFTP Server to download kernel/rootfs for network booting&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">netboot&lt;/td>
+&lt;td style="text-align:left">Start booting Linux from the network&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="/images_hardware/25.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>MII mode&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/images_hardware/26.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>port 0&lt;/strong> of DE2-115.&lt;/li>
+&lt;li>Connection speed is 10 Mpbs.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 2 and 3 (to config Ethernet port 0 to run on MII mode).&lt;/li>
+&lt;li>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. The network speed and IP can be set with the following command:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code># Assume that the network interface is enxf8e43b5dd64a
+NIC=enxf8e43b5dd64a
+sudo ethtool -s $NIC speed 10 duplex full autoneg off
+# Double check
+ethtool $NIC
+# IP needs to be fixed as 192.168.1.100
+# Make sure that IPv4 method is manual
+sudo ifconfig $NIC 192.168.1.100
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="/images_hardware/27.png" alt="example image">&lt;/p>
+&lt;h3 id="tftp-server">TFTP server&lt;/h3>
+&lt;p>To debug embedded Linux applications, a TFTP server needs to be set up on the development PC to host Linux /images_hardware. This Linux image will be loaded when the board is flashed.&lt;/p>
+&lt;h4 id="tftp-server-on-linux">TFTP server on Linux&lt;/h4>
+&lt;p>The quickest way to set up a TFTP server is using docker as follows:&lt;/p>
+&lt;ul>
+&lt;li>Create tftpboot directory&lt;/li>
+&lt;li>Copy boot.bin to tftpboot directory&lt;/li>
+&lt;li>Start the TFTP server&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>docker rm -f tftpboot
+cd tftpboot
+# Copy boot.bin (here)
+docker run -itd --name=tftpboot --net=host --restart=always -v ${PWD}:/var/tftpboot pghalliday/tftp
+&lt;/code>&lt;/pre>&lt;h4 id="solartftp-server-on-windows-10">SolarTFTP server on Windows 10&lt;/h4>
+&lt;blockquote>
+&lt;p>&lt;strong>Prerequisites&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Administrator permission&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SolarWinds TFTP Server&lt;/strong>: To set up a TFTP server, users will have to download the TFTP Server utility such as SolarWinds can be downloaded from &lt;a href="https://www.solarwinds.com/free-tools/free-tftp-server">https://www.solarwinds.com/free-tools/free-tftp-server&lt;/a>. Once the .zip file is downloaded, extract it and go through the straightforward installation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Firewall setup&lt;/strong>: To allow remote access to the TFTP server, users need to open the firewall for TFTP service.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>&lt;strong>Start the TFTP Server&lt;/strong>&lt;/p>
+&lt;p>Run the &lt;strong>SolarWinds TFTP Server&lt;/strong> utility by going to the &lt;strong>Start Menu&lt;/strong> and searching for &lt;strong>TFTP Server&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/28.png" alt="example image">&lt;/p>
+&lt;p>Once it loads up, copy the &lt;strong>boot.bin&lt;/strong> (RISC-V Linux image) to &lt;strong>C:\TFTP-Root&lt;/strong> folder.&lt;/p></description></item></channel></rss>
