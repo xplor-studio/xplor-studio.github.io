@@ -1913,7 +1913,7 @@ Select the desired project in the Project Explorer window, then click **Debug As
 After selecting **Debug As > RISC-V application with Imperas**, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.
 ![example image](/images_embedded_linux/linux/29.png)
 Other functions of debugging (such as *Resume*, *Step Into*, *Step Over*, *Step Return*, *Terminate*, ...) are the same as the quick-start project's. Please refer to [Running and Debugging project with QEMU emulator](../../../getting-started/quick-start/freertos#running-and-debugging-project-with-qemu-emulator) for more information. -->
-&lt;h2 id="a-iddebug-linux-de2span-stylecolor-blackrunning-and-debugging-project-with-intel-fpga-de2-115-platformspan-a">&lt;a id="debug-linux-de2">&lt;span style="color: black">Running and Debugging project with Intel FPGA DE2-115 platform&lt;/span> &lt;/a>&lt;/h2>
+&lt;h2 id="running-and-debugging-project-with-intel-fpga-de2-115-platform-on-ubuntu">Running and Debugging project with Intel FPGA DE2-115 platform on Ubuntu&lt;/h2>
 &lt;!-- The programming IP core step with Intel FPGA DE2-115 platform is the same as the quick-start project. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../getting-started/quick-start/freertos#blinky-debug-de2) for more information. -->
 &lt;h3 id="hardware-and-driver-preparations">Hardware and driver preparations&lt;/h3>
 &lt;p>Please refer to the &lt;a href="/docs/hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.&lt;/p>
@@ -2176,7 +2176,49 @@ Currently, **riscv64-xplord-linux** is the only toolchain supported. Please chan
 + Integer ABI: LP64(-mabi=lp64*)
 + Floating point ABI: Double precision extension (RVFD)
 + Click Apply and Close
-The following steps as same as the previous sections. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../examples/embedded-linux/Helloworld#debug-linux-de2) for more information. --></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
+The following steps as same as the previous sections. Please refer to [Running and Debugging project with Intel FPGA DE2-115 platform](../../../examples/embedded-linux/Helloworld#debug-linux-de2) for more information. -->
+&lt;h2 id="running-and-debugging-project-with-intel-fpga-de2-115-platform-on-windows-10">Running and Debugging project with Intel FPGA DE2-115 platform on Windows 10&lt;/h2>
+&lt;h3 id="hardware-and-driver-preparations-1">Hardware and driver preparations&lt;/h3>
+&lt;p>Please refer to the &lt;a href="/docs/hardware-environment/#driver-installation">Hardware and Environment Setup&lt;/a> document for more details.&lt;/p>
+&lt;h3 id="setup-solartftp-server-on-windows-10">Setup SolarTFTP server on Windows 10&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>Prerequisites&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Administrator permission&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SolarWinds TFTP Server&lt;/strong>: To set up a TFTP server, users will have to download the TFTP Server utility such as SolarWinds can be downloaded from &lt;a href="https://www.solarwinds.com/free-tools/free-tftp-server">https://www.solarwinds.com/free-tools/free-tftp-server&lt;/a>. Once the .zip file is downloaded, extract it and go through the straightforward installation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Firewall setup&lt;/strong>: To allow remote access to the TFTP server, users need to open the firewall for TFTP service.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>&lt;strong>Start the TFTP Server&lt;/strong>&lt;/p>
+&lt;p>Run the &lt;strong>SolarWinds TFTP Server&lt;/strong> utility by going to the &lt;strong>Start Menu&lt;/strong> and searching for &lt;strong>TFTP Server&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/images_hardware/28.png" alt="example image">&lt;/p>
+&lt;p>Once it loads up, copy all the file in &lt;strong>linux-vexriscv-de2115/tftpboot&lt;/strong> folder to &lt;strong>C:\TFTP-Root&lt;/strong> folder.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/59.1.png" alt="example image">&lt;/p>
+&lt;h3 id="programming-ip-core-1">Programming IP Core&lt;/h3>
+&lt;p>Similar to Linux&lt;/p>
+&lt;h3 id="update-ip-of-tftp-server">Update IP of TFTP server&lt;/h3>
+&lt;p>Go to *&lt;strong>Network and Internet settings&lt;/strong> by click on &lt;img src="/images_embedded_linux/linux/60.png" alt="example image">:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/61.png" alt="example image">&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/62.png" alt="example image">&lt;/p>
+&lt;p>As image, there are 2 networks:
+- The &lt;code>Ethernet 3&lt;/code> for connecting to Internet
+- The &lt;code>Ethernet&lt;/code> for connecting to DE2-115 Board&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/63.png" alt="example image">&lt;/p>
+&lt;p>Click on &lt;strong>Properties&lt;/strong> on &lt;code>Ethernet&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/64.png" alt="example image">&lt;/p>
+&lt;p>Now we need to setup IP manually bt click on &lt;strong>Edit&lt;/strong> button, choose &lt;strong>Manual&lt;/strong> , type as image and &lt;strong>Save&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/65.png" alt="example image">&lt;/p>
+&lt;p>After that, restart the SolarTFTP server and programming IP Core again.&lt;/p>
+&lt;p>&lt;img src="/images_embedded_linux/linux/66.png" alt="example image">&lt;/p>
+&lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram IP core.&lt;/p>
+&lt;h3 id="debug-application-1">Debug application&lt;/h3>
+&lt;p>Create debug configurations and debug are same to Linux.&lt;/p></description></item><item><title>Docs: Kernel debug</title><link>/docs/examples/embedded-linux/debug-kernel/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/embedded-linux/debug-kernel/</guid><description>
 &lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
