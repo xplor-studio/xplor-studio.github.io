@@ -437,7 +437,7 @@ de2-115-vexriscv32 login:
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>To build, run and debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/li>
+&lt;li>To debug Kernel Debugging applications with QEMU emulator, please install the &lt;strong>xplor-studio-kernel&lt;/strong> blueprint first. Please refer to &lt;a href="../../../blueprints/guideline/">&lt;span style="color: blue">Guidelines&lt;/span>&lt;/a> for more information.&lt;/li>
 &lt;li>In this release, &lt;strong>Debugging Kernel&lt;/strong> feature is only available on Ubuntu.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
@@ -494,6 +494,11 @@ de2-115-vexriscv32 login:
 &lt;strong>The Static Kernel project does not need to be built because the XploR Studio uses a pre-build kernel image for debugging.&lt;/strong>&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="/images_embedded_linux/debug-kernel/5.png" alt="example image">&lt;/p>
+&lt;h2 id="running-the-kernel-with-qemu-emulator">Running the kernel with QEMU emulator&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+XploR Studio does not support to the run Static Kernel project!&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="debugging-the-kernel-with-qemu-emulator">Debugging the kernel with QEMU emulator&lt;/h2>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
