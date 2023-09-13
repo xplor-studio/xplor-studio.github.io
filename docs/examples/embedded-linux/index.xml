@@ -183,12 +183,12 @@ litex&amp;gt;
 &lt;p>So, please do the follow steps:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Install &lt;strong>linux-vexriscv-de2115&lt;/strong> blueprint&lt;/p>
+&lt;p>Install &lt;strong>rootfs-vexriscv-de2115&lt;/strong> blueprint&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Start/Restart TFTP server (Linux)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> docker rm -f tftpboot
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>/.xplor/blueprints/linux-vexriscv-de2115/tftpboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>/.xplor/blueprints/rootfs-vexriscv-de2115/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> docker run -itd --name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tftpboot --net&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>host --restart&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>always -v &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">PWD&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>:/var/tftpboot pghalliday/tftp
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
@@ -383,7 +383,7 @@ The following steps as same as the previous sections. Please refer to [Running a
 &lt;p>&lt;strong>Start the TFTP Server&lt;/strong>&lt;/p>
 &lt;p>Run the &lt;strong>SolarWinds TFTP Server&lt;/strong> utility by going to the &lt;strong>Start Menu&lt;/strong> and searching for &lt;strong>TFTP Server&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="/images_hardware/28.png" alt="example image">&lt;/p>
-&lt;p>Once it loads up, copy all the file in &lt;strong>linux-vexriscv-de2115/tftpboot&lt;/strong> folder to &lt;strong>C:\TFTP-Root&lt;/strong> folder.&lt;/p>
+&lt;p>Once it loads up, copy all the file in &lt;strong>rootfs-vexriscv-de2115/&lt;/strong> folder to &lt;strong>C:\TFTP-Root&lt;/strong> folder.&lt;/p>
 &lt;p>&lt;img src="/images_embedded_linux/linux/59.1.png" alt="example image">&lt;/p>
 &lt;h3 id="programming-ip-core-1">Programming IP Core&lt;/h3>
 &lt;p>Similar to Linux&lt;/p>
