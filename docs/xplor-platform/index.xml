@@ -1,0 +1,585 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – XploR Platform</title><link>/docs/xplor-platform/</link><description>Recent content in XploR Platform on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/xplor-platform/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: XIP</title><link>/docs/xplor-platform/xip/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/xplor-platform/xip/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Developers can use &lt;strong>xip&lt;/strong> to:&lt;/p>
+&lt;ul>
+&lt;li>&lt;b>signup&lt;/b>: Sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://accounts.soc.one/">this link&lt;/a> to sign up for a free account.&lt;/li>
+&lt;li>&lt;b>install&lt;/b>: Download and install XploR Studio IDE, or components from &lt;a href="https://xplor.design/">XploR Design&lt;/a>&lt;/li>
+&lt;li>&lt;b>uninstall&lt;/b>: Uninstall installed components on the host machine.&lt;/li>
+&lt;li>&lt;b>show&lt;/b>: Show information about installed components.&lt;/li>
+&lt;li>&lt;b>list&lt;/b>: List all installed and available components.&lt;/li>
+&lt;/ul>
+&lt;p>To get more information:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: xip &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--version&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--xplor-home &amp;lt;path&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--init&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>A component manager CLI
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this &lt;span style="color:#204a87">help&lt;/span> message and &lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Commands:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> signup Sign up &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> a free account.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> install Install a component.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uninstall Uninstall a component.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> show Show the information of a component.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list List installed components.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>General options:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version Show version and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --xplor-home &amp;lt;path&amp;gt; Set the XploR workspace and &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">$XPLOR_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;path&amp;gt; &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> it not exists &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>Default: /home/ubuntu/.xplor&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --init Initialize the credentials file in the XploR workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> and &lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To get more info about subcommands (signup, install, uninstall, show, list):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip install --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: xip install &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--no-deps&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--upgrade&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> component
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>positional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> component The name of the component to install.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this &lt;span style="color:#204a87">help&lt;/span> message and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --no-deps Install a component without dependencies.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --upgrade Upgrade a component to the newest available version.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="sign-up">Sign up&lt;/h2>
+&lt;p>To access components and component registry, users must sign up for an account &lt;a href="https://accounts.soc.one/welcome">here&lt;/a> or using the &lt;code>xip signup&lt;/code> command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip signup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.060&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.060&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/dongnh/.xplor/components
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.061&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting the Registration Flow.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://auth.soc.one/self-service/registration?flow&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>6aa1bf27-2985-483e-b780-de06742a9f1a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 1.142&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting email and password.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your email: staff@soc.one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter your password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Re-enter your password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 17.868&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Signing up.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 19.770&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Sign up successfully.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>Notice&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Please activate your account now by clicking the link in the activation email to access all our features and services.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> Please activate your account by clicking the link in the activation email.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="sign-in">Sign in&lt;/h2>
+&lt;p>After signing up, users can authenticate with the registry with the following command: &lt;code>xip --init&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip --init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.105&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.105&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.107&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Credentials Verification.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get a new token from the server.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> &lt;strong>xip&lt;/strong> will open a browser for users to sign in. If login is successful, users will be requested access to some permissions.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="install">Install&lt;/h2>
+&lt;p>Use &lt;code>xip install&lt;/code> to install components with or without dependencies.&lt;/p>
+&lt;p>To install the GNU elf toolchain and related dependencies, use:&lt;/p>
+&lt;div class="td-card-group card-group p-0 mb-4">
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>For Linux&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ xip install rv-xplor-elf-linux64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>For Windows&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ xip install rv-xplor-elf-win64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>To install without dependencies, use:&lt;/p>
+&lt;div class="td-card-group card-group p-0 mb-4">
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>For Linux&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ xip install rv-xplor-elf-linux64 --no-deps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>For Windows&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ xip install rv-xplor-elf-win64 --no-deps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>To upgrade components to latest version:&lt;/p>
+&lt;div class="td-card-group card-group p-0 mb-4">
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>For Linux&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ xip install --upgrade rv-xplor-elf-linux64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="td-card card border me-4">
+&lt;div class="card-header bg-white">
+&lt;strong>For Windows&lt;/strong>
+&lt;/div>
+&lt;div class="card-body code p-0 m-0">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ xip install --upgrade rv-xplor-elf-win64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> &lt;strong>[Windows]&lt;/strong> There are some components that need enabling Windows Long Path to be installed. Please refer to the article: &lt;a href="https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#enable-long-paths-in-windows-10-version-1607-and-later">Enable Long Paths in Windows 10&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="show">Show&lt;/h2>
+&lt;p>To show information about an installed component:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip show rv-xplor-elf-linux64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.003&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Name: rv-xplor-elf-linux64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Version: 1.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Summary: RISC-V Embedded Toolchain
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Home-page: https://xplor.design
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Author: SoC.One Inc.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Author-email: info@soc.one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>License: Free
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Location: /home/hien/.xplor/components
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Requires:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Required-by: baremetal-vexriscv-agilex-helloworld-example, xplor-studio-baremetal-debug-plugin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="uninstall">Uninstall&lt;/h2>
+&lt;p>To uninstall the installed component:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip uninstall qemu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.105&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.105&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.196&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Uninstall rv-xplor-elf-linux64.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Found existing installation: rv-xplor-elf-linux64 1.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Uninstalling rv-xplor-elf-linux64-1.0.0:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Successfully uninstalled rv-xplor-elf-linux64-1.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.516&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Uninstallation &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="list">List&lt;/h2>
+&lt;p>To show all installed components on the local machine:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Package Version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>------------------- -------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-qemu-linux64 qemu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-linux-rootfs 1.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-linux-rootfs-debug 1.0.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To show all available components for your account:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list --on-registry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.103&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.103&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.203&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Credentials Verification.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get credentials from the file.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.205&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting data from registry.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 4.750&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Information of all components on Registry:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+----------------------------------------------+-----------+------------+-----------+------------------------------------------------------------+--------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> No &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Version &lt;span style="color:#000;font-weight:bold">|&lt;/span> Versions &lt;span style="color:#000;font-weight:bold">|&lt;/span> License &lt;span style="color:#000;font-weight:bold">|&lt;/span> Classifier &lt;span style="color:#000;font-weight:bold">|&lt;/span> Requires &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+&lt;span style="color:#ce5c00;font-weight:bold">======&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">==============================================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============================================================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">======================================&lt;/span>+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-linux-debug-plugin &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.1.0b1 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.1.0b1, &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software :: Host :: IDE :: XploR Studio :: Plugin &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-linux-rootfs, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.1.0, &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-qemu-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0b2, &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-qemu-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> ... &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv64gc-xplor-linux-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv64gc-xplor-linux-win64 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+----------------------------------------------+-----------+------------+-----------+------------------------------------------------------------+--------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> baremetal-vexriscv-agilex-helloworld-example &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software :: Host :: IDE :: XploR Studio :: Example Project &lt;span style="color:#000;font-weight:bold">|&lt;/span> agilex-vexriscv-bit, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> openocd-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> openocd-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-xplor-elf-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-xplor-elf-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-baremetal-debug-plugin, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-hardware-target &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+----------------------------------------------+-----------+------------+-----------+------------------------------------------------------------+--------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv64gc-xplor-linux-linux64 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.1 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.1, &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software :: Host :: Cross Toolchain &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+----------------------------------------------+-----------+------------+-----------+------------------------------------------------------------+--------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-helloworld-example &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software :: Host :: IDE :: XploR Studio :: Example Project &lt;span style="color:#000;font-weight:bold">|&lt;/span> qemu-for-zephyr-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> qemu-for-zephyr-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-zephyr-debug-plugin, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-sdk-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-sdk-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-source-code &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default, the data is displayed in table format. Users can customize their views by adding the &lt;code>--format&lt;/code> option. The available options are &lt;em>tabular&lt;/em> and &lt;em>JSON&lt;/em>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list --on-registry --format json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.103&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Credentials Verification.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get credentials from the file.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 3.662&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting data from registry.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 4.618&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Information of all components on Registry:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;rv-linux-rootfs&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Metadata-Version&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;2.1&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;rv-linux-rootfs&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;1.0.1&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Summary&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;RISC-V RootFS for running and debugging Embedded Linux applications&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Home-page&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;https://xplor.design&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Author&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;SoC.One Inc.&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Author-email&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;info@soc.one&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;License&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;Free&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Platform&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Classifier&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Software :: Target :: RootFS&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Description&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;RISC-V RootFS can be booted by QEMU and can run/debug RISC-V Embedded Linux applications&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Requires&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Size&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;170.95 MB&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Versions&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;1.0.0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;1.0.1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;rv-qemu-linux64&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>User can select specific type of components to display with the &lt;code>--filter&lt;/code> option.&lt;/p>
+&lt;p>component types for display using &lt;code>--filter&lt;/code> include &lt;b>software&lt;/b>, &lt;b>hardware&lt;/b>, &lt;b>cores&lt;/b>, &lt;b>platforms&lt;/b>, &lt;b>examples&lt;/b> or all (using the &lt;b>none&lt;/b> option).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip list --on-registry --filter Example
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.106&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Credentials Verification.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get credentials from the file.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 3.649&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Getting data from registry.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 4.600&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Information of examples components on Registry:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+----------------------------------------------+-----------+------------+-----------+------------------------------------------------------------+--------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> No &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Version &lt;span style="color:#000;font-weight:bold">|&lt;/span> Versions &lt;span style="color:#000;font-weight:bold">|&lt;/span> License &lt;span style="color:#000;font-weight:bold">|&lt;/span> Classifier &lt;span style="color:#000;font-weight:bold">|&lt;/span> Requires &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+&lt;span style="color:#ce5c00;font-weight:bold">======&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">==============================================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">===========&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">============================================================&lt;/span>+&lt;span style="color:#ce5c00;font-weight:bold">======================================&lt;/span>+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> baremetal-vexriscv-agilex-helloworld-example &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software :: Host :: IDE :: XploR Studio :: Example Project &lt;span style="color:#000;font-weight:bold">|&lt;/span> agilex-vexriscv-bit, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> openocd-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> openocd-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-xplor-elf-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> rv-xplor-elf-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-baremetal-debug-plugin, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-hardware-target &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+----------------------------------------------+-----------+------------+-----------+------------------------------------------------------------+--------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-helloworld-example &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1.0.0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Free &lt;span style="color:#000;font-weight:bold">|&lt;/span> Software :: Host :: IDE :: XploR Studio :: Example Project &lt;span style="color:#000;font-weight:bold">|&lt;/span> qemu-for-zephyr-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> qemu-for-zephyr-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> xplor-studio-zephyr-debug-plugin, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-sdk-linux64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-sdk-win64, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> zephyr-source-code &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Components</title><link>/docs/xplor-platform/components/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/xplor-platform/components/</guid><description>
+&lt;blockquote>
+&lt;p>&lt;strong>WARNING&lt;/strong>
+The following guide is preliminary and subjected to changes.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
+&lt;p>The following software components on the host computer are required:&lt;/p>
+&lt;ul>
+&lt;li>python==3.8.10&lt;/li>
+&lt;li>setuptools (newest version)&lt;/li>
+&lt;/ul>
+&lt;h2 id="template">Template&lt;/h2>
+&lt;p>Download and extract the component template from &lt;a href="https://github.com/xplor-studio/xip/blob/component-template/empty-component-templates.zip">here&lt;/a>.&lt;/p>
+&lt;p>Note that component name should be in lowercases. If multiple words are used, they should be separated by underscores &lt;code>_&lt;/code> or &lt;code>-&lt;/code>. Avoid using spaces or special characters or mixing &lt;code>_&lt;/code> and &lt;code>-&lt;/code> in the package name.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code> Correct name : `component-one`, `component_two`
+Wrong name : `component_with-wrong_name`
+&lt;/code>&lt;/pre>&lt;/blockquote>
+&lt;h3 id="structure-of-component-templates">Structure of component templates&lt;/h3>
+&lt;p>In the example component template, there are 2 folders (&lt;strong>component-one/&lt;/strong>, &lt;strong>component-two/&lt;/strong>) containing component templates and a &lt;em>Makefile&lt;/em> that supports building and publishing components.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── component-one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── component-one
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ └── Readme.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── component-two
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── component-two
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ ├── linux.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ │ └── env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ └── win32.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ │ └── env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── Makefile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The standard structure of a component template includes:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>A data folder (component-one/component-one, component-two/component-two)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>MANIFEST.in&lt;/strong> (used for including non-Python data to package/component)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>setup.py&lt;/strong> (used for building a component)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Two different data scenarios for component are supported:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The data of the component are host-independent, and can be used in both Windows and Linux OS (&lt;strong>component-one&lt;/strong>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The data of the component are host-dependent, requiring a different version for each supported host (&lt;strong>component-two&lt;/strong>)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>Limitation&lt;/strong>: components that have a mix of both common and specific data for different supported host are not yet supported.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="setuppy">setup.py&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>component-one/setup.py&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">setuptools&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">setup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">package_dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;component-one&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;component-one&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">setup&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;component-one&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">version&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">description&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;The baremetal example of the NEORV32 RISC-V Processor on Terrasic DE2-115 board&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">package_dir&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">package_dir&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">packages&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;component-one&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">include_package_data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">author&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;SoC.One Inc.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://xplor.design&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">author_email&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;info@soc.one&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">platforms&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">long_description&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;The baremetal example of the NEORV32 RISC-V Processor on Terrasic DE2-115 board&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">license&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Free&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">install_requires&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># Some dependencies here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">classifiers&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#39;Hardware&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Ref. &lt;a href="https://setuptools.pypa.io/en/latest/references/keywords.html">https://setuptools.pypa.io/en/latest/references/keywords.html&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>name&lt;/code> - A string specifying the name of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>version&lt;/code>- A string specifying the version number of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>description&lt;/code> - A string describing the package in a single line.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>long_description&lt;/code> - A string providing a longer description of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>author&lt;/code> - A string specifying the author of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>author_email&lt;/code> - A string specifying the email address of the package author.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>URL&lt;/code> - A string specifying the URL for the package homepage.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>license&lt;/code> - A string specifying the license of the package.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>platforms&lt;/code> - A list of strings or comma-separated string. (Used to specify which OS is supported)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>package_dir&lt;/code> - A dictionary that maps package names. (That maps the data folder with the installed component folder)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>packages&lt;/code> - A list of strings specifying the packages that setuptools will manipulate. (That is the name of the installed component folder)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>install_requires&lt;/code> - A string or list of strings specifying what other distributions need to be installed when this one is. (Dependencies concept)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>classifiers&lt;/code> - A list of strings describing the categories for the package. (Classify a component as HW, SW, bitstream,… or something else)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>include_package_data&lt;/code> - If True, setuptools will automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. (Should be set to True to include non-Python data)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>For (&lt;code>component-two&lt;/code>), only some code need to be added to &lt;code>setup.py&lt;/code> to specify &lt;code>package_dir&lt;/code> for each supported host OS, as follow:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">setuptools&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">setup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">platform&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#000">platform&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">system&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;Windows&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">package_dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;component-two&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;component-two/win32.x86_64&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">else&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">package_dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;component-two&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;component-two/linux.x86_64&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="post-install-and-pre-uninstall">Post-install and Pre-uninstall&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note:&lt;/h4>
+&lt;p>If there are executable files that need to run after the component is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
+&lt;p>If there are executable files that need to run before the component is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>xplor-studio-elf/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-studio-elf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── linux.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ ├── post-install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ └── pre-uninstall.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── win32.x86_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── post-install.bat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── pre-uninstall.bat
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="building-component">Building component&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% python3 setup.py sdist
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>% make build&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>If you&amp;rsquo;re reusing the example template, please rename the data folder and update the content of &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code>&lt;/li>
+&lt;li>As an example, with &lt;code>component-one&lt;/code>:
+&lt;ul>
+&lt;li>Rename folder &lt;code>component-one&lt;/code> → &lt;code>socone-component&lt;/code>&lt;/li>
+&lt;li>Replace string in &lt;code>setup.py&lt;/code>, &lt;code>MANIFEST.in&lt;/code> : &lt;code>component-one&lt;/code> → &lt;code>socone-component&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h2 id="example-of-creating-example-project-component">Example of Creating Example Project Component&lt;/h2>
+&lt;p>This is an example of how to create a component for Baremetal Helloworld sample, running on QEMU simulator.&lt;/p>
+&lt;p>Download and extract the Sample component template from &lt;a href="https://github.com/xplor-studio/xip/blob/component-template/xplor-studio-sample-component-template.zip">here&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Makefile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xplor-studio-virt-qemu-baremetal-helloworld/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── setup.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-studio-virt-qemu-baremetal-helloworld
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ ├── main.c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ └── ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── settings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── .cproject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── .project
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── project.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>Makefile&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>To clean or build the Sample component, use these commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>make clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/xplor-platform/components/makefile.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>MANIFEST.in&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Just need to replace with component&amp;rsquo;s name&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>global-include xplor-studio-virt-qemu-baremetal-helloworld/**/*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>setup.py&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Update the Sample component&amp;rsquo;s information like name, description, platforms, dependencies &amp;hellip;&lt;/p>
+&lt;p>&lt;img src="/xplor-platform/components/setup_py.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>project.json&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/xplor-platform/components/project_json.png" alt="example image">&lt;/p>
+&lt;p>Besides the basic information like Project&amp;rsquo;s Name, Project&amp;rsquo;s Type, Developer need to pay attention to Project&amp;rsquo;s language and Project&amp;rsquo;s category parameters.&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>XPLORSTUDIO IDE supports two kinds of Project&amp;rsquo;s language as C and CPP.&lt;/li>
+&lt;li>XPLORSTUDIO IDE supports the following list of Project&amp;rsquo;s categories:
+&lt;ul>
+&lt;li>Linux: RISC-V Embedded Linux Project&lt;/li>
+&lt;li>Baremetal: RISC-V Embedded Project&lt;/li>
+&lt;li>FreeRTOS: FreeRTOS Project&lt;/li>
+&lt;li>Zephyr: Zephyr Project&lt;/li>
+&lt;li>Linux_Kernel: Static Linux Kernel Project&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>Developer have to select the correct Project&amp;rsquo;s category from above list.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>xplor-studio-virt-qemu-baremetal-helloworld&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Contains all resources of Eclipse&amp;rsquo;s project such as source code files, header files, linker script, libraries &amp;hellip;&lt;/p>
+&lt;p>&lt;img src="/xplor-platform/components/src_main.png" alt="example image">&lt;/p>
+&lt;p>In .cproject, it includes information of Project&amp;rsquo;s settings like managed build options, include paths, library paths &amp;hellip;. Please, check the path of these resources, Developer should use the relative path, not the absolute path.&lt;/p>
+&lt;p>For example, to define the linker path:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> &amp;lt;option &lt;span style="color:#000">IS_BUILTIN_EMPTY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">IS_VALUE_EMPTY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vio.managedbuild.elf.riscv.option.c.linker.paths.222877999&amp;#34;&lt;/span> &lt;span style="color:#000">superClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vio.managedbuild.elf.riscv.option.c.linker.paths&amp;#34;&lt;/span> &lt;span style="color:#000">valueType&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;libPaths&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;listOptionValue &lt;span style="color:#000">builtIn&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">value&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;amp;quot;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">XPLOR_HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/xplor-platform/components/libraries/libpico/lib/virt/xplor&amp;amp;quot;&amp;#34;&lt;/span>/&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;listOptionValue &lt;span style="color:#000">builtIn&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#000">value&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span>/&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/option&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+To support Windows environment, Developer should use &lt;code>&amp;amp;quot;&lt;/code> before and after the relative path of resource
+Naming convention of Example component is &amp;ldquo;xplor-studio-&lt;core>-&lt;platform>-&lt;rtos>-&lt;app>&amp;rdquo;
+Starting with prefix as &amp;ldquo;xplor-studio-&amp;rdquo;
+core: the name of running core such as Vexrisv, Neorv32, Corevmcu &amp;hellip;
+platform: the name of running platform such as Qemu, DE2-115, Stratix10gx &amp;hellip;
+rtos: the name of cateogry such as baremetal, linux, freertos &amp;hellip;
+app: the name of application such as helloworld, timer, heap &amp;hellip;&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

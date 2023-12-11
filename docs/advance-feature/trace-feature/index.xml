@@ -1,0 +1,215 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Trace Feature</title><link>/docs/advance-feature/trace-feature/</link><description>Recent content in Trace Feature on XploR Studio</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/advance-feature/trace-feature/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: LTTng Tracer and Trace Compass</title><link>/docs/advance-feature/trace-feature/lttng/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/advance-feature/trace-feature/lttng/</guid><description>
+&lt;p>LTTng Tracer Control is a component of the LTTng ecosystem designed to manage and control tracing in a Linux system. It provides a set of to ols and interface for controlling and configuring traces, which are the components reponsible for collecting trace data (system events and logs) from various sources in the system.&lt;/p>
+&lt;p>To start working with LTTng Tracer Control, please refer to &lt;a href="/docs/examples/trace/lttng/">&lt;span style="color: blue">LTTng Trace Control Linux Project&lt;/span>&lt;/a>.&lt;/p>
+&lt;h3 id="view-and-analysis-trace-data-with-linux-user-space-and-kernel-trace">View and Analysis trace data with Linux user space and kernel trace&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>LTTng Kernel Traces (Project Explorer View, Events Editor, Histogram View, CPU Usage View, Disk I/O Activity View, Kernel Memory Usage View, Control Flow View, Resources View, &amp;hellip;). Kernel does not have information that can populate a flame chart view.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>LTTng-UST Traces (Events Editor, Flame Chart View, Flame Graph View, Function Duration Statistics View, Function Durations Distribution ViewProject Explorer View, &amp;hellip;)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="event-editor">Event Editor&lt;/h4>
+&lt;p>The Events editor shows the basic trace data elements (events) in a tabular format. The header displays the current trace (or experiment) name. In this case, it is Default…/kernel&lt;/p>
+&lt;p>&lt;img src="/advance-feature/32.png" alt="example image">&lt;/p>
+&lt;p>The columns of the table are defined by the fields (aspects) of the specific trace type (ust or kernel). These are the defaults:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Timestamp: the event timestamp&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Event Type: the event type&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Contents: the fields (or payload) of this event&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/advance-feature/33.png" alt="example image" title="The first row of the table is the header row a.k.a. the Search and Filter row.">&lt;/p>
+&lt;p>The highlighted event is the current event and is synchronized with the other views. If you select another event, the other views will be updated accordingly. The properties view will display a more detailed view of the selected event. For example:&lt;/p>
+&lt;p>&lt;img src="/advance-feature/34.png" alt="example image" title="Current event is ext4_…_space is synchronized with the CPU usage">&lt;/p>
+&lt;p>An event range can be selected by holding the Shift key while clicking another event or using any of the cursor keys ( Up&amp;rsquo;, Down, PageUp, PageDown, Home, End). The first and last events in the selection will be used to determine the current selected time range for synchronization with the other views.&lt;/p>
+&lt;p>If the Event editor is closed, the views will display empty states. For example:&lt;/p>
+&lt;p>&lt;img src="/advance-feature/35.png" alt="example image">&lt;/p>
+&lt;h4 id="searching-and-filtering">Searching and filtering&lt;/h4>
+&lt;p>When a searching condition is applied to the header row, the table will select the next matching event starting from the top currently displayed event. All matching events will have a &amp;lsquo;search match&amp;rsquo; icon in their left margin. Non-matching events will be dimmed. The characters in each column which match the regular expression will be highlighted.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/36.png" alt="example image">&lt;/p>
+&lt;p>Pressing the Enter key will search and select the next matching event. Pressing the Shift+Enter key will search and select the previous matching event. Press Esc to cancel an ongoing search.&lt;/p>
+&lt;p>To add the currently applied search condition(s) as filter(s), click the Add as Filter button in the header row margin, or press the Ctrl+Enter key.&lt;/p>
+&lt;p>Press Delete to clear the header row and reset all events to normal.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/37.png" alt="example image">&lt;/p>
+&lt;h4 id="histogram-view">Histogram View&lt;/h4>
+&lt;p>&lt;img src="/advance-feature/38.png" alt="example image" title="The x-axis of each histogram corresponds to the event timestamps. The axis is now the same as the other views for a better visualization of the range. The y-axis shows the maximum number of events in the corresponding histogram bars. The vertical blue line(s) show the current selection time (or range).">&lt;/p>
+&lt;p>The Histogram View display the trace events distribution with respect to time.&lt;/p>
+&lt;p>The Align Views toggle button in the view menu allows to disable and enable the automatic time axis alignment of time-based views. Disabling the alignment in the Histogram view will disable this feature across all the views because it&amp;rsquo;s a workspace preference.&lt;/p>
+&lt;p>&lt;strong>The Hide Lost Events&lt;/strong> toggle button in the local toolbar allows to hide the bars of lost events. When the button is selected it can be toggled again to show the lost events.&lt;/p>
+&lt;p>&lt;strong>The Activate Trace Coloring&lt;/strong> toggle button in the local toolbar allows to use separate colors for each trace of an experiment. Note that this feature is not available if your experiment contains more than twenty two traces. When activated, a legend is displayed at the bottom on the histogram view.&lt;/p>
+&lt;p>On the top left, there are three text controls:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Selection Start: Displays the start time of the current selection&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Selection End: Displays the end time of the current selection&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Window Span: Displays the current zoom window size in seconds&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The mouse can be used to control the histogram:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Left-click: Set a selection time&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Left-drag: Set a selection range&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Shift-left-click or drag: Extend or shrink the selection range&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Middle-click or Ctrl-left-click: Center the zoom window on mouse (full histogram only)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Middle-drag or Ctrl-left-drag: Move the zoom window&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-drag: Set the zoom window&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Shift-right-click or drag: Extend or shrink the zoom window (full histogram only)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mouse wheel up: Zoom in&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mouse wheel down: Zoom out&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Hovering the mouse over an histogram bar pops up an information window that displays the start/end time of the corresponding bar, as well as the number of events (and lost events) it represents. If the mouse is over the selection range, the selection span in seconds is displayed.&lt;/p>
+&lt;p>In each histogram, the following keys are handled:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Left Arrow: Moves the current event to the previous non-empty bar&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right Arrow: Moves the current event to the next non-empty bar&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Home: Sets the current time to the first non-empty bar&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>End: Sets the current time to the last non-empty histogram bar&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Plus (+): Zoom in&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Minus (-): Zoom out&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="statistic-view">Statistic View&lt;/h4>
+&lt;p>The Statistics View displays the various event counters that are collected when analyzing a trace. The statistics is collected for the whole trace.&lt;/p>
+&lt;p>The view is separated in two sides. The left side of the view presents the Statistics in a table. The table shows 3 columns: Level Events total and Events in selected time range.&lt;/p>
+&lt;p>The data is organized per trace. After parsing a trace the view will display the number of events per event type in the second column and in the third, the currently selected time range&amp;rsquo;s event type distribution is shown.&lt;/p>
+&lt;p>The cells where the number of events are printed also contain a colored bar with a number that indicates the percentage of the event count in relation to the total number of events.
+&lt;img src="/advance-feature/39.png" alt="example image">&lt;/p>
+&lt;p>The right side illustrates the proportion of types of events into two pie charts. The legend of each pie chart gives the representation of each color in the chart.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The Global pie chart displays the general proportion of the events in the trace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When there is a range selection, the Events in selection pie chart appears next to the Global pie chart and displays the proportion the event in the selected range of the trace.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="cpu-usage-view">CPU Usage View&lt;/h4>
+&lt;p>The CPU Usage analysis and view is specific to LTTng Kernel traces. The CPU usage is derived from a kernel trace as long as the sched_switch event was enabled during the collection of the trace. This analysis is executed the first time that the CPU Usage view is opened after opening the trace. To open the view, double-click on the CPU Usage tree element under the Linux Kernel Analysis tree element of the Project Explorer.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/40.png" alt="example image">&lt;/p>
+&lt;p>Now, the CPU Usage view will show:&lt;/p>
+&lt;p>&lt;img src="/advance-feature/41.png" alt="example image">&lt;/p>
+&lt;p>The view is divided into the following important sections: &lt;strong>Process Information&lt;/strong> and the &lt;strong>CPU Usage Chart&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>Process Information&lt;/strong>
+The process Information is displayed on the left side of the view and shows all threads that were executing on all available CPUs in the current time range. For each process, it shows in different columns the thread ID (TID), process name (Process), the average (%) execution time and the actual execution time (Time) during the current time range. It shows all threads that were executing on the CPUs in the current time range.&lt;/p>
+&lt;p>&lt;strong>CPU Usage Chart&lt;/strong>
+The CPU Usage Chart on the right side of the view, plots the total time spent on all CPUs of all processes and the time of the selected process.&lt;/p>
+&lt;p>Tooltips
+Hover the cursor over a line of the chart and a tooltip will pop up with the following information:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Time: current time of mouse position&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>total: The total CPU usage&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>process: CPU usage of selected process&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/advance-feature/42.png" alt="example image">&lt;/p>
+&lt;h4 id="kernel-memory-usage-view">Kernel Memory Usage View&lt;/h4>
+&lt;p>The Kernel Memory Usage View is specific to kernel traces. To open the view, double-click on the Kernel Memory Usage Analysis tree element under the Kernel tree element of the Project Explorer.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/43.png" alt="example image">&lt;/p>
+&lt;p>Now, the Kernel memory usage view will show:&lt;/p>
+&lt;p>&lt;img src="/advance-feature/44.png" alt="example image">&lt;/p>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>TID: The ID of the thread this event belongs to&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Process: The process of the TID that belongs to it&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="control-flow-view">Control FLow View&lt;/h4>
+&lt;p>The Control Flow view is a LTTng-specific view that shows per-process events graphically. The Linux Kernel Analysis is executed the first time when a LTTng Kernel is opened. After opening the trace, the element Control Flow is added under the Linux Kernel Analysis tree element in the Project Explorer. To open the view, double-click the Control Flow tree element.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/45.png" alt="example image">&lt;/p>
+&lt;p>You should get something like this:&lt;/p>
+&lt;p>&lt;img src="/advance-feature/46.png" alt="example image">&lt;/p>
+&lt;p>The view is divided into the following important sections: process tree and information, control flow and the toolbar. The following sections provide detailed information for each part of the Control Flow View.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Process tree and information&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Control flow&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Toolbar&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="flame-chart-view">Flame Chart View&lt;/h4>
+&lt;p>The Flame Chart view allows the user to visualize the call stack per thread over time, &lt;em>if the application and trace provide this information&lt;/em>.&lt;/p>
+&lt;p>To open this view go in Window -&amp;gt; Show View, if in the eclipse plug-in then click Other&amp;hellip; and select Tracing/Flame Chart in the list. The view shows the call stack information for the currently selected trace. Conversely, you can select a trace and expand it in the Project Explorer then expand LTTng-UST CallStack Analysis (the trace must be loaded) and open Flame Chart.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/47.png" alt="example image">&lt;/p>
+&lt;p>Flame Chart View will show:&lt;/p>
+&lt;p>&lt;img src="/advance-feature/48.png" alt="example image">&lt;/p>
+&lt;p>The Flame Chart View shows the state of the stack at all moments during the trace. That view shows for all threads of the application, the functions that were called, so it&amp;rsquo;s easy to see who called who and when.&lt;/p>
+&lt;h4 id="flame-graph-view">Flame Graph View&lt;/h4>
+&lt;p>This is an aggregate view of the function calls from the Flame Chart View&lt;/p>
+&lt;p>&lt;img src="/advance-feature/49.png" alt="example image">&lt;/p>
+&lt;p>Each entry in the Flame Graph represents an aggregation of all the calls to a function in a certain depth of the call stack having the same caller. So, functions in the Flame Graph are aggregated by depth and caller. This enables the user to find the most executed code path easily.&lt;/p>
+&lt;p>The function name is visible on each Flame graph event if the size permits. Each box in the Flame Graph has the same color as the box representing the same function in the Flame Chart.&lt;/p>
+&lt;p>To use the Flame graph, one can navigate it and find which function is consuming the most self-time.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Each box represents a function in the stack (a &amp;ldquo;stack frame&amp;rdquo;).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The y-axis shows stack depth (number of frames on the stack). The top box shows the function that was on-CPU. Everything beneath that is ancestry. The function beneath a function is its parent, just like the stack traces shown earlier. (Some flame graph implementations prefer to invert the order and use an &amp;ldquo;icicle layout&amp;rdquo;, so flames look upside down.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The x-axis spans the sample population. It does not show the passing of time from left to right, as most graphs do. The left to right ordering has no meaning (it&amp;rsquo;s sorted alphabetically to maximize frame merging).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The width of the box shows the total time it was on-CPU or part of an ancestry that was on-CPU (based on sample count). Functions with wide boxes may consume more CPU per execution than those with narrow boxes, or, they may simply be called more often. The call count is not shown (or known via sampling).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="function-duration-statistics-view">Function Duration Statistics View&lt;/h4>
+&lt;p>&lt;img src="/advance-feature/50.png" alt="example image">&lt;/p>
+&lt;p>Function Duration Statistics View is a bar graph that shows the number of function calls with respect to their duration. The count is using a logarithmic scale. In this example it shows that very few functions takes longer than 0.5ms&lt;/p>
+&lt;h4 id="function-duration-distribution-view">Function Duration Distribution View&lt;/h4>
+&lt;p>The Function Duration Statistics View is a table with each function&amp;rsquo;s minimum, maximum, average duration and other statistical parameters that may show that in certain cases, the duration can be bigger or lower depending on the context.&lt;/p>
+&lt;p>&lt;img src="/advance-feature/51.png" alt="example image">&lt;/p>
+&lt;h3 id="references">References&lt;/h3>
+&lt;p>Trace Compass User Guide. Available at: &lt;a href="https://archive.eclipse.org/tracecompass/doc/stable/org.eclipse.tracecompass.doc.user/User-Guide.html">https://archive.eclipse.org/tracecompass/doc/stable/org.eclipse.tracecompass.doc.user/User-Guide.html&lt;/a> (Accessed: 08 December 2023).&lt;/p></description></item></channel></rss>

@@ -1,0 +1,450 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Embedded Linux Example</title><link>/docs/examples/linux/</link><description>Recent content in Embedded Linux Example on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GNU C/C++ Helloworld</title><link>/docs/examples/linux/linux-helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/linux/linux-helloworld/</guid><description>
+&lt;p>This chapter covers the basics of C/C++ embedded Linux projects, including create/build/run/debug embedded Linux applications. The project referred to by this chapter is called “Hello World.” This application prints “Hello World” text and runs a simple for-loop for simple demonstration. The application can also be built and run both on QEMU emulator and FPGA DE2-115 board.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug Embedded Linux applications, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;h3 id="for-debugging-with-qemu-emulator">For debugging with QEMU emulator&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-linux-debug-plugin&lt;/strong>: XploR Studio Linux Plugin using for kernel debugging&lt;/li>
+&lt;li>&lt;strong>rv-linux-rootfs&lt;/strong>: RISC-V RootFS can be booted by QEMU and can run/debug RISC-V Embedded Linux applications&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for debugging Embedded Linux applications.
+Depending on variation of toolchain, XploR Studio has 4 different Linux toolchain components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>rv32imac-xplor-linux-linux64/rv32imac-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 32-bit (no Float)&lt;/li>
+&lt;li>&lt;strong>rv32gc-xplor-linux-linux64/rv32gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 32-bit (Double)&lt;/li>
+&lt;li>&lt;strong>rv64imac-xplor-linux-linux64/rv64imac-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (no Float)&lt;/li>
+&lt;li>&lt;strong>rv64gc-xplor-linux-linux64/rv64gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (Double)&lt;/li>
+&lt;/ul>
+&lt;p>Each toolchain can be downloaded separately.&lt;/p>
+&lt;h3 id="for-debugging-with-fpga-de2-115-board">For debugging with FPGA DE2-115 board&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-linux-debug-plugin&lt;/strong>: XploR Studio Linux Plugin using for kernel debugging&lt;/li>
+&lt;li>&lt;strong>rv32-linux-rootfs-vexriscv&lt;/strong>: The Linux images of the VexRISCV RISC-V Processor on Terrasic DE2-115 board&lt;/li>
+&lt;li>&lt;strong>xplor-studio-hardware-target&lt;/strong>: OpenOCD XploR Studio Plugin using for debugging applications on Hardware&lt;/li>
+&lt;li>&lt;strong>openocd-linux64/openocd-win64&lt;/strong>: OpenOCD binary to provide debugging, in-system programming and boundary-scan testing for embedded target devices&lt;/li>
+&lt;li>&lt;strong>rv32imac-xplor-linux-linux64/rv32imac-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 32-bit (no Float)&lt;/li>
+&lt;/ul>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Hello World&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/linux/gnu/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps (building, running and debugging with QEMU emulator) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="working-flow-for-debugging-with-fpga-de2-115-board">Working flow for debugging with FPGA DE2-115 board&lt;/h2>
+&lt;h3 id="programming-ip-core">Programming IP core&lt;/h3>
+&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/13.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-vexriscv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_vexrisc32&lt;/strong>&lt;/em> for the vexriscv - DE2-115 project.&lt;/li>
+&lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
+&lt;li>Click &lt;strong>Finish&lt;/strong> to flash Vexriscv 32-bit RISC-V core to DE2-115 board.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/linux/gnu/14.png" alt="example image">&lt;/p>
+&lt;p>To view the console output printed from the RISC-V core, open the Terminal view and select &lt;code>COM&lt;/code> port (on Windows) or &lt;code>/dev/ttyUSBx&lt;/code> port (on Linux) with the following connection settings.&lt;/p>
+&lt;p>The output message on the serial terminal will look like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+_ _ _ ____ ____
+| | | |_ _ __| |_ __ __ _/ ___| ___ / ___|
+| |_| | | | |/ _` | &amp;#39;__/ _` \___ \ / _ \| |
+| _ | |_| | (_| | | | (_| |___) | (_) | |___
+|_| |_|\__, |\__,_|_| \__,_|____/ \___/ \____|
+|___/
+Maximize your SoC design!
+(c) Copyright 2020-2023 SoC.One
+(c) Copyright 2012-2023 Enjoy-Digital
+(c) Copyright 2007-2015 M-Labs
+BIOS CRC passed (42b17cce)
+HydraCore git sha1: --------
+--=============== SoC ==================--
+CPU: NEORV32 @ 50MHz
+BUS: WISHBONE 32-bit @ 4GiB
+CSR: 32-bit data
+ROM: 64.0KiB
+SRAM: 64.0KiB
+SDRAM: 128.0MiB 32-bit @ 50MT/s (CL-2 CWL-2)
+MAIN-RAM: 128.0MiB
+--========== Initialization ============--
+Ethernet init...
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+Switching SDRAM to hardware control.
+Memtest at 0x40000000 (2.0MiB)...
+Write: 0x40000000-0x40200000 2.0MiB
+Read: 0x40000000-0x40200000 2.0MiB
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 2.0MiB)...
+Write speed: 14.4MiB/s
+Read speed: 11.7MiB/s
+--============== Boot ==================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+Timeout
+Booting from network...
+Local IP: 192.168.1.50
+Remote IP: 192.168.1.100
+Booting from boot.json...
+Booting from boot.bin...
+Copying boot.bin to 0x40000000...
+Network boot failed.
+No boot medium found
+--============= Console ================--
+litex&amp;gt;
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>The Ethernet connection is needed only for debugging embedded Linux RISC-V applications on the DE2-115 board.&lt;/li>
+&lt;li>There are two built-in SoC SOFs on XploR Studio to flash DE2-115 for embedded Linux applications:&lt;/li>
+&lt;li>One for MII network mode where speed is 10 Mbps&lt;/li>
+&lt;li>One for RGMII network mode where speed is 1000Mps&lt;/li>
+&lt;li>Development PC IP address: 192.168.1.100&lt;/li>
+&lt;li>The TFTP server is running the development PC and serving Linux image&lt;/li>
+&lt;/ul>
+&lt;h3 id="booting-linux-to-de2-115-board">Booting Linux to DE2-115 board&lt;/h3>
+&lt;p>In Serial Terminal, if you see:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> Booting from network...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Local IP: 192.168.1.50
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Remote IP: 192.168.1.100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from boot.json...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Booting from boot.bin...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Copying boot.bin to 0x40000000...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Network boot failed.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> No boot medium found
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That means the Linux kernel cannot be booted correctly. So, please do the follow steps in &lt;a href="/docs/examples/linux/linux-helloworld#notes">here&lt;/a>.&lt;/p>
+&lt;p>If output as follows, that means Linux be booted properly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> Starting Dropbear SSH server: Waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> kernel randomness to be initialised...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 14.144009&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> random: crng init &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Generating &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bit rsa key, this may take a &lt;span style="color:#204a87;font-weight:bold">while&lt;/span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Public key portion is:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCMeX37iv5Hw5MadvVwd+UIVeSIx1QecoV8OiPOt65obbokDxvaol0PsfCHBi0h23zxhhzUHizKDAu9fJ7gQVLWfHjcGKA4x4XuY8O3TasjnzpAntjXgWcBOpw3zpM46skOl65zfJqq6AIH14IzCqs+VDUE2dKjv+4mRbiX3A5Ovw&lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> root@de2-115-vexriscv32
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Fingerprint: sha1!! 5a:9f:05:35:11:2c:e2:e1:b8:71:a4:8e:f5:a3:8a:1d:76:b6:f2:ff
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dropbear.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Rvdn 1.0 de2-115-vexriscv32 /dev/console
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> de2-115-vexriscv32 login:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Login and setup connection to debug
+- Login by typing &lt;code>root&lt;/code> without password
+- Run &lt;code>ifconfig eth0 192.168.1.50 netmask 255.255.255.0&lt;/code>
+``` sh
+Rvdn 1.0 de2-115-vexriscv32 /dev/console&lt;/p>
+&lt;pre>&lt;code> de2-115-vexriscv32 login: root
+login[58]: root login on 'console'
+root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
+```
+&lt;/code>&lt;/pre>
+&lt;h3 id="debug-application">Debug application&lt;/h3>
+&lt;p>Currently, &lt;strong>rv32imac-xplor-linux-linux64/rv32imac-xplor-linux-win64&lt;/strong> is the only toolchain supported. Please change the project settings to use the correct toolchain&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Right click on the project then select properties.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In project settings, select&lt;/p>
+&lt;ul>
+&lt;li>Architecture: RV32 (-march=rv32i*)&lt;/li>
+&lt;li>Floating point: None&lt;/li>
+&lt;li>Integer ABI: ILP32 (-mabi=ilp32*)&lt;/li>
+&lt;li>Floating point ABI: None&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/linux/gnu/43.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click Apply and Close&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>There are some differences when debugging Linux applications, it is necessary to update some config as follows:&lt;/p>
+&lt;p>On the Debugger tab, select Intel FPGA Board.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/46.png" alt="example image">&lt;/p>
+&lt;p>On the Configuration, select &amp;ldquo;&lt;strong>Advanced Configuration&lt;/strong>&amp;rdquo;.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/47.png" alt="example image">&lt;/p>
+&lt;p>Click the &lt;strong>New&lt;/strong> button to create a new connection configuration, then select &lt;strong>SSH&lt;/strong> as connection type:&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/48.png" alt="example image">&lt;/p>
+&lt;p>On the &amp;ldquo;New Connection&amp;rdquo; dialog.&lt;/p>
+&lt;ul>
+&lt;li>Connection name: The name of connection&lt;/li>
+&lt;li>Host: 192.168.1.50. This is the default IP address of Linux run on board. If you use a different subnet when booting Linux, please update this IP too.&lt;/li>
+&lt;li>User: root&lt;/li>
+&lt;li>Use password-based authentication: No password&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/linux/gnu/49.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>Finish&lt;/strong> to create the connection configuration.&lt;/p>
+&lt;p>In the Connections dropdown, select the newly created connection name and set the destination file path to copy the application to the board.&lt;/p>
+&lt;p>On the Remote Absolute File Path for C/C++ Application, enter the path of the elf file that is copied to Linux (ex: /tmp/riscv.elf).&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/50.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>Debug&lt;/strong> to start debugging.&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-intel-fpga-de2-115-platform-on-windows-10">Running and Debugging project with Intel FPGA DE2-115 platform on Windows 10&lt;/h2>
+&lt;h3 id="hardware-and-driver-preparations">Hardware and driver preparations&lt;/h3>
+&lt;p>Please refer to the &lt;a href="/docs/hardware-environment/hardware#driver-installation">Hardware and Environment Setup&lt;/a> document for more details.&lt;/p>
+&lt;h4 id="login-and-setup-connection-from-board-to-host">Login and setup connection from board to host&lt;/h4>
+&lt;p>After booting Linux successfully,&lt;/p>
+&lt;pre>&lt;code>``` sh
+Starting Dropbear SSH server: Waiting for kernel randomness to be initialised...
+[ 14.144009] random: crng init done
+Generating 1024 bit rsa key, this may take a while...
+Public key portion is:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCMeX37iv5Hw5MadvVwd+UIVeSIx1QecoV8OiPOt65obbokDxvaol0PsfCHBi0h23zxhhzUHizKDAu9fJ7gQVLWfHjcGKA4x4XuY8O3TasjnzpAntjXgWcBOpw3zpM46skOl65zfJqq6AIH14IzCqs+VDUE2dKjv+4mRbiX3A5Ovw== root@de2-115-vexriscv32
+Fingerprint: sha1!! 5a:9f:05:35:11:2c:e2:e1:b8:71:a4:8e:f5:a3:8a:1d:76:b6:f2:ff
+dropbear.
+Rvdn 1.0 de2-115-vexriscv32 /dev/console
+de2-115-vexriscv32 login:
+```
+&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>
+&lt;p>Login by typing &lt;code>root&lt;/code> without password&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Run &lt;code>ifconfig eth0 192.168.1.50 netmask 255.255.255.0&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> Rvdn 1.0 de2-115-vexriscv32 /dev/console
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> de2-115-vexriscv32 login: root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> login&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>58&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: root login on &lt;span style="color:#4e9a06">&amp;#39;console&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>Now board is ready for debugging application.&lt;/p>
+&lt;h3 id="debug-application-1">Debug application&lt;/h3>
+&lt;p>Create debug configurations and debug are same to Linux.&lt;/p>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;h3 id="setup-environment-on-ubuntu">Setup environment on Ubuntu&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Install &lt;strong>rv32-linux-rootfs-vexriscv&lt;/strong> component&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start/Restart TFTP server (Linux)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> docker rm -f tftpboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>/.xplor/components/rootfs-vexriscv-de2115/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> docker run -itd --name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tftpboot --net&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>host --restart&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>always -v &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">PWD&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>:/var/tftpboot pghalliday/tftp
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure IP address for DE2-115 board:&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/24.png" alt="example image">&lt;/p>
+&lt;p>The DE2-115 board has 2 configurations for ethernet: &lt;strong>RGMII mode&lt;/strong> and &lt;strong>MII mode&lt;/strong>. Depending on the speed of link (1000Mbps or not), please choose a suitable mode for the board to run/debug applications.&lt;/p>
+&lt;p>&lt;strong>RGMII mode:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>ETHERNET0&lt;/strong> of DE2-115. &lt;strong>The connection could be directly or via router/switches&lt;/strong>.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 1 and 2. It’s default mode (RGMII mode).&lt;/li>
+&lt;li>Default IP addresses:
+&lt;ul>
+&lt;li>DE2-115 board: 192.168.1.50&lt;/li>
+&lt;li>TFTP server: 192.168.1.100&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.&lt;/p>
+&lt;p>To update the IP of the board, after flashing FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Command&lt;/th>
+&lt;th style="text-align:left">Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">eth_local_ip&lt;/td>
+&lt;td style="text-align:left">Set the IP address of the board&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">eth_remote_ip&lt;/td>
+&lt;td style="text-align:left">Set the expected IP of the TFTP Server to download kernel/rootfs for network booting&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">netboot&lt;/td>
+&lt;td style="text-align:left">Start booting Linux from the network&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="/examples/linux/gnu/25.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>MII mode&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Network interface on the host PC connects to &lt;strong>port 0&lt;/strong> of DE2-115.&lt;/li>
+&lt;li>Connection speed is 10 Mpbs.&lt;/li>
+&lt;li>On the board, set Jumper JP1 to pins 2 and 3 (to config Ethernet port 0 to run on MII mode).&lt;/li>
+&lt;li>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. The network speed and IP can be set with the following command:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code># Assume that the network interface is enxf8e43b5dd64a
+NIC=enxf8e43b5dd64a
+sudo ethtool -s $NIC speed 10 duplex full autoneg off
+# Double check
+ethtool $NIC
+# IP needs to be fixed as 192.168.1.100
+# Make sure that IPv4 method is manual
+sudo ifconfig $NIC 192.168.1.100
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="/examples/linux/gnu/27.png" alt="example image">&lt;/p>
+&lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Netboot/Reboot Linux
+Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex console or re-program IP core.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="setup-environment-on-windows-1011">Setup environment on Windows 10/11&lt;/h3>
+&lt;h4 id="setup-solartftp-server-on-windows-10">Setup SolarTFTP server on Windows 10&lt;/h4>
+&lt;blockquote>
+&lt;p>&lt;strong>Prerequisites&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Administrator permission&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SolarWinds TFTP Server&lt;/strong>: To set up a TFTP server, users will have to download the TFTP Server utility such as SolarWinds can be downloaded from &lt;a href="https://www.solarwinds.com/free-tools/free-tftp-server">https://www.solarwinds.com/free-tools/free-tftp-server&lt;/a>. Once the .zip file is downloaded, extract it and go through the straightforward installation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Firewall setup&lt;/strong>: To allow remote access to the TFTP server, users need to open the firewall for TFTP service.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>&lt;strong>Start the TFTP Server&lt;/strong>&lt;/p>
+&lt;p>Run the &lt;strong>SolarWinds TFTP Server&lt;/strong> utility by going to the &lt;strong>Start Menu&lt;/strong> and searching for &lt;strong>TFTP Server&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/28.png" alt="example image">&lt;/p>
+&lt;p>Once it loads up, copy all the file in &lt;strong>rootfs-vexriscv-de2115/&lt;/strong> folder to &lt;strong>C:\TFTP-Root&lt;/strong> folder.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/59.1.png" alt="example image">&lt;/p>
+&lt;h4 id="update-ip-of-tftp-server">Update IP of TFTP server&lt;/h4>
+&lt;p>Go to *&lt;strong>Network and Internet settings&lt;/strong> by click on &lt;img src="/examples/linux/gnu/60.png" alt="Image alt" style="display: inline;">&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/61.png" alt="example image">&lt;/p>
+&lt;p>As image, there are 2 networks:&lt;/p>
+&lt;pre>&lt;code>- The `Ethernet 3` for connecting to Internet
+- The `Ethernet` for connecting to DE2-115 Board
+&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="/examples/linux/gnu/62.png" alt="example image">&lt;/p>
+&lt;p>Click on &lt;strong>Properties&lt;/strong> on &lt;code>Ethernet&lt;/code>:&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/64.png" alt="example image">&lt;/p>
+&lt;p>Now we need to setup IP manually bt click on &lt;strong>Edit&lt;/strong> button, choose &lt;strong>Manual&lt;/strong> , type as image and &lt;strong>Save&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/65.png" alt="example image">&lt;/p>
+&lt;p>After that, restart the SolarTFTP server and programming IP Core again.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/gnu/66.png" alt="example image">&lt;/p>
+&lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram IP core.&lt;/p>
+&lt;h2 id="common-errors">Common errors&lt;/h2></description></item><item><title>Docs: LLVM C/C++ Helloworld</title><link>/docs/examples/linux/llvm-helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/linux/llvm-helloworld/</guid><description>
+&lt;p>This chapter covers the basics of LLVM C/C++ embedded Linux projects, including create/build/run/debug embedded Linux applications. The project referred to by this chapter is called “Hello World.” This application prints “Hello World” text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug LLVM Embedded Linux applications, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-linux-debug-plugin&lt;/strong>: Kernel XploR Studio Plugin using for kernel debugging&lt;/li>
+&lt;li>&lt;strong>rv-linux-rootfs&lt;/strong>: RISC-V RootFS can be booted by QEMU and can run/debug RISC-V Embedded Linux applications&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for debugging LLVM Embedded Linux applications.
+Depending on variation of toolchain, XploR Studio has 2 different Linux toolchain components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>rv32gc-xplor-linux-linux64/rv32gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 32-bit (Double)&lt;/li>
+&lt;li>&lt;strong>rv64gc-xplor-linux-linux64/rv64gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (Double)&lt;/li>
+&lt;/ul>
+&lt;p>Each toolchain can be downloaded separately.&lt;/p>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Hello World (with LLVM)&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/linux/llvm/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps (building, running and debugging with QEMU emulator) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;ul>
+&lt;li>On Ubuntu, LLVM Embedded Linux toolchain is packaged inside the Embedded Linux toolchain that supports Double extension (&lt;strong>riscv32-xplord-linux&lt;/strong> and &lt;strong>riscv64-xplord-linux&lt;/strong>).&lt;/li>
+&lt;li>LLVM Embedded Linux toolchain has not been supported on Windows yet.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Kernel Debug examples</title><link>/docs/examples/linux/kernel-debug/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/linux/kernel-debug/</guid><description>
+&lt;p>This chapter covers the basics of Linux Kernel projects including creating and debugging a &lt;strong>static Kernel&lt;/strong>.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug Linux static kernel, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-kernel-debug-plugin&lt;/strong>: Kernel XploR Studio Plugin using for kernel debugging&lt;/li>
+&lt;li>&lt;strong>rv-linux-rootfs-debug&lt;/strong>: RISC-V RootFS for running/debugging Kernel and Embedded Linux applications&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for debugging static kernel.
+Depending on variation of toolchain, XploR Studio has 4 different Linux toolchain components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>rv32imac-xplor-linux-linux64/rv32imac-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 32-bit (no Float)&lt;/li>
+&lt;li>&lt;strong>rv32gc-xplor-linux-linux64/rv32gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 32-bit (Double)&lt;/li>
+&lt;li>&lt;strong>rv64imac-xplor-linux-linux64/rv64imac-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (no Float)&lt;/li>
+&lt;li>&lt;strong>rv64gc-xplor-linux-linux64/rv64gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (Double)&lt;/li>
+&lt;/ul>
+&lt;p>Each toolchain can be downloaded separately.&lt;/p>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;h3 id="create-a-new-project">Create a new project&lt;/h3>
+&lt;p>Select &lt;strong>File &amp;gt; New &amp;gt; C/C++ Project&lt;/strong>, choose &lt;strong>Linux Kernel Project&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/1.png" alt="example image">&lt;/p>
+&lt;p>Enter the &lt;em>Project name&lt;/em> and select &lt;strong>Embedded Linux XploR Toolchain for RISC-V&lt;/strong> in the Toolchains box, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/2.png" alt="example image">&lt;/p>
+&lt;p>Select &lt;em>Kernel Source Path&lt;/em> then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/3.png" alt="example image">&lt;/p>
+&lt;h3 id="update-build-settings">Update build settings&lt;/h3>
+&lt;p>With build settings, users can switch from 32 bits to 64 bits as well as different floating point ABI options (except Single Precision). The kernels are specified via those options.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/4.png" alt="example image">&lt;/p>
+&lt;p>Please refer to the below table to select the correct options for each target.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Platform&lt;/th>
+&lt;th style="text-align:center">Core&lt;/th>
+&lt;th style="text-align:center">Architecture&lt;/th>
+&lt;th style="text-align:center">Floating Point&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV32&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV32&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">None&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">QEMU&lt;/td>
+&lt;td style="text-align:center">RISC-V emulator&lt;/td>
+&lt;td style="text-align:center">RV64&lt;/td>
+&lt;td style="text-align:center">RVFD&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="build-project">Build project&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>Warning:&lt;/strong>
+&lt;strong>The Static Kernel project does not need to be built because the XploR Studio uses a pre-build kernel image for debugging.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/5.png" alt="example image">&lt;/p>
+&lt;h3 id="running-the-kernel-with-qemu-emulator">Running the kernel with QEMU emulator&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+XploR Studio does not support to the run Static Kernel project!&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="debugging-the-kernel-with-qemu-emulator">Debugging the kernel with QEMU emulator&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong>
+Before debugging the kernel, the users should select the architecture and floating point options. By default, the combine (RV64, None) is selected.
+Please refer to &lt;a href="#update-build-settings">Section 2: Update build settings&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>There are two ways to debug the kernel:&lt;/p>
+&lt;ul>
+&lt;li>On the Project explorer, right-click on the project name and select &lt;strong>Debug as &amp;gt; RISC-V Kernel application with QEMU.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/6.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Create the new &lt;strong>RISC-V Kernel Debugging&lt;/strong> configurations: Right-click on the project name then select &lt;strong>Debug As &amp;gt; Debug Configurations.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/7.png" alt="example image">&lt;/p>
+&lt;p>Double-click on &lt;strong>RISC-V Kernel Debugging&lt;/strong>, then click &lt;strong>Debug&lt;/strong> to start the Kernel debugging session.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/8.png" alt="example image">&lt;/p>
+&lt;p>When starting kernel debugging, the kernel is suspended in the start_kernel function and the terminal/console pauses at kernel booting.&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/9.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>To debug an &lt;a href="/docs/examples/linux/linux-helloworld">&lt;span style="color: blue">embedded Linux applications&lt;/span>&lt;/a>, the kernel should be booted completely.&lt;/strong>&lt;/p>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;p>To switch arch between 32-bit and 64-bit, users should remove the old Debug Kernel Configuration and create a new one to change the kernel (vmlinux).&lt;/p>
+&lt;p>Or users can replace vmlinux manually at: &lt;code>~/.xplor/components/rv-linux-rootfs-debug/rv***_debugkernel/vmlinux&lt;/code>&lt;/p>
+&lt;p>Sometimes unable to debug Kernel for the first time with information such as follows:&lt;/p>
+&lt;p>&lt;img src="/examples/linux/debug-kernel/9-1.png" alt="example image">&lt;/p></description></item></channel></rss>

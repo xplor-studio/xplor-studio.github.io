@@ -1,0 +1,58 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Installation</title><link>/docs/installation/</link><description>Recent content in Installation on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: System requirements</title><link>/docs/installation/system-requirements/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/system-requirements/</guid><description>
+&lt;h2 id="host-system-requirements">Host System Requirements&lt;/h2>
+&lt;p>The supported operating systems for installing the product are:&lt;/p>
+&lt;ul>
+&lt;li>Windows 10&lt;/li>
+&lt;li>Ubuntu Desktop 20.04&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-windows-10">Minimum (Windows 10)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 1 gigahertz (GHz) or faster&lt;/li>
+&lt;li>Memory: 8 GB (64-bit)&lt;/li>
+&lt;li>Disk space: 30GB free HD space&lt;/li>
+&lt;li>Display: 19&amp;rsquo; Monitor, VGA capable of 1024×768 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="recommended-windows-10">Recommended (Windows 10)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 gigahertz (GHz) or faster&lt;/li>
+&lt;li>Memory: 16 gigabytes (GB)&lt;/li>
+&lt;li>Disk space: 50GB free HD space&lt;/li>
+&lt;li>Display: 22&amp;rsquo; Monitor, VGA capable of 1920x1080 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-ubuntu-2004">Minimum (Ubuntu 20.04)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 GHz dual-core processor&lt;/li>
+&lt;li>Memory: 8 GiB RAM (system memory)&lt;/li>
+&lt;li>Disk space: 30 GB of hard drive space&lt;/li>
+&lt;li>Display: 19&amp;rsquo; Monitor, VGA capable of 1024×768 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;h3 id="recommended-ubuntu-2004">Recommended (Ubuntu 20.04)&lt;/h3>
+&lt;ul>
+&lt;li>Processor: 2 GHz dual-core processor&lt;/li>
+&lt;li>Memory: 16 GiB RAM (system memory)&lt;/li>
+&lt;li>Disk space: 50 GB of hard drive space&lt;/li>
+&lt;li>Display: 22&amp;rsquo; Monitor, VGA capable of 1920x1080 screen resolution&lt;/li>
+&lt;li>Internet connection: Yes&lt;/li>
+&lt;/ul>
+&lt;!-- ## Hardware Debug Requirements
+The hardware requirements, hardware connections as well as driver installation on a host machine are documented in &lt;a href="../hardware-environment">**Hardware and Environment Setup**&lt;/a>. If you are going to develop and debug RISC-V applications on Intel FPGA platforms, please refer to this document for more details. --></description></item><item><title>Docs: XIP installer</title><link>/docs/installation/xip-install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/xip-install/</guid><description>
+&lt;p>&lt;strong>XIP&lt;/strong> (i.e. XploR pip) is a standalone application used for downloading, installing and managing the IDE and blueprints. This section contains instructions on how to install XIP on Windows or Linux hosts.&lt;/p>
+&lt;h3 id="window">Window&lt;/h3>
+&lt;ol>
+&lt;li>Go to the website &lt;a href="https://github.com/xplor-studio/xip/releases">https://github.com/xplor-studio/xip/releases&lt;/a> and download the xip.exe file&lt;/li>
+&lt;li>Add xip to the PATH environment variable&lt;/li>
+&lt;li>Sign up for an account (from Windows command line). Note that you will need to acknowledge your email before the account is activated.&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>% xip signup
+&lt;/code>&lt;/pre>&lt;h3 id="linux">Linux&lt;/h3>
+&lt;ol>
+&lt;li>Open terminal and type the following command:&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>% curl -L https://raw.githubusercontent.com/xplor-studio/xip/main/get_xip.sh | bash
+&lt;/code>&lt;/pre>&lt;p>Alternative, you can also download directly from: &lt;a href="https://github.com/xplor-studio/xip/releases">https://github.com/xplor-studio/xip/releases&lt;/a>&lt;/p>
+&lt;ol start="2">
+&lt;li>Sign up for an account (from terminal)&lt;/li>
+&lt;/ol></description></item><item><title>Docs: IDE install</title><link>/docs/installation/ide-install/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/installation/ide-install/</guid><description/></item></channel></rss>

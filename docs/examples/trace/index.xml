@@ -1,0 +1,174 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Trace Control Example</title><link>/docs/examples/trace/</link><description>Recent content in Trace Control Example on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/trace/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: LTTng Trace Control Linux Project</title><link>/docs/examples/trace/lttng/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/trace/lttng/</guid><description>
+&lt;p>This chapter covers the basics of C/C++ LTTng Trace Control Linux Project projects, including create/build/run/debug applications. This application sets up some tracepoints for tracing purposes when running the application. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug LTTng Trace Control Linux Project applications, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-tracecompass-plugin&lt;/strong>: Contains scripts to install Eclipse Tracecompass into XploR Studio&lt;/li>
+&lt;li>&lt;strong>xplor-studio-linux-debug-plugin&lt;/strong>: Kernel XploR Studio Plugin using for kernel debugging&lt;/li>
+&lt;li>&lt;strong>rv-linux-rootfs&lt;/strong>: RISC-V RootFS can be booted by QEMU and can run/debug RISC-V Embedded Linux applications&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;li>&lt;strong>linux-lttng-trace-example&lt;/strong>: LTTng Trace Control Linux Project source code.&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for running Embedded Linux Trace Control applications.
+Depending on variation of toolchain, XploR Studio has 2 different Linux toolchain components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>rv64imac-xplor-linux-linux64/rv64imac-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (No Float)&lt;/li>
+&lt;li>&lt;strong>rv64gc-xplor-linux-linux64/rv64gc-xplor-linux-win64&lt;/strong>: RISC-V Embedded Linux toolchain 64-bit (Double)&lt;/li>
+&lt;/ul>
+&lt;p>Each toolchain can be downloaded separately.&lt;/p>
+&lt;h2 id="creating--building-project">Creating &amp;amp; Building project&lt;/h2>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Linux Project &amp;gt; Linux Trace&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/trace/lttng/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps (building project) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="tracing-flow">Tracing flow&lt;/h2>
+&lt;h3 id="booting-linux">Booting Linux&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Right-click on project name &amp;gt; &lt;strong>Run configurations &amp;gt; RISC-V Running &amp;gt; QEMU&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>In Remote Absolute File Path for C/C++ Application: Type &lt;strong>/home/root/riscv.elf&lt;/strong> (if missing)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on &lt;strong>Enable LTTng Trace Control&lt;/strong> checkbox&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose &lt;strong>Apply&lt;/strong> and &lt;strong>Run&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/trace/lttng/2.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wait a few minutes for QEMU booting Linux:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/3.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="starting-trace-session">Starting Trace session&lt;/h3>
+&lt;p>Now we can start the Trace session by clicking on this button (in the top-right corner):&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/4.png" alt="example image">&lt;/p>
+&lt;p>and select &lt;strong>LTTng Kernel&lt;/strong> and &lt;strong>Open&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/5.png" alt="example image">&lt;/p>
+&lt;p>The screen should be like this:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/6.png" alt="example image">&lt;/p>
+&lt;p>In left corner, in Control tabs:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Create &lt;strong>New Connection…&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/7.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select &lt;strong>Default SSH-QEMU [localhost]&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/8.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select &lt;strong>Edit…&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/9.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Host: &lt;strong>localhost&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>User: &lt;strong>root&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Password based authentication&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Then &lt;strong>Finish&lt;/strong> and &lt;strong>OK&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Now the &lt;strong>Control View&lt;/strong> shows:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/10.png" alt="example image">&lt;/p>
+&lt;p>Right-click on &lt;strong>Sessions&lt;/strong> and select &lt;strong>Create sessions&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/11.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Enter &lt;strong>Session Name&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose &lt;strong>Normal Mode&lt;/strong> and &lt;strong>OK&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/12.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After create session, we can enable &lt;strong>Kernel&lt;/strong> or &lt;strong>UST&lt;/strong> event by Right-click on &lt;strong>trace_1&lt;/strong> &amp;gt; select &lt;strong>Enable Event&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/13.png" alt="example image">&lt;/p>
+&lt;p>The &lt;strong>Enable Events&lt;/strong> will be shown:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/14.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Enable event with &lt;strong>UST&lt;/strong>. Select &lt;strong>UST&lt;/strong> (on &lt;em>Domain&lt;/em>) &amp;gt; Select &lt;strong>All Tracepoint Events&lt;/strong> or choose a event (For example: hello_world:my_first_tracepoint)&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/15.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>In &lt;strong>Control View&lt;/strong>, information will be displayed in form of a tree structure as follow:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/16.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Enable event with &lt;strong>Kernel&lt;/strong>. Select &lt;strong>Kernel&lt;/strong> (on &lt;em>Domain&lt;/em>) → Select &lt;strong>All Tracepoint Events&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/17.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>In &lt;strong>Control View&lt;/strong>, information will be displayed in form of a tree structure as follow:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/18.png" alt="example image">&lt;/p>
+&lt;p>Now you can start the Trace session:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Right-click on &lt;strong>trace_1&lt;/strong> and select &lt;strong>Start&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/19.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Or click the Start button in the toolbar:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/20.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Then change to &lt;strong>Debug&lt;/strong> session by clicking on top-right button:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/21.png" alt="example image">&lt;/p>
+&lt;p>The &lt;strong>Console&lt;/strong> will be like this:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/22.png" alt="example image">&lt;/p>
+&lt;p>Change to the session that are running QEMU by click on below the button:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/23.png" alt="example image">&lt;/p>
+&lt;p>You should get something like this:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/24.png" alt="example image">&lt;/p>
+&lt;p>Click on the line &lt;strong>Press Enter to continue&lt;/strong>, and press &lt;strong>Enter&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/25.png" alt="example image">&lt;/p>
+&lt;p>Now back to &lt;strong>LTTng Trace&lt;/strong> sessions and stop Trace&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>By right-click on &lt;strong>trace_1&lt;/strong> and choose &lt;strong>Stop&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Or click on the &lt;strong>Stop&lt;/strong> button&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/trace/lttng/26.png" alt="example image">&lt;/p>
+&lt;h3 id="export-and-import-trace-data-to-view-and-analyze">Export and Import Trace Data to view and analyze&lt;/h3>
+&lt;p>&lt;strong>Userspace Trace (UST)&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Right-click on &lt;strong>trace_1&lt;/strong> and select &lt;strong>Import&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/27.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the data is created and click &lt;strong>Finish&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/28.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In Project Explorer, double-click on &lt;strong>64-bit&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/29.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Kernel Trace&lt;/strong>&lt;/p>
+&lt;p>Perform data import similar to the UST section. In case you have already imported data, skip this step.&lt;/p>
+&lt;p>You can also import both Kernel and UST data if you have created both events. For example:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>In Project Explorer, double-click on kernel:&lt;/p>
+&lt;p>&lt;img src="/examples/trace/lttng/30.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

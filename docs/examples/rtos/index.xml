@@ -1,0 +1,157 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – RTOS Example</title><link>/docs/examples/rtos/</link><description>Recent content in RTOS Example on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/rtos/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: FreeRTOS Examples</title><link>/docs/examples/rtos/freertos/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/rtos/freertos/</guid><description>
+&lt;p>This chapter covers the basics of C/C++ FreeRTOS projects including creating, building, running, and debugging FreeRTOS applications. Through the debug session, users can examine RTOS objects such as Task, Heap, Timer and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug C/C++ FreeRTOS applications, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-freertos-debug-plugin&lt;/strong>: FreeRTOS XploR Studio Plugin using for creating FreeRTOS examples and supporting RTOS views&lt;/li>
+&lt;li>&lt;strong>rv-xplor-elf-linux64/rv-xplor-elf-win64&lt;/strong>: XploR Embedded Toolchain for RISC-V (supported both 32 and 64-bit)&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for debugging FreeRTOS projects.&lt;/p>
+&lt;p>Depending on applications, XploR Studio has many example components for specific cases:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>freertos-virt-qemu-blinky-example&lt;/strong>: Blinky FreeRTOS Project for XploR Studio
+&lt;ul>
+&lt;li>This application prints &lt;strong>Blink&lt;/strong> text&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>freertos-virt-qemu-heap-example&lt;/strong>: Generic Heap FreeRTOS Project for XploR Studio
+&lt;ul>
+&lt;li>This application simply prints &lt;strong>Testing Heap&lt;/strong> on the console screen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>freertos-virt-qemu-timer-example&lt;/strong>: Timer FreeRTOS Project for XploR Studio
+&lt;ul>
+&lt;li>This application simply prints &lt;strong>Testing Timer&lt;/strong> on the console screen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;ul>
+&lt;li>To open FreeRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Others&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>FreeRTOS Object Views&lt;/strong>&lt;/li>
+&lt;li>The FreeRTOS object views only contain information when user debugs a FreeRTOS project&lt;/li>
+&lt;li>Depending on the FreeRTOS application, &lt;strong>not all FreeRTOS objects will display valid information&lt;/strong>. For example, if the application does not utilize a Timer object, XploR Studio will not display any useful information on FreeRTOS Timer view.&lt;/li>
+&lt;li>The display of FreeRTOS views is dependent on the &lt;strong>xplor-studio-freertos&lt;/strong> component. Therefore, if you uninstall this component, please close these views to prevent any errors.&lt;/li>
+&lt;/ul>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;h3 id="create-project">Create project&lt;/h3>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong>, please choose the suitable project (after clicking on a project, XploR Studio will show the description of that project):&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/rtos/freertos/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps (&lt;em>Update build settings&lt;/em>, &lt;em>Build project&lt;/em>) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="freertos-views">FreeRTOS views&lt;/h2>
+&lt;p>During the FreeRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Task, Queue, Heap, and Timer. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
+&lt;h3 id="freertos-task-view">FreeRTOS Task View&lt;/h3>
+&lt;p>The FreeRTOS task view helps developers examine tasks during debug sessions. Each object is identified by its ID, name, address, state, task state, stack usage, event object, runtime, and priority.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/freertos/20.png" alt="example image">&lt;/p>
+&lt;h3 id="freertos-queue-view">FreeRTOS Queue View&lt;/h3>
+&lt;p>The FreeRTOS Queue view helps developers examine queues during debug sessions. Each object is identified by its type, ID, name, address, length, size, and state of TX and RX.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/freertos/21.png" alt="example image">&lt;/p>
+&lt;h3 id="freertos-timer-view">FreeRTOS Timer View&lt;/h3>
+&lt;p>The FreeRTOS Timer view helps developers examine timers during debug sessions. Each object is identified by its ID, name, status, callback functions, and similar.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/freertos/22.png" alt="example image">&lt;/p>
+&lt;h3 id="freertos-heap-view">FreeRTOS Heap View&lt;/h3>
+&lt;p>The FreeRTOS Heap view helps developers examine heaps during debug sessions. Each object is identified by its ID, address, usage information, and similar.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/freertos/23.png" alt="example image">&lt;/p></description></item><item><title>Docs: ZephyrRTOS Examples</title><link>/docs/examples/rtos/zephyr/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/rtos/zephyr/</guid><description>
+&lt;p>This chapter covers the basics of the C/C++ ZephyrRTOS RISC-V projects including creating, building, running, and debugging ZephyrRTOS RISC-V applications. The application can also be built and run on a QEMU emulator.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug C/C++ FreeRTOS applications, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-zephyr-debug-plugin&lt;/strong>: Zephyr XploR Studio Plugin using for creating and debugging Zephyr applications&lt;/li>
+&lt;li>&lt;strong>zephyr-source-code&lt;/strong>: Contains script to download and install Zephyr Project Source Code&lt;/li>
+&lt;li>&lt;strong>zephyr-sdk-linux64/zephyr-sdk-win64&lt;/strong>: Contain script to install Zephyr SDK&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for debugging ZephyrRTOS projects.&lt;/p>
+&lt;p>Depending on applications, XploR Studio has many example components for specific cases:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>zephyr-helloworld-example&lt;/strong>: Zephyr Hello World Project for XploR Studio
+&lt;ul>
+&lt;li>This application prints Hello world text and runs a simple for-loop for a simple demonstration&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>zephyr-mutex-example&lt;/strong>: Zephyr Mutex Project for XploR Studio
+&lt;ul>
+&lt;li>This application creates two threads that modify a shared resource while using a mutex lock for synchronization&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>zephyr-queue-example&lt;/strong>: Zephyr Message Queue Project for XploR Studio
+&lt;ul>
+&lt;li>This application uses message queues to allow communication between two threads, where one thread sends integers and characters to the queues and another thread receives the messages and prints them&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>zephyr-semaphore-example&lt;/strong>: Zephyr Semaphore Project for XploR Studio
+&lt;ul>
+&lt;li>This application uses a semaphore to control access to a shared resource and prints a message indicating whether it was successful or not in taking the semaphore&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>zephyr-sync-example&lt;/strong>: Zephyr Synchronization Project for XploR Studio
+&lt;ul>
+&lt;li>A simple application that demonstrates basic sanity of the kernel. Two threads (A and B) take turns printing a greeting message to the console and use sleep requests and semaphores to control the rate at which messages are generated&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;h3 id="create-project">Create project&lt;/h3>
+&lt;ol>
+&lt;li>Select &lt;strong>File &amp;gt; New &amp;gt; C/C++ Project&lt;/strong>, choose &lt;strong>Zephyr Application&lt;/strong> and &lt;strong>Next&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/1.1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong>, please choose the suitable project (after clicking on a project, XploR Studio will show the description of that project):&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/1.png" alt="example image">&lt;/p>
+&lt;ol start="3">
+&lt;li>Other steps (&lt;em>Update build settings&lt;/em>, &lt;em>Build project&lt;/em>) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>If there is any problem related to the CMake, such as:&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/11.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Please make sure that the version of CMake is 3.20 or higher.&lt;/strong>&lt;/p>
+&lt;p>After building successfully, you will see the messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/10.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To open ZephyrRTOS Objects View, select &lt;strong>Windows &amp;gt; Show View &amp;gt; Other&amp;hellip;&lt;/strong>. In &lt;strong>Show View&lt;/strong> wizard, select &lt;strong>ZephyrRTOS Object Views&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The ZephyrRTOS object views only contain information when user debugs a ZephyrRTOS project&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Depending on the ZephyrRTOS application, not all ZephyrRTOS objects will display valid information. For example, if the application does not utilize a Mutex object, XploR Studio will not display any useful information on ZephyrRTOS Mutex view.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The display of ZephyrRTOS views is dependent on the &lt;strong>xplor-studio-zephyr&lt;/strong> component. Therefore, if you uninstall this component, please close these views to prevent any errors.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="zephyrrtos-views">ZephyrRTOS views&lt;/h2>
+&lt;p>During the ZephyrRTOS debug sessions, developers need to examine the state of the applications. This state can be seen as Thread, Mutex, Semaphore, and MessageQueue. The following sessions describe how XploR Studio helps to check this information.&lt;/p>
+&lt;h3 id="zephyrrtos-thread-view">ZephyrRTOS Thread View&lt;/h3>
+&lt;p>The ZephyrRTOS Thread view helps developers examine threads during debug sessions. Each object is identified by its ID, Name, Handle, Priority, Thread State and Thread Usage.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/12.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Hello World project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="zephyrrtos-mutex-view">ZephyrRTOS Mutex View&lt;/h3>
+&lt;p>The ZephyrRTOS Mutex view helps developers examine mutexes during debug sessions. Each object is identified by its ID, Handle, Mutex Owner, Owner Priority and Lock Count.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/13.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Mutex project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="zephyrrtos-semaphore-view">ZephyrRTOS Semaphore View&lt;/h3>
+&lt;p>The ZephyrRTOS Semaphore view helps developers examine semaphores during debug sessions. Each object is identified by its ID, Handle, Semaphore Count and Semaphore Limit.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/14.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Semaphore project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="zephyrrtos-message-queue-view">ZephyrRTOS Message Queue View&lt;/h3>
+&lt;p>The ZephyrRTOS Message Queue view helps developers examine message queues during debug sessions. Each object is identified by its ID, Handle, Message Size, Max Messages, Read Pointer, Write Pointer, Used Messages and Flags.&lt;/p>
+&lt;p>&lt;img src="/examples/rtos/zephyrtos/15.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> This image is sourced from the Zephyr Message Queue project. However, please note that for other projects, the view may vary or unavailable.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

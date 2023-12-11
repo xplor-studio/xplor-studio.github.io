@@ -1,0 +1,306 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Baremetal Example</title><link>/docs/examples/baremetal/</link><description>Recent content in Baremetal Example on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 15:21:01 +0200</lastBuildDate><atom:link href="/docs/examples/baremetal/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GNU C/C++ Helloworld</title><link>/docs/examples/baremetal/gnu_helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/baremetal/gnu_helloworld/</guid><description>
+&lt;p>This chapter covers the basics of C/C++ embedded projects including creating, building, running, and debugging baremetal applications. The project referred to in this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>baremetal-virt-qemu-helloworld-example&lt;/strong>: Hello World C Baremetal Project for running on QEMU&lt;/li>
+&lt;li>&lt;strong>baremetal-virt-qemu-helloworld-cpp-example&lt;/strong>: Hello World C++ Baremetal Project for running on QEMU&lt;/li>
+&lt;li>&lt;strong>xplor-studio-baremetal-debug-plugin&lt;/strong>: ELF XploR Studio Plugin using for creating baremetal examples&lt;/li>
+&lt;li>&lt;strong>rv-xplor-elf-linux64/rv-xplor-elf-win64&lt;/strong>: XploR Embedded Toolchain for RISC-V (supported both 32 and 64-bit)&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>To build, run and debug GNU Helloworld applications, please make sure that all above components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; Hello World&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/baremetal/gnu/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="notes">Notes&lt;/h2></description></item><item><title>Docs: LLVM Helloworld</title><link>/docs/examples/baremetal/llvm_helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/baremetal/llvm_helloworld/</guid><description>
+&lt;p>This chapter covers the basics of C embedded projects including creating, building, running, and debugging baremetal applications. The project referred to in this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>baremetal-virt-qemu-helloworld-llvm-example&lt;/strong>: Hello World Baremetal (LLVM) Project for running on QEMU&lt;/li>
+&lt;li>&lt;strong>xplor-studio-baremetal-debug-plugin&lt;/strong>: ELF XploR Studio Plugin using for creating baremetal examples&lt;/li>
+&lt;li>&lt;strong>rv-xplor-clang-linux64/rv-xplor-clang-win64&lt;/strong>: XploR Embedded LLVM toolchain for RISC-V (support both 32 and 64-bit)&lt;/li>
+&lt;li>&lt;strong>rv-qemu-linux64/rv-qemu-win64&lt;/strong>: QEMU for running and debugging RISC-V applications (Baremetal, Embedded, Embedded Linux)&lt;/li>
+&lt;/ul>
+&lt;p>To build, run and debug LLVM Helloworld applications, please make sure that all above components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>RISC-V Embedded Project &amp;gt; RISC-V Hello World with LLVM&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/baremetal/llvm/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h2 id="notes">Notes&lt;/h2></description></item><item><title>Docs: Litex C Helloworld</title><link>/docs/examples/baremetal/litex_helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/baremetal/litex_helloworld/</guid><description>
+&lt;p>This chapter covers the basics of Litex C embedded projects including creating, building, running, and debugging baremetal applications. The project referred to in this chapter is called &amp;ldquo;Hello World.&amp;rdquo; This application prints &amp;ldquo;Hello World&amp;rdquo; text and runs a simple for-loop as a simple demonstration. The application can also be built and run on hardware.&lt;/p>
+&lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
+&lt;p>To build, run and debug GNU Helloworld applications, please make sure that all below components are installed. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component management&lt;/span>&lt;/a> for more information about installing component.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>xplor-studio-baremetal-debug-plugin&lt;/strong>: ELF XploR Studio Plugin using for creating baremetal examples&lt;/li>
+&lt;li>&lt;strong>rv-xplor-elf-linux64/rv-xplor-elf-win64&lt;/strong>: XploR Embedded Toolchain for RISC-V (supported both 32 and 64-bit)&lt;/li>
+&lt;li>&lt;strong>xplor-studio-hardware-target&lt;/strong>: XploR Studio Plugin using for debugging applications on Hardware&lt;/li>
+&lt;li>&lt;strong>openocd-linux64/openocd-win64&lt;/strong>: OpenOCD binary to provide debugging, in-system programming and boundary-scan testing for embedded target devices&lt;/li>
+&lt;/ul>
+&lt;p>All above components are compulsory for debugging RISC-V applications on real hardware.
+Depending on IP Cores or FPGA Board, XploR Studio has many example components for specific cases:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>baremetal-corevmcu-s10gx-helloworld-example&lt;/strong>: Hello World Baremetal Project for CORE-V-MCU run on Intel Stratix 10 GX board
+&lt;ul>
+&lt;li>Requires: &lt;strong>s10gx-corevmcu-bit&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>baremetal-neorv32-de2115-helloworld-example&lt;/strong>: Hello World Project for NEORV32 (Litex) run on Terrasic DE2-115 board
+&lt;ul>
+&lt;li>Requires: &lt;strong>de2115-neorv32-bit&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>baremetal-vexriscv-agilex-helloworld-example&lt;/strong>: Hello World Project for VexRiscv (LiteX) run on Intel Agilex board
+&lt;ul>
+&lt;li>Requires: &lt;strong>agilex-vexriscv-bit&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>baremetal-vexriscv-c10gx-helloworld-example&lt;/strong>: Hello World Project for VexRiscv (LiteX) run on Intel Cyclone 10 GX board
+&lt;ul>
+&lt;li>Requires: &lt;strong>c10gx-vexriscv-bit&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>baremetal-vexriscv-s10gx-helloworld-example&lt;/strong>: Hello World Project for VexRiscv (LiteX) run on Intel Stratix 10 GX board
+&lt;ul>
+&lt;li>Requires: &lt;strong>s10gx-vexriscv-bit&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Moreover, it is necessary to install &lt;a href="https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html">&lt;strong>Quartus Programmer&lt;/strong>&lt;/a> for flashing IP core. After installation, please add Quartus to your environment path before starting XploR Studio.&lt;/p>
+&lt;h2 id="working-flow">Working flow&lt;/h2>
+&lt;h3 id="create-project">Create project&lt;/h3>
+&lt;ol>
+&lt;li>To create a new project, select &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong>, please choose the suitable project (after clicking on a project, XploR Studio will show the description of that project):&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="/examples/baremetal/litex/1.png" alt="example image">&lt;/p>
+&lt;ol start="2">
+&lt;li>Other steps (&lt;em>Update build settings&lt;/em>, &lt;em>Build project&lt;/em>) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
+&lt;/ol>
+&lt;h3 id="flash-ip-core">Flash IP Core&lt;/h3>
+&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/6.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-neorv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_neorv32&lt;/strong>&lt;/em> for the neorv32 - DE2-115 project.&lt;/li>
+&lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
+&lt;li>Click &lt;strong>Finish&lt;/strong> to flash NEORV 32-bit RISC-V core to DE2-115 board.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/baremetal/litex/7.png" alt="example image">&lt;/p>
+&lt;p>To view the console output printed from the RISC-V core (for &lt;strong>NEORV32 core&lt;/strong>), open the Terminal view, select &lt;strong>Serial Terminal&lt;/strong> and select &lt;code>COM&lt;/code> port (on Windows) or &lt;code>/dev/ttyUSBx&lt;/code> port (on Linux) with the following connection settings.&lt;/p>
+&lt;p>The output message on the serial terminal will look like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+_ _ _ ____ ____
+| | | |_ _ __| |_ __ __ _/ ___| ___ / ___|
+| |_| | | | |/ _` | &amp;#39;__/ _` \___ \ / _ \| |
+| _ | |_| | (_| | | | (_| |___) | (_) | |___
+|_| |_|\__, |\__,_|_| \__,_|____/ \___/ \____|
+|___/
+Maximize your SoC design!
+(c) Copyright 2020-2023 SoC.One
+(c) Copyright 2012-2023 Enjoy-Digital
+(c) Copyright 2007-2015 M-Labs
+BIOS CRC passed (42b17cce)
+HydraCore git sha1: --------
+--=============== SoC ==================--
+CPU: NEORV32 @ 50MHz
+BUS: WISHBONE 32-bit @ 4GiB
+CSR: 32-bit data
+ROM: 64.0KiB
+SRAM: 64.0KiB
+SDRAM: 128.0MiB 32-bit @ 50MT/s (CL-2 CWL-2)
+MAIN-RAM: 128.0MiB
+--========== Initialization ============--
+Ethernet init...
+Initializing SDRAM @0x40000000...
+Switching SDRAM to software control.
+Switching SDRAM to hardware control.
+Memtest at 0x40000000 (2.0MiB)...
+Write: 0x40000000-0x40200000 2.0MiB
+Read: 0x40000000-0x40200000 2.0MiB
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 2.0MiB)...
+Write speed: 14.4MiB/s
+Read speed: 11.7MiB/s
+--============== Boot ==================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+Timeout
+Booting from network...
+Local IP: 192.168.1.50
+Remote IP: 192.168.1.100
+Booting from boot.json...
+Booting from boot.bin...
+Copying boot.bin to 0x40000000...
+Network boot failed.
+No boot medium found
+--============= Console ================--
+litex&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>To view the console output printed from the RISC-V core (for &lt;strong>VexRISCV core&lt;/strong>), open the Terminal view, select &lt;strong>Local Terminal&lt;/strong> and run:&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ jtagconfig -d
+1) USB-BlasterII [1-8]
+(JTAG Server Version 23.2.0 Build 94 06/14/2023 SC Pro Edition)
+031820DD 10M08SA(.|ES)/10M08S(C|L) (IR=10)
+Design hash BBCCCB3AC441E26FCFFA
++ Node 1C106E00 JTAG Avalon #0
++ Node 30286E00 Parallel Flash Loader #0
+02E120DD 10CX220Y (IR=10)
+Design hash C19BBD971B8FE87E0FB0
++ Node 08986E00 Nios V #0
++ Node 0C006E00 JTAG UART #0
+Captured DR after reset = (0063041BB02E120DD) [65]
+Captured IR after reset = (0AAD55) [21]
+Captured Bypass after reset = (2) [3]
+Captured Bypass chain = (0) [3]
+JTAG clock speed auto-adjustment is enabled. To disable, set JtagClockAutoAdjust parameter to 0
+JTAG clock speed 24 MHz
+&lt;/code>&lt;/pre>&lt;p>So the index of cable is 1, then run &lt;code>nios2-terminal -c 1 -d 2 -i 0&lt;/code> and the output will be like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>nios2-terminal: connected to hardware target using JTAG UART on cable
+nios2-terminal: &amp;#34;USB-BlasterII [1-8]&amp;#34;, device 2, instance 0
+nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
+_ _ _ ____ ____
+| | | |_ _ __| |_ __ __ _/ ___| ___ / ___|
+| |_| | | | |/ _` | &amp;#39;__/ _` \___ \ / _ \| |
+| _ | |_| | (_| | | | (_| |___) | (_) | |___
+|_| |_|\__, |\__,_|_| \__,_|____/ \___/ \____|
+|___/
+Maximize your SoC design!
+(c) Copyright 2020-2023 SoC.One
+(c) Copyright 2012-2023 Enjoy-Digital
+(c) Copyright 2007-2015 M-Labs
+BIOS CRC passed (ac8aa09b)
+HydraCore git sha1: --------
+--=============== SoC ==================--
+CPU: VexRiscv_VjtagDebug @ 100MHz
+BUS: WISHBONE 32-bit @ 4GiB
+CSR: 32-bit data
+ROM: 64.0KiB
+SRAM: 64.0KiB
+L2: 8.0KiB
+MAIN-RAM: 1.0GiB
+--========== Initialization ============--
+Ethernet init...
+Memtest at 0x40000000 (2.0MiB)...
+Write: 0x40000000-0x40200000 2.0MiB
+Read: 0x40000000-0x40200000 2.0MiB
+Memtest OK
+Memspeed at 0x40000000 (Sequential, 2.0MiB)...
+Write speed: 31.2MiB/s
+Read speed: 23.0MiB/s
+--============== Boot ==================--
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+Timeout
+Booting from network...
+Local IP: 192.168.1.50
+Remote IP: 192.168.1.100
+Booting from boot.json...
+Booting from boot.bin...
+Copying boot.bin to 0x40000000...
+Network boot failed.
+No boot medium found
+--============= Console ================--
+litex&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>Now the board is ready to run or debug applications.&lt;/p>
+&lt;h3 id="run-project-on-hardware-platform">Run project on hardware platform&lt;/h3>
+&lt;blockquote>
+&lt;p>It is recommended to program the bitstream to board before starting running project. Please refer to &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">previous section&lt;/a> for how to program the bitstream.&lt;/p>
+&lt;/blockquote>
+&lt;p>To run the application on hardware without debugging, select project in the Project Explorer, click &lt;strong>Run as &amp;gt; Run configurations&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/8.png" alt="example image">&lt;/p>
+&lt;p>Then create a new &lt;strong>RISC-V Running&lt;/strong> configuration with the following information.&lt;/p>
+&lt;ul>
+&lt;li>Platform: Choose hardware platform, for example: &lt;strong>FPGA&lt;/strong> &amp;gt; &lt;strong>Terrasic Board&lt;/strong> &amp;gt; &lt;strong>Neorv32&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/baremetal/litex/9.png" alt="example image">&lt;/p>
+&lt;p>On the Terminal view, the message will be printed.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/10.png" alt="example image">&lt;/p>
+&lt;h3 id="debug-project-on-hardware-platform">Debug project on hardware platform&lt;/h3>
+&lt;blockquote>
+&lt;p>It is recommended to program the bitstream to board before starting debugging project. Please refer to &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">previous section&lt;/a> for how to program the bitstream.&lt;/p>
+&lt;/blockquote>
+&lt;p>To debug the application on hardware, select project in the Project Explorer, click &lt;strong>Debug as &amp;gt; Debug Confihurations&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/11.png" alt="example image">&lt;/p>
+&lt;p>Then create a new RISC-V Running configuration with the following information.&lt;/p>
+&lt;p>On tab &lt;strong>Debugger&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Platform: Choose hardware platform, for example: &lt;strong>FPGA&lt;/strong> &amp;gt; &lt;strong>Terrasic DE2-115 Board&lt;/strong> &amp;gt; &lt;strong>Neorv32&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/examples/baremetal/litex/12.png" alt="example image">&lt;/p>
+&lt;p>After selecting &lt;strong>Apply&lt;/strong> and &lt;strong>Debug&lt;/strong>, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/13.png" alt="example image">&lt;/p>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;h3 id="debug-project-with-custom-openocd">Debug project with custom OpenOCD&lt;/h3>
+&lt;p>Create a new debug configuration on &lt;strong>Debug Configurations&lt;/strong> dialog by double-clicking on &lt;strong>RISC-V Debugging&lt;/strong>:&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/11.png" alt="example image">&lt;/p>
+&lt;p>On the tab &lt;strong>Debugger&lt;/strong>, select option &lt;strong>Terrasic DE2-115 Board&lt;/strong> in &lt;strong>FPGA&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/12.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>OpenOCD Options&lt;/strong>, we use the openocd binary of Quartus and the default openocd configuration file.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/21.png" alt="example image">&lt;/p>
+&lt;p>Users can browse the custom openocd binary and the custom openocd configuration file.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/22.png" alt="example image">&lt;/p>
+&lt;p>Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong> to start debugging with the custom openocd binary.&lt;/p>
+&lt;h3 id="for-fpga-cyclone-10-gx">For FPGA Cyclone 10 GX&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>In &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">&lt;span style="color: blue">Flashing IP Core&lt;/span>&lt;/a> step, please choose the JTAG Cable has postfix is &lt;code>02E120DD&lt;/code>. If not, it will show error like belows:&lt;/p>
+&lt;pre tabindex="0">&lt;code>*************** Intel FPGA board flash start ***************
+Info (19848): Regular SEU info =&amp;gt; 105 sector(s), 8 thread(s), 10000000 interval time in microsecond(s)
+Info (19848): IO hash is 375D44051CBCD1FB1F349EB0B5ACD027F92657328775E3F463232CDB69BE6348
+Info (19848): Keyed hash is B670402376FE190A33DBF30EBAD19B18AACC03926BD9F0F5A709DA7A30CF88C2
+Info (19848): Design hash is 77B1BDFD03B8C8A53D651348C5A9BFFF51434DB77B1C5336286B597E40C3EA22
+Info (19848): IO hash is 375D44051CBCD1FB1F349EB0B5ACD027F92657328775E3F463232CDB69BE6348
+Info (19848): Keyed hash is CFA76139E3B99B431DB2D40867858F9DF93B0E80F91C3D1907853B7A1B913025
+Info: *******************************************************************
+Info: Running Quartus Prime Programmer
+Info: Version 23.2.0 Build 94 06/14/2023 SC Pro Edition
+Info: Copyright (C) 2023 Intel Corporation. All rights reserved.
+Info: Your use of Intel Corporation&amp;#39;s design tools, logic functions
+Info: and other software and tools, and any partner logic
+Info: functions, and any output files from any of the foregoing
+Info: (including device programming or simulation files), and any
+Info: associated documentation or information are expressly subject
+Info: to the terms and conditions of the Intel Program License
+Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+Info: the Intel FPGA IP License Agreement, or other applicable license
+Info: agreement, including, without limitation, that your use is for
+Info: the sole purpose of programming logic devices manufactured by
+Info: Intel and sold by Intel or its authorized distributors. Please
+Info: refer to the applicable agreement for further details, at
+Info: https://fpgasoftware.intel.com/eula.
+Info: Processing started: Fri Sep 15 15:56:03 2023
+Info: System process ID: 13773
+Info: Command: quartus_pgm -c 1 -m JTAG -o p;/home/ubuntu/.xplor//components/bitstream-s10gx-corevmcu/s10gx_corevmcu.sof@1
+Info (213045): Using programming cable &amp;#34;USB-BlasterII [1-8]&amp;#34;
+Info (213011): Using programming file /home/ubuntu/.xplor/components/bitstream-s10gx-corevmcu/s10gx_corevmcu.sof with checksum 0x46CB0DC5 for device 1SG280LU2F50@1
+Info (209060): Started Programmer operation at Fri Sep 15 15:56:09 2023
+Info (18942): Configuring device index 1
+Error (18939): Unexpected error in JTAG server: Chain in use - check
+Error (209012): Operation failed
+Info (209061): Ended Programmer operation at Fri Sep 15 15:56:09 2023
+Error: Quartus Prime Programmer was unsuccessful. 2 errors, 0 warnings
+Error: Peak virtual memory: 2326 megabytes
+Error: Processing ended: Fri Sep 15 15:56:09 2023
+Error: Elapsed time: 00:00:06
+Error: System process ID: 13773
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>In the &lt;a href="/docs/examples/baremetal/litex_helloworld/#run-project-on-hardware-platform">&lt;span style="color: blue">Run project&lt;/span>&lt;/a> step, in &lt;strong>Main&lt;/strong> &amp;gt; &lt;strong>Configuration&lt;/strong> &amp;gt; &lt;strong>Default Configuration&lt;/strong>, please choose &lt;code>FPGA USB-Blaster II (vjtag, vexriscv-c10gx)&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/23.png" alt="example image">&lt;/p>
+&lt;p>If not, the debug session will be terminated immediately because of wrong OpenOCD configuration.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;a href="/docs/examples/baremetal/litex_helloworld/#debug-project-on-hardware-platform">&lt;span style="color: blue">Debug project&lt;/span>&lt;/a> step, in &lt;strong>Debugger&lt;/strong> &amp;gt; &lt;strong>OpenOCD Options&lt;/strong> &amp;gt; &lt;strong>Default Configuration&lt;/strong>, please choose &lt;code>FPGA USB-Blaster II (vjtag, vexriscv-c10gx)&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="/examples/baremetal/litex/24.png" alt="example image">&lt;/p>
+&lt;p>If not, the debug session will be terminated immediately because of wrong OpenOCD configuration.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-errors">Common errors&lt;/h2></description></item></channel></rss>

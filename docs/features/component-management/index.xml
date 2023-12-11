@@ -1,0 +1,167 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Component Management</title><link>/docs/features/component-management/</link><description>Recent content in Component Management on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/features/component-management/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Component Management</title><link>/docs/features/component-management/component-management/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/features/component-management/component-management/</guid><description>
+&lt;p>This section covers how to install, uninstall, upgrade components in IDE and command line&lt;/p>
+&lt;h3 id="in-xplor-studio-ide">In XploR Studio IDE&lt;/h3>
+&lt;h4 id="install">Install&lt;/h4>
+&lt;p>After successful &lt;a href="/docs/installation/ide-install/">installation&lt;/a>, the baseline IDE does not contain any resources like plugins, toolchains, example projects, and target bitfiles. So, users need to install the desired resources to start working with XploR Studio.&lt;/p>
+&lt;p>To install component(s) in XploR Studio, follow these steps:&lt;/p>
+&lt;ul>
+&lt;li>Select the icon &lt;img src="/features/1.png" alt="Image alt" style="display: inline;"> in the toolbar to show a list of available components:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/features/component-management.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>On the left side of the window, there is a filter box. User can choose to show type of components by selecting the corresponding checkbox.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To install the desired component, check the box in the &lt;em>No.&lt;/em> column and select &lt;strong>Install&lt;/strong>. One or more components can be installed at the same time.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note:&lt;/h4>
+If you do not wish to install the dependencies of specific components, please select the checkbox labeled &lt;strong>Don&amp;rsquo;t install component&amp;rsquo;s dependencies&lt;/strong> below the components list.
+&lt;/div>
+&lt;h4 id="uninstall">Uninstall&lt;/h4>
+&lt;p>The &lt;em>Status&lt;/em> column shows whether the component is installed locally. User can uninstall a component by checking the box in the &lt;em>No.&lt;/em> column and selecting &lt;strong>Uninstall&lt;/strong>. Similar to installing feature, one or more components can be uninstalled at the same time.&lt;/p>
+&lt;h4 id="upgrade">Upgrade&lt;/h4>
+&lt;p>If a component has multiple available versions, you can select a specific version of that component by simply double-clicking on it. A new dialog will be shown to display all available versions:&lt;/p>
+&lt;p>&lt;img src="/features/select-version.png" alt="example image">&lt;/p>
+&lt;h3 id="in-command-line">In command line&lt;/h3>
+&lt;h4 id="install-1">Install&lt;/h4>
+&lt;p>To install the component with command line, use xip:&lt;/p>
+&lt;pre tabindex="0">&lt;code>xip install [component-name]
+&lt;/code>&lt;/pre>&lt;h4 id="uninstall-1">Uninstall&lt;/h4>
+&lt;p>To uninstall the component with command line, use xip:&lt;/p>
+&lt;pre tabindex="0">&lt;code>xip uninstall [component-name]
+&lt;/code>&lt;/pre>&lt;h4 id="upgrade-1">Upgrade&lt;/h4>
+&lt;p>To upgrade the component with command line, use xip:&lt;/p>
+&lt;pre tabindex="0">&lt;code>xip install --upgrade [component-name]
+&lt;/code>&lt;/pre>&lt;p>Or install component with specific version:&lt;/p>
+&lt;pre tabindex="0">&lt;code>xip install [component-name]==[version]
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Component Category</title><link>/docs/features/component-management/component-category/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/features/component-management/component-category/</guid><description>
+&lt;p>Xplor component category has 4 types: &lt;strong>Software&lt;/strong>, &lt;strong>IP&lt;/strong>, &lt;strong>Executive Platform&lt;/strong>, and &lt;strong>Blueprint&lt;/strong>. Each type has its own characteristics and usage.&lt;/p>
+&lt;h2 id="software">Software&lt;/h2>
+&lt;p>A component of type &lt;strong>Software&lt;/strong> is a software package that can be installed on a host machine or target machine. It can be a toolchain, a library, an application, or a plugin. A software component can be installed on the host machine and used by XploR Studio IDE.&lt;/p>
+&lt;p>The hierarchy of a software component is as follows:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Host&lt;/strong>: A software component that can be installed on the host machine.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>IDE&lt;/strong>: A component related to the IDE.
+&lt;ul>
+&lt;li>&lt;strong>XploR Studio&lt;/strong>: A component related to the XploR Studio IDE.
+&lt;ul>
+&lt;li>&lt;strong>Plugin&lt;/strong>: A plugin for XploR Studio IDE. With this type of component, users can extend the functionality of XploR Studio IDE.&lt;/li>
+&lt;li>&lt;strong>Example Project&lt;/strong>: An example project for XploR Studio IDE. With this type of component, users can create a new project with a pre-configured project structure.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Debug&lt;/strong>: A component related to the debug process.&lt;/li>
+&lt;li>&lt;strong>Libraries&lt;/strong>: A component related to libraries.&lt;/li>
+&lt;li>&lt;strong>Cross Toolchain&lt;/strong>: A component related to cross toolchain.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Target&lt;/strong>: A software component that can be installed on the target machine.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>OS&lt;/strong>: A component related to the operating system.&lt;/li>
+&lt;li>&lt;strong>RootFS&lt;/strong>: A component related to the root file system. That can be booted on QEMU or flashed to the target machine.
+&lt;ul>
+&lt;li>&lt;strong>Native Toolchain&lt;/strong>: A component related to the native toolchain on the target machine.&lt;/li>
+&lt;li>&lt;strong>Libraries&lt;/strong>: A component related to libraries on the target machine.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ip">IP&lt;/h2>
+&lt;p>A component of type &lt;strong>IP&lt;/strong> is a design IP that can be used in a hardware design. It can be a peripheral, a bus, or a processor. An IP component can be used in a hardware design and synthesized to a bitfile.&lt;/p>
+&lt;p>The hierarchy of an IP component is as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Core&lt;/strong>: A component related to the core.
+&lt;ul>
+&lt;li>&lt;strong>32-bit&lt;/strong>: A component related to the 32-bit core.
+&lt;ul>
+&lt;li>&lt;strong>RISC-V&lt;/strong>: A component related to the RISC-V core.&lt;/li>
+&lt;li>&lt;strong>ARM&lt;/strong>: A component related to the ARM core.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>64-bit&lt;/strong>: A component related to the 64-bit core.
+&lt;ul>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Peripheral&lt;/strong>: A component related to the peripheral.
+&lt;ul>
+&lt;li>&lt;strong>UART&lt;/strong>: A component related to the UART peripheral.&lt;/li>
+&lt;li>&lt;strong>SPI&lt;/strong>: A component related to the SPI peripheral.&lt;/li>
+&lt;li>&lt;strong>I2C&lt;/strong>: A component related to the I2C peripheral.&lt;/li>
+&lt;li>&lt;strong>Ethernet&lt;/strong>: A component related to the Ethernet peripheral.&lt;/li>
+&lt;li>&lt;strong>USB&lt;/strong>: A component related to the USB peripheral.&lt;/li>
+&lt;li>&lt;strong>SDIO&lt;/strong>: A component related to the SDIO peripheral.&lt;/li>
+&lt;li>&lt;strong>PCIe&lt;/strong>: A component related to the PCIe peripheral.&lt;/li>
+&lt;li>&lt;strong>I2S&lt;/strong>: A component related to the I2S peripheral.&lt;/li>
+&lt;li>&lt;strong>DMA&lt;/strong>: A component related to the DMA peripheral.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Accelerator&lt;/strong>: A component related to the accelerator.
+&lt;ul>
+&lt;li>&lt;strong>DSP&lt;/strong>: A component related to the DSP accelerator.&lt;/li>
+&lt;li>&lt;strong>Vector&lt;/strong>: A component related to the Vector accelerator.&lt;/li>
+&lt;li>&lt;strong>Neural Network&lt;/strong>: A component related to the Neural Network accelerator.&lt;/li>
+&lt;li>&lt;strong>FPU&lt;/strong>: A component related to the FPU accelerator.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="executive-platform">Executive Platform&lt;/h2>
+&lt;p>A component of type &lt;strong>Executive Platform&lt;/strong> is a platform that can be used to run an application. It can be a board, a emulator, or a simulator.&lt;/p>
+&lt;p>The hierarchy of an Executive Platform component is as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Simulator&lt;/strong>: A component related to the simulator.&lt;/li>
+&lt;li>&lt;strong>ISA Simulator&lt;/strong>: A component related to the ISA simulator.
+&lt;ul>
+&lt;li>&lt;strong>QEMU&lt;/strong>: A component related to the QEMU ISA simulator.&lt;/li>
+&lt;li>&lt;strong>Spike&lt;/strong>: A component related to the Spike ISA simulator.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>RTL Simulator&lt;/strong>: A component related to the RTL simulator.
+&lt;ul>
+&lt;li>&lt;strong>Verilator&lt;/strong>: A component related to the Verilator RTL simulator.&lt;/li>
+&lt;li>&lt;strong>VCS&lt;/strong>: A component related to the VCS RTL simulator.&lt;/li>
+&lt;li>&lt;strong>Questasim&lt;/strong>: A component related to the Questasim RTL simulator.&lt;/li>
+&lt;li>&lt;strong>Modelsim&lt;/strong>: A component related to the Modelsim RTL simulator.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Emulator&lt;/strong>: A component related to the emulator.
+&lt;ul>
+&lt;li>&lt;strong>Veloce&lt;/strong>: A component related to the Veloce emulator.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Prototying Hardware&lt;/strong>: A component related to the prototyping hardware.
+&lt;ul>
+&lt;li>&lt;strong>FPGA&lt;/strong>: A component related to the FPGA prototyping hardware.&lt;/li>
+&lt;li>&lt;strong>Pro FPGA&lt;/strong>: A component related to the professional FPGA prototyping hardware.&lt;/li>
+&lt;li>&lt;strong>Primo&lt;/strong>: A component related to the ASIC prototyping hardware.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="blueprint">Blueprint&lt;/h2>
+&lt;p>A component of type &lt;strong>Blueprint&lt;/strong> is a blueprint that contains one or more components. It can be a project, a platform, or a toolchain. A blueprint component can be used for running end-to-end a lab/experiment.&lt;/p>
+&lt;p>The hierarchy of a Blueprint component is as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Profile&lt;/strong>: A component related to the profile.
+&lt;ul>
+&lt;li>&lt;strong>Baremetal&lt;/strong>: A component related to the baremetal profile.&lt;/li>
+&lt;li>&lt;strong>Linux&lt;/strong>: A component related to the Linux profile.&lt;/li>
+&lt;li>&lt;strong>Embedded&lt;/strong>: A component related to the embedded profile.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Reference Design&lt;/strong>: A component related to the reference design.
+&lt;ul>
+&lt;li>&lt;strong>System&lt;/strong>: A component related to the system reference design.&lt;/li>
+&lt;li>&lt;strong>Connected System&lt;/strong>: A component related to the connected system reference design.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

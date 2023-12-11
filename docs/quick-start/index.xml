@@ -1,0 +1,257 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>XploR Studio – Quick start</title><link>/docs/quick-start/</link><description>Recent content in Quick start on XploR Studio</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/quick-start/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Creating application with FreeRTOS</title><link>/docs/quick-start/freertos/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/quick-start/freertos/</guid><description>
+&lt;p>This chapter covers the basics of a quick-start project including creating, building, running, and debugging applications. This project referred to in this chapter is called &lt;strong>Blinky&lt;/strong>. This application prints &lt;em>Blink&lt;/em> text. Through the debug session, users can examine RTOS objects such as Task and Queue. The application can also be built and run on QEMU emulator.&lt;/p>
+&lt;p>To build, run and debug &lt;strong>Blinky&lt;/strong> applications with QEMU emulator, please install the &lt;strong>xplor-studio-freertos-debug-plugin&lt;/strong> and &lt;strong>freertos-virt-qemu-blinky-example&lt;/strong> components first. Please refer to &lt;a href="/docs/features/component-management/component-management">&lt;span style="color: blue">Component Management&lt;/span>&lt;/a> for more information.&lt;/p>
+&lt;h2 id="create-a-new-project">Create a new project&lt;/h2>
+&lt;p>First, open XploR Studio IDE by the following command:&lt;/p>
+&lt;pre tabindex="0">&lt;code>xip ide start
+&lt;/code>&lt;/pre>&lt;p>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects by selecting &lt;strong>File &amp;gt; New &amp;gt; C Project&lt;/strong> choose &lt;strong>Blinky&lt;/strong> project.
+Then click Next.&lt;/p>
+&lt;p>&lt;img src="/quickstart/1.png" alt="example image">&lt;/p>
+&lt;p>Then click &lt;strong>Finish&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/quickstart/3.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> For more project examples, please install &lt;code>Example Projects components&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="update-build-settings">Update build settings&lt;/h2>
+&lt;p>After the project is created, the user can change build settings or other project settings by right-clicking on the project name in &lt;strong>Project Explorer&lt;/strong> and selecting &lt;strong>Properties&lt;/strong>.
+Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/4.png" alt="example image">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The Floating-point ABI – Single precision (f) is currently not supported in this release (except Embedded projects).&lt;/p>
+&lt;/blockquote>
+&lt;p>For example, on the Target Processor menu, users can change the architecture from 32 bits to 64 bits, and also select floating-point options.&lt;/p>
+&lt;p>&lt;img src="/quickstart/5.png" alt="example image">&lt;/p>
+&lt;p>Another useful setting is to add hooks before and after the build. For example:&lt;/p>
+&lt;p>&lt;img src="/quickstart/6.png" alt="example image">&lt;/p>
+&lt;h2 id="build-project">Build project&lt;/h2>
+&lt;ul>
+&lt;li>Building is simply done by clicking on the build button in the toolbar:&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/quickstart/7.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>Or right-click on the current project &amp;gt; Build Project&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="/quickstart/8.png" alt="example image">&lt;/p>
+&lt;p>Messages in the Console view:&lt;/p>
+&lt;p>&lt;img src="/quickstart/9.png" alt="example image">&lt;/p>
+&lt;h2 id="running-and-debugging-project-with-qemu-emulator">Running and Debugging project with QEMU emulator&lt;/h2>
+&lt;h3 id="run-project-on-qemu-emulator">Run project on QEMU emulator&lt;/h3>
+&lt;p>XploR Studio offers several ways to run applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the BlinkyDemo entry in the Project Explorer then open the Run Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary run configuration information.&lt;/p>
+&lt;p>&lt;img src="/quickstart/10.png" alt="example image">&lt;/p>
+&lt;p>In Run Configuration Dialog box, create a new run configuration by double-clicking on RISC-V Running&lt;/p>
+&lt;p>&lt;img src="/quickstart/10-1.png" alt="example image">&lt;/p>
+&lt;p>On the &lt;strong>Main&lt;/strong> tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Run&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/quickstart/10-2.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the Blinky Demo Project entry in the Project Explorer and then click &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISC-V application with QEMU&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/10-3.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; &lt;strong>Run As&lt;/strong> &amp;gt; &lt;strong>RISV-C application with QEMU&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/10-4.png" alt="example image">&lt;/p>
+&lt;p>After selecting &lt;strong>Run As RISC-V application with QEMU&lt;/strong>, the &amp;ldquo;Blink&amp;rdquo; text will be printed continuously in Console view.&lt;/p>
+&lt;p>&lt;img src="/quickstart/10-5.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="debug-project-on-qemu-emulator">Debug project on QEMU Emulator&lt;/h3>
+&lt;p>XploR Studio offers several ways to debug applications:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Select the BlinkyDemo entry in the Project Explorer then open the Debug Configuration Dialog. Doing so will enable Eclipse to automatically fill out the necessary debug configuration information.&lt;/p>
+&lt;p>&lt;img src="/quickstart/11.png" alt="example image">&lt;/p>
+&lt;p>In Debug Configuration Dialog box, create a new debug configuration by double-clicking on RISC-V Debugging&lt;/p>
+&lt;p>&lt;img src="/quickstart/12.png" alt="example image">&lt;/p>
+&lt;p>On the Debugger tab, choose option &lt;strong>QEMU&lt;/strong> in &lt;strong>Virtual Platforms&lt;/strong>. Click &lt;strong>Apply&lt;/strong> then click &lt;strong>Debug&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="/quickstart/13.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the Blinky Demo Project entry in the Project Explorer and then click &lt;strong>Debug As/RISC-V application with QEMU&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/14.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Right-click on current project &amp;gt; Debug As &amp;gt; RISV-C application with QEMU&lt;/p>
+&lt;p>&lt;img src="/quickstart/15.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>After selecting Debug As RISC-V application with QEMU, the IDE changes to the debug perspective and automatically sets a breakpoint in the first line of code in the main() function.&lt;/p>
+&lt;p>&lt;img src="/quickstart/16.png" alt="example image">&lt;/p>
+&lt;p>Open &lt;strong>main_blinky.c&lt;/strong> source code file in &lt;strong>src/application-specific/blinky_demo&lt;/strong> &amp;gt; Set more breakpoints in Task and Queue object.&lt;/p>
+&lt;p>&lt;img src="/quickstart/17.png" alt="example image">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Press F8 or click on &lt;strong>Resume&lt;/strong> button to go to the next breakpoint&lt;/p>
+&lt;p>&lt;img src="/quickstart/17.1.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continue debugging with press F5 or clicking on Step Into button to step into the line of code&lt;/p>
+&lt;p>&lt;img src="/quickstart/18.1.png" alt="example image">&lt;/p>
+&lt;p>and see data change in Register View&lt;/p>
+&lt;p>&lt;img src="/quickstart/register-view.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continue debugging with press F6 or clicking on Step Over button for step over&lt;/p>
+&lt;p>&lt;img src="/quickstart/18.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press F7 or click on Step Return (F7) button for step return code&lt;/p>
+&lt;p>&lt;img src="/quickstart/19.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on the Suspend button to pause the debug process.&lt;/p>
+&lt;p>&lt;img src="/quickstart/20.png" alt="example image">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>User can open Object Variables, Breakpoints, Task, Queue, and Heap to examine application states:&lt;/p>
+&lt;p>&lt;strong>Variables&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/21.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Breakpoints:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/22.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Task:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/23.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Queue:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/24.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Timer:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/images_views/freertos/22.png" alt="example image">&lt;/p>
+&lt;p>&lt;strong>Heap:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/quickstart/25.png" alt="example image">&lt;/p>
+&lt;p>To stop the debug process, click the Terminate icon in the toolbar or press F2.&lt;/p>
+&lt;p>&lt;img src="/quickstart/26.png" alt="example image">&lt;/p>
+&lt;!-- ## &lt;a id="blinky-debug-de2">5 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/a>
+### Hardware and driver preparations
+Please refer to the &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
+### Programming IP core
+To program a RISC-V IP core to the board, click on Flash icon on the toolbar
+![example image](/quickstart/27.png)
+- In the **Categories**, there are 2 types:
+- "***Free IP For Starter Boards***" includes free IP Core files like Neorv32, Rocket64 or OpenHW group
+- "***Commercial Grade IP for Professional Boards***" includes commercial IP Core files like Andes, Codasip. To download these IP Core files, user need to register an account and download from [https://pathfinder.intel.com/registration/](https://pathfinder.intel.com/registration/)
+- In the **IP Core**, select **stratix10_rocket64.sof** or **Custom IP core** if users use their own RISC-V IP core. In this case, we select "***de2-115_neorv32***" for the neorv32 - DE2-115 project.
+- Select JTAG cable (if the user has multiple boards connected to the development machine).
+- Click **Finish** to flash Neorv 32-bit RISC-V core to DE2-115 board.
+To view the console output printed from the RISC-V core, there are 2 ways depending on the IP core:
+- **Physical UART** &lt;span style="color:red">*(for Open-V-MCU, Neorv32)*:&lt;/style>
+Open the Terminal view and select `COM` port (on Windows) or `/dev/ttyUSBx` port (on Linux) with the following connection settings.
+![example image](/images_xplorstudio/28.png)
+The output message on the serial terminal will look like this:
+```
+&lt;&lt; NEORV32 Bootloader >>
+BLDV: Oct 27 2021
+HWV: 0x01060300
+CLK: 0x02faf080
+MISA: 0x40801104
+CPU: 0x00000483
+SOC: 0x0007400d
+IMEM: 0x00040000 bytes @0x00000000
+DMEM: 0x00020000 bytes @0x80000000
+Autoboot in 8s. Press key to abort.
+Loading...
+[ERR 0x00000005 0xffff0d58 0xffffffa8]
+ERROR_1
+```
+It is safe to ignore messages like `ERROR_1` above.
+- **vJTAG-UART** &lt;span style="color:red">*(for Rocket Chip, Andes, Codasip)*:&lt;/style>
+Open Terminal view and choose Local Terminal. Type `jtagconfig -d` to detect the index of the USB-Blaster II cable (Linux OS: The user should use the command `source path/to/__PROJECT_SHORTNAME__/bin/environment-setup.sh` first to set the environment of the __PROJECT_SHORTNAME__.
+![example image](/images_xplorstudio/28.1.png)
+Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
+!!!warning "Note"
+Examples with 3 IP cores (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
+### Run project on Intel FPGA DE2-115 platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 5.2](#52-programming-ip-core) for how to program the bitstream.
+To run the application on hardware without debugging, select project in the Project Explorer, click **Run as > RISC-V application on Hardware**.
+On the Terminal view, the "Blinky" message will be printed continuously.
+Please refer to [section 6.3](#63-run-project-on-intel-fpga-stratix-10-gx-platform) for how to run the application by creating a new *Run Configuration*.
+!!!info
+Both Neorv32 and Rocket Chip on DE2-115 board use Virtual JTAG to run/debug.
+![example image](/images_xplorstudio/29.png)
+### Debug project on Intel FPGA DE2-115 platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 5.2](#52-programming-ip-core) for how to program the bitstream.
+To debug the application on hardware, select project in the Project Explorer, click **Debug as > RISC-V application on Hardware**
+![example image](/images_xplorstudio/30.png)
+Please refer to [section 6.4](#64-debug-project-on-intel-fpga-stratix-10-gx-platform) for how to debug the application by creating a new *Debug Configuration*.
+!!!info
+Both Neorv32 and Rocket Chip on DE2-115 board use Virtual JTAG to run/debug.
+If users cannot debug normally, that means the RISC-V core may be locked from a previous debug session. To restart with a new debug session, please press `KEY0` on the DE2-115 board to reset the core and continue.
+The application stops at the first line, and users can set breakpoints and continue to debug.
+![example image](/images_xplorstudio/31.png)
+To view the RTOS objects, press the **Suspend** button.
+![example image](/images_xplorstudio/32.png)
+Task objects:
+![example image](/images_xplorstudio/33.png)
+Queue objects:
+![example image](/images_xplorstudio/34.png)
+Heap objects:
+![example image](/images_xplorstudio/35.png)
+To view Registers, switch to the Register view:
+![example image](/images_xplorstudio/36.png)
+To view gdb console message, switch to the Debug console view
+![example image](/images_xplorstudio/37.png)
+In the complex application where the peripherals are configured with the RISC-V cores, users can examine the peripherals' status such as control register values, and data register values via **Peripheral Registers view**.
+To active Peripheral Registers view, select **Window > Preferences**
+![example image](/images_xplorstudio/38.png)
+Then go to the **C/C++ > Debug section**
+Click the Peripheral **Registers Page**. On this page:
+- Architecture: Select RISC-V
+- Vendor: Select FPGA
+- Platform: Select Neorv32
+The peripheral registers will be listed on the right-hand side of the page:
+![example image](/images_xplorstudio/39.png)
+Users can select specific registers or all registers via the checkbox, then click **Apply and Close** button
+![example image](/images_xplorstudio/40.png)
+The Peripheral Register views will show all registers as well as their information.
+To view any register status, double-click on the register name on Peripheral View:
+![example image](/images_xplorstudio/41.png)
+To view the program output, switch to the Terminal view.
+![example image](/images_xplorstudio/42.png)
+## &lt;a id="blinky-debug-stratix">6 Running and Debugging project with Intel FPGA Stratix 10 GX platform&lt;/a>
+### Hardware and driver preparations
+For more information, please refer to &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> and [Running and Debugging project with Intel FPGA DE2-115 platform](#5-running-and-debugging-project-with-intel-fpga-de2-115-platform).
+### Programming IP core
+To program a RISC-V IP core to the board, click on the Flash icon on the toolbar:
+![example image](/images_xplorstudio/43.png)
+- In **Vendor**, select: Neorv32
+- In **Product**, select
+- **neorv32 - Stratix10gx (sof)**.
+- **Custom IP core** if users use their own RISC-V IP core.
+- Select the JTAG cable (if users have multiple boards connected to the development machine)
+- Click "Finish" to flash the NEOR32 RISC-V core.
+### Run project on Intel FPGA Stratix 10 GX platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 6.2](#62-programming-ip-core) for how to program the bitstream.
+To run the application on hardware without debugging, select the project in the Project Explorer, and click **Run as > Run Configurations**. Then create a new RISC-V Running configuration with the following information.
+- Platform: **FPGA** > **Intel Stratix 10 GX Board** > **Neorv32**
+- Configuration: Uncheck Virtual Jtag and select the external JTAG
+![example image](/images_xplorstudio/45.png)
+![example image](/images_xplorstudio/29.png)
+### Debug project on Intel FPGA Stratix 10 GX platform
+!!!warning "Note"
+It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 6.2](#62-programming-ip-core) for how to program the bitstream.
+To debug the application on hardware, select project in the Project Explorer, click **Debug as > Debug RISC-V application on hardware**. Then create a new RISC-V Running configuration with the following information.
+- Platform: **FPGA** > **Intel Stratix 10 GX Board** > **Neorv32**
+- Configuration: Uncheck `Virtual Jtag` and select the external JTAG
+![example image](/images_xplorstudio/47.png)
+![example image](/images_xplorstudio/48.png)
+For the OpenOCD configuration of each IP core on the Intel Stratix 10 GX board, please refer to the below table:
+| IP cores | Type of JTAG | Supported JTAG |
+|:-----------:|:-------------:|:-----------------------------------------------------------:|
+| Neorv32 | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+| Rocket Chip | Virtual JTAG | N/A |
+| Open-V-MCU | Virtual JTAG | N/A |
+| Andes | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+| Codasip | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
+*Note: This is an example of creating, building, running, and debugging a typical project. For specific projects, which are supported in this release, please refer to &lt;a href="../../examples/">**Examples and Demos**&lt;/a> section.*
+## Debug project with custom openocd
+Create a new debug configuration on **Debug Configurations** dialog by double-clicking on **RISC-V Debugging**:
+![example image](/images_xplorstudio/50.png)
+On the tab **Debugger**, select option **Intel FPGA Board in FPGA.**
+![example image](/images_xplorstudio/51.png)
+On the **OpenOCD Options**, we use the openocd binary of Quartus and the default openocd configuration file.
+![example image](/images_xplorstudio/52.png)
+Users can browse the custom openocd binary and the custom openocd configuration file.
+![example image](/images_xplorstudio/53.png)
+Click **Apply** then click **Debug** to start debugging with the custom openocd binary. --></description></item></channel></rss>
