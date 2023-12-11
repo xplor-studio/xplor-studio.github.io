@@ -26,33 +26,19 @@
 The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="download-the-ide-installer">Download the IDE installer&lt;/h2>
-&lt;div class="td-card-group card-group p-0 mb-4">
-&lt;div class="td-card card border me-4">
-&lt;div class="card-header bg-white">
-&lt;strong>Installer for Linux&lt;/strong>
-&lt;/div>
-&lt;div class="card-body code p-0 m-0">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> https://xplor.studio/release/XploRStudio_v1.0.0_linux.run
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
-&lt;/div>
-&lt;div class="td-card card border me-4">
-&lt;div class="card-header bg-white">
-&lt;strong>Installer for Windows&lt;/strong>
-&lt;/div>
-&lt;div class="card-body code p-0 m-0">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> https://xplor.studio/release/XploRStudio_v1.0.0_win32.exe
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
-&lt;/div>
-&lt;/div>
+&lt;!-- https://xplor.studio/release -->
+&lt;p>The XploR IDE installer is available for Linux and Windows. The installer can be downloaded from the links: &lt;a href="https://xplor.studio/release/">https://xplor.studio/release/&lt;/a>&lt;/p>
+&lt;p>There are 2 suffixes corresponding to the operating system:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>XploR-Studio-{VERSION}_linux.run&lt;/strong> for Linux&lt;/li>
+&lt;li>&lt;strong>XploR-Studio-{VERSION}_win32.exe&lt;/strong> for Windows&lt;/li>
+&lt;/ul>
 &lt;h2 id="start-the-installer">Start the installer&lt;/h2>
 &lt;h3 id="on-windows">On Windows&lt;/h3>
-&lt;p>Run the executable installer by right-clicking on the executable from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>:&lt;/p>
-&lt;p>&lt;img src="/images_installation/IDE_Installer/1.png" alt="example image">&lt;/p>
+&lt;p>Run the executable installer by right-clicking on the executable &lt;strong>XploR-Studio-{VERSION}_win32.exe&lt;/strong> from the desktop or file manager and selecting &lt;strong>Open&lt;/strong>.&lt;/p>
 &lt;h3 id="on-linux">On Linux&lt;/h3>
 &lt;p>Open the terminal and run the installer&lt;/p>
-&lt;p>&lt;code>./xplorstudio-linux.run&lt;/code>&lt;/p>
+&lt;p>&lt;code>./XploR-Studio-{VERSION}_linux.run&lt;/code>&lt;/p>
 &lt;p>&lt;img src="/images_installation/IDE_Installer/2.png" alt="example image">&lt;/p>
 &lt;p>Select the &lt;strong>Next&lt;/strong> button to proceed with the installation.&lt;/p>
 &lt;p>&lt;img src="/images_installation/IDE_Installer/3.png" alt="example image">&lt;/p>
