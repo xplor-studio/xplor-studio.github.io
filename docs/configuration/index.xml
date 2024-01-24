@@ -39,7 +39,7 @@
 &lt;p>The &lt;strong>Programming IP Core&lt;/strong> dialog appears to make it easier to select IP cores from different vendors:&lt;/p>
 &lt;p>&lt;img src="/configuration/flash/1.png" alt="example image">&lt;/p>
 &lt;p>The images show the IP core selected is &lt;code>s10gx_vexriscv.sof&lt;/code>, which is the bitfile for Intel Stratix 10 GX FPGA board from VexRiscv vendor and the tool used for programming board is &lt;code>quartus_pgm&lt;/code> (Quartus Programmer).&lt;/p>
-&lt;p>To program with more bitfiles, install &lt;a href="/docs/features/component-management/component-category/#IP">&lt;span style="color: blue">Component Management&lt;/span>&lt;/a> from different vendors and select the desired bitfile from the list.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
+&lt;p>To program with more bitfiles, install &lt;a href="/docs/features/component-management/component-category/#ip">&lt;span style="color: blue">IP Component&lt;/span>&lt;/a> from different vendors and select the desired bitfile from the list.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
 &lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>

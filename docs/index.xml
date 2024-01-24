@@ -39,7 +39,7 @@
 &lt;p>The &lt;strong>Programming IP Core&lt;/strong> dialog appears to make it easier to select IP cores from different vendors:&lt;/p>
 &lt;p>&lt;img src="/configuration/flash/1.png" alt="example image">&lt;/p>
 &lt;p>The images show the IP core selected is &lt;code>s10gx_vexriscv.sof&lt;/code>, which is the bitfile for Intel Stratix 10 GX FPGA board from VexRiscv vendor and the tool used for programming board is &lt;code>quartus_pgm&lt;/code> (Quartus Programmer).&lt;/p>
-&lt;p>To program with more bitfiles, install &lt;a href="/docs/features/component-management/component-category/#IP">&lt;span style="color: blue">Component Management&lt;/span>&lt;/a> from different vendors and select the desired bitfile from the list.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
+&lt;p>To program with more bitfiles, install &lt;a href="/docs/features/component-management/component-category/#ip">&lt;span style="color: blue">IP Component&lt;/span>&lt;/a> from different vendors and select the desired bitfile from the list.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
 &lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
@@ -208,22 +208,22 @@ hosts -&amp;gt; JTAG
 &lt;li>Add xip to the PATH environment variable&lt;/li>
 &lt;li>Sign up for an account (from Windows command line). Note that you will need to acknowledge your email before the account is activated.&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>% xip signup
+&lt;pre tabindex="0">&lt;code>$ xip signup
 &lt;/code>&lt;/pre>&lt;h3 id="linux">Linux&lt;/h3>
 &lt;ol>
 &lt;li>Open terminal and type the following command:&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>% curl -L https://raw.githubusercontent.com/xplor-studio/xip/main/get_xip.sh | bash
+&lt;pre tabindex="0">&lt;code>$ curl -L https://raw.githubusercontent.com/xplor-studio/xip/main/get_xip.sh | bash
 &lt;/code>&lt;/pre>&lt;p>Alternative, you can also download directly from: &lt;a href="https://github.com/xplor-studio/xip/releases">https://github.com/xplor-studio/xip/releases&lt;/a>&lt;/p>
 &lt;ol start="2">
 &lt;li>Sign up for an account (from terminal)&lt;/li>
-&lt;/ol></description></item><item><title>Docs: XploR Components</title><link>/docs/concepts/component/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/component/</guid><description>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>$ xip signup
+&lt;/code>&lt;/pre></description></item><item><title>Docs: XploR Components</title><link>/docs/concepts/component/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/component/</guid><description>
 &lt;p>Components are packages of hardware and/or software IP(s) that are bounded to specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
-&lt;p>The &lt;a href="https://xplor.design/">Component Catalog&lt;/a> is a collection of free and paid components from SoC.one, community contributors, and commercial vendors.&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong>
-You can peruse the &lt;a href="https://xplor.design/">Component Catalog&lt;/a> from the XploR Studio Dashboard via the &lt;code>components&lt;/code> menu entry, or with &lt;strong>xip&lt;/strong>.&lt;/p>
-&lt;/blockquote>
+&lt;!-- The [Component Catalog](https://xplor.design/) is a collection of free and paid components from SoC.one, community contributors, and commercial vendors.
+> **Note:**
+> You can peruse the [Component Catalog](https://xplor.design/) from the XploR Studio Dashboard via the `components` menu entry, or with **xip**. -->
 &lt;pre tabindex="0">&lt;code class="language-plantuml" data-lang="plantuml">mainframe XploR components
 state &amp;#34;xplor.design - component registry&amp;#34; as registry {
 state &amp;#34;Free components&amp;#34;
@@ -250,7 +250,7 @@ IDE --&amp;gt; target
 &lt;/code>&lt;/pre>&lt;p>Components are fully integrated with XploR Studio, and can be installed and used by themselves or in combination with other components.&lt;/p>
 &lt;h3 id="creating-and-contributing-components">Creating and contributing components&lt;/h3>
 &lt;p>Developer can create and contribute components to XploR Design component catalog. Once downloaded and installed, contributed components are loaded dynamically XploR Studio.&lt;/p>
-&lt;p>The experience of implementing an XploR Design component is comparable to that of writing a web browser extension. To learn more about XploR component creation, please refer to the &lt;a href="/docs/xplor-platform/featuress">&lt;span style="color: blue">Packaging components&lt;/span>&lt;/a> documentation.&lt;/p>
+&lt;p>The experience of implementing an XploR Design component is comparable to that of writing a web browser extension. To learn more about XploR component creation, please refer to the &lt;a href="/docs/xplor-platform/components">&lt;span style="color: blue">Packaging components&lt;/span>&lt;/a> documentation.&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>IP(s) versus components&amp;quot;&lt;/strong>
 &lt;em> The HDL implementations of hardware peripherals, accelerator, or ISA such as ARM or RISC-V are &lt;b>IP(s)&lt;/b>. &lt;b>components&lt;/b> are combination these IP(s) that has been customized, configured, and built to execute on specific target execution platforms, such as FPGA(s) from AMD or Intel. &lt;/em>&lt;/p>
@@ -2193,7 +2193,7 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;p>Developers can use &lt;strong>xip&lt;/strong> to:&lt;/p>
 &lt;ul>
 &lt;li>&lt;b>signup&lt;/b>: Sign up for a free account from the command line. Alternatively, you can also used &lt;a href="https://accounts.soc.one/">this link&lt;/a> to sign up for a free account.&lt;/li>
-&lt;li>&lt;b>install&lt;/b>: Download and install XploR Studio IDE, or components from &lt;a href="https://xplor.design/">XploR Design&lt;/a>&lt;/li>
+&lt;li>&lt;b>install&lt;/b>: Download and install XploR Studio IDE, or components&lt;/li>
 &lt;li>&lt;b>uninstall&lt;/b>: Uninstall installed components on the host machine.&lt;/li>
 &lt;li>&lt;b>show&lt;/b>: Show information about installed components.&lt;/li>
 &lt;li>&lt;b>list&lt;/b>: List all installed and available components.&lt;/li>

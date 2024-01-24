@@ -46,13 +46,15 @@ The hardware requirements, hardware connections as well as driver installation o
 &lt;li>Add xip to the PATH environment variable&lt;/li>
 &lt;li>Sign up for an account (from Windows command line). Note that you will need to acknowledge your email before the account is activated.&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>% xip signup
+&lt;pre tabindex="0">&lt;code>$ xip signup
 &lt;/code>&lt;/pre>&lt;h3 id="linux">Linux&lt;/h3>
 &lt;ol>
 &lt;li>Open terminal and type the following command:&lt;/li>
 &lt;/ol>
-&lt;pre tabindex="0">&lt;code>% curl -L https://raw.githubusercontent.com/xplor-studio/xip/main/get_xip.sh | bash
+&lt;pre tabindex="0">&lt;code>$ curl -L https://raw.githubusercontent.com/xplor-studio/xip/main/get_xip.sh | bash
 &lt;/code>&lt;/pre>&lt;p>Alternative, you can also download directly from: &lt;a href="https://github.com/xplor-studio/xip/releases">https://github.com/xplor-studio/xip/releases&lt;/a>&lt;/p>
 &lt;ol start="2">
 &lt;li>Sign up for an account (from terminal)&lt;/li>
-&lt;/ol></description></item><item><title>Docs: IDE install</title><link>/docs/installation/ide-install/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/installation/ide-install/</guid><description/></item></channel></rss>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>$ xip signup
+&lt;/code>&lt;/pre></description></item><item><title>Docs: IDE install</title><link>/docs/installation/ide-install/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/installation/ide-install/</guid><description/></item></channel></rss>
