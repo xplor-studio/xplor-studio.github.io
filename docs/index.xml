@@ -396,16 +396,16 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;!-- ## &lt;a id="blinky-debug-de2">5 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/a>
 ### Hardware and driver preparations
 Please refer to the &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
-### Programming IP core
-To program a RISC-V IP core to the board, click on Flash icon on the toolbar
+### Programming Bitfile
+To program a RISC-V Bitfile to the board, click on Flash icon on the toolbar
 ![example image](/quickstart/27.png)
 - In the **Categories**, there are 2 types:
-- "***Free IP For Starter Boards***" includes free IP Core files like Neorv32, Rocket64 or OpenHW group
-- "***Commercial Grade IP for Professional Boards***" includes commercial IP Core files like Andes, Codasip. To download these IP Core files, user need to register an account and download from [https://pathfinder.intel.com/registration/](https://pathfinder.intel.com/registration/)
-- In the **IP Core**, select **stratix10_rocket64.sof** or **Custom IP core** if users use their own RISC-V IP core. In this case, we select "***de2-115_neorv32***" for the neorv32 - DE2-115 project.
+- "***Free IP For Starter Boards***" includes free Bitfile files like Neorv32, Rocket64 or OpenHW group
+- "***Commercial Grade IP for Professional Boards***" includes commercial Bitfile files like Andes, Codasip. To download these Bitfile files, user need to register an account and download from [https://pathfinder.intel.com/registration/](https://pathfinder.intel.com/registration/)
+- In the **Bitfile**, select **stratix10_rocket64.sof** or **Custom Bitfile** if users use their own RISC-V Bitfile. In this case, we select "***de2-115_neorv32***" for the neorv32 - DE2-115 project.
 - Select JTAG cable (if the user has multiple boards connected to the development machine).
 - Click **Finish** to flash Neorv 32-bit RISC-V core to DE2-115 board.
-To view the console output printed from the RISC-V core, there are 2 ways depending on the IP core:
+To view the console output printed from the RISC-V core, there are 2 ways depending on the Bitfile:
 - **Physical UART** &lt;span style="color:red">*(for Open-V-MCU, Neorv32)*:&lt;/style>
 Open the Terminal view and select `COM` port (on Windows) or `/dev/ttyUSBx` port (on Linux) with the following connection settings.
 ![example image](/images_xplorstudio/28.png)
@@ -431,7 +431,7 @@ Open Terminal view and choose Local Terminal. Type `jtagconfig -d` to detect the
 ![example image](/images_xplorstudio/28.1.png)
 Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
 !!!warning "Note"
-Examples with 3 IP cores (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
+Examples with 3 Bitfiles (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
 ### Run project on Intel FPGA DE2-115 platform
 !!!warning "Note"
 It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 5.2](#52-programming-ip-core) for how to program the bitstream.
@@ -484,13 +484,13 @@ To view the program output, switch to the Terminal view.
 ## &lt;a id="blinky-debug-stratix">6 Running and Debugging project with Intel FPGA Stratix 10 GX platform&lt;/a>
 ### Hardware and driver preparations
 For more information, please refer to &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> and [Running and Debugging project with Intel FPGA DE2-115 platform](#5-running-and-debugging-project-with-intel-fpga-de2-115-platform).
-### Programming IP core
-To program a RISC-V IP core to the board, click on the Flash icon on the toolbar:
+### Programming Bitfile
+To program a RISC-V Bitfile to the board, click on the Flash icon on the toolbar:
 ![example image](/images_xplorstudio/43.png)
 - In **Vendor**, select: Neorv32
 - In **Product**, select
 - **neorv32 - Stratix10gx (sof)**.
-- **Custom IP core** if users use their own RISC-V IP core.
+- **Custom Bitfile** if users use their own RISC-V Bitfile.
 - Select the JTAG cable (if users have multiple boards connected to the development machine)
 - Click "Finish" to flash the NEOR32 RISC-V core.
 ### Run project on Intel FPGA Stratix 10 GX platform
@@ -509,8 +509,8 @@ To debug the application on hardware, select project in the Project Explorer, cl
 - Configuration: Uncheck `Virtual Jtag` and select the external JTAG
 ![example image](/images_xplorstudio/47.png)
 ![example image](/images_xplorstudio/48.png)
-For the OpenOCD configuration of each IP core on the Intel Stratix 10 GX board, please refer to the below table:
-| IP cores | Type of JTAG | Supported JTAG |
+For the OpenOCD configuration of each Bitfile on the Intel Stratix 10 GX board, please refer to the below table:
+| Bitfiles | Type of JTAG | Supported JTAG |
 |:-----------:|:-------------:|:-----------------------------------------------------------:|
 | Neorv32 | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
 | Rocket Chip | Virtual JTAG | N/A |
@@ -949,7 +949,7 @@ If any of view disappears, users can always restore by clicking *&lt;strong>Wind
 &lt;li>&lt;strong>openocd-linux64/openocd-win64&lt;/strong>: OpenOCD binary to provide debugging, in-system programming and boundary-scan testing for embedded target devices&lt;/li>
 &lt;/ul>
 &lt;p>All above components are compulsory for debugging RISC-V applications on real hardware.
-Depending on IP Cores or FPGA Board, XploR Studio has many example components for specific cases:&lt;/p>
+Depending on Bitfiles or FPGA Board, XploR Studio has many example components for specific cases:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>baremetal-corevmcu-s10gx-helloworld-example&lt;/strong>: Hello World Baremetal Project for CORE-V-MCU run on Intel Stratix 10 GX board
 &lt;ul>
@@ -977,7 +977,7 @@ Depending on IP Cores or FPGA Board, XploR Studio has many example components fo
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>Moreover, it is necessary to install &lt;a href="https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html">&lt;strong>Quartus Programmer&lt;/strong>&lt;/a> for flashing IP core. After installation, please add Quartus to your environment path before starting XploR Studio.&lt;/p>
+&lt;p>Moreover, it is necessary to install &lt;a href="https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html">&lt;strong>Quartus Programmer&lt;/strong>&lt;/a> for programming Bitfile. After installation, please add Quartus to your environment path before starting XploR Studio.&lt;/p>
 &lt;h2 id="working-flow">Working flow&lt;/h2>
 &lt;h3 id="create-project">Create project&lt;/h3>
 &lt;ol>
@@ -987,11 +987,11 @@ Depending on IP Cores or FPGA Board, XploR Studio has many example components fo
 &lt;ol start="2">
 &lt;li>Other steps (&lt;em>Update build settings&lt;/em>, &lt;em>Build project&lt;/em>) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
 &lt;/ol>
-&lt;h3 id="flash-ip-core">Flash IP Core&lt;/h3>
-&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
+&lt;h3 id="flash-bitfile">Flash Bitfile&lt;/h3>
+&lt;p>To program a RISC-V Bitfile to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
 &lt;p>&lt;img src="/examples/baremetal/litex/6.png" alt="example image">&lt;/p>
 &lt;ul>
-&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-neorv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_neorv32&lt;/strong>&lt;/em> for the neorv32 - DE2-115 project.&lt;/li>
+&lt;li>In the &lt;strong>Bitfile&lt;/strong>, select &lt;strong>de2115-neorv32.sof&lt;/strong> or &lt;strong>Custom Bitfile&lt;/strong> if users use their own RISC-V Bitfile. In this case, we select &lt;em>&lt;strong>de2-115_neorv32&lt;/strong>&lt;/em> for the neorv32 - DE2-115 project.&lt;/li>
 &lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
 &lt;li>Click &lt;strong>Finish&lt;/strong> to flash NEORV 32-bit RISC-V core to DE2-115 board.&lt;/li>
 &lt;/ul>
@@ -1154,7 +1154,7 @@ litex&amp;gt;
 &lt;h3 id="for-fpga-cyclone-10-gx">For FPGA Cyclone 10 GX&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>In &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">&lt;span style="color: blue">Flashing IP Core&lt;/span>&lt;/a> step, please choose the JTAG Cable has postfix is &lt;code>02E120DD&lt;/code>. If not, it will show error like belows:&lt;/p>
+&lt;p>In &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">&lt;span style="color: blue">Programming Bitfile&lt;/span>&lt;/a> step, please choose the JTAG Cable has postfix is &lt;code>02E120DD&lt;/code>. If not, it will show error like belows:&lt;/p>
 &lt;pre tabindex="0">&lt;code>*************** Intel FPGA board flash start ***************
 Info (19848): Regular SEU info =&amp;gt; 105 sector(s), 8 thread(s), 10000000 interval time in microsecond(s)
 Info (19848): IO hash is 375D44051CBCD1FB1F349EB0B5ACD027F92657328775E3F463232CDB69BE6348
@@ -1242,11 +1242,11 @@ Depending on variation of toolchain, XploR Studio has 4 different Linux toolchai
 &lt;li>Other steps (building, running and debugging with QEMU emulator) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
 &lt;/ol>
 &lt;h2 id="working-flow-for-debugging-with-fpga-de2-115-board">Working flow for debugging with FPGA DE2-115 board&lt;/h2>
-&lt;h3 id="programming-ip-core">Programming IP core&lt;/h3>
-&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
+&lt;h3 id="programming-bitfile">Programming Bitfile&lt;/h3>
+&lt;p>To program a RISC-V Bitfile to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/13.png" alt="example image">&lt;/p>
 &lt;ul>
-&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-vexriscv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_vexrisc32&lt;/strong>&lt;/em> for the vexriscv - DE2-115 project.&lt;/li>
+&lt;li>In the &lt;strong>Bitfile&lt;/strong>, select &lt;strong>de2115-vexriscv32.sof&lt;/strong> or &lt;strong>Custom Bitfile&lt;/strong> if users use their own RISC-V Bitfile. In this case, we select &lt;em>&lt;strong>de2-115_vexrisc32&lt;/strong>&lt;/em> for the vexriscv - DE2-115 project.&lt;/li>
 &lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
 &lt;li>Click &lt;strong>Finish&lt;/strong> to flash Vexriscv 32-bit RISC-V core to DE2-115 board.&lt;/li>
 &lt;/ul>
@@ -1443,7 +1443,7 @@ de2-115-vexriscv32 login:
 &lt;/li>
 &lt;/ul>
 &lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.&lt;/p>
-&lt;p>To update the IP of the board, after flashing FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
+&lt;p>To update the IP of the board, after programming FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1487,7 +1487,7 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/li>
 &lt;li>
 &lt;p>Netboot/Reboot Linux
-Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex console or re-program IP core.&lt;/p>
+Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex console or re-program Bitfile.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="setup-environment-on-windows-1011">Setup environment on Windows 10/11&lt;/h3>
@@ -1523,9 +1523,9 @@ Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex co
 &lt;p>&lt;img src="/examples/linux/gnu/64.png" alt="example image">&lt;/p>
 &lt;p>Now we need to setup IP manually bt click on &lt;strong>Edit&lt;/strong> button, choose &lt;strong>Manual&lt;/strong> , type as image and &lt;strong>Save&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/65.png" alt="example image">&lt;/p>
-&lt;p>After that, restart the SolarTFTP server and programming IP Core again.&lt;/p>
+&lt;p>After that, restart the SolarTFTP server and programming Bitfile again.&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/66.png" alt="example image">&lt;/p>
-&lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram IP core.&lt;/p>
+&lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram Bitfile.&lt;/p>
 &lt;h2 id="common-errors">Common errors&lt;/h2></description></item><item><title>Docs: LLVM C/C++ Helloworld</title><link>/docs/examples/linux/llvm-helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/linux/llvm-helloworld/</guid><description>
 &lt;p>This chapter covers the basics of LLVM C/C++ embedded Linux projects, including create/build/run/debug embedded Linux applications. The project referred to by this chapter is called “Hello World.” This application prints “Hello World” text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>
@@ -2137,7 +2137,7 @@ The connection between the PC and the Intel Stratix 10 GX board is shown in the 
 &lt;p>&lt;img src="/hardware/19.png" alt="example image">&lt;/p>
 &lt;p>If you see that the Altera USB Blaster II is unconfigured&lt;/p>
 &lt;p>&lt;img src="/hardware/20.png" alt="example image">&lt;/p>
-&lt;p>and when flashing, the board cannot be detected; open Quartus programmer with administrator rights, wait a few seconds for Quartus Programmer to update the settings.&lt;/p>
+&lt;p>and when programming, the board cannot be detected; open Quartus programmer with administrator rights, wait a few seconds for Quartus Programmer to update the settings.&lt;/p>
 &lt;p>&lt;img src="/hardware/21.png" alt="example image">&lt;/p>
 &lt;p>After the settings are updated, the JTAG USB can be used.&lt;/p>
 &lt;p>&lt;img src="/hardware/22.png" alt="example image">&lt;/p>
@@ -2165,7 +2165,7 @@ To debug embedded Linux RISC-V applications on the board, the following requirem
 - DE2-115 board: 192.168.1.50
 - TFTP server: 192.168.1.100
 On the PC, the IP address is set to **192.168.1.100**. If users want to use a different subnet, please update the IP of the board.
-To update the IP of the board, after flashing FPGA bitstream, open the `/dev/ttyUSB*` or `COM*` port console to the board and set the IP as:
+To update the IP of the board, after programming FPGA bitstream, open the `/dev/ttyUSB*` or `COM*` port console to the board and set the IP as:
 | Command | Usage |
 |:-------------|:------------------------------------------------------------------------------------|
 | eth_local_ip | Set the IP address of the board |

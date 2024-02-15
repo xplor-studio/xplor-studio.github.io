@@ -46,7 +46,7 @@
 &lt;li>&lt;strong>openocd-linux64/openocd-win64&lt;/strong>: OpenOCD binary to provide debugging, in-system programming and boundary-scan testing for embedded target devices&lt;/li>
 &lt;/ul>
 &lt;p>All above components are compulsory for debugging RISC-V applications on real hardware.
-Depending on IP Cores or FPGA Board, XploR Studio has many example components for specific cases:&lt;/p>
+Depending on Bitfiles or FPGA Board, XploR Studio has many example components for specific cases:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>baremetal-corevmcu-s10gx-helloworld-example&lt;/strong>: Hello World Baremetal Project for CORE-V-MCU run on Intel Stratix 10 GX board
 &lt;ul>
@@ -74,7 +74,7 @@ Depending on IP Cores or FPGA Board, XploR Studio has many example components fo
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>Moreover, it is necessary to install &lt;a href="https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html">&lt;strong>Quartus Programmer&lt;/strong>&lt;/a> for flashing IP core. After installation, please add Quartus to your environment path before starting XploR Studio.&lt;/p>
+&lt;p>Moreover, it is necessary to install &lt;a href="https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html">&lt;strong>Quartus Programmer&lt;/strong>&lt;/a> for programming Bitfile. After installation, please add Quartus to your environment path before starting XploR Studio.&lt;/p>
 &lt;h2 id="working-flow">Working flow&lt;/h2>
 &lt;h3 id="create-project">Create project&lt;/h3>
 &lt;ol>
@@ -84,11 +84,11 @@ Depending on IP Cores or FPGA Board, XploR Studio has many example components fo
 &lt;ol start="2">
 &lt;li>Other steps (&lt;em>Update build settings&lt;/em>, &lt;em>Build project&lt;/em>) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
 &lt;/ol>
-&lt;h3 id="flash-ip-core">Flash IP Core&lt;/h3>
-&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
+&lt;h3 id="flash-bitfile">Flash Bitfile&lt;/h3>
+&lt;p>To program a RISC-V Bitfile to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
 &lt;p>&lt;img src="/examples/baremetal/litex/6.png" alt="example image">&lt;/p>
 &lt;ul>
-&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-neorv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_neorv32&lt;/strong>&lt;/em> for the neorv32 - DE2-115 project.&lt;/li>
+&lt;li>In the &lt;strong>Bitfile&lt;/strong>, select &lt;strong>de2115-neorv32.sof&lt;/strong> or &lt;strong>Custom Bitfile&lt;/strong> if users use their own RISC-V Bitfile. In this case, we select &lt;em>&lt;strong>de2-115_neorv32&lt;/strong>&lt;/em> for the neorv32 - DE2-115 project.&lt;/li>
 &lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
 &lt;li>Click &lt;strong>Finish&lt;/strong> to flash NEORV 32-bit RISC-V core to DE2-115 board.&lt;/li>
 &lt;/ul>
@@ -251,7 +251,7 @@ litex&amp;gt;
 &lt;h3 id="for-fpga-cyclone-10-gx">For FPGA Cyclone 10 GX&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>In &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">&lt;span style="color: blue">Flashing IP Core&lt;/span>&lt;/a> step, please choose the JTAG Cable has postfix is &lt;code>02E120DD&lt;/code>. If not, it will show error like belows:&lt;/p>
+&lt;p>In &lt;a href="/docs/examples/baremetal/litex_helloworld#flash-ip-core">&lt;span style="color: blue">Programming Bitfile&lt;/span>&lt;/a> step, please choose the JTAG Cable has postfix is &lt;code>02E120DD&lt;/code>. If not, it will show error like belows:&lt;/p>
 &lt;pre tabindex="0">&lt;code>*************** Intel FPGA board flash start ***************
 Info (19848): Regular SEU info =&amp;gt; 105 sector(s), 8 thread(s), 10000000 interval time in microsecond(s)
 Info (19848): IO hash is 375D44051CBCD1FB1F349EB0B5ACD027F92657328775E3F463232CDB69BE6348

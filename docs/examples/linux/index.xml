@@ -34,11 +34,11 @@ Depending on variation of toolchain, XploR Studio has 4 different Linux toolchai
 &lt;li>Other steps (building, running and debugging with QEMU emulator) are same as the quick-start project. Please refer to &lt;a href="/docs/quick-start/freertos">&lt;span style="color: blue">Quick start with FreeRTOS&lt;/span>&lt;/a> project for general working flow.&lt;/li>
 &lt;/ol>
 &lt;h2 id="working-flow-for-debugging-with-fpga-de2-115-board">Working flow for debugging with FPGA DE2-115 board&lt;/h2>
-&lt;h3 id="programming-ip-core">Programming IP core&lt;/h3>
-&lt;p>To program a RISC-V IP core to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
+&lt;h3 id="programming-bitfile">Programming Bitfile&lt;/h3>
+&lt;p>To program a RISC-V Bitfile to the board, click on Flash icon &lt;img src="/examples/baremetal/litex/5.png" alt="Image alt" style="display: inline;"> on the toolbar&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/13.png" alt="example image">&lt;/p>
 &lt;ul>
-&lt;li>In the &lt;strong>IP Core&lt;/strong>, select &lt;strong>de2115-vexriscv32.sof&lt;/strong> or &lt;strong>Custom IP core&lt;/strong> if users use their own RISC-V IP core. In this case, we select &lt;em>&lt;strong>de2-115_vexrisc32&lt;/strong>&lt;/em> for the vexriscv - DE2-115 project.&lt;/li>
+&lt;li>In the &lt;strong>Bitfile&lt;/strong>, select &lt;strong>de2115-vexriscv32.sof&lt;/strong> or &lt;strong>Custom Bitfile&lt;/strong> if users use their own RISC-V Bitfile. In this case, we select &lt;em>&lt;strong>de2-115_vexrisc32&lt;/strong>&lt;/em> for the vexriscv - DE2-115 project.&lt;/li>
 &lt;li>Select JTAG cable (if the user has multiple boards connected to the development machine).&lt;/li>
 &lt;li>Click &lt;strong>Finish&lt;/strong> to flash Vexriscv 32-bit RISC-V core to DE2-115 board.&lt;/li>
 &lt;/ul>
@@ -235,7 +235,7 @@ de2-115-vexriscv32 login:
 &lt;/li>
 &lt;/ul>
 &lt;p>On the PC, the IP address is set to &lt;strong>192.168.1.100&lt;/strong>. If users want to use a different subnet, please update the IP of the board.&lt;/p>
-&lt;p>To update the IP of the board, after flashing FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
+&lt;p>To update the IP of the board, after programming FPGA bitstream, open the &lt;code>/dev/ttyUSB*&lt;/code> or &lt;code>COM*&lt;/code> port console to the board and set the IP as:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -279,7 +279,7 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/li>
 &lt;li>
 &lt;p>Netboot/Reboot Linux
-Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex console or re-program IP core.&lt;/p>
+Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex console or re-program Bitfile.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="setup-environment-on-windows-1011">Setup environment on Windows 10/11&lt;/h3>
@@ -315,9 +315,9 @@ Then setup IP address (if needed) and run &lt;code>netboot&lt;/code> in Litex co
 &lt;p>&lt;img src="/examples/linux/gnu/64.png" alt="example image">&lt;/p>
 &lt;p>Now we need to setup IP manually bt click on &lt;strong>Edit&lt;/strong> button, choose &lt;strong>Manual&lt;/strong> , type as image and &lt;strong>Save&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/65.png" alt="example image">&lt;/p>
-&lt;p>After that, restart the SolarTFTP server and programming IP Core again.&lt;/p>
+&lt;p>After that, restart the SolarTFTP server and programming Bitfile again.&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/66.png" alt="example image">&lt;/p>
-&lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram IP core.&lt;/p>
+&lt;p>If Serial Terminal stills show &lt;em>Network boot failed&lt;/em>, please try to turn off your Windows Firewall and reprogram Bitfile.&lt;/p>
 &lt;h2 id="common-errors">Common errors&lt;/h2></description></item><item><title>Docs: LLVM C/C++ Helloworld</title><link>/docs/examples/linux/llvm-helloworld/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/examples/linux/llvm-helloworld/</guid><description>
 &lt;p>This chapter covers the basics of LLVM C/C++ embedded Linux projects, including create/build/run/debug embedded Linux applications. The project referred to by this chapter is called “Hello World.” This application prints “Hello World” text and runs a simple for-loop for simple demonstration. The application can also be built and run on QEMU emulator.&lt;/p>
 &lt;h2 id="components-prerequisites">Components Prerequisites&lt;/h2>

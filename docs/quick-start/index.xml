@@ -123,16 +123,16 @@ Then select &lt;strong>C/C++ Build &amp;gt; Settings&lt;/strong>&lt;/p>
 &lt;!-- ## &lt;a id="blinky-debug-de2">5 Running and Debugging project with Intel FPGA DE2-115 platform&lt;/a>
 ### Hardware and driver preparations
 Please refer to the &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> document for more details.
-### Programming IP core
-To program a RISC-V IP core to the board, click on Flash icon on the toolbar
+### Programming Bitfile
+To program a RISC-V Bitfile to the board, click on Flash icon on the toolbar
 ![example image](/quickstart/27.png)
 - In the **Categories**, there are 2 types:
-- "***Free IP For Starter Boards***" includes free IP Core files like Neorv32, Rocket64 or OpenHW group
-- "***Commercial Grade IP for Professional Boards***" includes commercial IP Core files like Andes, Codasip. To download these IP Core files, user need to register an account and download from [https://pathfinder.intel.com/registration/](https://pathfinder.intel.com/registration/)
-- In the **IP Core**, select **stratix10_rocket64.sof** or **Custom IP core** if users use their own RISC-V IP core. In this case, we select "***de2-115_neorv32***" for the neorv32 - DE2-115 project.
+- "***Free IP For Starter Boards***" includes free Bitfile files like Neorv32, Rocket64 or OpenHW group
+- "***Commercial Grade IP for Professional Boards***" includes commercial Bitfile files like Andes, Codasip. To download these Bitfile files, user need to register an account and download from [https://pathfinder.intel.com/registration/](https://pathfinder.intel.com/registration/)
+- In the **Bitfile**, select **stratix10_rocket64.sof** or **Custom Bitfile** if users use their own RISC-V Bitfile. In this case, we select "***de2-115_neorv32***" for the neorv32 - DE2-115 project.
 - Select JTAG cable (if the user has multiple boards connected to the development machine).
 - Click **Finish** to flash Neorv 32-bit RISC-V core to DE2-115 board.
-To view the console output printed from the RISC-V core, there are 2 ways depending on the IP core:
+To view the console output printed from the RISC-V core, there are 2 ways depending on the Bitfile:
 - **Physical UART** &lt;span style="color:red">*(for Open-V-MCU, Neorv32)*:&lt;/style>
 Open the Terminal view and select `COM` port (on Windows) or `/dev/ttyUSBx` port (on Linux) with the following connection settings.
 ![example image](/images_xplorstudio/28.png)
@@ -158,7 +158,7 @@ Open Terminal view and choose Local Terminal. Type `jtagconfig -d` to detect the
 ![example image](/images_xplorstudio/28.1.png)
 Then, type `nios2-terminal -c $index -d 1 -i 0`. In this case, the index is number 2, so the command is `nios2-terminal -c 2 -d 1 -i 0`.
 !!!warning "Note"
-Examples with 3 IP cores (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
+Examples with 3 Bitfiles (Rocket Chip, Andes, Codasip) on the Intel Stratix 10 GX board will not print the output on Terminal view on this release (version 1.1).
 ### Run project on Intel FPGA DE2-115 platform
 !!!warning "Note"
 It is recommended to program the bitstream to Intel FPGA board before starting project debugging. Please refer to [section 5.2](#52-programming-ip-core) for how to program the bitstream.
@@ -211,13 +211,13 @@ To view the program output, switch to the Terminal view.
 ## &lt;a id="blinky-debug-stratix">6 Running and Debugging project with Intel FPGA Stratix 10 GX platform&lt;/a>
 ### Hardware and driver preparations
 For more information, please refer to &lt;a href="../../hardware-environment/">Hardware and Environment Setup&lt;/a> and [Running and Debugging project with Intel FPGA DE2-115 platform](#5-running-and-debugging-project-with-intel-fpga-de2-115-platform).
-### Programming IP core
-To program a RISC-V IP core to the board, click on the Flash icon on the toolbar:
+### Programming Bitfile
+To program a RISC-V Bitfile to the board, click on the Flash icon on the toolbar:
 ![example image](/images_xplorstudio/43.png)
 - In **Vendor**, select: Neorv32
 - In **Product**, select
 - **neorv32 - Stratix10gx (sof)**.
-- **Custom IP core** if users use their own RISC-V IP core.
+- **Custom Bitfile** if users use their own RISC-V Bitfile.
 - Select the JTAG cable (if users have multiple boards connected to the development machine)
 - Click "Finish" to flash the NEOR32 RISC-V core.
 ### Run project on Intel FPGA Stratix 10 GX platform
@@ -236,8 +236,8 @@ To debug the application on hardware, select project in the Project Explorer, cl
 - Configuration: Uncheck `Virtual Jtag` and select the external JTAG
 ![example image](/images_xplorstudio/47.png)
 ![example image](/images_xplorstudio/48.png)
-For the OpenOCD configuration of each IP core on the Intel Stratix 10 GX board, please refer to the below table:
-| IP cores | Type of JTAG | Supported JTAG |
+For the OpenOCD configuration of each Bitfile on the Intel Stratix 10 GX board, please refer to the below table:
+| Bitfiles | Type of JTAG | Supported JTAG |
 |:-----------:|:-------------:|:-----------------------------------------------------------:|
 | Neorv32 | Physical JTAG | Altera USB Blaster, DP Bus Blaster v3, Olimex JTAG Adapter. |
 | Rocket Chip | Virtual JTAG | N/A |

@@ -95,7 +95,7 @@ The connection between the PC and the Intel Stratix 10 GX board is shown in the 
 &lt;p>&lt;img src="/hardware/19.png" alt="example image">&lt;/p>
 &lt;p>If you see that the Altera USB Blaster II is unconfigured&lt;/p>
 &lt;p>&lt;img src="/hardware/20.png" alt="example image">&lt;/p>
-&lt;p>and when flashing, the board cannot be detected; open Quartus programmer with administrator rights, wait a few seconds for Quartus Programmer to update the settings.&lt;/p>
+&lt;p>and when programming, the board cannot be detected; open Quartus programmer with administrator rights, wait a few seconds for Quartus Programmer to update the settings.&lt;/p>
 &lt;p>&lt;img src="/hardware/21.png" alt="example image">&lt;/p>
 &lt;p>After the settings are updated, the JTAG USB can be used.&lt;/p>
 &lt;p>&lt;img src="/hardware/22.png" alt="example image">&lt;/p>
@@ -123,7 +123,7 @@ To debug embedded Linux RISC-V applications on the board, the following requirem
 - DE2-115 board: 192.168.1.50
 - TFTP server: 192.168.1.100
 On the PC, the IP address is set to **192.168.1.100**. If users want to use a different subnet, please update the IP of the board.
-To update the IP of the board, after flashing FPGA bitstream, open the `/dev/ttyUSB*` or `COM*` port console to the board and set the IP as:
+To update the IP of the board, after programming FPGA bitstream, open the `/dev/ttyUSB*` or `COM*` port console to the board and set the IP as:
 | Command | Usage |
 |:-------------|:------------------------------------------------------------------------------------|
 | eth_local_ip | Set the IP address of the board |
