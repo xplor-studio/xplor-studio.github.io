@@ -1363,7 +1363,7 @@ root@de2-115-vexriscv32:~# ifconfig eth0 192.168.1.50 netmask 255.255.255.0
 &lt;/li>
 &lt;/ul>
 &lt;p>There are some differences when debugging Linux applications, it is necessary to update some config as follows:&lt;/p>
-&lt;p>On the Debugger tab, select Intel FPGA Board.&lt;/p>
+&lt;p>On the Debugger tab, select Remote Application by default.&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/46.png" alt="example image">&lt;/p>
 &lt;p>On the Configuration, select &amp;ldquo;&lt;strong>Advanced Configuration&lt;/strong>&amp;rdquo;.&lt;/p>
 &lt;p>&lt;img src="/examples/linux/gnu/47.png" alt="example image">&lt;/p>
