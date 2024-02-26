@@ -20,7 +20,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xip install xplor-studio-ide-win64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
-&lt;/div></description></item><item><title>Docs: Using IDE installer</title><link>/docs/installation/ide-install/ide-installer/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/ide-install/ide-installer/</guid><description>
+&lt;/div>
+&lt;p>📝&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;p>Please restart your terminal/PC and then check XPLORSTUDIO_HOME if exists before installing other XploR Studio components.&lt;/p></description></item><item><title>Docs: Using IDE installer</title><link>/docs/installation/ide-install/ide-installer/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/ide-install/ide-installer/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
 The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity.&lt;/p>

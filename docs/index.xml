@@ -201,7 +201,7 @@ state JTAG
 note top of JTAG : JTAG used for both hardware\nand software programming
 hosts -&amp;gt; JTAG
 &lt;/code>&lt;/pre></description></item><item><title>Docs: XIP installer</title><link>/docs/installation/xip-install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/xip-install/</guid><description>
-&lt;p>&lt;strong>XIP&lt;/strong> (i.e. XploR pip) is a standalone application used for downloading, installing and managing the IDE and blueprints. This section contains instructions on how to install XIP on Windows or Linux hosts.&lt;/p>
+&lt;p>&lt;strong>XIP&lt;/strong> (i.e. XploR pip) is a standalone application used for downloading, installing and managing the IDE and components. This section contains instructions on how to install XIP on Windows or Linux hosts.&lt;/p>
 &lt;h3 id="window">Window&lt;/h3>
 &lt;ol>
 &lt;li>Go to the website &lt;a href="https://github.com/xplor-studio/xip/releases">https://github.com/xplor-studio/xip/releases&lt;/a> and download the xip.exe file&lt;/li>
@@ -219,7 +219,7 @@ hosts -&amp;gt; JTAG
 &lt;li>Sign up for an account (from terminal)&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>$ xip signup
-&lt;/code>&lt;/pre></description></item><item><title>Docs: XploR Components</title><link>/docs/concepts/component/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/component/</guid><description>
+&lt;/code>&lt;/pre>&lt;p>💡For more information and examples, see the &lt;a href="/docs/xplor-platform/xip/">XIP&lt;/a> reference.&lt;/p></description></item><item><title>Docs: XploR Components</title><link>/docs/concepts/component/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/concepts/component/</guid><description>
 &lt;p>Components are packages of hardware and/or software IP(s) that are bounded to specific &lt;a href="/docs/concepts/execution-environment/">&lt;em>execution platform(s)&lt;/em>&lt;/a>.&lt;/p>
 &lt;!-- The [Component Catalog](https://xplor.design/) is a collection of free and paid components from SoC.one, community contributors, and commercial vendors.
 > **Note:**
@@ -549,7 +549,9 @@ Click **Apply** then click **Debug** to start debugging with the custom openocd 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xip install xplor-studio-ide-win64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
-&lt;/div></description></item><item><title>Docs: Using IDE installer</title><link>/docs/installation/ide-install/ide-installer/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/ide-install/ide-installer/</guid><description>
+&lt;/div>
+&lt;p>📝&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;p>Please restart your terminal/PC and then check XPLORSTUDIO_HOME if exists before installing other XploR Studio components.&lt;/p></description></item><item><title>Docs: Using IDE installer</title><link>/docs/installation/ide-install/ide-installer/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/ide-install/ide-installer/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
 The installer needs to pull development packages from the internet. Please make sure that your machine has internet connectivity.&lt;/p>
@@ -697,7 +699,7 @@ If you do not wish to install the dependencies of specific components, please se
 &lt;/code>&lt;/pre>&lt;p>Or install component with specific version:&lt;/p>
 &lt;pre tabindex="0">&lt;code>xip install [component-name]==[version]
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Component Category</title><link>/docs/features/component-management/component-category/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/features/component-management/component-category/</guid><description>
-&lt;p>Xplor component category has 4 types: &lt;strong>Software&lt;/strong>, &lt;strong>IP&lt;/strong>, &lt;strong>Executive Platform&lt;/strong>, and &lt;strong>Blueprint&lt;/strong>. Each type has its own characteristics and usage.&lt;/p>
+&lt;p>Xplor component category has 4 types: &lt;strong>Software&lt;/strong>, &lt;strong>IP&lt;/strong>, &lt;strong>Executive Platform&lt;/strong>, and &lt;strong>Component&lt;/strong>. Each type has its own characteristics and usage.&lt;/p>
 &lt;h2 id="software">Software&lt;/h2>
 &lt;p>A component of type &lt;strong>Software&lt;/strong> is a software package that can be installed on a host machine or target machine. It can be a toolchain, a library, an application, or a plugin. A software component can be installed on the host machine and used by XploR Studio IDE.&lt;/p>
 &lt;p>The hierarchy of a software component is as follows:&lt;/p>
@@ -806,9 +808,9 @@ If you do not wish to install the dependencies of specific components, please se
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="blueprint">Blueprint&lt;/h2>
-&lt;p>A component of type &lt;strong>Blueprint&lt;/strong> is a blueprint that contains one or more components. It can be a project, a platform, or a toolchain. A blueprint component can be used for running end-to-end a lab/experiment.&lt;/p>
-&lt;p>The hierarchy of a Blueprint component is as follows:&lt;/p>
+&lt;h2 id="component">Component&lt;/h2>
+&lt;p>A &lt;strong>Component&lt;/strong> can be a project, a platform, or a toolchain. A component can be used for running end-to-end a lab/experiment.&lt;/p>
+&lt;p>The hierarchy of a Component is as follows:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Profile&lt;/strong>: A component related to the profile.
 &lt;ul>
@@ -2197,6 +2199,8 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;li>&lt;b>uninstall&lt;/b>: Uninstall installed components on the host machine.&lt;/li>
 &lt;li>&lt;b>show&lt;/b>: Show information about installed components.&lt;/li>
 &lt;li>&lt;b>list&lt;/b>: List all installed and available components.&lt;/li>
+&lt;li>&lt;b>ide&lt;/b>: Manipulations with the IDE (Currently only support for XploR Studio).&lt;/li>
+&lt;li>&lt;b>env&lt;/b>: Execute a command in a virtual environment.&lt;/li>
 &lt;/ul>
 &lt;p>To get more information:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip --help
@@ -2206,20 +2210,26 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: xip &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--version&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--xplor-home &amp;lt;path&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--init&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Usage: xip &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> COMMAND &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>ARGS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>A component manager CLI
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> XploR CLI to manage manipulation with XploR Studio IDE and components.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>optional arguments:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h, --help show this &lt;span style="color:#204a87">help&lt;/span> message and &lt;span style="color:#204a87">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Options:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --home &amp;lt;path&amp;gt; Set the XploR workspace and &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">$XPLOR_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;path&amp;gt; &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> it not
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exists &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>Default: $/home/user/.xplor&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v, --verbose Enables verbose mode.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version Show the version and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --help Show this message and exit.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Commands:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> signup Sign up &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> a free account.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> env Execute a &lt;span style="color:#204a87">command&lt;/span> in a virtual environment.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ide Manipulations with the IDE &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>Currently only support &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> XploR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Studio&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> install Install a component.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list List components.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> show Show component info.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> signup Sign up a new account.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uninstall Uninstall a component.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> show Show the information of a component.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list List installed components.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>General options:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version Show version and exit.
@@ -2268,24 +2278,25 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong> Please activate your account by clicking the link in the activation email.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="sign-in">Sign in&lt;/h2>
-&lt;p>After signing up, users can authenticate with the registry with the following command: &lt;code>xip --init&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip --init
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_/ .__/_/&lt;span style="color:#4e9a06">\_&lt;/span>__/_/&lt;span style="color:#000;font-weight:bold">|&lt;/span>_&lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /_/ Explore your SoC Design!
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.105&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Setup the workspace.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.105&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.107&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Credentials Verification.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get a new token from the server.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> &lt;strong>xip&lt;/strong> will open a browser for users to sign in. If login is successful, users will be requested access to some permissions.&lt;/p>
-&lt;/blockquote>
+&lt;!-- ## Sign in
+After signing up, users can authenticate with the registry with the following command: `xip --init`.
+``` bash
+$ xip --init
+_ __ __ ___
+| |/_/__ / /__ / _ \
+_> &lt;/ _ \/ / _ \/ , _/
+/_/|_/ .__/_/\___/_/|_|
+/_/ Explore your SoC Design!
+[ 0.105] Setup the workspace.
+[ 0.105] The XploR's workspace folder already exists.
+[ 0.107] Credentials Verification.
+Get a new token from the server.
+``` -->
 &lt;h2 id="install">Install&lt;/h2>
 &lt;p>Use &lt;code>xip install&lt;/code> to install components with or without dependencies.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> &lt;strong>xip&lt;/strong> will open a browser for users to sign in at the first time. If login is successful, users will be requested access to some permissions.&lt;/p>
+&lt;/blockquote>
 &lt;p>To install the GNU elf toolchain and related dependencies, use:&lt;/p>
 &lt;div class="td-card-group card-group p-0 mb-4">
 &lt;div class="td-card card border me-4">
@@ -2370,12 +2381,12 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Author: SoC.One Inc.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Author-email: info@soc.one
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>License: Free
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Location: /home/hien/.xplor/components
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Location: /home/user/.xplor/components
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Requires:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Required-by: baremetal-vexriscv-agilex-helloworld-example, xplor-studio-baremetal-debug-plugin
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="uninstall">Uninstall&lt;/h2>
 &lt;p>To uninstall the installed component:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip uninstall qemu
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ xip uninstall rv-xplor-elf-linux64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _ __ __ ___
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>/_/__ / /__ / _ &lt;span style="color:#4e9a06">\ &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _&amp;gt; &amp;lt;/ _ &lt;span style="color:#4e9a06">\/&lt;/span> / _ &lt;span style="color:#4e9a06">\/&lt;/span> , _/
@@ -2402,7 +2413,7 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> 0.004&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> The XploR&lt;span style="color:#a40000">&amp;#39;&lt;/span>s workspace folder already exists!
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Package Version
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>------------------- -------
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-qemu-linux64 qemu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-qemu-linux64 1.0.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-linux-rootfs 1.0.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rv-linux-rootfs-debug 1.0.0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To show all available components for your account:&lt;/p>
@@ -2524,7 +2535,7 @@ sudo ifconfig $NIC 192.168.1.100
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Components</title><link>/docs/xplor-platform/components/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/xplor-platform/components/</guid><description>
 &lt;blockquote>
-&lt;p>&lt;strong>WARNING&lt;/strong>
+&lt;p>&lt;strong>WARNING:&lt;/strong>
 The following guide is preliminary and subjected to changes.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
@@ -2675,16 +2686,14 @@ Wrong name : `component_with-wrong_name`
 &lt;p>If there are executable files that need to run after the component is installed, please add &lt;code>post-install.sh/post-install.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
 &lt;p>If there are executable files that need to run before the component is uninstalled, please add &lt;code>pre-uninstall.sh/pre-uninstall.bat&lt;/code> file (host specific) to the data folder.&lt;/p>
 &lt;/div>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>xplor-studio-elf/
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rv-xplor-elf-linux64/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── setup.py
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-studio-elf
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── linux.x86_64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ ├── post-install.sh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ └── pre-uninstall.sh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── win32.x86_64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── post-install.bat
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── pre-uninstall.bat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── pre-build.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── rv-xplor-elf-linux64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── env.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── post-install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── pre-uninstall.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── setup.py
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="building-component">Building component&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>% python3 setup.py sdist
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or &lt;code>% make build&lt;/code>&lt;/p>
@@ -2704,10 +2713,10 @@ Wrong name : `component_with-wrong_name`
 &lt;p>This is an example of how to create a component for Baremetal Helloworld sample, running on QEMU simulator.&lt;/p>
 &lt;p>Download and extract the Sample component template from &lt;a href="https://github.com/xplor-studio/xip/blob/component-template/xplor-studio-sample-component-template.zip">here&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Makefile
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xplor-studio-virt-qemu-baremetal-helloworld/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>baremetal-virt-qemu-helloworld-example/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── MANIFEST.in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── setup.py
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── xplor-studio-virt-qemu-baremetal-helloworld
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── baremetal-virt-qemu-helloworld-example
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── src
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ ├── main.c
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ └── ...
@@ -2726,7 +2735,7 @@ Wrong name : `component_with-wrong_name`
 &lt;li>&lt;code>MANIFEST.in&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Just need to replace with component&amp;rsquo;s name&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>global-include xplor-studio-virt-qemu-baremetal-helloworld/**/*
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>global-include baremetal-virt-qemu-helloworld-example/**/*
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>&lt;code>setup.py&lt;/code>&lt;/li>
 &lt;/ul>
@@ -2753,7 +2762,7 @@ Wrong name : `component_with-wrong_name`
 &lt;/blockquote>
 &lt;p>Developer have to select the correct Project&amp;rsquo;s category from above list.&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>xplor-studio-virt-qemu-baremetal-helloworld&lt;/code>&lt;/li>
+&lt;li>&lt;code>baremetal-virt-qemu-helloworld-example&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Contains all resources of Eclipse&amp;rsquo;s project such as source code files, header files, linker script, libraries &amp;hellip;&lt;/p>
 &lt;p>&lt;img src="/xplor-platform/components/src_main.png" alt="example image">&lt;/p>

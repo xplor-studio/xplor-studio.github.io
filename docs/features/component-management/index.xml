@@ -38,7 +38,7 @@ If you do not wish to install the dependencies of specific components, please se
 &lt;/code>&lt;/pre>&lt;p>Or install component with specific version:&lt;/p>
 &lt;pre tabindex="0">&lt;code>xip install [component-name]==[version]
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Component Category</title><link>/docs/features/component-management/component-category/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/features/component-management/component-category/</guid><description>
-&lt;p>Xplor component category has 4 types: &lt;strong>Software&lt;/strong>, &lt;strong>IP&lt;/strong>, &lt;strong>Executive Platform&lt;/strong>, and &lt;strong>Blueprint&lt;/strong>. Each type has its own characteristics and usage.&lt;/p>
+&lt;p>Xplor component category has 4 types: &lt;strong>Software&lt;/strong>, &lt;strong>IP&lt;/strong>, &lt;strong>Executive Platform&lt;/strong>, and &lt;strong>Component&lt;/strong>. Each type has its own characteristics and usage.&lt;/p>
 &lt;h2 id="software">Software&lt;/h2>
 &lt;p>A component of type &lt;strong>Software&lt;/strong> is a software package that can be installed on a host machine or target machine. It can be a toolchain, a library, an application, or a plugin. A software component can be installed on the host machine and used by XploR Studio IDE.&lt;/p>
 &lt;p>The hierarchy of a software component is as follows:&lt;/p>
@@ -147,9 +147,9 @@ If you do not wish to install the dependencies of specific components, please se
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="blueprint">Blueprint&lt;/h2>
-&lt;p>A component of type &lt;strong>Blueprint&lt;/strong> is a blueprint that contains one or more components. It can be a project, a platform, or a toolchain. A blueprint component can be used for running end-to-end a lab/experiment.&lt;/p>
-&lt;p>The hierarchy of a Blueprint component is as follows:&lt;/p>
+&lt;h2 id="component">Component&lt;/h2>
+&lt;p>A &lt;strong>Component&lt;/strong> can be a project, a platform, or a toolchain. A component can be used for running end-to-end a lab/experiment.&lt;/p>
+&lt;p>The hierarchy of a Component is as follows:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Profile&lt;/strong>: A component related to the profile.
 &lt;ul>

@@ -39,7 +39,7 @@
 &lt;/ul>
 &lt;!-- ## Hardware Debug Requirements
 The hardware requirements, hardware connections as well as driver installation on a host machine are documented in &lt;a href="../hardware-environment">**Hardware and Environment Setup**&lt;/a>. If you are going to develop and debug RISC-V applications on Intel FPGA platforms, please refer to this document for more details. --></description></item><item><title>Docs: XIP installer</title><link>/docs/installation/xip-install/</link><pubDate>Tue, 06 Oct 2020 08:49:15 +0000</pubDate><guid>/docs/installation/xip-install/</guid><description>
-&lt;p>&lt;strong>XIP&lt;/strong> (i.e. XploR pip) is a standalone application used for downloading, installing and managing the IDE and blueprints. This section contains instructions on how to install XIP on Windows or Linux hosts.&lt;/p>
+&lt;p>&lt;strong>XIP&lt;/strong> (i.e. XploR pip) is a standalone application used for downloading, installing and managing the IDE and components. This section contains instructions on how to install XIP on Windows or Linux hosts.&lt;/p>
 &lt;h3 id="window">Window&lt;/h3>
 &lt;ol>
 &lt;li>Go to the website &lt;a href="https://github.com/xplor-studio/xip/releases">https://github.com/xplor-studio/xip/releases&lt;/a> and download the xip.exe file&lt;/li>
@@ -57,4 +57,4 @@ The hardware requirements, hardware connections as well as driver installation o
 &lt;li>Sign up for an account (from terminal)&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>$ xip signup
-&lt;/code>&lt;/pre></description></item><item><title>Docs: IDE install</title><link>/docs/installation/ide-install/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/installation/ide-install/</guid><description/></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;p>💡For more information and examples, see the &lt;a href="/docs/xplor-platform/xip/">XIP&lt;/a> reference.&lt;/p></description></item><item><title>Docs: IDE install</title><link>/docs/installation/ide-install/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/installation/ide-install/</guid><description/></item></channel></rss>
