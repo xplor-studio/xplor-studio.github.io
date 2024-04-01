@@ -37,17 +37,9 @@
 &lt;p>For ASIC target platforms, no additional preparation is needed.&lt;/p>
 &lt;p>To program a bitfile to the specific board, click on the flash icon &lt;img src="/configuration/flash/flashing-icon.png" alt="Image alt" style="display: inline;"> on the toolbar of XploR Studio IDE.&lt;/p>
 &lt;p>The &lt;strong>Programming Bitfile&lt;/strong> dialog appears to make it easier to select Bitfiles from different vendors:&lt;/p>
-&lt;p>Currently, XploR Studio is supporting 2 different types of programming tools:&lt;/p>
-&lt;ul>
-&lt;li>Program bitstream file to Intel FPGA Board using Quartus tool. User can download and install Quartus tool from this link &lt;a href="https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html">&lt;strong>Quartus Programmer&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>Program bit file to Xilinx FPGA Board using Vivado tool. User can download and install Vivado tool from this link &lt;a href="https://www.xilinx.com/support/download.html">&lt;strong>Vivado Programmer&lt;/strong>&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>After installation, please add the paths to these tools to your environment path before using XploR Studio to program bitstream files.&lt;/p>
 &lt;p>&lt;img src="/configuration/flash/1.png" alt="example image">&lt;/p>
-&lt;p>This image shows the selected Bitfile is &lt;code>de2-115_neorv32.sof&lt;/code>, which is the bitfile for Terrasic DE2-115 FPGA board from Stephan Nolting vendor and the tool used for programming board is &lt;code>quartus_pgm&lt;/code> (Quartus Programmer).&lt;/p>
-&lt;p>To program with more bitfiles, install &lt;a href="/docs/features/component-management/component-category/#ip">&lt;span style="color: blue">IP Component&lt;/span>&lt;/a> from different vendors and select the desired bitfile from the list.&lt;/p>
-&lt;p>&lt;img src="/configuration/flash/2.png" alt="example image">
-Another example shows the selected Bitfile is &lt;code>shakti-secure-iot-no-fpu.bit&lt;/code>, which is the bitfile for Nexys A7 FPGA board from Mingrove Silicon Inc. vendor and the tool used for programming board is &lt;code>vivado&lt;/code> (Vivado Programmer).&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
+&lt;p>The images show the selected Bitfile is &lt;code>de2-115_neorv32.sof&lt;/code>, which is the bitfile for Terrasic DE2-115 FPGA board from Stephan Nolting vendor and the tool used for programming board is &lt;code>quartus_pgm&lt;/code> (Quartus Programmer).&lt;/p>
+&lt;p>To program with more bitfiles, install &lt;a href="/docs/features/component-management/component-category/#ip">&lt;span style="color: blue">IP Component&lt;/span>&lt;/a> from different vendors and select the desired bitfile from the list.&lt;/p></description></item><item><title>Docs: Running program</title><link>/docs/configuration/run/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>/docs/configuration/run/</guid><description>
 &lt;p>To Run a project on XploR Studio, right-click on the project and select &lt;strong>Run As &amp;gt; Run Configurations&lt;/strong>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong>
